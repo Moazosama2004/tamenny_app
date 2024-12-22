@@ -27,7 +27,7 @@ class ProfileView extends StatelessWidget {
             ),
           ],
           backgroundColor: AppColors.primaryColor),
-      body: Center(
+      body: const Center(
         child: Text('Profiel  View'),
       ),
     );

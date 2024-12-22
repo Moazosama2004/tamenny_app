@@ -11,9 +11,9 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(context, title: 'Search', leadingIcon: false),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: const Column(
+      body: const Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 16.0),
+        child:  Column(
           children: [
             SizedBox(
               height: 32.0,

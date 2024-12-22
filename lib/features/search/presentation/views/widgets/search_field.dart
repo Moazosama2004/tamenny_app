@@ -11,7 +11,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 13.5),
+        contentPadding: const EdgeInsets.symmetric(vertical: 13.5),
         prefixIcon: SizedBox(
             height: 24,
             width: 24,

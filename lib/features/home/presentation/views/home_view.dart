@@ -59,7 +59,7 @@ class HomeView extends StatelessWidget {
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return Container(
-                        padding: EdgeInsets.all(16),
+                        padding:const  EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
@@ -67,22 +67,22 @@ class HomeView extends StatelessWidget {
                             BoxShadow(
                               color: Colors.grey.shade300,
                               blurRadius: 6,
-                              offset: Offset(2, 2),
+                              offset: const Offset(2, 2),
                             ),
                           ],
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(Icons.file_present,
+                           const  Icon(Icons.file_present,
                                 color: Colors.blue, size: 40),
-                            Spacer(),
+                             const Spacer(),
                             Text(
                               "Scan ${index + 1}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 16),
                             ),
-                            Text(
+                            const Text(
                               "Status: Normal",
                               style:
                                   TextStyle(fontSize: 12, color: Colors.grey),
@@ -116,7 +116,7 @@ class HomeView extends StatelessWidget {
                           margin: const EdgeInsets.only(right: 12),
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               colors: [
                                 AppColors.primaryColor,
                                 Colors.white,
@@ -138,9 +138,9 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 // Daily Health Challenges Section
-                SliverToBoxAdapter(
+                 const SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    padding:  EdgeInsets.symmetric(vertical: 16.0),
                     child: Text(
                       "Daily Health Challenges",
                       style:
@@ -150,7 +150,7 @@ class HomeView extends StatelessWidget {
                 ),
                 SliverToBoxAdapter(
                   child: Container(
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
@@ -158,24 +158,24 @@ class HomeView extends StatelessWidget {
                         BoxShadow(
                           color: Colors.grey.shade300,
                           blurRadius: 6,
-                          offset: Offset(2, 2),
+                          offset: const Offset(2, 2),
                         ),
                       ],
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Challenge of the Day: Walk 10,000 steps",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Row(
                           children: [
-                            Icon(Icons.directions_walk,
+                            const Icon(Icons.directions_walk,
                                 color: AppColors.primaryColor, size: 30),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 "Stay active and healthy by completing this challenge!",
@@ -189,9 +189,9 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 // Latest Medical News Section
-                SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    padding:  EdgeInsets.symmetric(vertical: 16.0),
                     child: Text(
                       "Latest Medical News",
                       style:
@@ -201,13 +201,13 @@ class HomeView extends StatelessWidget {
                 ),
                 SliverToBoxAdapter(
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: 3,
                     itemBuilder: (context, index) {
                       return Container(
-                        margin: EdgeInsets.only(bottom: 12),
-                        padding: EdgeInsets.all(16),
+                        margin: const EdgeInsets.only(bottom: 12),
+                        padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
@@ -215,7 +215,7 @@ class HomeView extends StatelessWidget {
                             BoxShadow(
                               color: Colors.grey.shade300,
                               blurRadius: 6,
-                              offset: Offset(2, 2),
+                              offset: const Offset(2, 2),
                             ),
                           ],
                         ),
@@ -224,10 +224,10 @@ class HomeView extends StatelessWidget {
                           children: [
                             Text(
                               "News Title ${index + 1}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 16),
                             ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             Text(
                               "Brief summary of the news goes here. Click to read more.",
                               style: TextStyle(color: Colors.grey.shade700),

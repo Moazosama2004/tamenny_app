@@ -9,6 +9,7 @@ import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.
 import '../../features/auth/presentation/views/forgot_password_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
+import '../../features/chatbot/presentation/views/chat_bot_view.dart';
 import '../../features/home/presentation/views/health_scan_categories_view.dart';
 import '../../features/home/presentation/views/notification_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
@@ -107,6 +108,10 @@ class AppRouter {
       case Routes.settingsLanguageView:
         return MaterialPageRoute(
           builder: (context) => const SettingsLanguageView(),
+        );
+      case Routes.chatBotView:
+        return MaterialPageRoute(
+          builder: (context) => const ChatBotView(),
         );
       case Routes.settingsFaqView:
         return MaterialPageRoute(

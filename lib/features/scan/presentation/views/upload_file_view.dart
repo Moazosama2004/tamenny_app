@@ -25,7 +25,7 @@ class UploadFileView extends StatelessWidget {
               style: AppStyles.font48SemiBold
                   .copyWith(color: AppColors.primaryColor),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             Text(
@@ -34,7 +34,7 @@ class UploadFileView extends StatelessWidget {
               style:
                   AppStyles.font16SemiBold.copyWith(color: Color(0xff242424)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
             CustomAppButton(
@@ -43,7 +43,7 @@ class UploadFileView extends StatelessWidget {
                 Navigator.pushNamed(context, Routes.previewScanView);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
           ],

@@ -27,11 +27,11 @@ class SettingsItem extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 12),
+              padding: const EdgeInsets.symmetric(vertical: 12),
               child: Row(
                 children: [
-                  leadingIcon ?? SizedBox(),
-                  SizedBox(
+                  leadingIcon ?? const SizedBox(),
+                  const SizedBox(
                     width: 12,
                   ),
                   Expanded(
@@ -41,7 +41,7 @@ class SettingsItem extends StatelessWidget {
                         Text(
                           title,
                           style: AppStyles.font14Regular
-                              .copyWith(color: titleColor ?? Color(0xff242424)),
+                              .copyWith(color: titleColor ?? const  Color(0xff242424)),
                         ),
                         trailingIcon ??
                             SvgPicture.asset(Assets.imagesGoArrowRigthIcon),

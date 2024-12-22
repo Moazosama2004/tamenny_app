@@ -21,15 +21,15 @@ class HealthScanItemWidget extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 28,
-            backgroundColor: Color(0xffF4F8FF),
+            backgroundColor: const Color(0xffF4F8FF),
             child: SvgPicture.asset(
               Assets.imagesCardiologistIcon,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
-          Text(
+          const Text(
             'General',
             style: AppStyles.font12Regular,
           ),

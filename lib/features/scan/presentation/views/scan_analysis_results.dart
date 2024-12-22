@@ -17,54 +17,54 @@ class ScanAnalysisResults extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           children: [
             Image.asset(Assets.imagesScanResult),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Diagnosis Summary', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Diagnosis Summary', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'Diagnosed Condition: Potential Early-Stage Chronic Obstructive Pulmonary Disease (COPD)',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Confidence Level', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Confidence Level', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
             Text(
               'The AI analysis provides a confidence level of 98%, indicating strong reliability in the results.',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Recommended Next Steps', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Recommended Next Steps', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'Consulting with a pulmonologist is advised for a thorough evaluation and personalized treatment strategies.',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Empower Your Health', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Empower Your Health', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'We encourage you to share these results with trusted healthcare professionals and specialists. This collaborative approach enhances your understanding and supports informed decisions regarding your health.',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             CustomAppButton(
@@ -73,91 +73,91 @@ class ScanAnalysisResults extends StatelessWidget {
                 Navigator.pushNamed(context, Routes.processingScreen);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             CustomAppButton(
               text: 'Upload Another Scan',
-              bgColor: Color(0xffEFF1F5),
+              bgColor: const Color(0xffEFF1F5),
               textColor: Colors.black,
               onTap: () {
                 Navigator.pushNamed(context, Routes.processingScreen);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Next Steps', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Next Steps', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'Please consult a pulmonologist for further evaluation and treatment recommendations.',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Your Feedback Matters', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Your Feedback Matters', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'Help us improve by rating your experience.',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            FeedBackReviewsWidget(),
-            SizedBox(
+            const FeedBackReviewsWidget(),
+            const SizedBox(
               height: 20,
             ),
-            Text('Need Help?', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Need Help?', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'Visit our FAQ or contact support for assistance.',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             CustomAppButton(
               text: 'Visit FAQ',
-              bgColor: Color(0xffEFF1F5),
+              bgColor: const Color(0xffEFF1F5),
               textColor: Colors.black,
               onTap: () {
                 Navigator.pushNamed(context, Routes.processingScreen);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 12,
             ),
             CustomAppButton(
               text: 'Contact Support',
-              bgColor: Color(0xffEFF1F5),
+              bgColor: const Color(0xffEFF1F5),
               textColor: Colors.black,
               onTap: () {
                 Navigator.pushNamed(context, Routes.processingScreen);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text('Share Your Results!', style: AppStyles.font20SemiBold),
-            SizedBox(
+            const Text('Share Your Results!', style: AppStyles.font20SemiBold),
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'Share your AI results in our community for expert reviews and advice.',
               style: AppStyles.font16Regular,
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
             CustomAppButton(
@@ -166,7 +166,7 @@ class ScanAnalysisResults extends StatelessWidget {
                 Navigator.pushNamed(context, Routes.processingScreen);
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
           ],
@@ -183,14 +183,14 @@ class FeedBackReviewsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        GestureDetector(onTap: () {}, child: Icon(Icons.star_border)),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text('4.95', style: AppStyles.font16SemiBold),
+        GestureDetector(onTap: () {}, child: const Icon(Icons.star_border)),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          child:  Text('4.95', style: AppStyles.font16SemiBold),
         ),
         Text(
           '22 reviews',
-          style: AppStyles.font16Regular.copyWith(color: Color(0xffA09CAB)),
+          style: AppStyles.font16Regular.copyWith(color: const  Color(0xffA09CAB)),
         ),
       ],
     );
