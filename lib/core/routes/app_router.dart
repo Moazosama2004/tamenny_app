@@ -12,6 +12,7 @@ import '../../features/auth/presentation/views/signup_view.dart';
 import '../../features/chatbot/presentation/views/chat_bot_view.dart';
 import '../../features/home/presentation/views/health_scan_categories_view.dart';
 import '../../features/home/presentation/views/notification_view.dart';
+import '../../features/profiel/presentation/views/personal_info_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
 import '../../features/settings/presentation/views/settings_faq_view.dart';
 import '../../features/settings/presentation/views/settings_language_view.dart';
@@ -116,6 +117,10 @@ class AppRouter {
       case Routes.settingsFaqView:
         return MaterialPageRoute(
           builder: (context) => const SettingsFaqView(),
+        );
+      case Routes.personalInfoView:
+        return MaterialPageRoute(
+          builder: (context) => const PersonalInfoView(),
         );
       case Routes.previewScanView:
         return MaterialPageRoute(

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../core/routes/routes.dart';
-import '../../../../core/theme/app_colors.dart';
+
 import '../../../../core/theme/app_styles.dart';
 import '../../../../core/utils/app_assets.dart';
-import '../../../../core/widgets/custom_app_bar.dart';
+
 import '../../../../core/widgets/custom_app_button.dart';
 
 class CompletedScreen extends StatelessWidget {
@@ -14,7 +14,7 @@ class CompletedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff094E6C),
+      backgroundColor: const Color(0xff094E6C),
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Padding(
@@ -22,7 +22,7 @@ class CompletedScreen extends StatelessWidget {
           child: ListView(
             children: [
               Image.asset(Assets.imagesDoctorCompletedModel),
-              SizedBox(
+              const SizedBox(
                 height: 57,
               ),
               Text(
@@ -30,7 +30,7 @@ class CompletedScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: AppStyles.font48SemiBold.copyWith(color: Colors.white),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Padding(
@@ -41,17 +41,17 @@ class CompletedScreen extends StatelessWidget {
                   style: AppStyles.font16Medium.copyWith(color: Colors.white60),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 108,
               ),
               CustomAppButton(
                 text: 'Show Results',
-                bgColor: Color(0xffD3A9FF).withOpacity(0.25),
+                bgColor: const Color(0xffD3A9FF).withOpacity(0.25),
                 onTap: () {
                   Navigator.pushNamed(context, Routes.scanAnalysisResultsScreen);
                 },
               ),
-              SizedBox(
+              const  SizedBox(
                 height: 16,
               ),
             ],

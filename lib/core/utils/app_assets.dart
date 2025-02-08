@@ -62,6 +62,10 @@ class Assets {
   /// assets/images/community_inactive_icon.svg
   static const String imagesCommunityInactiveIcon = "assets/images/community_inactive_icon.svg";
 
+  /// Assets for imagesDirectIconBoxIcon
+  /// assets/images/direct_icon_box_icon.svg
+  static const String imagesDirectIconBoxIcon = "assets/images/direct_icon_box_icon.svg";
+
   /// Assets for imagesDoctorChatBot
   /// assets/images/doctor_chat_bot.svg
   static const String imagesDoctorChatBot = "assets/images/doctor_chat_bot.svg";
@@ -189,6 +193,18 @@ class Assets {
   /// Assets for imagesOnboarding4
   /// assets/images/onboarding4.png
   static const String imagesOnboarding4 = "assets/images/onboarding4.png";
+
+  /// Assets for imagesPaymentIcon
+  /// assets/images/payment_icon.svg
+  static const String imagesPaymentIcon = "assets/images/payment_icon.svg";
+
+  /// Assets for imagesPenEditIcon
+  /// assets/images/pen_edit_icon.svg
+  static const String imagesPenEditIcon = "assets/images/pen_edit_icon.svg";
+
+  /// Assets for imagesPersonalCardIcon
+  /// assets/images/personal_card_icon.svg
+  static const String imagesPersonalCardIcon = "assets/images/personal_card_icon.svg";
 
   /// Assets for imagesPopArrowWhiteIcon
   /// assets/images/pop_arrow_white_icon.svg

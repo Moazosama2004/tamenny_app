@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tap_to_expand/tap_to_expand.dart';
 

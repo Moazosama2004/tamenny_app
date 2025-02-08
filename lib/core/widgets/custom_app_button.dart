@@ -16,7 +16,7 @@ class CustomAppButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: 14,
         ),
         decoration: BoxDecoration(
