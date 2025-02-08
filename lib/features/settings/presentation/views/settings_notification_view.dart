@@ -1,6 +1,5 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/widgets/custom_app_switch.dart';
 import 'package:tamenny_app/features/settings/presentation/views/widgets/settings_item.dart';
 import '../../../../core/widgets/custom_app_bar.dart';

@@ -9,44 +9,42 @@ class NotificationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            backgroundColor: const Color(0xffE9FAEF),
-            child: SvgPicture.asset(Assets.imagesCalendarCompletedIcon),
-          ),
-          const SizedBox(
-            width: 12,
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Scan Analysis Completed',
-                  style: AppStyles.font14SemiBold.copyWith(
-                    color: Colors.black,
-                  ),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CircleAvatar(
+          backgroundColor: const Color(0xffE9FAEF),
+          child: SvgPicture.asset(Assets.imagesCalendarCompletedIcon),
+        ),
+        const SizedBox(
+          width: 12,
+        ),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Scan Analysis Completed',
+                style: AppStyles.font14SemiBold.copyWith(
+                  color: Colors.black,
                 ),
-                Text(
-                  'Your lung scan has been successfully analyzed. No major issues were detected. We recommend regular check-ups to stay informed about your health.',
-                  style: AppStyles.font12Regular.copyWith(
-                    color: const Color(0xff757575),
-                  ),
+              ),
+              Text(
+                'Your lung scan has been successfully analyzed. No major issues were detected. We recommend regular check-ups to stay informed about your health.',
+                style: AppStyles.font12Regular.copyWith(
+                  color: const Color(0xff757575),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Text(
-            '1h',
-            style: AppStyles.font10Regular.copyWith(
-              color: const Color(0xff9E9E9E),
-            ),
-          )
-        ],
-      ),
+        ),
+        Text(
+          '1h',
+          style: AppStyles.font10Regular.copyWith(
+            color: const Color(0xff9E9E9E),
+          ),
+        )
+      ],
     );
   }
 }

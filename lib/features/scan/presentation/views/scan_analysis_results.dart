@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/routes/routes.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_styles.dart';
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
@@ -38,7 +37,7 @@ class ScanAnalysisResults extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               'The AI analysis provides a confidence level of 98%, indicating strong reliability in the results.',
               style: AppStyles.font16Regular,
             ),

@@ -17,10 +17,10 @@ class MainBannerWidget extends StatelessWidget {
           Container(
             height: 165,
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: AssetImage(
                   Assets.imagesMainBannerBackground,
                 ),
@@ -36,12 +36,16 @@ class MainBannerWidget extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(48))),
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
@@ -51,10 +55,6 @@ class MainBannerWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(48))),
                   ),
                 )
               ],

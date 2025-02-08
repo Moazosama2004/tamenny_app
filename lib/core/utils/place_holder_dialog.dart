@@ -6,8 +6,8 @@ class PlaceholderDialog extends StatelessWidget {
     this.title,
     this.message,
     this.actions = const [],
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget? icon;
   final String? title;

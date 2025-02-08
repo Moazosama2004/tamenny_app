@@ -32,7 +32,7 @@ class UploadFileView extends StatelessWidget {
               'Tap to upload your file! Let’s help you analyze your health data and provide insights.',
               textAlign: TextAlign.center,
               style:
-                  AppStyles.font16SemiBold.copyWith(color: Color(0xff242424)),
+                  AppStyles.font16SemiBold.copyWith(color:const  Color(0xff242424)),
             ),
             const SizedBox(
               height: 60,

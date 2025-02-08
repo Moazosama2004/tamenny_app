@@ -34,7 +34,7 @@ AppBar customAppBar(
     title: Text(
       title,
       style: AppStyles.font18SemiBold
-          .copyWith(color: titleColor ?? Color(0xff242424)),
+          .copyWith(color: titleColor ?? const Color(0xff242424)),
     ),
     actions: actions,
   );
