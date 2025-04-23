@@ -17,9 +17,10 @@ showAwesomeDialogLogout(BuildContext context) {
     btnCancelOnPress: () {},
     btnOkOnPress: () async {
       await FirebaseAuth.instance.signOut();
-      Navigator.pushReplacementNamed(
+      Navigator.pushNamedAndRemoveUntil(
         context,
         Routes.loginView,
+        (route) => false,
       );
     },
   ).show();

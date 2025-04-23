@@ -1,5 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tamenny_app/features/auth/presentation/view_model/cubit/auth_cubit.dart';
+import 'package:tamenny_app/features/auth/presentation/view_model/cubit/auth_state.dart';
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_styles.dart';
 import '../../../../../core/utils/app_assets.dart';
@@ -9,6 +14,8 @@ class HomeCustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authState = context.watch<AuthCubit>().state;
+    log(authState.toString());
     return ListTile(
       contentPadding: EdgeInsets.zero,
       leading: const CircleAvatar(
@@ -17,9 +24,9 @@ class HomeCustomAppBar extends StatelessWidget {
           Assets.imagesProfiel,
         ),
       ),
-      title: const Text(
-        'Hi, Muaz!',
-        style: AppStyles.font18Bold,
+      title: Text(
+        getUserName(authState),
+        style: AppStyles.font18Bold.copyWith(),
       ),
       subtitle: Text(
         'How are you Today?',
@@ -40,4 +47,11 @@ class HomeCustomAppBar extends StatelessWidget {
       ),
     );
   }
+}
+
+String getUserName(AuthState state) {
+  if (state is LogInSuccessState || state is SignUpSuccessState) {
+    return (state as dynamic).user.name;
+  }
+  return '';
 }
