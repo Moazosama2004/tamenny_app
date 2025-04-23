@@ -13,6 +13,283 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: customAppBar(
+        context,
+        title: 'Profile',
+        leadingIcon: false,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: GestureDetector(
+                onTap: () {},
+                child: SvgPicture.asset(Assets.imagesProfileShareIcon)),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 24.0,
+          ),
+          child: Column(
+            children: [
+              const SizedBox(height: 12.0),
+              const Row(
+                children: [
+                  CircleAvatar(
+                    radius: 29,
+                    backgroundImage: NetworkImage(
+                        'https://scontent.fcai21-4.fna.fbcdn.net/v/t39.30808-6/480736065_1351844645997522_5916626625746172420_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=4wz_eaDqd4kQ7kNvwHrwSPJ&_nc_oc=AdlMaHRWgrRiJv_XJABvv7rEHhH0UVcQR8c6RL8BZ8Epk6K0Jc5YUhu2m0_0dTSQj_8&_nc_zt=23&_nc_ht=scontent.fcai21-4.fna&_nc_gid=jlliu27TIwyOdgkU69Aeng&oh=00_AfEfb4qpCdW9n9K4z3ZC1yAF9oy0b9RzV6jUM88U_07Xiw&oe=68075E87'), // Dynamic avatar URL
+                  ),
+                  SizedBox(
+                    width: 8.0,
+                  ),
+                  Text(
+                    'Muaz Osama',
+                    style: AppStyles.font18SemiBold,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 18.0,
+              ),
+              Container(
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                    color: const Color(0xffF5F5F5),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('ACCOUNT'),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.imagesProfileDataIcon,
+                              width: 24,
+                              height: 24,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Text('Profile Data'),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: SvgPicture.asset(
+                            Assets.imagesProfileArrowGoIcon,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.imagesProfileNotificationIcon,
+                              width: 24,
+                              height: 24,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Text('Profile Data'),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: SvgPicture.asset(
+                            Assets.imagesProfileArrowGoIcon,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.imagesChangePasswordIcon,
+                              width: 24,
+                              height: 24,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Text('Profile Data'),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: SvgPicture.asset(
+                            Assets.imagesProfileArrowGoIcon,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              Container(
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                    color: const Color(0xffF5F5F5),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Preference'),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.imagesDarkModeIcon,
+                              width: 24,
+                              height: 24,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Text('Dark Mode'),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: SvgPicture.asset(
+                            Assets.imagesProfileArrowGoIcon,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.imagesLanguageIcon,
+                              width: 24,
+                              height: 24,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Text('Language'),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: SvgPicture.asset(
+                            Assets.imagesProfileArrowGoIcon,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              Container(
+                padding: const EdgeInsets.all(12.0),
+                decoration: BoxDecoration(
+                    color: const Color(0xffF5F5F5),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('HELP'),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.imagesQuestionIcon,
+                              width: 24,
+                              height: 24,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Text('FAQ'),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: SvgPicture.asset(
+                            Assets.imagesProfileArrowGoIcon,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.imagesPrivacyIcon,
+                              width: 24,
+                              height: 24,
+                            ),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            const Text('Privacy Center'),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: SvgPicture.asset(
+                            Assets.imagesProfileArrowGoIcon,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+    return Scaffold(
       backgroundColor: AppColors.primaryColor,
       appBar: customAppBar(context,
           title: 'Profile',

@@ -22,4 +22,5 @@ abstract class Routes {
   static const String previewScanView = 'previewScanView';
   static const String chatBotView = 'chatBotView';
   static const String personalInfoView = 'personalInfoView';
+  static const String addPostView = 'addPostView';
 }
