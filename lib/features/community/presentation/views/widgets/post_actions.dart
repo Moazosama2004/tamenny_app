@@ -9,31 +9,41 @@ class PostActions extends StatelessWidget {
     required this.likesCount,
     required this.sharesCount,
     required this.viewsCount,
+    this.isLiked = false,
+    this.onLikePressed,
   });
+
   final int commentsCount;
   final int likesCount;
   final int sharesCount;
   final int viewsCount;
+  final bool isLiked;
+  final VoidCallback? onLikePressed;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
-            child: PostAction(
-          counts: commentsCount,
-          iconPath: Assets.imagesCommentIcon,
-        )),
+          child: PostAction(
+            counts: commentsCount,
+            iconPath: Assets.imagesCommentIcon,
+          ),
+        ),
         Expanded(
-            child: PostAction(
-          counts: likesCount,
-          iconPath: Assets.imagesLoveIcon,
-        )),
+          child: PostAction(
+            counts: likesCount,
+            iconPath: Assets.imagesLoveIcon,
+            isLiked: isLiked,
+            onLikePressed: onLikePressed,
+          ),
+        ),
         Expanded(
-            child: PostAction(
-          counts: sharesCount,
-          iconPath: Assets.imagesShareIcon,
-        )),
+          child: PostAction(
+            counts: sharesCount,
+            iconPath: Assets.imagesShareIcon,
+          ),
+        ),
       ],
     );
   }

@@ -126,8 +126,7 @@ class _CreatePostViewState extends State<CreatePostView> {
                         const SnackBar(content: Text("Posted successfully!")),
                       );
 
-                      Navigator.pop(
-                          context, true); // ✅ نرجع true عشان نستخدمه لما نرجع
+                      Navigator.pop(context, true);
                     }
 
                     if (state is PostFailure) {
@@ -146,7 +145,6 @@ class _CreatePostViewState extends State<CreatePostView> {
                                     privacy: privacy,
                                     selectedImage: selectedImage,
                                   );
-                              // ❌ متعملش pop هنا، خليه جوه listener لما تكون العملية نجحت
                             },
                       style: TextButton.styleFrom(
                         backgroundColor: AppColors.primaryColor,

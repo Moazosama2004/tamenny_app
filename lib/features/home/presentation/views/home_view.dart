@@ -59,7 +59,7 @@ class HomeView extends StatelessWidget {
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return Container(
-                        padding:const  EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
@@ -74,9 +74,9 @@ class HomeView extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                           const  Icon(Icons.file_present,
+                            const Icon(Icons.file_present,
                                 color: Colors.blue, size: 40),
-                             const Spacer(),
+                            const Spacer(),
                             Text(
                               "Scan ${index + 1}",
                               style: const TextStyle(
@@ -138,9 +138,9 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 // Daily Health Challenges Section
-                 const SliverToBoxAdapter(
+                const SliverToBoxAdapter(
                   child: Padding(
-                    padding:  EdgeInsets.symmetric(vertical: 16.0),
+                    padding: EdgeInsets.symmetric(vertical: 16.0),
                     child: Text(
                       "Daily Health Challenges",
                       style:
@@ -191,7 +191,7 @@ class HomeView extends StatelessWidget {
                 // Latest Medical News Section
                 const SliverToBoxAdapter(
                   child: Padding(
-                    padding:  EdgeInsets.symmetric(vertical: 16.0),
+                    padding: EdgeInsets.symmetric(vertical: 16.0),
                     child: Text(
                       "Latest Medical News",
                       style:

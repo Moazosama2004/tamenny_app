@@ -6,14 +6,13 @@ import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
 import '../../../../../core/widgets/custom_app_button.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
-import '../../view_model/cubit/auth_cubit.dart';
 
 class ForgotPasswordFormSection extends StatelessWidget {
   const ForgotPasswordFormSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var authCubit = BlocProvider.of<AuthCubit>(context);
+    // var authCubit = BlocProvider.of<AuthCubit>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -50,7 +49,7 @@ class ForgotPasswordFormSection extends StatelessWidget {
               return null;
             },
             onChanged: (data) {
-              authCubit.email = data;
+              // authCubit.email = data;
             },
           ),
           const Expanded(
@@ -59,7 +58,7 @@ class ForgotPasswordFormSection extends StatelessWidget {
           CustomAppButton(
             text: 'Reset Password',
             onTap: () {
-              authCubit.resetPassword();
+              // authCubit.resetPassword();
               showToastMessage(
                 msg: 'Check your email for the reset link.',
                 backgroundColor: Colors.blue,

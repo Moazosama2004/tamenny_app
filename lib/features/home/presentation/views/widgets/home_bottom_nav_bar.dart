@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/presentation/manager/community_cubit/community_cubit.dart';
 import 'package:tamenny_app/features/home/presentation/views/home_view.dart';
@@ -68,14 +69,14 @@ class BottomNavBar extends StatelessWidget {
             radius: 12,
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(555),
-                child: Image.asset(Assets.imagesProfiel)),
+                child: Image.network(getUserEntitiy().userAvatarUrl)),
           ),
         ),
         inactiveIcon: CircleAvatar(
           radius: 12,
           child: ClipRRect(
               borderRadius: BorderRadius.circular(555),
-              child: Image.asset(Assets.imagesProfiel)),
+              child: Image.network(getUserEntitiy().userAvatarUrl)),
         ),
       ),
     ];

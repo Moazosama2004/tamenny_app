@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
@@ -86,16 +87,16 @@ class ChatbotWelcomeView extends StatelessWidget {
                   ),
                   elevation: 1,
                 ),
-                onPressed: () {
-                  Navigator.pushNamed(context,
-                      '/learnMore'); // Replace with your learn more route
+                onPressed: () async {
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.of(context, rootNavigator: true)
+                      .pushReplacementNamed(Routes.loginView);
                 },
                 child: const Text(
                   'Learn More About the Chatbot',
                   style: TextStyle(
                     fontSize: 16,
-                    color:
-                        AppColors.primaryColor, // Use the updated primary color
+                    color: AppColors.primaryColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -112,8 +113,7 @@ class ChatbotWelcomeView extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon,
-            color: AppColors.primaryColor), // Use the updated primary color
+        Icon(icon, color: AppColors.primaryColor),
         const SizedBox(width: 10),
         Expanded(
           child: Text(

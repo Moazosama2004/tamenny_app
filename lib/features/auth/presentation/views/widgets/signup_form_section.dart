@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
+import 'package:tamenny_app/features/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 
 import '../../../../../core/routes/routes.dart';
@@ -8,40 +10,39 @@ import '../../../../../core/theme/app_styles.dart';
 import '../../../../../core/widgets/already_have_an_account.dart';
 import '../../../../../core/widgets/custom_app_button.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
-import '../../view_model/cubit/auth_cubit.dart';
-import '../../view_model/cubit/auth_state.dart';
 import 'or_sign_in_with.dart';
 import 'social_media_methods.dart';
 
-class SignUpFormSection extends StatelessWidget {
+class SignUpFormSection extends StatefulWidget {
   const SignUpFormSection({super.key});
 
   @override
+  State<SignUpFormSection> createState() => _SignUpFormSectionState();
+}
+
+class _SignUpFormSectionState extends State<SignUpFormSection> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  late String name, email, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  bool isObsecure = true;
+  bool isTermsAndConditionsAccepted = false;
+
+  @override
   Widget build(BuildContext context) {
-    var authCubit = BlocProvider.of<AuthCubit>(context);
-    return BlocConsumer<AuthCubit, AuthState>(
+    return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
-        if (state is SignUpSuccessState) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content:
-                  Text('Successifuly , check your email to verify account'),
-            ),
-          );
-          Navigator.pushReplacementNamed(context, Routes.loginView);
-        } else if (state is SignUpFailureState) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.errMessage),
-            ),
-          );
+        if (state is SignupSuccess) {
+          showErrorBar(context, message: 'تم انشاء حساب جديد');
+          Navigator.pop(context);
+        } else if (state is SignupFailure) {
+          showErrorBar(context, message: state.errMessage);
         }
       },
       builder: (context, state) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
-            key: authCubit.signupFormKey,
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -58,45 +59,30 @@ class SignUpFormSection extends StatelessWidget {
                   height: 30,
                 ),
                 CustomTextFormField(
-                  hintText: 'First Name',
-                  onChanged: (data) {
-                    authCubit.firstName = data;
+                  hintText: 'Full Name',
+                  onSaved: (data) {
+                    name = data!;
                   },
                   validate: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'First name is required.';
+                      return 'Full name is required.';
                     }
                     if (value.length < 2) {
-                      return 'First name must be at least 2 characters long.';
+                      return 'Full name must be at least 2 characters long.';
                     }
                     return null;
                   },
                 ),
                 const SizedBox(
                   height: 16,
-                ),
-                CustomTextFormField(
-                  hintText: 'Last Name',
-                  onChanged: (data) {
-                    authCubit.lasName = data;
-                  },
-                  validate: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Last name is required.';
-                    }
-                    if (value.length < 2) {
-                      return 'Last name must be at least 2 characters long.';
-                    }
-                    return null;
-                  },
                 ),
                 const SizedBox(
                   height: 16,
                 ),
                 CustomTextFormField(
                   hintText: 'Email',
-                  onChanged: (data) {
-                    authCubit.email = data;
+                  onSaved: (data) {
+                    email = data!;
                   },
                   validate: (value) {
                     final emailRegex = RegExp(
@@ -116,7 +102,7 @@ class SignUpFormSection extends StatelessWidget {
                 CustomTextFormField(
                   hintText: 'Password',
                   onChanged: (data) {
-                    authCubit.password = data;
+                    password = data;
                   },
                   validate: (value) {
                     if (value == null || value.isEmpty) {
@@ -132,22 +118,18 @@ class SignUpFormSection extends StatelessWidget {
                     }
                     return null;
                   },
-                  obscure: authCubit.obsecure,
+                  obscure: false,
                   suffixIcon: IconButton(
                     onPressed: () {
-                      authCubit.changeObsecureState();
+                      // authCubit.changeObsecureState();
                     },
-                    icon: Icon(
-                      authCubit.obsecure == false
-                          ? Icons.remove_red_eye
-                          : Icons.visibility_off,
-                    ),
+                    icon: const Icon(Icons.remove_red_eye),
                   ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                state is SignUpLoadingState
+                state is SignupLoading
                     ? const Center(
                         child: CircularProgressIndicator(
                           color: AppColors.primaryColor,
@@ -156,9 +138,17 @@ class SignUpFormSection extends StatelessWidget {
                     : CustomAppButton(
                         text: 'Create Account',
                         onTap: () {
-                          if (authCubit.signupFormKey.currentState!
-                              .validate()) {
-                            authCubit.signUpWithEmailAndPassword();
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState!.save();
+                            context
+                                .read<SignupCubit>()
+                                .createUserWithEmailAndPassword(
+                                    name: name,
+                                    email: email,
+                                    password: password);
+                          } else {
+                            autovalidateMode = AutovalidateMode.always;
+                            setState(() {});
                           }
                         },
                       ),

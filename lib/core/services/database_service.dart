@@ -15,4 +15,6 @@ abstract class DatabaseService {
     required String path,
     required String docuementId,
   });
+  Future<void> updateUserAvatar(
+      {required String userId, required String imageUrl});
 }

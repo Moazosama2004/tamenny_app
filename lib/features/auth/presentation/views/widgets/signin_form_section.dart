@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tamenny_app/features/auth/presentation/view_model/cubit/auth_cubit.dart';
-import 'package:tamenny_app/features/auth/presentation/view_model/cubit/auth_state.dart';
+import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
+import 'package:tamenny_app/core/routes/routes.dart';
+import 'package:tamenny_app/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/remember_me_and_forgot_password.dart';
 
 import '../../../../../core/functions/show_toast_message.dart';
@@ -16,37 +17,35 @@ import 'or_sign_in_with.dart';
 import 'social_media_methods.dart';
 import 'terms_and_conditions.dart';
 
-class LoginFormSection extends StatelessWidget {
-  const LoginFormSection({super.key});
+class SigninFormSection extends StatefulWidget {
+  const SigninFormSection({super.key});
+
+  @override
+  State<SigninFormSection> createState() => _SigninFormSectionState();
+}
+
+class _SigninFormSectionState extends State<SigninFormSection> {
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  late String email, password;
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  bool isObsecure = true;
 
   @override
   Widget build(BuildContext context) {
-    var authCubit = BlocProvider.of<AuthCubit>(context);
-    return BlocConsumer<AuthCubit, AuthState>(
+    return BlocConsumer<SigninCubit, SignInState>(
       listener: (context, state) {
-        if (state is LogInSuccessState) {
-          FirebaseAuth.instance.currentUser!.emailVerified
-              ? loginWithMessage(
-                  context: context,
-                  msg: 'You have successfully logged in.',
-                  backgroundColor: Colors.green,
-                )
-              : showToastMessage(
-                  msg: 'Please Verify Your Account',
-                  backgroundColor: Colors.red,
-                );
-        } else if (state is LogInFailureState) {
-          showToastMessage(
-            msg: state.errMessage,
-            backgroundColor: Colors.red,
-          );
+        if (state is SignInSuccess) {
+          showErrorBar(context, message: 'تم تسجيل الدخول بنجاح');
+          Navigator.pushReplacementNamed(context, Routes.bottomNavBarView);
+        } else if (state is SignInFailure) {
+          showErrorBar(context, message: state.errMessage);
         }
       },
       builder: (context, state) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
-            key: authCubit.loginFormKey,
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -63,8 +62,8 @@ class LoginFormSection extends StatelessWidget {
                 ),
                 CustomTextFormField(
                   hintText: 'Email',
-                  onChanged: (data) {
-                    authCubit.email = data;
+                  onSaved: (data) {
+                    email = data!;
                   },
                   validate: (value) {
                     final emailRegex = RegExp(
@@ -83,8 +82,8 @@ class LoginFormSection extends StatelessWidget {
                 ),
                 CustomTextFormField(
                   hintText: 'Password',
-                  onChanged: (data) {
-                    authCubit.password = data;
+                  onSaved: (data) {
+                    password = data!;
                   },
                   validate: (value) {
                     if (value == null || value.isEmpty) {
@@ -100,16 +99,10 @@ class LoginFormSection extends StatelessWidget {
                     }
                     return null;
                   },
-                  obscure: authCubit.obsecure,
+                  obscure: false,
                   suffixIcon: IconButton(
-                    onPressed: () {
-                      authCubit.changeObsecureState();
-                    },
-                    icon: Icon(
-                      authCubit.obsecure == false
-                          ? Icons.remove_red_eye
-                          : Icons.visibility_off,
-                    ),
+                    onPressed: () {},
+                    icon: const Icon(Icons.remove_red_eye),
                   ),
                 ),
                 const SizedBox(
@@ -119,17 +112,24 @@ class LoginFormSection extends StatelessWidget {
                 const SizedBox(
                   height: 32,
                 ),
-                state is LogInLoadingState
+                state is SignInSuccess
                     ? const Center(
-                        child:  CircularProgressIndicator(
+                        child: CircularProgressIndicator(
                           color: AppColors.primaryColor,
                         ),
                       )
                     : CustomAppButton(
                         text: 'Login',
                         onTap: () {
-                          if (authCubit.loginFormKey.currentState!.validate()) {
-                            authCubit.loginWithEmailAndPassword();
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState!.save();
+                            context
+                                .read<SigninCubit>()
+                                .signInWithEmailAndPassword(
+                                    email: email, password: password);
+                          } else {
+                            autovalidateMode = AutovalidateMode.always;
+                            setState(() {});
                           }
                         },
                       ),
@@ -160,4 +160,3 @@ class LoginFormSection extends StatelessWidget {
     );
   }
 }
-

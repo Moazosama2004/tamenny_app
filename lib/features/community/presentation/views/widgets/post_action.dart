@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PostAction extends StatefulWidget {
+class PostAction extends StatelessWidget {
   const PostAction({
     super.key,
     required this.iconPath,
@@ -9,6 +9,8 @@ class PostAction extends StatefulWidget {
     this.defaultColor = Colors.grey,
     this.activeIconPath,
     required this.counts,
+    this.isLiked = false,
+    this.onLikePressed,
   });
 
   final String iconPath;
@@ -16,38 +18,39 @@ class PostAction extends StatefulWidget {
   final Color activeColor;
   final Color defaultColor;
   final int counts;
-
-  @override
-  State<PostAction> createState() => _PostActionState();
-}
-
-class _PostActionState extends State<PostAction> {
-  bool isActive = false;
-
-  void toggle() {
-    setState(() {
-      isActive = !isActive;
-    });
-  }
+  final bool isLiked;
+  final VoidCallback? onLikePressed;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         GestureDetector(
-          onTap: toggle,
-          child: SvgPicture.asset(
-            isActive && widget.activeIconPath != null
-                ? widget.activeIconPath!
-                : widget.iconPath,
-            colorFilter: ColorFilter.mode(
-              isActive ? widget.activeColor : widget.defaultColor,
-              BlendMode.srcIn,
-            ),
-          ),
+          onTap: onLikePressed,
+          child: iconPath.contains('love')
+              ? Icon(
+                  isLiked ? Icons.favorite : Icons.favorite_border,
+                  color: isLiked ? activeColor : defaultColor,
+                  size: 24,
+                )
+              : SvgPicture.asset(
+                  isLiked && activeIconPath != null
+                      ? activeIconPath!
+                      : iconPath,
+                  colorFilter: ColorFilter.mode(
+                    isLiked ? activeColor : defaultColor,
+                    BlendMode.srcIn,
+                  ),
+                ),
         ),
         const SizedBox(width: 4),
-        Text('${widget.counts}'), // Just a demo, can be passed as a prop
+        Text(
+          '$counts',
+          style: TextStyle(
+            color: isLiked ? activeColor : defaultColor,
+            fontSize: 14,
+          ),
+        ),
       ],
     );
   }
