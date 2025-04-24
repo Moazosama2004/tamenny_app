@@ -39,7 +39,7 @@ class CommunityView extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: ListView.separated(
-                  physics: const BouncingScrollPhysics(),
+                  physics: BouncingScrollPhysics(),
                   separatorBuilder: (context, index) => const SizedBox(
                     height: 20,
                   ),
