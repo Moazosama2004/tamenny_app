@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
+import 'package:tamenny_app/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:tamenny_app/features/auth/presentation/view_model/cubit/auth_cubit.dart';
+import 'package:tamenny_app/features/community/presentation/manager/post_cubit/post_cubit.dart';
+import 'package:tamenny_app/features/community/presentation/views/add_post_view.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_bottom_nav_bar.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.dart';
@@ -12,6 +15,7 @@ import '../../features/auth/presentation/views/signup_view.dart';
 import '../../features/chatbot/presentation/views/chat_bot_view.dart';
 import '../../features/home/presentation/views/health_scan_categories_view.dart';
 import '../../features/home/presentation/views/notification_view.dart';
+import '../../features/profiel/presentation/views/personal_info_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
 import '../../features/settings/presentation/views/settings_faq_view.dart';
 import '../../features/settings/presentation/views/settings_language_view.dart';
@@ -46,22 +50,16 @@ class AppRouter {
         );
       case Routes.loginView:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => AuthCubit(),
-            child: const LoginView(),
-          ),
+          builder: (context) => const LoginView(),
         );
       case Routes.signupView:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => AuthCubit(),
-            child: const SignUpView(),
-          ),
+          builder: (context) => const SignUpView(),
         );
       case Routes.forgotPasswordView:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (context) => AuthCubit(),
+            create: (context) => AuthCubit(AuthRepoImpl()),
             child: const ForgotPasswordView(),
           ),
         );
@@ -117,9 +115,20 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const SettingsFaqView(),
         );
+      case Routes.personalInfoView:
+        return MaterialPageRoute(
+          builder: (context) => const PersonalInfoView(),
+        );
       case Routes.previewScanView:
         return MaterialPageRoute(
           builder: (context) => const PreviewScanView(),
+        );
+      case Routes.addPostView:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => PostCubit(),
+            child: const CreatePostView(),
+          ),
         );
       default:
         return MaterialPageRoute(

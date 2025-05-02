@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
-import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 
 import '../../../../core/theme/app_colors.dart';

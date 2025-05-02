@@ -22,7 +22,6 @@ class SignUpFormSection extends StatelessWidget {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignUpSuccessState) {
-          
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content:
@@ -60,6 +59,9 @@ class SignUpFormSection extends StatelessWidget {
                 ),
                 CustomTextFormField(
                   hintText: 'First Name',
+                  onChanged: (data) {
+                    authCubit.firstName = data;
+                  },
                   validate: (value) {
                     if (value == null || value.isEmpty) {
                       return 'First name is required.';
@@ -75,6 +77,9 @@ class SignUpFormSection extends StatelessWidget {
                 ),
                 CustomTextFormField(
                   hintText: 'Last Name',
+                  onChanged: (data) {
+                    authCubit.lasName = data;
+                  },
                   validate: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Last name is required.';
@@ -143,8 +148,8 @@ class SignUpFormSection extends StatelessWidget {
                   height: 16,
                 ),
                 state is SignUpLoadingState
-                    ? Center(
-                        child: const CircularProgressIndicator(
+                    ? const Center(
+                        child: CircularProgressIndicator(
                           color: AppColors.primaryColor,
                         ),
                       )

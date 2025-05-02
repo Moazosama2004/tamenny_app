@@ -1,10 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/features/auth/data/models/user_model.dart';
+import 'package:tamenny_app/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:tamenny_app/features/auth/presentation/view_model/cubit/auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(AuthInitial());
+  AuthCubit(this._authRepoImpl) : super(AuthInitial());
 
   String? firstName;
   String? lasName;
@@ -13,15 +15,23 @@ class AuthCubit extends Cubit<AuthState> {
   GlobalKey<FormState> signupFormKey = GlobalKey();
   GlobalKey<FormState> loginFormKey = GlobalKey();
   bool obsecure = false;
+  final AuthRepoImpl _authRepoImpl;
 
   signUpWithEmailAndPassword() async {
     try {
       emit(SignUpLoadingState());
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+
+      final user = await _authRepoImpl.registerUser(
+        name: '${firstName}${lasName}',
         email: email!,
         password: password!,
       );
-      emit(SignUpSuccessState());
+
+      if (user != null) {
+        emit(SignUpSuccessState(user: user));
+      } else {
+        emit(SignUpFailureState(errMessage: 'حدث خطأ أثناء إنشاء الحساب.'));
+      }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         emit(SignUpFailureState(
@@ -42,12 +52,18 @@ class AuthCubit extends Cubit<AuthState> {
   loginWithEmailAndPassword() async {
     try {
       emit(LogInLoadingState());
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+
+      final user = await _authRepoImpl.loginUser(
         email: email!,
         password: password!,
       );
-      await verifyAccount();
-      emit(LogInSuccessState());
+
+      if (user != null) {
+        await verifyAccount();
+        emit(LogInSuccessState(user: user));
+      } else {
+        emit(LogInFailureState(errMessage: 'حدث خطأ أثناء تسجيل الدخول.'));
+      }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         emit(LogInFailureState(errMessage: 'No user found for that email.'));
@@ -74,6 +90,11 @@ class AuthCubit extends Cubit<AuthState> {
 
   resetPassword() async {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email!);
+  }
+
+  Future<UserModel?> getUserData() async {
+    return await _authRepoImpl
+        .getUserData(FirebaseAuth.instance.currentUser!.uid);
   }
 
   changeObsecureState() {
