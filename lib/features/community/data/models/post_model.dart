@@ -10,6 +10,7 @@ class PostModel {
   final int sharesCount;
   final int viewsCount;
   final Timestamp createdAt;
+  final List<String> likedBy;
 
   PostModel({
     required this.postId,
@@ -21,12 +22,13 @@ class PostModel {
     required this.sharesCount,
     required this.viewsCount,
     required this.createdAt,
+    this.likedBy = const [],
   });
 
   factory PostModel.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
     return PostModel(
-      postId: data['postId'] ?? '',
+      postId: doc.id,
       postText: data['postText'] ?? '',
       username: data['username'] ?? '',
       userAvatarUrl: data['userAvatarUrl'] ?? '',
@@ -35,6 +37,21 @@ class PostModel {
       sharesCount: data['sharesCount'] ?? 0,
       viewsCount: data['viewsCount'] ?? 0,
       createdAt: data['createdAt'] ?? Timestamp.now(),
+      likedBy: List<String>.from(data['likedBy'] ?? []),
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'postText': postText,
+      'username': username,
+      'userAvatarUrl': userAvatarUrl,
+      'commentsCount': commentsCount,
+      'likesCount': likesCount,
+      'sharesCount': sharesCount,
+      'viewsCount': viewsCount,
+      'createdAt': createdAt,
+      'likedBy': likedBy,
+    };
   }
 }

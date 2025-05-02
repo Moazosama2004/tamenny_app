@@ -12,7 +12,12 @@
           "package_name": "com.example.tamenny_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "580619104529-1hn9q2retmii1125vohq9t0g0tg126df.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCEt_G0vs5kEclxwsIXpid5erqkqkMgth0"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580619104529-1hn9q2retmii1125vohq9t0g0tg126df.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "580619104529-bsg00oj45i92oqn17g052ad4cr33kbkn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tamennyApp"
+              }
+            }
+          ]
         }
       }
     }

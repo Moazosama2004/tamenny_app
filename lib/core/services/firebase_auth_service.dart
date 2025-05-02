@@ -2,8 +2,13 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 import 'dart:math' as math;
+
 import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
 import 'package:tamenny_app/core/errors/custom_exception.dart';
 
 class FirebaseAuthService {
@@ -11,208 +16,115 @@ class FirebaseAuthService {
     await FirebaseAuth.instance.currentUser!.delete();
   }
 
-  Future<User> createUserWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
+  Future<User> createUserWithEmailAndPassword(
+      {required String email, required String password}) async {
     try {
-      final credential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
-      return credential.user!;
-    } on FirebaseAuthException catch (e) {
-      log(
-        "Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()} and code is ${e.code}",
-      );
-      if (e.code == 'weak-password') {
-        throw CustomException(message: 'الرقم السري ضعيف جداً.');
-      } else if (e.code == 'email-already-in-use') {
-        throw CustomException(
-          message: 'لقد قمت بالتسجيل مسبقاً. الرجاء تسجيل الدخول.',
-        );
-      } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تأكد من اتصالك بالانترنت.');
-      } else {
-        throw CustomException(
-          message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
-        );
-      }
-    } catch (e) {
-      log(
-        "Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()}",
-      );
-
-      throw CustomException(
-        message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
-      );
-    }
-  }
-
-  Future<User> signInWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
-    try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
       return credential.user!;
     } on FirebaseAuthException catch (e) {
-      log(
-        "Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()} and code is ${e.code}",
-      );
-      if (e.code == 'user-not-found') {
+      log("Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()} and code is ${e.code}");
+      if (e.code == 'weak-password') {
+        throw CustomException(message: 'The password is too weak.');
+      } else if (e.code == 'email-already-in-use') {
         throw CustomException(
-          message: 'الرقم السري او البريد الالكتروني غير صحيح.',
-        );
-      } else if (e.code == 'wrong-password') {
-        throw CustomException(
-          message: 'الرقم السري او البريد الالكتروني غير صحيح.',
-        );
-      } else if (e.code == 'invalid-credential') {
-        throw CustomException(
-          message: 'الرقم السري او البريد الالكتروني غير صحيح.',
-        );
+            message: 'This email is already registered. Please sign in.');
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: 'تأكد من اتصالك بالانترنت.');
+        throw CustomException(
+            message: 'Please check your internet connection.');
       } else {
         throw CustomException(
-          message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
-        );
+            message: 'Something went wrong. Please try again.');
       }
     } catch (e) {
-      log(
-        "Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()}",
-      );
+      log("Exception in FirebaseAuthService.createUserWithEmailAndPassword: ${e.toString()}");
 
-      throw CustomException(
-        message: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
-      );
+      throw CustomException(message: 'Something went wrong. Please try again.');
     }
   }
 
-  // Future<User> signInWithGoogle() async {
-  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  Future<User> signInWithEmailAndPassword(
+      {required String email, required String password}) async {
+    try {
+      final credential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      return credential.user!;
+    } on FirebaseAuthException catch (e) {
+      log("Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()} and code is ${e.code}");
+      if (e.code == 'user-not-found' ||
+          e.code == 'wrong-password' ||
+          e.code == 'invalid-credential') {
+        throw CustomException(message: 'Incorrect email or password.');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(
+            message: 'Please check your internet connection.');
+      } else {
+        throw CustomException(
+            message: 'Something went wrong. Please try again.');
+      }
+    } catch (e) {
+      log("Exception in FirebaseAuthService.signInWithEmailAndPassword: ${e.toString()}");
 
-  //   final GoogleSignInAuthentication? googleAuth =
-  //       await googleUser?.authentication;
+      throw CustomException(message: 'Something went wrong. Please try again.');
+    }
+  }
 
-  //   final credential = GoogleAuthProvider.credential(
-  //     accessToken: googleAuth?.accessToken,
-  //     idToken: googleAuth?.idToken,
-  //   );
+  Future<User> signInWithGoogle() async {
+    try {
+      // Trigger the authentication flow
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-  //   return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
-  // }
+      if (googleUser == null) {
+        throw CustomException(message: 'Google Sign-In was cancelled.');
+      }
 
-  // Future<User> signInWithFacebook() async {
-  //   //? to generate sha1 code in CMD ---> gradlew signingReport
-  //   final rawNonce = generateNonce();
-  //   final nonce = sha256ofString(rawNonce);
-  //   final LoginResult loginResult = await FacebookAuth.instance.login(
-  //     nonce: nonce,
-  //   );
-  //   OAuthCredential facebookAuthCredential;
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
 
-  //   if (Platform.isIOS) {
-  //     switch (loginResult.accessToken!.type) {
-  //       case AccessTokenType.classic:
-  //         final token = loginResult.accessToken as ClassicToken;
-  //         facebookAuthCredential = FacebookAuthProvider.credential(
-  //           token.authenticationToken!,
-  //         );
-  //         break;
-  //       case AccessTokenType.limited:
-  //         final token = loginResult.accessToken as LimitedToken;
-  //         facebookAuthCredential = OAuthCredential(
-  //           providerId: 'facebook.com',
-  //           signInMethod: 'oauth',
-  //           idToken: token.tokenString,
-  //           rawNonce: rawNonce,
-  //         );
-  //         break;
-  //     }
-  //   } else {
-  //     facebookAuthCredential = FacebookAuthProvider.credential(
-  //       loginResult.accessToken!.tokenString,
-  //     );
-  //   }
+      if (googleAuth.accessToken == null || googleAuth.idToken == null) {
+        throw CustomException(message: 'Failed to get Google credentials.');
+      }
 
-  //   return (await FirebaseAuth.instance.signInWithCredential(
-  //     facebookAuthCredential,
-  //   ))
-  //       .user!;
-  // }
+      // Create a new credential
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
 
-  /// Generates a cryptographically secure random nonce, to be included in a
-  /// credential request.
-  // String generateNonce([int length = 32]) {
-  //   const charset =
-  //       '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._';
-  //   final random = math.Random.secure();
-  //   return List.generate(
-  //     length,
-  //     (_) => charset[random.nextInt(charset.length)],
-  //   ).join();
-  // }
+      // Sign in to Firebase with the Google credential
+      final UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
 
-  /// Returns the sha256 hash of [input] in hex notation.
-  // String sha256ofString(String input) {
-  //   final bytes = utf8.encode(input);
-  //   final digest = sha256.convert(bytes);
-  //   return digest.toString();
-  // }
+      if (userCredential.user == null) {
+        throw CustomException(message: 'Failed to sign in with Google.');
+      }
 
-  // Future<User> signInWithApple() async {
-  //   // To prevent replay attacks with the credential returned from Apple, we
-  //   // include a nonce in the credential request. When signing in with
-  //   // Firebase, the nonce in the id token returned by Apple, is expected to
-  //   // match the sha256 hash of `rawNonce`.
-  //   final rawNonce = generateNonce();
-  //   final nonce = sha256ofString(rawNonce);
-
-  //   // Request credential for the currently signed in Apple account.
-  //   final appleCredential = await SignInWithApple.getAppleIDCredential(
-  //     scopes: [
-  //       AppleIDAuthorizationScopes.email,
-  //       AppleIDAuthorizationScopes.fullName,
-  //     ],
-  //     nonce: nonce,
-  //   );
-
-  //   // Create an `OAuthCredential` from the credential returned by Apple.
-  //   final oauthCredential = OAuthProvider(
-  //     "apple.com",
-  //   ).credential(idToken: appleCredential.identityToken, rawNonce: rawNonce);
-
-  //   return (await FirebaseAuth.instance.signInWithCredential(
-  //     oauthCredential,
-  //   ))
-  //       .user!;
-  // }
-
-  // Future<User> signInWithTwitter() async {
-  //   // Create a TwitterLogin instance
-  //   final twitterLogin = TwitterLogin(
-  //     apiKey: 'TDnrhMXCD70NByZjRWDzsPIUX',
-  //     apiSecretKey: 'y9iJCP2kwiPuebBn8t4OJK4xHQaRa8lhqIEOvJUZMQTzsHIXpx',
-  //     redirectURI: 'yourapp://twitter-callback',
-  //   );
-
-  //   // Trigger the sign-in flow
-  //   final authResult = await twitterLogin.login();
-
-  //   // Create a credential from the access token
-  //   final twitterAuthCredential = TwitterAuthProvider.credential(
-  //     accessToken: authResult.authToken!,
-  //     secret: authResult.authTokenSecret!,
-  //   );
-
-  //   // Once signed in, return the UserCredential
-  //   return (await FirebaseAuth.instance
-  //           .signInWithCredential(twitterAuthCredential))
-  //       .user!;
-  // }
+      return userCredential.user!;
+    } on FirebaseAuthException catch (e) {
+      log("Exception in FirebaseAuthService.signInWithGoogle: ${e.toString()} and code is ${e.code}");
+      if (e.code == 'account-exists-with-different-credential') {
+        throw CustomException(
+            message: 'An account already exists with the same email address.');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(
+            message: 'Please check your internet connection.');
+      } else {
+        throw CustomException(
+            message: 'Failed to sign in with Google. Please try again.');
+      }
+    } catch (e) {
+      log("Exception in FirebaseAuthService.signInWithGoogle: ${e.toString()}");
+      if (e is CustomException) {
+        rethrow;
+      }
+      throw CustomException(
+          message: 'Failed to sign in with Google. Please try again.');
+    }
+  }
 
   bool isLoggedIn() {
     return FirebaseAuth.instance.currentUser != null;

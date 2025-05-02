@@ -39,17 +39,22 @@ dependencies:
     sdk: flutter
   flutter_advanced_switch: ^3.1.0
   flutter_bloc: ^9.1.0
+  flutter_facebook_auth: ^7.1.1
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.4.3
   flutter_svg: ^2.0.16
   fluttertoast: ^8.2.10
   get_it: ^8.0.2
   google_generative_ai: ^0.4.6
+  google_sign_in: ^6.3.0
   image_picker: ^1.1.2
+  modal_progress_hud_nsn: ^0.5.1
   percent_indicator: ^4.2.4
   persistent_bottom_nav_bar: ^6.2.1
   shared_preferences: ^2.3.3
+  skeletonizer: ^1.4.3
   smooth_page_indicator: ^1.2.0+3
+  supabase_flutter: ^2.8.4
   tap_to_expand: ^0.7.2
 
 dev_dependencies:

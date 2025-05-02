@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tamenny_app/features/community/data/models/post_model.dart';
+import 'package:tamenny_app/features/community/presentation/manager/community_cubit/community_cubit.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_actions.dart';
 
 import '../../../../../core/theme/app_styles.dart';
@@ -13,6 +15,9 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final communityCubit = context.read<CommunityCubit>();
+    final isLiked = communityCubit.isPostLiked(post);
+
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
@@ -72,6 +77,8 @@ class Post extends StatelessWidget {
               likesCount: post.likesCount, // Passing dynamic likes count
               sharesCount: post.sharesCount, // Passing dynamic shares count
               viewsCount: post.viewsCount, // Passing dynamic views count
+              isLiked: isLiked,
+              onLikePressed: () => communityCubit.toggleLike(post.postId),
             ),
           ],
         ),

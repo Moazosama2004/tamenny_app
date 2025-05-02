@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tamenny_app/core/databases/cache_helper.dart';
-import 'package:tamenny_app/core/di/service_locator.dart';
+import 'package:tamenny_app/config/cache_helper.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'functions/custom_navigation_from_splash_to_another_views.dart';
 import 'widgets/logo_name_with_animation.dart';
@@ -17,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     bool? isOnboardingVisited =
-        getIt<CacheHelper>().getData(key: 'isOnboardingVisited') ?? false;
+        CacheHelper.getBool(key: 'isOnboardingVisited') ?? false;
     customNavigationFromSplashToAnotherViews(context, isOnboardingVisited);
     super.initState();
   }

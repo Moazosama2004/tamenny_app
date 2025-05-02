@@ -1,72 +1,184 @@
+import 'dart:convert';
+import 'dart:developer';
+
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tamenny_app/config/cache_helper.dart';
+import 'package:tamenny_app/constants.dart';
+import 'package:tamenny_app/core/errors/custom_exception.dart';
+import 'package:tamenny_app/core/errors/failure.dart';
+import 'package:tamenny_app/core/services/database_service.dart';
+import 'package:tamenny_app/core/services/firebase_auth_service.dart';
+import 'package:tamenny_app/core/utils/backend_end_point.dart';
 import 'package:tamenny_app/features/auth/data/models/user_model.dart';
-import 'package:tamenny_app/features/auth/data/repos/auth_repo.dart';
+import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
+import 'package:tamenny_app/features/auth/domain/repos/auth_repo.dart';
 
 class AuthRepoImpl extends AuthRepo {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseAuthService firebaseAuthService;
+  final DatabaseService databaseService;
 
-  // تسجيل مستخدم جديد
-  Future<UserModel?> registerUser({
+  AuthRepoImpl({
+    required this.firebaseAuthService,
+    required this.databaseService,
+  });
+
+  @override
+  Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword({
+    required String email,
+    required String password,
     required String name,
+  }) async {
+    User? user;
+    try {
+      user = await firebaseAuthService.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      UserEntity userEntity = UserEntity(
+          name: name,
+          email: email,
+          uId: user.uid,
+          userAvatarUrl:
+              'https://hxknihxevezcsgfffdmr.supabase.co/storage/v1/object/public/images/avatars/profiel.png');
+      await addUserData(user: userEntity);
+      return right(userEntity);
+    } on CustomException catch (e) {
+      await deleteUser(user);
+
+      return left(ServerFailure(errMessage: e.toString()));
+    } catch (e) {
+      await deleteUser(user);
+      log(
+        'Exception in AuthRepoImpl.createUserWithEmailAndPassword : ${e.toString()}',
+      );
+      return left(
+        ServerFailure(errMessage: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
+      );
+    }
+  }
+
+  Future<void> deleteUser(User? user) async {
+    if (user != null) {
+      await firebaseAuthService.deleteUser();
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
     try {
-      final credential = await _auth.createUserWithEmailAndPassword(
+      var user = await firebaseAuthService.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-
-      final user = UserModel(
-        uid: credential.user!.uid,
-        name: name,
-        email: email,
-      );
-
-      await saveUserData(user);
-      return user;
+      UserEntity userEntity = await getUserData(uid: user.uid);
+      await saveUserData(user: userEntity);
+      return right(userEntity);
+    } on CustomException catch (e) {
+      return left(ServerFailure(errMessage: e.message));
     } catch (e) {
-      print("Register Error: $e");
-      return null;
+      log(
+        'Exception in AuthRepoImpl.signInWithEmailAndPassword : ${e.toString()}',
+      );
+      return left(
+        ServerFailure(errMessage: 'لقد حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
+      );
     }
   }
 
-  // تسجيل الدخول
-  Future<UserModel?> loginUser({
-    required String email,
-    required String password,
-  }) async {
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    User? user;
     try {
-      final credential = await _auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
+      user = await firebaseAuthService.signInWithGoogle();
+
+      // Create user entity from Firebase user
+      UserEntity userEntity = UserModel.fromFirebaseUser(user);
+
+      // Check if user exists in database
+      var isUserExist = await databaseService.checkIfDataExists(
+        path: BackendEndPoint.isUserExists,
+        docuementId: user.uid,
       );
 
-      return await getUserData(credential.user!.uid);
+      if (!isUserExist) {
+        // If user doesn't exist, add them to the database
+        await addUserData(user: userEntity);
+      } else {
+        // If user exists, get their data from the database
+        userEntity = await getUserData(uid: user.uid);
+      }
+
+      // Save user data to local storage
+      await saveUserData(user: userEntity);
+
+      return right(userEntity);
     } catch (e) {
-      print("Login Error: $e");
-      return null;
+      await deleteUser(user);
+      log('Exception in AuthRepoImpl.signInWithGoogle: ${e.toString()}');
+      return left(
+        ServerFailure(
+            errMessage: 'Failed to sign in with Google. Please try again.'),
+      );
     }
   }
 
-  // حفظ بيانات المستخدم
-  Future<void> saveUserData(UserModel user) async {
-    await _firestore.collection('users').doc(user.uid).set(user.toJson());
+  @override
+  // Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+  //   User? user;
+  //   try {
+  //     user = await firebaseAuthService.signInWithFacebook();
+  //     UserEntity userEntity = UserModel.fromFirebaseUser(user);
+  //     var isUserExist = await databaseService.checkIfDataExists(
+  //       path: BackendEndPoint.isUserExists,
+  //       documentId: user.uid,
+  //     );
+  //     if (isUserExist) {
+  //       await addUserData(user: userEntity);
+  //     } else {
+  //       await getUserData(uid: user.uid);
+  //     }
+  //     return right(userEntity);
+  //   } catch (e) {
+  //     await deleteUser(user);
+  //     log('Exception in AuthRepoImpl.signInWithFacebook: ${e.toString()}');
+  //     return left(
+  //       ServerFailure(errMessage: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
+  //     );
+  //   }
+  // }
+
+  @override
+  Future addUserData({required UserEntity user}) async {
+    await databaseService.addData(
+      path: BackendEndPoint.addUserData,
+      data: UserModel.fromEntity(user).toJson(),
+      documentId: user.uId,
+    );
   }
 
-  // جلب بيانات المستخدم
-  Future<UserModel?> getUserData(String uid) async {
-    final doc = await _firestore.collection('users').doc(uid).get();
-    if (doc.exists) {
-      return UserModel.fromJson(doc.data()!);
-    }
-    return null;
+  @override
+  Future<UserEntity> getUserData({required String uid}) async {
+    return UserModel.fromJson(
+      await databaseService.getData(
+        path: BackendEndPoint.getUserData,
+        docuementId: uid,
+      ),
+    );
   }
 
-  // تسجيل الخروج
-  Future<void> logout() async {
-    await _auth.signOut();
+  @override
+  Future saveUserData({required UserEntity user}) async {
+    String jsonData = jsonEncode(UserModel.fromEntity(user).toJson());
+    await CacheHelper.set(key: kUserData, value: jsonData);
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() {
+    // TODO: implement signInWithFacebook
+    throw UnimplementedError();
   }
 }

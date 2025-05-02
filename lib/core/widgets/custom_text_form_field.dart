@@ -11,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
     this.obscure = false,
     this.prefixIcon,
     this.suffixIcon,
+    this.onSaved,
   });
   final String hintText;
   final Function(String)? onChanged;
@@ -18,10 +19,12 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscure;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved,
       onChanged: onChanged,
       validator: validate,
       obscureText: obscure,
@@ -30,7 +33,7 @@ class CustomTextFormField extends StatelessWidget {
         suffixIcon: suffixIcon,
         hintText: hintText,
         hintStyle: AppStyles.font14Medium.copyWith(
-          color:  const Color(0xffC2C2C2),
+          color: const Color(0xffC2C2C2),
         ),
         fillColor: AppColors.grayColor,
         filled: true,
