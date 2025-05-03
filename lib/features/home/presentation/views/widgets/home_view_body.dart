@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
+import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/features/home/presentation/manager/medical_news_cubit/medical_news_cubit.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/health_scan_categories_widget.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/health_tips_list_view.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_custom_app_bar.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/home_view_custom_header.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/main_banner_widget.dart';
-import 'package:tamenny_app/features/home/presentation/views/widgets/medical_article_item.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/search_text_field.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/sliver_medical_articles_list.dart';
 
@@ -48,18 +49,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   height: 12,
                 ),
                 HealthScanCategoriesWidget(),
-                SizedBox(
-                  height: 12,
-                ),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Your Recent Insights",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  child: HomeViewCustomHeader(
+                    text: "Your Recent Insights",
                   ),
-                ),
-                SizedBox(
-                  height: 12,
                 ),
               ],
             ),
@@ -107,79 +101,13 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             },
           ),
           const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 12.0),
-              child: Text(
-                "Health Tips for You",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 180,
-              child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 200,
-                    margin: const EdgeInsets.only(right: 12),
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(24),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
-                          blurRadius: 12,
-                          offset: const Offset(0, 6),
-                        ),
-                      ],
-                      border: Border.all(
-                        color: AppColors.primaryColor.withOpacity(0.1),
-                      ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryColor.withOpacity(0.1),
-                            shape: BoxShape.circle,
-                          ),
-                          child: const Icon(
-                            Icons.water_drop_rounded,
-                            color: AppColors.primaryColor,
-                            size: 28,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        const Text(
-                          "Drink plenty of water daily for better health.",
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.black54,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ),
+            child: HomeViewCustomHeader(text: "Health Tips for You"),
           ),
           const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Text(
-                "Latest Medical News",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
+            child: HealthTipsListView(),
+          ),
+          const SliverToBoxAdapter(
+            child: HomeViewCustomHeader(text: "Latest Medical News"),
           ),
           const SliverMedicalArticlesList(),
         ],
