@@ -2,8 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
+import 'package:tamenny_app/core/functions/validator.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
+import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/remember_me_and_forgot_password.dart';
 
 import '../../../../../core/functions/show_toast_message.dart';
@@ -46,6 +48,7 @@ class _SigninFormSectionState extends State<SigninFormSection> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
             key: formKey,
+            autovalidateMode: autovalidateMode,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -65,46 +68,12 @@ class _SigninFormSectionState extends State<SigninFormSection> {
                   onSaved: (data) {
                     email = data!;
                   },
-                  validate: (value) {
-                    final emailRegex = RegExp(
-                        r'^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$');
-                    if (value == null || value.isEmpty) {
-                      return 'Email is required.';
-                    }
-                    if (!emailRegex.hasMatch(value)) {
-                      return 'Enter a valid email address.';
-                    }
-                    return null;
-                  },
+                  validate: Validator.validateEmail,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                CustomTextFormField(
-                  hintText: 'Password',
-                  onSaved: (data) {
-                    password = data!;
-                  },
-                  validate: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Password is required.';
-                    }
-                    if (value.length < 8) {
-                      return 'Password must be at least 8 characters long.';
-                    }
-                    final passwordRegex = RegExp(
-                        r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$');
-                    if (!passwordRegex.hasMatch(value)) {
-                      return 'Password must include uppercase, lowercase, number, and special character.';
-                    }
-                    return null;
-                  },
-                  obscure: false,
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.remove_red_eye),
-                  ),
-                ),
+                const PasswordTextField(),
                 const SizedBox(
                   height: 16,
                 ),

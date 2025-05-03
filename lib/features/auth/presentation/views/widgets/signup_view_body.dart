@@ -9,13 +9,11 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          CustomClipPathWithLogo(),
-          SignUpFormSection(),
-        ],
-      ),
+    return ListView(
+      children: const [
+        CustomClipPathWithLogo(),
+        SignUpFormSection(),
+      ],
     );
   }
 }

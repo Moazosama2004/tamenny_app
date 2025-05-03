@@ -112,14 +112,6 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                 const SizedBox(
                   height: 46,
                 ),
-                const OrSignInWith(),
-                const SizedBox(
-                  height: 32,
-                ),
-                const SocialMediaMethods(),
-                const SizedBox(
-                  height: 32,
-                ),
                 const TermsAndConditionsAndPrivacyPolicy(),
                 const SizedBox(
                   height: 24,
