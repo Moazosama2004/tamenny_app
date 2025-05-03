@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:tamenny_app/features/onboarding/presentation/views/widgets/step_image_widget.dart';
+import 'package:tamenny_app/features/onboarding/presentation/views/widgets/step_widget.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
-import '../../../data/models/on_boarding_model.dart';
+import '../../../domain/entites/on_boarding_entity.dart';
 
 class OnBoardingPageViewBody extends StatefulWidget {
-  const OnBoardingPageViewBody(
-      {super.key, required this.controller, required this.onBoardingModel});
+  const OnBoardingPageViewBody({
+    super.key,
+    required this.controller,
+    required this.onBoardingEntity,
+  });
   final PageController controller;
-  final OnBoardingModel onBoardingModel;
+  final OnBoardingEntity onBoardingEntity;
 
   @override
   State<OnBoardingPageViewBody> createState() => _OnBoardingPageViewBodyState();
@@ -22,32 +27,9 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 16),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(500),
-              border: Border.all(color: AppColors.primaryColor),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 15,
-                vertical: 10,
-              ),
-              child: Text(
-                widget.onBoardingModel.numberOfStep,
-                style: AppStyles.font16Bold.copyWith(
-                  color: AppColors.primaryColor,
-                ),
-              ),
-            ),
-          ),
+          child: StepWidget(text: widget.onBoardingEntity.numberOfStep),
         ),
-        SizedBox(
-          height: 400,
-          width: 400,
-          child: Image.asset(
-            widget.onBoardingModel.image,
-          ),
-        ),
+        StepImageWidget(imageUrl: widget.onBoardingEntity.image),
         const SizedBox(
           height: 60,
         ),
@@ -68,7 +50,7 @@ class _OnBoardingPageViewBodyState extends State<OnBoardingPageViewBody> {
             horizontal: 16.0,
           ),
           child: Text(
-            widget.onBoardingModel.textDesc,
+            widget.onBoardingEntity.textDesc,
             textAlign: TextAlign.center,
             style: AppStyles.font30ExtraBold.copyWith(
               color: AppColors.primaryColor,
