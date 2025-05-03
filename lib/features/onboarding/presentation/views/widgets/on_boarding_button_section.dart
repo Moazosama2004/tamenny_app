@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/widgets/on_boarding_custom_button.dart';
 
-class BottonSection extends StatelessWidget {
-  const BottonSection({
+class BottomSection extends StatelessWidget {
+  const BottomSection({
     super.key,
     required this.controller,
     required this.currentPage,

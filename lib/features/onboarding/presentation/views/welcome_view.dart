@@ -6,10 +6,8 @@ class WelcomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        body: WelcomeViewBody(),
-      ),
+    return const Scaffold(
+      body: WelcomeViewBody(),
     );
   }
 }

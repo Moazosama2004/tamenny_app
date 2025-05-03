@@ -14,7 +14,7 @@ class GetStartedButton extends StatelessWidget {
     return Center(
       child: GestureDetector(
         onTap: () {
-          Navigator.pushReplacementNamed(context, Routes.onboardingView);
+          Navigator.pushNamed(context, Routes.onboardingView);
         },
         child: Container(
             decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class GetStartedButton extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  const  SizedBox(
+                  const SizedBox(
                     width: 12,
                   ),
                   SvgPicture.asset(
