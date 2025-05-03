@@ -1,12 +1,7 @@
-import 'dart:convert';
 import 'dart:developer';
-import 'dart:io';
-import 'dart:math' as math;
 
-import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+
 import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:tamenny_app/core/errors/custom_exception.dart';

@@ -6,8 +6,6 @@ import 'package:tamenny_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:tamenny_app/features/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/signup_view_body.dart';
 import '../../../../core/theme/app_colors.dart';
-import 'widgets/custom_clip_path_with_logo.dart';
-import 'widgets/signup_form_section.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -23,7 +21,7 @@ class SignUpView extends StatelessWidget {
       child: Scaffold(
         body: BlocProvider(
           create: (context) => SignupCubit(getIt.get<AuthRepo>()),
-          child: SignUpViewBody(),
+          child: const SignUpViewBody(),
         ),
       ),
     );
