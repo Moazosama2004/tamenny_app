@@ -19,18 +19,18 @@ class FirestoreService implements DatabaseService {
 
   @override
   Future<bool> checkIfDataExists(
-      {required String path, required String docuementId}) async {
-    var data = await _firestore.collection(path).doc(docuementId).get();
+      {required String path, required String documentId}) async {
+    var data = await _firestore.collection(path).doc(documentId).get();
     return data.exists;
   }
 
   @override
   Future getData(
       {required String path,
-      String? docuementId,
+      String? documentId,
       Map<String, dynamic>? query}) async {
-    if (docuementId != null) {
-      var data = await _firestore.collection(path).doc(docuementId).get();
+    if (documentId != null) {
+      var data = await _firestore.collection(path).doc(documentId).get();
       return data.data();
     } else {
       Query<Map<String, dynamic>> data = _firestore.collection(path);

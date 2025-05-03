@@ -19,16 +19,14 @@ class SocialMediaMethods extends StatelessWidget {
           },
           socialMediaImageSource: Assets.imagesGoogleIcon,
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: SocialMediaItem(
-            onTap: () {},
-            socialMediaImageSource: Assets.imagesFacebookIcon,
-          ),
+        const SizedBox(
+          width: 24,
         ),
         SocialMediaItem(
-          onTap: () {},
-          socialMediaImageSource: Assets.imagesAppleIcon,
+          onTap: () {
+            context.read<SigninCubit>().signInWithFacebook();
+          },
+          socialMediaImageSource: Assets.imagesFacebookIcon,
         ),
       ],
     );

@@ -114,6 +114,10 @@ class Assets {
   /// assets/images/female_doctor_image.png
   static const String imagesFemaleDoctorImage = "assets/images/female_doctor_image.png";
 
+  /// Assets for imagesFilterIcon
+  /// assets/images/filter_icon.svg
+  static const String imagesFilterIcon = "assets/images/filter_icon.svg";
+
   /// Assets for imagesGeneralIcon
   /// assets/images/general_icon.svg
   static const String imagesGeneralIcon = "assets/images/general_icon.svg";
@@ -295,8 +299,8 @@ class Assets {
   static const String imagesSearchGrayIcon = "assets/images/search_gray_Icon.svg";
 
   /// Assets for imagesSearchIcon
-  /// assets/images/search-icon.svg
-  static const String imagesSearchIcon = "assets/images/search-icon.svg";
+  /// assets/images/search_icon.svg
+  static const String imagesSearchIcon = "assets/images/search_icon.svg";
 
   /// Assets for imagesSecurityIcon
   /// assets/images/security_icon.svg

@@ -101,7 +101,7 @@ class AuthRepoImpl extends AuthRepo {
       // Check if user exists in database
       var isUserExist = await databaseService.checkIfDataExists(
         path: BackendEndPoint.isUserExists,
-        docuementId: user.uid,
+        documentId: user.uid,
       );
 
       if (!isUserExist) {
@@ -126,7 +126,7 @@ class AuthRepoImpl extends AuthRepo {
     }
   }
 
-  @override
+  // @override
   // Future<Either<Failure, UserEntity>> signInWithFacebook() async {
   //   User? user;
   //   try {
@@ -165,7 +165,7 @@ class AuthRepoImpl extends AuthRepo {
     return UserModel.fromJson(
       await databaseService.getData(
         path: BackendEndPoint.getUserData,
-        docuementId: uid,
+        documentId: uid,
       ),
     );
   }
@@ -177,8 +177,23 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signInWithFacebook() {
-    // TODO: implement signInWithFacebook
-    throw UnimplementedError();
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    User? user;
+    try {
+      user = await firebaseAuthService.signInWithFacebook();
+      var userEntity = UserModel.fromFirebaseUser(user);
+      await addUserData(user: userEntity);
+      return right(userEntity);
+    } catch (e) {
+      await deleteUser(user);
+      log(
+        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
+      );
+      return left(
+        ServerFailure(
+          errMessage: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
+        ),
+      );
+    }
   }
 }
