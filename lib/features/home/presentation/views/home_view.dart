@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tamenny_app/features/home/presentation/views/widgets/search_text_field.dart';
-import '../../../../core/theme/app_colors.dart';
-import 'widgets/health_scan_categories_widget.dart';
-import 'widgets/home_custom_app_bar.dart';
-import 'widgets/main_banner_widget.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -17,7 +13,7 @@ class HomeView extends StatelessWidget {
         systemNavigationBarColor: Colors.white,
         statusBarIconBrightness: Brightness.dark,
       ),
-      child: SafeArea(
+      child: const SafeArea(
         child: Scaffold(
           body: HomeViewBody(),
         ),

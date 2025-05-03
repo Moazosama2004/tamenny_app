@@ -22,9 +22,17 @@ class Assets {
   /// assets/images/arrow_sm_icon.svg
   static const String imagesArrowSmIcon = "assets/images/arrow_sm_icon.svg";
 
+  /// Assets for imagesBoneIcon
+  /// assets/images/bone_icon.svg
+  static const String imagesBoneIcon = "assets/images/bone_icon.svg";
+
   /// Assets for imagesBotIcon
   /// assets/images/bot_icon.svg
   static const String imagesBotIcon = "assets/images/bot_icon.svg";
+
+  /// Assets for imagesBrainIcon
+  /// assets/images/brain_icon.svg
+  static const String imagesBrainIcon = "assets/images/brain_icon.svg";
 
   /// Assets for imagesCalendarActiveIcon
   /// assets/images/calendar_active_icon.svg
@@ -130,6 +138,10 @@ class Assets {
   /// assets/images/google_icon.svg
   static const String imagesGoogleIcon = "assets/images/google_icon.svg";
 
+  /// Assets for imagesHeartIcon
+  /// assets/images/heart_icon.svg
+  static const String imagesHeartIcon = "assets/images/heart_icon.svg";
+
   /// Assets for imagesHomeActiveIcon
   /// assets/images/home_active_icon.svg
   static const String imagesHomeActiveIcon = "assets/images/home_active_icon.svg";
@@ -173,6 +185,10 @@ class Assets {
   /// Assets for imagesLoveInactiveIcon
   /// assets/images/love_inactive_icon.svg
   static const String imagesLoveInactiveIcon = "assets/images/love_inactive_icon.svg";
+
+  /// Assets for imagesLungsIcon
+  /// assets/images/lungs_icon.svg
+  static const String imagesLungsIcon = "assets/images/lungs_icon.svg";
 
   /// Assets for imagesMainBannerBackground
   /// assets/images/main_banner_background.png
