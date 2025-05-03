@@ -16,7 +16,7 @@ class CommunityView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context, title: 'Community', leadingIcon: false),
+      appBar: customAppBar(context, title: 'Circle', leadingIcon: false),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           final result = await Navigator.of(context, rootNavigator: true)
@@ -39,23 +39,23 @@ class CommunityView extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: ListView.separated(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   separatorBuilder: (context, index) => const SizedBox(
                     height: 20,
                   ),
                   itemCount: 10,
                   itemBuilder: (context, index) => Post(
                       post: PostModel(
-                    postId: '1',
-                    postText: 'This is a sample post text.',
-                    username: 'john_doe',
-                    userAvatarUrl: 'https://example.com/avatar.jpg',
-                    commentsCount: 10,
-                    likesCount: 100,
-                    sharesCount: 5,
-                    viewsCount: 1000,
-                    createdAt: Timestamp.now(),
-                  )),
+                          postId: '1',
+                          postText: 'This is a sample post text.',
+                          username: 'john_doe',
+                          userAvatarUrl: 'https://example.com/avatar.jpg',
+                          commentsCount: 10,
+                          likesCount: 100,
+                          sharesCount: 5,
+                          viewsCount: 1000,
+                          createdAt: Timestamp.now(),
+                          imageUrl: '')),
                 ),
               ),
             );

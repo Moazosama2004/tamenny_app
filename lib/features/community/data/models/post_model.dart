@@ -11,6 +11,7 @@ class PostModel {
   final int viewsCount;
   final Timestamp createdAt;
   final List<String> likedBy;
+  String? imageUrl;
 
   PostModel({
     required this.postId,
@@ -22,6 +23,7 @@ class PostModel {
     required this.sharesCount,
     required this.viewsCount,
     required this.createdAt,
+    required this.imageUrl,
     this.likedBy = const [],
   });
 
@@ -38,6 +40,7 @@ class PostModel {
       viewsCount: data['viewsCount'] ?? 0,
       createdAt: data['createdAt'] ?? Timestamp.now(),
       likedBy: List<String>.from(data['likedBy'] ?? []),
+      imageUrl: data['imageUrl'] ?? '',
     );
   }
 
@@ -52,6 +55,7 @@ class PostModel {
       'viewsCount': viewsCount,
       'createdAt': createdAt,
       'likedBy': likedBy,
+      'imageUrl': imageUrl
     };
   }
 }

@@ -145,6 +145,7 @@ class _CreatePostViewState extends State<CreatePostView> {
                                     privacy: privacy,
                                     selectedImage: selectedImage,
                                   );
+                              Navigator.pop(context);
                             },
                       style: TextButton.styleFrom(
                         backgroundColor: AppColors.primaryColor,

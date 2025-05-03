@@ -18,6 +18,7 @@ PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
 
+// style 5 , 6
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
@@ -26,7 +27,7 @@ class BottomNavBar extends StatelessWidget {
       screens: _buildScreens(),
       items: _navBarsItems(),
       backgroundColor: Colors.white,
-      navBarStyle: NavBarStyle.style16,
+      navBarStyle: NavBarStyle.style6,
       decoration: const NavBarDecoration(),
     );
   }
@@ -39,7 +40,6 @@ class BottomNavBar extends StatelessWidget {
             CommunityCubit(FirebaseFirestore.instance)..getPosts(),
         child: const CommunityView(),
       ),
-      const SearchView(),
       const ChatbotWelcomeView(),
       const ProfileView(),
     ];
@@ -52,15 +52,24 @@ class BottomNavBar extends StatelessWidget {
         inactiveIcon: SvgPicture.asset(Assets.imagesHomeInactiveIcon),
       ),
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(Assets.imagesCommunityActiveIcon),
-        inactiveIcon: SvgPicture.asset(Assets.imagesCommunityInactiveIcon),
+        icon: SvgPicture.asset(
+          Assets.imagesGroupFillIcon,
+          width: 35,
+        ),
+        inactiveIcon: SvgPicture.asset(
+          Assets.imagesGroupLightIcon,
+          width: 35,
+        ),
       ),
       PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(Assets.imagesSearchIcon),
-      ),
-      PersistentBottomNavBarItem(
-        icon: SvgPicture.asset(Assets.imagesCalendarActiveIcon),
-        inactiveIcon: SvgPicture.asset(Assets.imagesCalendarInactiveIcon),
+        icon: SvgPicture.asset(
+          Assets.imagesRobotFillIcon,
+          width: 35,
+        ),
+        inactiveIcon: SvgPicture.asset(
+          Assets.imagesRobotLightIcon,
+          width: 30,
+        ),
       ),
       PersistentBottomNavBarItem(
         icon: Opacity(

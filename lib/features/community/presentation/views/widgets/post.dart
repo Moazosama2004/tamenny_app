@@ -1,13 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tamenny_app/core/theme/app_styles.dart';
+import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/data/models/post_model.dart';
 import 'package:tamenny_app/features/community/presentation/manager/community_cubit/community_cubit.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_actions.dart';
-
-import '../../../../../core/theme/app_styles.dart';
-import '../../../../../core/utils/app_assets.dart';
 
 class Post extends StatelessWidget {
   const Post({super.key, required this.post});
@@ -20,17 +19,17 @@ class Post extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-            18,
-          ),
-          border: Border.all(
-            color: const Color(0xffEEEEEE),
-          )),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(
+          color: const Color(0xffEEEEEE),
+        ),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Header: Avatar, Username, Time Ago
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -38,21 +37,16 @@ class Post extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 16,
-                      backgroundImage: NetworkImage(
-                          post.userAvatarUrl), // Dynamic avatar URL
+                      backgroundImage: NetworkImage(post.userAvatarUrl),
                     ),
-                    const SizedBox(
-                      width: 4,
-                    ),
+                    const SizedBox(width: 4),
                     Text(
-                      post.username, // Dynamic username
+                      post.username,
                       style: AppStyles.font13Bold,
                     ),
-                    const SizedBox(
-                      width: 5,
-                    ),
+                    const SizedBox(width: 5),
                     Text(
-                      _getTimeAgo(post.createdAt), // Dynamic time ago
+                      _getTimeAgo(post.createdAt),
                       style: AppStyles.font13Bold,
                     ),
                   ],
@@ -60,23 +54,27 @@ class Post extends StatelessWidget {
                 SvgPicture.asset(Assets.imagesMoreOptionIcon)
               ],
             ),
-            const SizedBox(
-              height: 8,
-            ),
+            const SizedBox(height: 8),
+            // Post text
             Text(
-              post.postText, // Dynamic post text
+              post.postText,
               style: AppStyles.font12Regular,
               textAlign: TextAlign.start,
             ),
-            const SizedBox(
-              height: 18,
-            ),
+            const SizedBox(height: 18),
+            // Display image if it exists
+            if (post.imageUrl!.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 12.0),
+                child: Image.network(post.imageUrl!),
+              ),
+            const SizedBox(height: 18),
+            // Post actions (Like, Comment, Share, View)
             PostActions(
-              commentsCount:
-                  post.commentsCount, // Passing dynamic comments count
-              likesCount: post.likesCount, // Passing dynamic likes count
-              sharesCount: post.sharesCount, // Passing dynamic shares count
-              viewsCount: post.viewsCount, // Passing dynamic views count
+              commentsCount: post.commentsCount,
+              likesCount: post.likesCount,
+              sharesCount: post.sharesCount,
+              viewsCount: post.viewsCount,
               isLiked: isLiked,
               onLikePressed: () => communityCubit.toggleLike(post.postId),
             ),
@@ -87,7 +85,6 @@ class Post extends StatelessWidget {
   }
 
   String _getTimeAgo(Timestamp timestamp) {
-    // A simple method to convert the Firebase timestamp to a human-readable time ago string
     final DateTime dateTime = timestamp.toDate();
     final Duration difference = DateTime.now().difference(dateTime);
     if (difference.inMinutes < 60) {

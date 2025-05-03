@@ -46,17 +46,17 @@ class CommunityCubit extends Cubit<CommunityState> {
         final updatedPosts = currentState.posts.map((p) {
           if (p.postId == postId) {
             return PostModel(
-              postId: p.postId,
-              postText: p.postText,
-              username: p.username,
-              userAvatarUrl: p.userAvatarUrl,
-              commentsCount: p.commentsCount,
-              likesCount: updatedLikedBy.length,
-              sharesCount: p.sharesCount,
-              viewsCount: p.viewsCount,
-              createdAt: p.createdAt,
-              likedBy: updatedLikedBy,
-            );
+                postId: p.postId,
+                postText: p.postText,
+                username: p.username,
+                userAvatarUrl: p.userAvatarUrl,
+                commentsCount: p.commentsCount,
+                likesCount: updatedLikedBy.length,
+                sharesCount: p.sharesCount,
+                viewsCount: p.viewsCount,
+                createdAt: p.createdAt,
+                likedBy: updatedLikedBy,
+                imageUrl: p.imageUrl);
           }
           return p;
         }).toList();

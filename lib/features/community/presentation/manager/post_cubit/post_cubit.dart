@@ -12,7 +12,8 @@ class PostCubit extends Cubit<PostState> {
   Future<void> postNow({
     required String postText,
     required String privacy,
-    required File? selectedImage,
+    File? selectedImage,
+    String? imageUrl,
   }) async {
     try {
       emit(PostLoading());
@@ -33,7 +34,7 @@ class PostCubit extends Cubit<PostState> {
         'likesCount': 0,
         'sharesCount': 0,
         'viewsCount': 0,
-        // 'imageUrl': imageUrl,
+        'imageUrl': imageUrl,
       });
 
       emit(PostSuccess());
