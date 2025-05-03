@@ -2,13 +2,14 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:tamenny_app/features/home/domain/entites/health_scan_category_entity.dart';
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_styles.dart';
-import '../../../../../core/utils/app_assets.dart';
 
 class HealthScanItemWidget extends StatelessWidget {
-  const HealthScanItemWidget({super.key});
+  const HealthScanItemWidget(
+      {super.key, required this.healthScanCategoryEntity});
+  final HealthScanCategoryEntity healthScanCategoryEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +24,16 @@ class HealthScanItemWidget extends StatelessWidget {
             radius: 28,
             backgroundColor: const Color(0xffF4F8FF),
             child: SvgPicture.asset(
-              Assets.imagesBrainIcon,
+              healthScanCategoryEntity.image,
             ),
           ),
           const SizedBox(
             height: 12,
           ),
-          const Text(
-            'Lungs',
+          Text(
+            healthScanCategoryEntity.title,
             style: AppStyles.font12Regular,
+            textAlign: TextAlign.center,
           ),
         ],
       ),
