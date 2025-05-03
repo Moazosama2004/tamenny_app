@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/features/home/presentation/manager/medical_news_cubit/medical_news_cubit.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/health_scan_categories_widget.dart';
@@ -106,8 +107,22 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           const SliverToBoxAdapter(
             child: HealthTipsListView(),
           ),
-          const SliverToBoxAdapter(
-            child: HomeViewCustomHeader(text: "Latest Medical News"),
+          SliverToBoxAdapter(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const HomeViewCustomHeader(text: "Latest Medical News"),
+                GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    'Read more',
+                    style: AppStyles.font12Regular.copyWith(
+                      color: AppColors.primaryColor,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
           const SliverMedicalArticlesList(),
         ],
