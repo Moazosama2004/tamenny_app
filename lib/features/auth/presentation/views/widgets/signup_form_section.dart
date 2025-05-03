@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/core/functions/validator.dart';
 import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
 import 'package:tamenny_app/features/auth/presentation/manager/signup_cubit/signup_cubit.dart';
+import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 
 import '../../../../../core/routes/routes.dart';
@@ -32,7 +34,8 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
         if (state is SignupSuccess) {
-          showErrorBar(context, message: 'تم انشاء حساب جديد');
+          showErrorBar(context,
+              message: 'Your account has been successfully created.');
           Navigator.pop(context);
         } else if (state is SignupFailure) {
           showErrorBar(context, message: state.errMessage);
@@ -43,6 +46,7 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Form(
             key: formKey,
+            autovalidateMode: autovalidateMode,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -63,18 +67,7 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                   onSaved: (data) {
                     name = data!;
                   },
-                  validate: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Full name is required.';
-                    }
-                    if (value.length < 2) {
-                      return 'Full name must be at least 2 characters long.';
-                    }
-                    return null;
-                  },
-                ),
-                const SizedBox(
-                  height: 16,
+                  validate: Validator.validateFullName,
                 ),
                 const SizedBox(
                   height: 16,
@@ -84,48 +77,12 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                   onSaved: (data) {
                     email = data!;
                   },
-                  validate: (value) {
-                    final emailRegex = RegExp(
-                        r'^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$');
-                    if (value == null || value.isEmpty) {
-                      return 'Email is required.';
-                    }
-                    if (!emailRegex.hasMatch(value)) {
-                      return 'Enter a valid email address.';
-                    }
-                    return null;
-                  },
+                  validate: Validator.validateEmail,
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                CustomTextFormField(
-                  hintText: 'Password',
-                  onChanged: (data) {
-                    password = data;
-                  },
-                  validate: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Password is required.';
-                    }
-                    if (value.length < 8) {
-                      return 'Password must be at least 8 characters long.';
-                    }
-                    final passwordRegex = RegExp(
-                        r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$');
-                    if (!passwordRegex.hasMatch(value)) {
-                      return 'Password must include uppercase, lowercase, number, and special character.';
-                    }
-                    return null;
-                  },
-                  obscure: false,
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      // authCubit.changeObsecureState();
-                    },
-                    icon: const Icon(Icons.remove_red_eye),
-                  ),
-                ),
+                const PasswordTextField(),
                 const SizedBox(
                   height: 16,
                 ),
