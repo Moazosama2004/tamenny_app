@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
+import 'package:tamenny_app/features/home/presentation/manager/medical_news_cubit/medical_news_cubit.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/health_scan_categories_widget.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_custom_app_bar.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/main_banner_widget.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/medical_article_item.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/search_text_field.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/sliver_medical_articles_list.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({
     super.key,
   });
+
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<MedicalNewsCubit>().getMedicalNews();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -166,65 +181,7 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
           ),
-          SliverList.builder(
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              return Container(
-                margin: const EdgeInsets.only(bottom: 12),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.network(
-                        "https://via.placeholder.com/80", // Replace with your image URL
-                        width: 80,
-                        height: 80,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "News Title ${index + 1}",
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            "Brief summary of the news goes here. Click to read more.",
-                            style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: 13.5,
-                            ),
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            },
-          )
+          const SliverMedicalArticlesList(),
         ],
       ),
     );

@@ -29,7 +29,7 @@ class HealthScanCategoriesView extends StatelessWidget {
           return Column(
             children: [
               GestureDetector(
-                onTap:(){
+                onTap: () {
                   Navigator.pushNamed(context, Routes.scanView);
                 },
                 child: CircleAvatar(

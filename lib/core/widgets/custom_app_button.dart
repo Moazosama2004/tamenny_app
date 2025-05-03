@@ -4,7 +4,11 @@ import 'package:tamenny_app/core/theme/app_styles.dart';
 
 class CustomAppButton extends StatelessWidget {
   const CustomAppButton(
-      {super.key, required this.text, required this.onTap, this.bgColor, this.textColor});
+      {super.key,
+      required this.text,
+      required this.onTap,
+      this.bgColor,
+      this.textColor});
   final String text;
   final VoidCallback onTap;
   final Color? bgColor;
@@ -26,7 +30,8 @@ class CustomAppButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: AppStyles.font16SemiBold.copyWith(color: textColor ?? Colors.white),
+            style: AppStyles.font16SemiBold
+                .copyWith(color: textColor ?? Colors.white),
           ),
         ),
       ),

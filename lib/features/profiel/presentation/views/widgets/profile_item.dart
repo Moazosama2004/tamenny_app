@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileItem extends StatelessWidget {
-  const ProfileItem({super.key, required this.text, required this.image, required this.backgroundColor, this.onTap});
+  const ProfileItem(
+      {super.key,
+      required this.text,
+      required this.image,
+      required this.backgroundColor,
+      this.onTap});
   final String text;
   final String image;
   final Color backgroundColor;
@@ -14,7 +19,7 @@ class ProfileItem extends StatelessWidget {
       child: ListTile(
         leading: Container(
           decoration: BoxDecoration(
-            color:  backgroundColor,
+            color: backgroundColor,
             borderRadius: BorderRadius.circular(16),
           ),
           padding: const EdgeInsets.all(8),

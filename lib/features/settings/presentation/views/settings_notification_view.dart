@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/widgets/custom_app_switch.dart';
 import 'package:tamenny_app/features/settings/presentation/views/widgets/settings_item.dart';

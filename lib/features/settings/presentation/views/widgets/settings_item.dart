@@ -40,8 +40,8 @@ class SettingsItem extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: AppStyles.font14Regular
-                              .copyWith(color: titleColor ?? const  Color(0xff242424)),
+                          style: AppStyles.font14Regular.copyWith(
+                              color: titleColor ?? const Color(0xff242424)),
                         ),
                         trailingIcon ??
                             SvgPicture.asset(Assets.imagesGoArrowRigthIcon),

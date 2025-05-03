@@ -44,7 +44,8 @@ class ScanAnalysisResults extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text('Recommended Next Steps', style: AppStyles.font20SemiBold),
+            const Text('Recommended Next Steps',
+                style: AppStyles.font20SemiBold),
             const SizedBox(
               height: 8,
             ),
@@ -97,7 +98,8 @@ class ScanAnalysisResults extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Text('Your Feedback Matters', style: AppStyles.font20SemiBold),
+            const Text('Your Feedback Matters',
+                style: AppStyles.font20SemiBold),
             const SizedBox(
               height: 8,
             ),
@@ -185,11 +187,12 @@ class FeedBackReviewsWidget extends StatelessWidget {
         GestureDetector(onTap: () {}, child: const Icon(Icons.star_border)),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 8.0),
-          child:  Text('4.95', style: AppStyles.font16SemiBold),
+          child: Text('4.95', style: AppStyles.font16SemiBold),
         ),
         Text(
           '22 reviews',
-          style: AppStyles.font16Regular.copyWith(color: const  Color(0xffA09CAB)),
+          style:
+              AppStyles.font16Regular.copyWith(color: const Color(0xffA09CAB)),
         ),
       ],
     );

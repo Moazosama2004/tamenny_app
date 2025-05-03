@@ -48,10 +48,11 @@ class CompletedScreen extends StatelessWidget {
                 text: 'Show Results',
                 bgColor: const Color(0xffD3A9FF).withOpacity(0.25),
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.scanAnalysisResultsScreen);
+                  Navigator.pushNamed(
+                      context, Routes.scanAnalysisResultsScreen);
                 },
               ),
-              const  SizedBox(
+              const SizedBox(
                 height: 16,
               ),
             ],

@@ -19,7 +19,8 @@ class OrSignInWith extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Text(
             'Or sign in with',
-            style: AppStyles.font12Regular.copyWith(color: const Color(0xff9E9E9E)),
+            style: AppStyles.font12Regular
+                .copyWith(color: const Color(0xff9E9E9E)),
           ),
         ),
         const Expanded(
