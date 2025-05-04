@@ -178,6 +178,10 @@ class Assets {
   /// assets/images/logout_icon.svg
   static const String imagesLogoutIcon = "assets/images/logout_icon.svg";
 
+  /// Assets for imagesLogoutImage
+  /// assets/images/logout_image.png
+  static const String imagesLogoutImage = "assets/images/logout_image.png";
+
   /// Assets for imagesLoveActiveIcon
   /// assets/images/love_active_icon.svg
   static const String imagesLoveActiveIcon = "assets/images/love_active_icon.svg";
