@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
+import 'package:tamenny_app/core/widgets/custom_app_button.dart';
+import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 
 class ProfileChangePasswordView extends StatefulWidget {
   const ProfileChangePasswordView({super.key});
@@ -66,33 +68,34 @@ class _ProfileChangePasswordViewState extends State<ProfileChangePasswordView> {
               const SizedBox(height: 16),
               const Text("Current Password", style: AppStyles.font16Medium),
               const SizedBox(height: 8),
-              _buildTextField(currentPasswordController, obscure: true),
+              const PasswordTextField(),
               const SizedBox(height: 16),
               const Text("New Password", style: AppStyles.font16Medium),
               const SizedBox(height: 8),
-              _buildTextField(newPasswordController, obscure: true),
+              const PasswordTextField(),
               const SizedBox(height: 16),
               const Text("Confirm New Password", style: AppStyles.font16Medium),
               const SizedBox(height: 8),
-              _buildTextField(confirmPasswordController, obscure: true),
+              const PasswordTextField(),
               const SizedBox(height: 32),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryColor,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  onPressed: isLoading ? null : _changePassword,
-                  child: isLoading
-                      ? const CircularProgressIndicator(color: Colors.white)
-                      : const Text("Update Password",
-                          style: AppStyles.font16Bold),
-                ),
-              )
+              CustomAppButton(text: "Update Password", onTap: () {})
+              // SizedBox(
+              //   width: double.infinity,
+              //   child: ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: AppColors.primaryColor,
+              //       padding: const EdgeInsets.symmetric(vertical: 14),
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(12),
+              //       ),
+              //     ),
+              //     onPressed: isLoading ? null : _changePassword,
+              //     child: isLoading
+              //         ? const CircularProgressIndicator(color: Colors.white)
+              //         : const Text("Update Password",
+              //             style: AppStyles.font16Bold),
+              //   ),
+              // )
             ],
           ),
         ),

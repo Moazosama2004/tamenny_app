@@ -1,9 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
+import 'package:tamenny_app/core/functions/show_language_picker.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
+import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
@@ -76,16 +79,38 @@ class ProfileView extends StatelessWidget {
             ),
 
             // PREFERENCE
-            const ProfileSection(
+            ProfileSection(
               title: 'PREFERENCE',
               items: [
                 ProfileItem(
                   iconPath: Assets.imagesDarkModeIcon,
                   title: 'Dark Mode',
+                  trailingWidget: SizedBox(
+                    width: 60,
+                    height: 30,
+                    child: Center(
+                      child: FlutterSwitch(
+                        value: true,
+                        onToggle: (val) {},
+                        activeColor: Colors.black87, // Dark enough for active
+                        inactiveColor: Colors.grey
+                            .shade300, // Slightly darker for better visibility
+                        toggleColor: Colors.grey
+                            .shade100, // Softer than pure white, more visible
+                        activeIcon:
+                            const Icon(Icons.dark_mode, color: Colors.amber),
+                        inactiveIcon: const Icon(Icons.light_mode,
+                            color: Colors.black54), // More visible
+                      ),
+                    ),
+                  ),
                 ),
                 ProfileItem(
                   iconPath: Assets.imagesLanguageIcon,
                   title: 'Language',
+                  onTap: () {
+                    showLanguagePicker(context, currentLanguage: 'en');
+                  },
                 ),
               ],
             ),

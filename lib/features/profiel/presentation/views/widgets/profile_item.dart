@@ -7,12 +7,14 @@ class ProfileItem extends StatelessWidget {
   final String iconPath;
   final String title;
   final VoidCallback? onTap;
+  final Widget? trailingWidget;
 
   const ProfileItem({
     super.key,
     required this.iconPath,
     required this.title,
     this.onTap,
+    this.trailingWidget,
   });
 
   @override
@@ -37,7 +39,7 @@ class ProfileItem extends StatelessWidget {
                   Text(title, style: AppStyles.font16Medium),
                 ],
               ),
-              const ArrowIcon(),
+              trailingWidget ?? const ArrowIcon(),
             ],
           ),
         ),
