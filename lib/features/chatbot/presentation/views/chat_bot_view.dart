@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
+import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
 import 'package:tamenny_app/features/chatbot/presentation/views/widgets/message.dart';
 
 class ChatBotView extends StatefulWidget {
@@ -26,26 +27,50 @@ class _ChatBotViewState extends State<ChatBotView> {
     super.initState();
   }
 
+  addMessage() async {
+    if (messageController.text != '') {
+      setState(() {
+        messages.add(
+          {
+            'text': messageController.text,
+            'sender': true,
+          },
+        );
+      });
+      messageController.clear();
+      final prompt = messageController.text;
+      final content = [Content.text(prompt)];
+      final response = await model.generateContent(content);
+      setState(() {
+        messages.add(
+          {
+            'text': response.text,
+            'sender': false,
+          },
+        );
+      });
+      messageController.clear();
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    messageController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xfff3f3f3),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: ListTile(
-          leading: SvgPicture.asset(Assets.imagesDoctorChatBot),
-          title: const Text('Tamenny bot'),
-          subtitle: const Text('@Official'),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              Assets.imagesMoreAppBarIcon,
-            ),
-          )
-        ],
-      ),
+      appBar: customAppBar(context, title: 'Tamenny bot', actions: [
+        IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            Assets.imagesMoreAppBarIcon,
+          ),
+        )
+      ]),
       body: Column(
         children: [
           Expanded(
@@ -112,31 +137,5 @@ class _ChatBotViewState extends State<ChatBotView> {
         ],
       ),
     );
-  }
-
-  addMessage() async {
-    if (messageController.text != '') {
-      setState(() {
-        messages.add(
-          {
-            'text': messageController.text,
-            'sender': true,
-          },
-        );
-      });
-      messageController.clear();
-      final prompt = messageController.text;
-      final content = [Content.text(prompt)];
-      final response = await model.generateContent(content);
-      setState(() {
-        messages.add(
-          {
-            'text': response.text,
-            'sender': false,
-          },
-        );
-      });
-      messageController.clear();
-    }
   }
 }
