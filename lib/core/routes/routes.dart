@@ -17,9 +17,10 @@ abstract class Routes {
   static const String settingsView = 'settingsView';
   static const String profileNotificationView = 'profileNotificationView';
   static const String profileChangePasswordView = 'profileChangePasswordView';
+  static const String profilePrivacyCenterApp = 'profilePrivacyCenterApp';
   static const String settingsSecurityView = 'settingsSecurityView';
   static const String settingsLanguageView = 'settingsLanguageView';
-  static const String settingsFaqView = 'settingsFaqView';
+  static const String profileFaqView = 'profileFaqView';
   static const String previewScanView = 'previewScanView';
   static const String chatBotView = 'chatBotView';
   static const String personalInfoView = 'personalInfoView';

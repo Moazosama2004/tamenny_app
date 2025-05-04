@@ -7,6 +7,7 @@ import 'package:tamenny_app/features/home/presentation/views/widgets/home_bottom
 import 'package:tamenny_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_change_password_view.dart';
+import 'package:tamenny_app/features/profiel/presentation/views/profile_privacy_center_app_view.dart';
 
 import '../../features/auth/presentation/views/forgot_password_view.dart';
 import '../../features/auth/presentation/views/signin_view.dart';
@@ -16,7 +17,7 @@ import '../../features/home/presentation/views/health_scan_categories_view.dart'
 import '../../features/home/presentation/views/notification_view.dart';
 import '../../features/profiel/presentation/views/personal_info_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
-import '../../features/settings/presentation/views/settings_faq_view.dart';
+import '../../features/profiel/presentation/views/profile_faq_view.dart';
 import '../../features/settings/presentation/views/settings_language_view.dart';
 import '../../features/profiel/presentation/views/profile_notification_view.dart';
 import '../../features/settings/presentation/views/settings_security_view.dart';
@@ -103,6 +104,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const ProfileChangePasswordView(),
         );
+      case Routes.profilePrivacyCenterApp:
+        return MaterialPageRoute(
+          builder: (context) => const ProfilePrivacyCenterScreen(),
+        );
       case Routes.settingsLanguageView:
         return MaterialPageRoute(
           builder: (context) => const SettingsLanguageView(),
@@ -111,9 +116,9 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const ChatBotView(),
         );
-      case Routes.settingsFaqView:
+      case Routes.profileFaqView:
         return MaterialPageRoute(
-          builder: (context) => const SettingsFaqView(),
+          builder: (context) => const ProfileFaqView(),
         );
 
       case Routes.previewScanView:

@@ -90,17 +90,15 @@ class ProfileView extends StatelessWidget {
                     height: 30,
                     child: Center(
                       child: FlutterSwitch(
-                        value: true,
+                        value: false,
                         onToggle: (val) {},
-                        activeColor: Colors.black87, // Dark enough for active
-                        inactiveColor: Colors.grey
-                            .shade300, // Slightly darker for better visibility
-                        toggleColor: Colors.grey
-                            .shade100, // Softer than pure white, more visible
+                        activeColor: Colors.black87,
+                        inactiveColor: Colors.grey.shade300,
+                        toggleColor: Colors.grey.shade100,
                         activeIcon:
                             const Icon(Icons.dark_mode, color: Colors.amber),
-                        inactiveIcon: const Icon(Icons.light_mode,
-                            color: Colors.black54), // More visible
+                        inactiveIcon:
+                            const Icon(Icons.light_mode, color: Colors.black54),
                       ),
                     ),
                   ),
@@ -116,16 +114,20 @@ class ProfileView extends StatelessWidget {
             ),
 
             // HELP
-            const ProfileSection(
+            ProfileSection(
               title: 'HELP',
               items: [
                 ProfileItem(
                   iconPath: Assets.imagesQuestionIcon,
                   title: 'FAQ',
+                  onTap: () => Navigator.of(context, rootNavigator: true)
+                      .pushNamed(Routes.profileFaqView),
                 ),
                 ProfileItem(
                   iconPath: Assets.imagesPrivacyIcon,
                   title: 'Privacy Center',
+                  onTap: () => Navigator.of(context, rootNavigator: true)
+                      .pushNamed(Routes.profilePrivacyCenterApp),
                 ),
               ],
             ),

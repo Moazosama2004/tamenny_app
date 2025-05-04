@@ -28,7 +28,7 @@ class SettingsView extends StatelessWidget {
               leadingIcon: SvgPicture.asset(Assets.imagesFaqIcon),
               title: 'FAQ',
               onTap: () {
-                Navigator.pushNamed(context, Routes.settingsFaqView);
+                // Navigator.pushNamed(context, Routes.settingsFaqView);
               },
             ),
             SettingsItem(
