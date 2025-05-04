@@ -12,55 +12,62 @@ class ChatbotWelcomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 20),
-          const Text(
-            'Meet Tamenny AI Chatbot',
-            style: AppStyles.font26Bold,
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            'Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:',
-            style: AppStyles.font16Regular,
-          ),
-          const SizedBox(height: 20),
-          _buildFeatureRow(
-            icon: Icons.check_circle,
-            text: 'Ask questions about your health conditions.',
-          ),
-          const SizedBox(height: 10),
-          _buildFeatureRow(
-            icon: Icons.check_circle,
-            text: 'Get recommendations on your next steps.',
-          ),
-          const SizedBox(height: 10),
-          _buildFeatureRow(
-            icon: Icons.check_circle,
-            text: 'Learn about health-related topics with ease.',
-          ),
-          const SizedBox(height: 30),
-          Text(
-            'How to Use the Chatbot:',
-            style: AppStyles.font20Bold.copyWith(color: AppColors.primaryColor),
-          ),
-          const SizedBox(height: 10),
-          const Text(
-            '1. Tap the "Start Chatting" button below.\n'
-            '2. Ask any question related to your health.\n'
-            '3. Get instant, AI-powered responses customized for you.',
-            style: TextStyle(fontSize: 16, color: Colors.black87),
-          ),
-          const Spacer(),
-          CustomAppButton(
-            text: 'Start Chatting',
-            onTap: () {
-              Navigator.of(context, rootNavigator: true)
-                  .pushNamed(Routes.chatBotView);
-            },
-          ),
-          const SizedBox(height: 10),
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 20),
+                const Text(
+                  'Meet Tamenny AI Chatbot',
+                  style: AppStyles.font26Bold,
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:',
+                  style: AppStyles.font16Regular,
+                ),
+                const SizedBox(height: 20),
+                _buildFeatureRow(
+                  icon: Icons.check_circle,
+                  text: 'Ask questions about your health conditions.',
+                ),
+                const SizedBox(height: 10),
+                _buildFeatureRow(
+                  icon: Icons.check_circle,
+                  text: 'Get recommendations on your next steps.',
+                ),
+                const SizedBox(height: 10),
+                _buildFeatureRow(
+                  icon: Icons.check_circle,
+                  text: 'Learn about health-related topics with ease.',
+                ),
+                const SizedBox(height: 30),
+                Text(
+                  'How to Use the Chatbot:',
+                  style: AppStyles.font20Bold
+                      .copyWith(color: AppColors.primaryColor),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  '1. Tap the "Start Chatting" button below.\n'
+                  '2. Ask any question related to your health.\n'
+                  '3. Get instant, AI-powered responses customized for you.',
+                  style: TextStyle(fontSize: 16, color: Colors.black87),
+                ),
+                const Spacer(),
+                CustomAppButton(
+                  text: 'Start Chatting',
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed(Routes.chatBotView);
+                  },
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
+          )
         ],
       ),
     );

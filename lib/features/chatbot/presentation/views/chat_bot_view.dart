@@ -86,7 +86,7 @@ class _ChatBotViewState extends State<ChatBotView> {
           Container(
             // height: 70,
             padding:
-                const EdgeInsets.only(left: 16, right: 16, bottom: 40, top: 8),
+                const EdgeInsets.only(left: 16, right: 16, bottom: 20, top: 8),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
