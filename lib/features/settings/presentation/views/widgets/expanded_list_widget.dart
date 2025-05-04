@@ -20,9 +20,7 @@ class ExpandedListWidget extends StatelessWidget {
         outerClosedPadding: 0,
         outerOpenedPadding: 0,
         openedHeight: 150,
-        // isScrollable: true,
         borderRadius: const BorderRadius.all(Radius.zero),
-        duration: const Duration(milliseconds: 1000),
         title: Expanded(
           child: Text(
             title,

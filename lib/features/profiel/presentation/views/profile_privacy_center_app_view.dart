@@ -25,7 +25,7 @@ class ProfilePrivacyCenterScreen extends StatelessWidget {
                 style: AppStyles.font16Regular.copyWith(color: Colors.black87),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('📋 What We Collect'),
+              _sectionTitle('What We Collect'),
               _sectionBody([
                 'Preferred language (Arabic / English)',
                 'Display settings (Dark Mode / Light Mode)',
@@ -36,7 +36,7 @@ class ProfilePrivacyCenterScreen extends StatelessWidget {
                 style: AppStyles.font16Regular.copyWith(color: Colors.black45),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('🔄 How We Use Your Data'),
+              _sectionTitle('How We Use Your Data'),
               _sectionBody([
                 'Personalize your app experience',
                 'Remember your preferences',
@@ -47,13 +47,13 @@ class ProfilePrivacyCenterScreen extends StatelessWidget {
                 style: AppStyles.font16Regular.copyWith(color: Colors.black45),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('🤝 Third-Party Services'),
+              _sectionTitle('Third-Party Services'),
               Text(
                 'Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely.',
                 style: AppStyles.font16Regular.copyWith(color: Colors.black87),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('⚙️ Your Controls'),
+              _sectionTitle('Your Controls'),
               _sectionBody([
                 'Change your language',
                 'Toggle Dark Mode on or off',
