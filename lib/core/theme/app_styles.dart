@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tamenny_app/core/theme/app_colors.dart';
 
 abstract class AppStyles {
   static const font8Medium = TextStyle(
@@ -104,6 +105,10 @@ abstract class AppStyles {
     fontSize: 20,
     fontWeight: FontWeight.w600,
   );
+  static const font20Bold = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+  );
 
   static const font24Bold = TextStyle(
     fontSize: 24,
@@ -126,5 +131,10 @@ abstract class AppStyles {
   static const font48SemiBold = TextStyle(
     fontSize: 48,
     fontWeight: FontWeight.w600,
+  );
+  static const font26Bold = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.bold,
+    color: AppColors.primaryColor, // Use the updated primary color
   );
 }
