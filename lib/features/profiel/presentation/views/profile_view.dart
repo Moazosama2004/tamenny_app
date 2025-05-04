@@ -4,6 +4,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/core/functions/show_language_picker.dart';
@@ -17,6 +18,7 @@ import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_header.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_item.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
+import 'package:tamenny_app/main.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -24,6 +26,7 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = getUserEntitiy();
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
 
     return Scaffold(
       appBar: customAppBar(
@@ -82,8 +85,10 @@ class ProfileView extends StatelessWidget {
                     height: 30,
                     child: Center(
                       child: FlutterSwitch(
-                        value: false,
-                        onToggle: (val) {},
+                        value: themeNotifier.isDark,
+                        onToggle: (val) {
+                          themeNotifier.toggleTheme();
+                        },
                         activeColor: Colors.black87,
                         inactiveColor: Colors.grey.shade300,
                         toggleColor: Colors.grey.shade100,

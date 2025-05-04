@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:provider/provider.dart';
 import 'package:tamenny_app/core/routes/app_router.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
-import 'package:tamenny_app/features/auth/data/repos/auth_repo_impl.dart';
+
+import 'package:tamenny_app/main.dart';
 
 class TamennyApp extends StatelessWidget {
   const TamennyApp({super.key, required this.appRouter});
@@ -11,13 +12,12 @@ class TamennyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
     return MaterialApp(
       onGenerateRoute: appRouter.generateRoute,
       initialRoute: Routes.splashView,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-      ),
+      theme: themeNotifier.currentTheme,
     );
   }
 }
