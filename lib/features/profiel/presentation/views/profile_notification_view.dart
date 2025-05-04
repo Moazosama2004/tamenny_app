@@ -3,8 +3,8 @@ import 'package:tamenny_app/core/widgets/custom_app_switch.dart';
 import 'package:tamenny_app/features/settings/presentation/views/widgets/settings_item.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 
-class SettingsNotificationView extends StatelessWidget {
-  const SettingsNotificationView({super.key});
+class ProfileNotificationView extends StatelessWidget {
+  const ProfileNotificationView({super.key});
 
   @override
   Widget build(BuildContext context) {

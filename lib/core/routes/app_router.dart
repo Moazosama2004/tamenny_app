@@ -6,6 +6,7 @@ import 'package:tamenny_app/features/community/presentation/views/add_post_view.
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_bottom_nav_bar.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.dart';
+import 'package:tamenny_app/features/profiel/presentation/views/profile_change_password_view.dart';
 
 import '../../features/auth/presentation/views/forgot_password_view.dart';
 import '../../features/auth/presentation/views/signin_view.dart';
@@ -17,7 +18,7 @@ import '../../features/profiel/presentation/views/personal_info_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
 import '../../features/settings/presentation/views/settings_faq_view.dart';
 import '../../features/settings/presentation/views/settings_language_view.dart';
-import '../../features/settings/presentation/views/settings_notification_view.dart';
+import '../../features/profiel/presentation/views/profile_notification_view.dart';
 import '../../features/settings/presentation/views/settings_security_view.dart';
 import '../../features/settings/presentation/views/settings_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
@@ -94,9 +95,13 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const SettingsSecurityView(),
         );
-      case Routes.settingsNotificationView:
+      case Routes.profileNotificationView:
         return MaterialPageRoute(
-          builder: (context) => const SettingsNotificationView(),
+          builder: (context) => const ProfileNotificationView(),
+        );
+      case Routes.profileChangePasswordView:
+        return MaterialPageRoute(
+          builder: (context) => const ProfileChangePasswordView(),
         );
       case Routes.settingsLanguageView:
         return MaterialPageRoute(

@@ -21,7 +21,7 @@ class SettingsView extends StatelessWidget {
               leadingIcon: SvgPicture.asset(Assets.imagesNotificationIcon),
               title: 'Notification',
               onTap: () {
-                Navigator.pushNamed(context, Routes.settingsNotificationView);
+                Navigator.pushNamed(context, Routes.profileNotificationView);
               },
             ),
             SettingsItem(

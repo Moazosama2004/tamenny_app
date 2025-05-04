@@ -1,33 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tamenny_app/core/theme/app_styles.dart';
+import 'package:tamenny_app/features/profiel/presentation/views/widgets/arrow_icon.dart';
 
 class ProfileItem extends StatelessWidget {
-  const ProfileItem(
-      {super.key,
-      required this.text,
-      required this.image,
-      required this.backgroundColor,
-      this.onTap});
-  final String text;
-  final String image;
-  final Color backgroundColor;
-  final Function()? onTap;
+  final String iconPath;
+  final String title;
+  final VoidCallback? onTap;
+
+  const ProfileItem({
+    super.key,
+    required this.iconPath,
+    required this.title,
+    this.onTap,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: ListTile(
-        leading: Container(
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          padding: const EdgeInsets.all(8),
-          child: SvgPicture.asset(
-            image,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(8),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: Center(child: SvgPicture.asset(iconPath))),
+                  const SizedBox(width: 12),
+                  Text(title, style: AppStyles.font16Medium),
+                ],
+              ),
+              const ArrowIcon(),
+            ],
           ),
         ),
-        title: Text(text),
       ),
     );
   }
