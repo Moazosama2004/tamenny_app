@@ -10,10 +10,6 @@ class Assets {
   /// assets/images/ai_processing_model.png
   static const String imagesAiProcessingModel = "assets/images/ai_processing_model.png";
 
-  /// Assets for imagesAppleIcon
-  /// assets/images/apple_icon.svg
-  static const String imagesAppleIcon = "assets/images/apple_icon.svg";
-
   /// Assets for imagesArrowIcon
   /// assets/images/arrow_icon.svg
   static const String imagesArrowIcon = "assets/images/arrow_icon.svg";
@@ -25,10 +21,6 @@ class Assets {
   /// Assets for imagesBoneIcon
   /// assets/images/bone_icon.svg
   static const String imagesBoneIcon = "assets/images/bone_icon.svg";
-
-  /// Assets for imagesBotIcon
-  /// assets/images/bot_icon.svg
-  static const String imagesBotIcon = "assets/images/bot_icon.svg";
 
   /// Assets for imagesBrainIcon
   /// assets/images/brain_icon.svg
@@ -45,10 +37,6 @@ class Assets {
   /// Assets for imagesCalendarInactiveIcon
   /// assets/images/calendar-inactive_icon.svg
   static const String imagesCalendarInactiveIcon = "assets/images/calendar-inactive_icon.svg";
-
-  /// Assets for imagesCardiologistIcon
-  /// assets/images/cardiologist_icon.svg
-  static const String imagesCardiologistIcon = "assets/images/cardiologist_icon.svg";
 
   /// Assets for imagesChangePasswordIcon
   /// assets/images/change_password_icon.svg
@@ -70,25 +58,9 @@ class Assets {
   /// assets/images/comments_icon.svg
   static const String imagesCommentsIcon = "assets/images/comments_icon.svg";
 
-  /// Assets for imagesCommunityActiveIcon
-  /// assets/images/community_active_icon.svg
-  static const String imagesCommunityActiveIcon = "assets/images/community_active_icon.svg";
-
-  /// Assets for imagesCommunityInactiveIcon
-  /// assets/images/community_inactive_icon.svg
-  static const String imagesCommunityInactiveIcon = "assets/images/community_inactive_icon.svg";
-
   /// Assets for imagesDarkModeIcon
   /// assets/images/dark_mode_icon.svg
   static const String imagesDarkModeIcon = "assets/images/dark_mode_icon.svg";
-
-  /// Assets for imagesDirectIconBoxIcon
-  /// assets/images/direct_icon_box_icon.svg
-  static const String imagesDirectIconBoxIcon = "assets/images/direct_icon_box_icon.svg";
-
-  /// Assets for imagesDoctorChatBot
-  /// assets/images/doctor_chat_bot.svg
-  static const String imagesDoctorChatBot = "assets/images/doctor_chat_bot.svg";
 
   /// Assets for imagesDoctorCompletedModel
   /// assets/images/doctor_completed_model.png
@@ -114,10 +86,6 @@ class Assets {
   /// assets/images/faq_icon.svg
   static const String imagesFaqIcon = "assets/images/faq_icon.svg";
 
-  /// Assets for imagesFemaleDoctor
-  /// assets/images/female_doctor.svg
-  static const String imagesFemaleDoctor = "assets/images/female_doctor.svg";
-
   /// Assets for imagesFemaleDoctorImage
   /// assets/images/female_doctor_image.png
   static const String imagesFemaleDoctorImage = "assets/images/female_doctor_image.png";
@@ -125,10 +93,6 @@ class Assets {
   /// Assets for imagesFilterIcon
   /// assets/images/filter_icon.svg
   static const String imagesFilterIcon = "assets/images/filter_icon.svg";
-
-  /// Assets for imagesGeneralIcon
-  /// assets/images/general_icon.svg
-  static const String imagesGeneralIcon = "assets/images/general_icon.svg";
 
   /// Assets for imagesGoArrowRigthIcon
   /// assets/images/go__arrow_rigth_Icon.svg
@@ -222,10 +186,6 @@ class Assets {
   /// assets/images/more-option_icon.svg
   static const String imagesMoreOptionIcon = "assets/images/more-option_icon.svg";
 
-  /// Assets for imagesNeurologicIcon
-  /// assets/images/neurologic_icon.png
-  static const String imagesNeurologicIcon = "assets/images/neurologic_icon.png";
-
   /// Assets for imagesNotification
   /// assets/images/notification.svg
   static const String imagesNotification = "assets/images/notification.svg";
@@ -253,10 +213,6 @@ class Assets {
   /// Assets for imagesOnboarding4
   /// assets/images/onboarding4.png
   static const String imagesOnboarding4 = "assets/images/onboarding4.png";
-
-  /// Assets for imagesPaymentIcon
-  /// assets/images/payment_icon.svg
-  static const String imagesPaymentIcon = "assets/images/payment_icon.svg";
 
   /// Assets for imagesPenEditIcon
   /// assets/images/pen_edit_icon.svg
@@ -313,10 +269,6 @@ class Assets {
   /// Assets for imagesQuestionIcon
   /// assets/images/question_icon.svg
   static const String imagesQuestionIcon = "assets/images/question_icon.svg";
-
-  /// Assets for imagesRobot
-  /// assets/images/robot.svg
-  static const String imagesRobot = "assets/images/robot.svg";
 
   /// Assets for imagesRobotFillIcon
   /// assets/images/robot_fill_icon.svg

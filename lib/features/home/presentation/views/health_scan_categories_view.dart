@@ -36,7 +36,7 @@ class HealthScanCategoriesView extends StatelessWidget {
                   radius: 40,
                   backgroundColor: const Color(0xffF4F8FF),
                   child: SvgPicture.asset(
-                    Assets.imagesCardiologistIcon,
+                    Assets.imagesHeartIcon,
                   ),
                 ),
               ),
