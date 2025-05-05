@@ -18,10 +18,9 @@ import '../../features/home/presentation/views/notification_view.dart';
 import '../../features/profiel/presentation/views/personal_info_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
 import '../../features/profiel/presentation/views/profile_faq_view.dart';
-import '../../features/settings/presentation/views/settings_language_view.dart';
+
 import '../../features/profiel/presentation/views/profile_notification_view.dart';
-import '../../features/settings/presentation/views/settings_security_view.dart';
-import '../../features/settings/presentation/views/settings_view.dart';
+
 import '../../features/splash/presentation/views/splash_view.dart';
 import '../../features/scan/presentation/views/completed_screen.dart';
 import '../../features/scan/presentation/views/processing_screen.dart';
@@ -88,14 +87,6 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const ScanAnalysisResults(),
         );
-      case Routes.settingsView:
-        return MaterialPageRoute(
-          builder: (context) => const SettingsView(),
-        );
-      case Routes.settingsSecurityView:
-        return MaterialPageRoute(
-          builder: (context) => const SettingsSecurityView(),
-        );
       case Routes.profileNotificationView:
         return MaterialPageRoute(
           builder: (context) => const ProfileNotificationView(),
@@ -107,10 +98,6 @@ class AppRouter {
       case Routes.profilePrivacyCenterApp:
         return MaterialPageRoute(
           builder: (context) => const ProfilePrivacyCenterScreen(),
-        );
-      case Routes.settingsLanguageView:
-        return MaterialPageRoute(
-          builder: (context) => const SettingsLanguageView(),
         );
       case Routes.chatBotView:
         return MaterialPageRoute(

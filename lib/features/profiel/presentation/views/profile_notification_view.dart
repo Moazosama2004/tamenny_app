@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/widgets/custom_app_switch.dart';
-import 'package:tamenny_app/features/settings/presentation/views/widgets/settings_item.dart';
+import 'package:tamenny_app/features/profiel/presentation/views/widgets/settings_item.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 
 class ProfileNotificationView extends StatelessWidget {

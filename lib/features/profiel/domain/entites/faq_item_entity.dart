@@ -1,8 +1,8 @@
-class FaqItemModel {
+class FaqItemEntity {
   final String title;
   final String content;
 
-  const FaqItemModel({
+  const FaqItemEntity({
     required this.title,
     required this.content,
   });
