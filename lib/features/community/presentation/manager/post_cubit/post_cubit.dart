@@ -1,55 +1,61 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:tamenny_app/config/cache_helper.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
+import 'package:tamenny_app/core/services/database_service.dart';
+import 'package:tamenny_app/core/services/storage_service.dart';
+import 'package:tamenny_app/core/utils/backend_end_point.dart';
+import 'package:tamenny_app/features/community/data/models/post_model.dart';
+import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
+import 'package:tamenny_app/features/community/domain/repos/community_repo.dart';
 import 'dart:io';
 
 import 'package:tamenny_app/features/community/presentation/manager/post_cubit/post_state.dart';
 
-class PostCubit extends Cubit<PostState> {
-  PostCubit() : super(PostInitial());
+class AddPostCubit extends Cubit<AddPostState> {
+  AddPostCubit(
+    this.communityRepo,
+    this.storageService,
+  ) : super(AddPostInitial());
+
+  final CommunityRepo communityRepo;
+  final StorageService storageService;
 
   Future<void> postNow({
     required String postText,
-    required String privacy,
     File? selectedImage,
     String? imageUrl,
   }) async {
     try {
-      emit(PostLoading());
+      emit(AddPostLoading());
+      String? imageUrl;
+      if (selectedImage != null) {
+        imageUrl = await _uploadImageToStorage(selectedImage);
+      }
 
-      // String? imageUrl;
-      // if (selectedImage != null) {
-      //   imageUrl = await _uploadImageToStorage(selectedImage);
-      // }
+      await communityRepo.addPost(
+          post: PostEntity(
+        postText: postText.trim(),
+        username: getUserEntitiy().name,
+        userAvatarUrl: getUserEntitiy().userAvatarUrl,
+        commentsCount: 0,
+        likesCount: 0,
+        sharesCount: 0,
+        createdAt: Timestamp.now(),
+        imageUrl: imageUrl,
+      ));
 
-      await FirebaseFirestore.instance.collection('posts').add({
-        'userId': 'uid_001',
-        'username': getUserEntitiy().name,
-        'userAvatarUrl': getUserEntitiy().userAvatarUrl,
-        'createdAt': Timestamp.now(),
-        'postText': postText.trim(),
-        'privacy': privacy,
-        'commentsCount': 0,
-        'likesCount': 0,
-        'sharesCount': 0,
-        'viewsCount': 0,
-        'imageUrl': imageUrl,
-      });
-
-      emit(PostSuccess());
+      emit(AddPostSuccess());
     } catch (e) {
-      emit(PostFailure(error: e.toString()));
+      emit(AddPostFailure(error: e.toString()));
     }
   }
 
-  // Future<String?> _uploadImageToStorage(File imageFile) async {
-  //   final ref = FirebaseStorage.instance
-  //       .ref()
-  //       .child('posts')
-  //       .child('${DateTime.now().millisecondsSinceEpoch}.jpg');
+  Future<String?> _uploadImageToStorage(File imageFile) async {
+    final imageUrl = await storageService.uploadFile(
+        file: XFile(imageFile.path), path: 'postsImages/');
 
-  //   await ref.putFile(imageFile);
-  //   return await ref.getDownloadURL();
-  // }
+    return imageUrl;
+  }
 }

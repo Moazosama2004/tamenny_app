@@ -127,10 +127,7 @@ class AppRouter {
         );
       case Routes.addPostView:
         return MaterialPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => PostCubit(),
-            child: const CreatePostView(),
-          ),
+          builder: (context) => const AddPostView(),
         );
       case Routes.personalInfoView:
         return MaterialPageRoute(

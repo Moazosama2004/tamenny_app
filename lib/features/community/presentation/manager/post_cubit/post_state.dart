@@ -1,13 +1,13 @@
-abstract class PostState {}
+abstract class AddPostState {}
 
-class PostInitial extends PostState {}
+class AddPostInitial extends AddPostState {}
 
-class PostLoading extends PostState {}
+class AddPostLoading extends AddPostState {}
 
-class PostSuccess extends PostState {}
+class AddPostSuccess extends AddPostState {}
 
-class PostFailure extends PostState {
+class AddPostFailure extends AddPostState {
   final String error;
 
-  PostFailure({required this.error});
+  AddPostFailure({required this.error});
 }

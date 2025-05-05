@@ -1,5 +1,4 @@
-// states.dart
-import 'package:tamenny_app/features/community/data/models/post_model.dart';
+import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 
 abstract class CommunityState {}
 
@@ -8,7 +7,7 @@ class CommunityInitial extends CommunityState {}
 class CommunityLoading extends CommunityState {}
 
 class CommunitySuccess extends CommunityState {
-  final List<PostModel> posts;
+  final List<PostEntity> posts;
 
   CommunitySuccess(this.posts);
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
+import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
+import 'package:tamenny_app/features/community/presentation/views/add_comment_view.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_action.dart';
 
 class PostActions extends StatelessWidget {
@@ -8,17 +10,17 @@ class PostActions extends StatelessWidget {
     required this.commentsCount,
     required this.likesCount,
     required this.sharesCount,
-    required this.viewsCount,
     this.isLiked = false,
     this.onLikePressed,
+    required this.post,
   });
 
   final int commentsCount;
   final int likesCount;
   final int sharesCount;
-  final int viewsCount;
   final bool isLiked;
   final VoidCallback? onLikePressed;
+  final PostEntity post;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,14 @@ class PostActions extends StatelessWidget {
           child: PostAction(
             counts: commentsCount,
             iconPath: Assets.imagesCommentIcon,
+            onLikePressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => AddCommentView(post: post),
+                ),
+              );
+            },
           ),
         ),
         Expanded(

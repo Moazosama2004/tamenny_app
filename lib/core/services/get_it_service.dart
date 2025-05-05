@@ -8,6 +8,8 @@ import 'package:tamenny_app/core/services/storage_service.dart';
 import 'package:tamenny_app/core/services/supabase_storage_service.dart';
 import 'package:tamenny_app/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:tamenny_app/features/auth/domain/repos/auth_repo.dart';
+import 'package:tamenny_app/features/community/data/repos/community_repo_impl.dart';
+import 'package:tamenny_app/features/community/domain/repos/community_repo.dart';
 import 'package:tamenny_app/features/home/data/repos/medical_news_repo_impl.dart';
 import 'package:tamenny_app/features/home/domain/repos/medical_news_repo.dart';
 
@@ -29,6 +31,11 @@ void setupGetIt() {
   getIt.registerSingleton<MedicalNewsRepo>(
     MedicalNewsRepoImpl(
       getIt<MedicalNewsApiService>(),
+    ),
+  );
+  getIt.registerSingleton<CommunityRepo>(
+    CommunityRepoImpl(
+      getIt<DatabaseService>(),
     ),
   );
 }

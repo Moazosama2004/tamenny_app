@@ -35,11 +35,7 @@ class BottomNavBar extends StatelessWidget {
   List<Widget> _buildScreens() {
     return [
       const HomeView(),
-      BlocProvider(
-        create: (context) =>
-            CommunityCubit(FirebaseFirestore.instance)..getPosts(),
-        child: const CommunityView(),
-      ),
+      const CommunityView(),
       const ChatbotWelcomeView(),
       const ProfileView(),
     ];
