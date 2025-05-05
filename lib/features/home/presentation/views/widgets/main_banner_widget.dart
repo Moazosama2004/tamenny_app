@@ -49,7 +49,7 @@ class MainBannerWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
-                        'Explore Full Scans',
+                        'Start New Scan',
                         style: AppStyles.font10Regular.copyWith(
                           color: AppColors.primaryColor,
                         ),
