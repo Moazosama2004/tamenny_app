@@ -68,35 +68,51 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ),
             itemCount: 4,
             itemBuilder: (context, index) {
-              return Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade300,
-                      blurRadius: 6,
-                      offset: const Offset(2, 2),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Icon(Icons.file_present,
-                        color: Colors.blue, size: 40),
-                    const Spacer(),
-                    Text(
-                      "Scan ${index + 1}",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 16),
-                    ),
-                    const Text(
-                      "Status: Normal",
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
-                    ),
-                  ],
+              return GestureDetector(
+                onTap: () {
+                  Navigator.of(context, rootNavigator: true)
+                      .push(MaterialPageRoute(
+                          builder: (_) => const ScanResultScreen(
+                                status: 'متوسط',
+                                resultDescription:
+                                    'تم الكشف عن بعض المؤشرات التي تتطلب الانتباه ولكنها ليست خطيرة.',
+                                adviceList: [
+                                  'ابدأ ببرنامج رياضي معتدل.',
+                                  'تابع حالتك مع طبيب مختص.',
+                                  'حاول تجنب الحركات المفاجئة أو المجهدة.',
+                                ],
+                              )));
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade300,
+                        blurRadius: 6,
+                        offset: const Offset(2, 2),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Icon(Icons.file_present,
+                          color: Colors.blue, size: 40),
+                      const Spacer(),
+                      Text(
+                        "Scan ${index + 1}",
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
+                      const Text(
+                        "Status: Normal",
+                        style: TextStyle(fontSize: 12, color: Colors.grey),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },
@@ -126,6 +142,197 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ),
           const SliverMedicalArticlesList(),
         ],
+      ),
+    );
+  }
+}
+
+class ScanResultScreen extends StatelessWidget {
+  final String status; // 'طبيعي', 'خطر', etc.
+  final String resultDescription;
+  final List<String> adviceList;
+
+  const ScanResultScreen({
+    super.key,
+    required this.status,
+    required this.resultDescription,
+    required this.adviceList,
+  });
+
+  Color getStatusColor(BuildContext context) {
+    switch (status) {
+      case 'طبيعي':
+        return Colors.green;
+      case 'خطر':
+        return Colors.redAccent;
+      case 'متوسط':
+        return Colors.orange;
+      default:
+        return Theme.of(context).colorScheme.primary;
+    }
+  }
+
+  IconData getStatusIcon() {
+    switch (status) {
+      case 'طبيعي':
+        return Icons.check_circle_outline;
+      case 'خطر':
+        return Icons.error_outline;
+      case 'متوسط':
+        return Icons.info_outline;
+      default:
+        return Icons.help_outline;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Scaffold(
+      backgroundColor:
+          isDark ? AppColors.darkBackgroundColor : AppColors.grayColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          'Scan Result',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        foregroundColor:
+            isDark ? AppColors.darkTextColor : AppColors.blueDarkColor,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Diagnosis Status Card
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color:
+                    isDark ? AppColors.darkCardColor : AppColors.deepGrayColor,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    getStatusIcon(),
+                    color: getStatusColor(context),
+                    size: 40,
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'النتيجة: $status',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: getStatusColor(context),
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          resultDescription,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: isDark
+                                ? AppColors.darkSecondaryTextColor
+                                : Colors.black54,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 32),
+
+            // Advice Title
+            Text(
+              'نصائح وقائية',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color:
+                    isDark ? AppColors.darkTextColor : AppColors.blueDarkColor,
+              ),
+            ),
+            const SizedBox(height: 12),
+
+            // Advice List
+            ...adviceList.map(
+              (advice) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 6),
+                child: Row(
+                  children: [
+                    const Icon(Icons.check,
+                        color: AppColors.primaryColor, size: 20),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        advice,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color:
+                              isDark ? AppColors.darkTextColor : Colors.black87,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            const Spacer(),
+
+            // Action Buttons
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      // TODO: Share logic
+                    },
+                    icon: const Icon(Icons.share),
+                    label: const Text('مشاركة'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.primaryColor,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: AppColors.primaryColor,
+                      side: const BorderSide(color: AppColors.primaryColor),
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: const Text('تم'),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
