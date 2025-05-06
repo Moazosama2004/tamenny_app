@@ -8,12 +8,12 @@ import 'package:tamenny_app/features/onboarding/presentation/views/onboarding_vi
 import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_change_password_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_privacy_center_app_view.dart';
+import 'package:tamenny_app/features/scan/domain/entites/scan_details_entity.dart';
 
 import '../../features/auth/presentation/views/forgot_password_view.dart';
 import '../../features/auth/presentation/views/signin_view.dart';
 import '../../features/auth/presentation/views/signup_view.dart';
 import '../../features/chatbot/presentation/views/chat_bot_view.dart';
-import '../../features/home/presentation/views/health_scan_categories_view.dart';
 import '../../features/home/presentation/views/notification_view.dart';
 import '../../features/profiel/presentation/views/personal_info_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
@@ -22,8 +22,8 @@ import '../../features/profiel/presentation/views/profile_faq_view.dart';
 import '../../features/profiel/presentation/views/profile_notification_view.dart';
 
 import '../../features/splash/presentation/views/splash_view.dart';
-import '../../features/scan/presentation/views/completed_screen.dart';
-import '../../features/scan/presentation/views/processing_screen.dart';
+import '../../features/scan/presentation/views/completed_view.dart';
+import '../../features/scan/presentation/views/processing_view.dart';
 import '../../features/scan/presentation/views/scan_analysis_results.dart';
 import '../../features/scan/presentation/views/scan_view.dart';
 import '../../features/scan/presentation/views/upload_file_view.dart';
@@ -45,7 +45,9 @@ class AppRouter {
         );
       case Routes.scanView:
         return MaterialPageRoute(
-          builder: (context) => const ScanView(),
+          builder: (context) => ScanView(
+            scanDetailsEntity: settings.arguments as ScanDetailsEntity,
+          ),
         );
       case Routes.loginView:
         return MaterialPageRoute(
@@ -71,17 +73,14 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const UploadFileView(),
         );
-      case Routes.healthScanCategoriesView:
-        return MaterialPageRoute(
-          builder: (context) => const HealthScanCategoriesView(),
-        );
+
       case Routes.notificationView:
         return MaterialPageRoute(
           builder: (context) => const NotificationView(),
         );
       case Routes.completedScreen:
         return MaterialPageRoute(
-          builder: (context) => const CompletedScreen(),
+          builder: (context) => const CompletedView(),
         );
       case Routes.scanAnalysisResultsScreen:
         return MaterialPageRoute(

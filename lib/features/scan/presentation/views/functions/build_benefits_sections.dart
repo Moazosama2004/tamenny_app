@@ -18,11 +18,6 @@ Widget buildBenefitsSection() {
       ),
       const SizedBox(height: 10),
       buildBenefitItem(
-        icon: Icons.medical_services_outlined,
-        text: 'Detect early-stage COPD and other lung diseases.',
-      ),
-      const SizedBox(height: 10),
-      buildBenefitItem(
         icon: Icons.timer_outlined,
         text: 'Get results in minutes, saving time and effort.',
       ),

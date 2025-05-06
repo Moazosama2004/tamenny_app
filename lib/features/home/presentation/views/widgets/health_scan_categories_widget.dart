@@ -21,7 +21,9 @@ class HealthScanCategoriesWidget extends StatelessWidget {
             categories.length,
             (index) => Expanded(
               child: HealthScanItemWidget(
-                  healthScanCategoryEntity: categories[index]),
+                healthScanCategoryEntity: categories[index],
+                selectedWidgetIndex: index,
+              ),
             ),
           ),
         ),

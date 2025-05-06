@@ -19,160 +19,76 @@ class ScanAnalysisResults extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           children: [
             Image.asset(Assets.imagesScanResult),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Diagnosis Summary', style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'Diagnosed Condition: Potential Early-Stage Chronic Obstructive Pulmonary Disease (COPD)',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Confidence Level', style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'The AI analysis provides a confidence level of 98%, indicating strong reliability in the results.',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Recommended Next Steps',
-                style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'Consulting with a pulmonologist is advised for a thorough evaluation and personalized treatment strategies.',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Empower Your Health', style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'We encourage you to share these results with trusted healthcare professionals and specialists. This collaborative approach enhances your understanding and supports informed decisions regarding your health.',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
+            const SizedBox(height: 20),
+
+            // Diagnosis Summary
+            _sectionTitle('Diagnosis Summary'),
+            _sectionBody(
+                'Diagnosed Condition: Potential Early-Stage Chronic Obstructive Pulmonary Disease (COPD)'),
+
+            // Recommended Steps
+            _sectionTitle('Recommended Next Steps'),
+            _sectionBody(
+                'Consulting with a pulmonologist is advised for a thorough evaluation and personalized treatment strategies.'),
+
+            // Buttons
             CustomAppButton(
-              text: 'Share Results with Healthcare Professionals',
-              onTap: () {
-                Navigator.pushNamed(context, Routes.processingScreen);
-              },
+              text: 'Share Results in Circle',
+              onTap: () =>
+                  Navigator.pushNamed(context, Routes.processingScreen),
             ),
-            const SizedBox(
-              height: 12,
-            ),
+            const SizedBox(height: 12),
             CustomAppButton(
               text: 'Upload Another Scan',
               bgColor: const Color(0xffEFF1F5),
               textColor: Colors.black,
-              onTap: () {
-                Navigator.pushNamed(context, Routes.processingScreen);
-              },
+              onTap: () =>
+                  Navigator.pushNamed(context, Routes.processingScreen),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Next Steps', style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'Please consult a pulmonologist for further evaluation and treatment recommendations.',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Your Feedback Matters',
-                style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'Help us improve by rating your experience.',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const FeedBackReviewsWidget(),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Need Help?', style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'Visit our FAQ or contact support for assistance.',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
+            const SizedBox(height: 30),
+
+            // Help
+            _sectionTitle('Need Help?'),
+            _sectionBody('Visit our FAQ or contact support for assistance.'),
+            const SizedBox(height: 8),
             CustomAppButton(
               text: 'Visit FAQ',
               bgColor: const Color(0xffEFF1F5),
               textColor: Colors.black,
-              onTap: () {
-                Navigator.pushNamed(context, Routes.processingScreen);
-              },
+              onTap: () => Navigator.pushNamed(context, Routes.profileFaqView),
             ),
-            const SizedBox(
-              height: 12,
-            ),
+            const SizedBox(height: 12),
             CustomAppButton(
               text: 'Contact Support',
               bgColor: const Color(0xffEFF1F5),
               textColor: Colors.black,
-              onTap: () {
-                Navigator.pushNamed(context, Routes.processingScreen);
-              },
+              onTap: () =>
+                  Navigator.pushNamed(context, Routes.profilePrivacyCenterApp),
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text('Share Your Results!', style: AppStyles.font20SemiBold),
-            const SizedBox(
-              height: 8,
-            ),
-            const Text(
-              'Share your AI results in our community for expert reviews and advice.',
-              style: AppStyles.font16Regular,
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            CustomAppButton(
-              text: 'Share in Community',
-              onTap: () {
-                Navigator.pushNamed(context, Routes.processingScreen);
-              },
-            ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _sectionTitle(String title) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(title, style: AppStyles.font20SemiBold),
+        const SizedBox(height: 8),
+      ],
+    );
+  }
+
+  Widget _sectionBody(String content) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(content, style: AppStyles.font16Regular),
+        const SizedBox(height: 20),
+      ],
     );
   }
 }
