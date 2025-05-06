@@ -73,13 +73,13 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   Navigator.of(context, rootNavigator: true)
                       .push(MaterialPageRoute(
                           builder: (_) => const ScanResultScreen(
-                                status: 'متوسط',
+                                status: 'normal',
                                 resultDescription:
-                                    'تم الكشف عن بعض المؤشرات التي تتطلب الانتباه ولكنها ليست خطيرة.',
+                                    'No health issues were detected in this scan.',
                                 adviceList: [
-                                  'ابدأ ببرنامج رياضي معتدل.',
-                                  'تابع حالتك مع طبيب مختص.',
-                                  'حاول تجنب الحركات المفاجئة أو المجهدة.',
+                                  'Maintain a healthy diet.',
+                                  'Keep doing regular light exercises.',
+                                  'Continue your periodic health check-ups.',
                                 ],
                               )));
                 },
@@ -148,7 +148,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 }
 
 class ScanResultScreen extends StatelessWidget {
-  final String status; // 'طبيعي', 'خطر', etc.
+  final String status;
   final String resultDescription;
   final List<String> adviceList;
 
@@ -160,26 +160,26 @@ class ScanResultScreen extends StatelessWidget {
   });
 
   Color getStatusColor(BuildContext context) {
-    switch (status) {
-      case 'طبيعي':
+    switch (status.toLowerCase()) {
+      case 'normal':
         return Colors.green;
-      case 'خطر':
+      case 'critical':
         return Colors.redAccent;
-      case 'متوسط':
-        return Colors.orange;
+      case 'moderate':
+        return Colors.amber;
       default:
         return Theme.of(context).colorScheme.primary;
     }
   }
 
   IconData getStatusIcon() {
-    switch (status) {
-      case 'طبيعي':
+    switch (status.toLowerCase()) {
+      case 'normal':
         return Icons.check_circle_outline;
-      case 'خطر':
+      case 'critical':
         return Icons.error_outline;
-      case 'متوسط':
-        return Icons.info_outline;
+      case 'moderate':
+        return Icons.warning_amber_rounded;
       default:
         return Icons.help_outline;
     }
@@ -229,7 +229,7 @@ class ScanResultScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'النتيجة: $status',
+                          'Result: $status',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -256,7 +256,7 @@ class ScanResultScreen extends StatelessWidget {
 
             // Advice Title
             Text(
-              'نصائح وقائية',
+              "Preventive Tips",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
