@@ -26,9 +26,7 @@ class CommunityViewBodyBlocBuilder extends StatelessWidget {
         } else {
           return Skeletonizer(
             enabled: true,
-            child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: CommunityViewBody(posts: dummyPosts)),
+            child: CommunityViewBody(posts: dummyPosts),
           );
         }
       },

@@ -4,8 +4,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
+import 'package:tamenny_app/features/community/presentation/views/functions/get_time_age.dart';
 import 'package:tamenny_app/features/community/presentation/views/post_details_view.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_actions.dart';
+import 'package:tamenny_app/features/community/presentation/views/widgets/post_header.dart';
 
 class Post extends StatelessWidget {
   const Post({super.key, required this.post});
@@ -13,9 +15,6 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final communityCubit = context.read<CommunityCubit>();
-    // final isLiked = communityCubit.isPostLiked(post);
-
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18),
@@ -43,30 +42,7 @@ class Post extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 16,
-                              backgroundImage: NetworkImage(post.userAvatarUrl),
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              post.username,
-                              style: AppStyles.font13Bold,
-                            ),
-                            const SizedBox(width: 5),
-                            Text(
-                              _getTimeAgo(post.createdAt),
-                              style: AppStyles.font13Bold,
-                            ),
-                          ],
-                        ),
-                        SvgPicture.asset(Assets.imagesMoreOptionIcon)
-                      ],
-                    ),
+                    PostHeader(post: post),
                     const SizedBox(height: 8),
                     Text(
                       post.postText,
@@ -106,19 +82,5 @@ class Post extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  String _getTimeAgo(Timestamp timestamp) {
-    final DateTime dateTime = timestamp.toDate();
-    final Duration difference = DateTime.now().difference(dateTime);
-    if (difference.inMinutes < 60) {
-      return '${difference.inMinutes} minutes ago';
-    } else if (difference.inHours < 24) {
-      return '${difference.inHours} hours ago';
-    } else if (difference.inDays < 7) {
-      return '${difference.inDays} days ago';
-    } else {
-      return '${(difference.inDays / 7).floor()} weeks ago';
-    }
   }
 }

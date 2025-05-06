@@ -28,9 +28,16 @@ class PostActions extends StatelessWidget {
       children: [
         Expanded(
           child: PostAction(
+            counts: likesCount,
+            iconPath: Assets.imagesLoveIcon,
+            onTap: onLikePressed,
+          ),
+        ),
+        Expanded(
+          child: PostAction(
             counts: commentsCount,
             iconPath: Assets.imagesCommentIcon,
-            onLikePressed: () {
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -38,14 +45,6 @@ class PostActions extends StatelessWidget {
                 ),
               );
             },
-          ),
-        ),
-        Expanded(
-          child: PostAction(
-            counts: likesCount,
-            iconPath: Assets.imagesLoveIcon,
-            isLiked: isLiked,
-            onLikePressed: onLikePressed,
           ),
         ),
         Expanded(
