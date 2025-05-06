@@ -29,7 +29,6 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   animated_text_kit: ^4.2.2
-  awesome_dialog: ^3.2.1
   cached_network_image: ^3.4.1
   cloud_firestore: ^5.6.6
   cupertino_icons: ^1.0.8
