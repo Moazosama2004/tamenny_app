@@ -62,4 +62,27 @@ class FirestoreService implements DatabaseService {
         .doc(userId)
         .update({'userAvatarUrl': imageUrl});
   }
+
+  @override
+  Stream streamData(
+      {required String path, Map<String, dynamic>? query}) async* {
+    Query<Map<String, dynamic>> data = _firestore.collection(path);
+
+    if (query != null) {
+      if (query.containsKey('orderBy')) {
+        data = data.orderBy(
+          query['orderBy'],
+          descending: query['descending'] ?? false,
+        );
+      }
+
+      if (query.containsKey('limit')) {
+        data = data.limit(query['limit']);
+      }
+    }
+
+    await for (var result in data.snapshots()) {
+      yield result.docs.map((e) => e.data()).toList();
+    }
+  }
 }

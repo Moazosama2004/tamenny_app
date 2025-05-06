@@ -18,33 +18,6 @@ class _AddCommentViewState extends State<AddCommentView> {
   final TextEditingController _controller = TextEditingController();
   bool isSending = false;
 
-  // Future<void> _submitComment() async {
-  //   final comment = _controller.text.trim();
-  //   if (comment.isEmpty) return;
-
-  //   setState(() => isSending = true);
-
-  //   try {
-  //     await FirebaseFirestore.instance
-  //         .collection('posts')
-  //         .doc(widget.post.postId)
-  //         .collection('comments')
-  //         .add({
-  //       'comment': comment,
-  //       'username': 'current_user', // Replace dynamically
-  //       'userAvatarUrl': '', // Replace dynamically
-  //       'createdAt': FieldValue.serverTimestamp(),
-  //     });
-
-  //     Navigator.pop(context, true);
-  //   } catch (_) {
-  //     setState(() => isSending = false);
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       const SnackBar(content: Text('Failed to send comment')),
-  //     );
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

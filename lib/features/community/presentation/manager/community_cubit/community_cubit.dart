@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/features/community/data/models/post_model.dart';
@@ -9,11 +11,20 @@ class CommunityCubit extends Cubit<CommunityState> {
 
   CommunityCubit(this.communityRepo) : super(CommunityInitial());
 
-  void getPosts() async {
+  StreamSubscription? _streamSubscription;
+
+  void getPosts() {
     emit(CommunityLoading());
-    var result = await communityRepo.getPosts();
-    result.fold((e) => emit(CommunityFailure(e.toString())),
-        (posts) => emit(CommunitySuccess(posts)));
+    _streamSubscription = communityRepo.getPosts().listen((result) {
+      result.fold(
+        (e) => emit(
+          CommunityFailure(e.toString()),
+        ),
+        (posts) => emit(
+          CommunitySuccess(posts),
+        ),
+      );
+    });
   }
 
   // Future<void> toggleLike(String postId) async {
@@ -87,5 +98,11 @@ class CommunityCubit extends Cubit<CommunityState> {
   bool isPostLiked(PostModel post) {
     final currentUser = getUserEntitiy();
     return post.likedBy.contains(currentUser.uId);
+  }
+
+  @override
+  Future<void> close() {
+    _streamSubscription!.cancel();
+    return super.close();
   }
 }

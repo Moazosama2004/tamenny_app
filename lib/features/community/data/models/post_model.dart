@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:tamenny_app/features/community/data/models/comment_model.dart';
+import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 
 class PostModel {
@@ -11,6 +13,7 @@ class PostModel {
   final Timestamp createdAt;
   final List<String> likedBy;
   String? imageUrl;
+  final List<CommentEntity>? comments;
 
   PostModel({
     required this.postText,
@@ -21,6 +24,7 @@ class PostModel {
     required this.sharesCount,
     required this.createdAt,
     required this.imageUrl,
+    this.comments,
     this.likedBy = const [],
   });
 
@@ -35,6 +39,7 @@ class PostModel {
       createdAt: data['createdAt'] ?? Timestamp.now(),
       likedBy: List<String>.from(data['likedBy'] ?? []),
       imageUrl: data['imageUrl'] ?? '',
+      comments: data['comments'] ?? [],
     );
   }
 
@@ -48,35 +53,36 @@ class PostModel {
       'sharesCount': sharesCount,
       'createdAt': createdAt,
       'likedBy': likedBy,
-      'imageUrl': imageUrl
+      'imageUrl': imageUrl,
+      'comments': comments
     };
   }
 
   PostEntity toEntity() {
     return PostEntity(
-      postText: postText,
-      username: username,
-      userAvatarUrl: userAvatarUrl,
-      commentsCount: commentsCount,
-      likesCount: likesCount,
-      sharesCount: sharesCount,
-      createdAt: createdAt,
-      imageUrl: imageUrl,
-    );
+        postText: postText,
+        username: username,
+        userAvatarUrl: userAvatarUrl,
+        commentsCount: commentsCount,
+        likesCount: likesCount,
+        sharesCount: sharesCount,
+        createdAt: createdAt,
+        imageUrl: imageUrl,
+        comments: comments);
   }
 
   factory PostModel.fromEntity(PostEntity entity) {
     return PostModel(
-      postText: entity.postText,
-      username: entity.username,
-      userAvatarUrl: entity.userAvatarUrl,
-      commentsCount: entity.commentsCount ?? 0,
-      likesCount: entity.likesCount ?? 0,
-      sharesCount: entity.sharesCount ?? 0,
-      createdAt: entity.createdAt,
-      likedBy: [],
-      imageUrl: entity.imageUrl,
-    );
+        postText: entity.postText,
+        username: entity.username,
+        userAvatarUrl: entity.userAvatarUrl,
+        commentsCount: entity.commentsCount ?? 0,
+        likesCount: entity.likesCount ?? 0,
+        sharesCount: entity.sharesCount ?? 0,
+        createdAt: entity.createdAt,
+        likedBy: [],
+        imageUrl: entity.imageUrl,
+        comments: entity.comments);
   }
 }
 
