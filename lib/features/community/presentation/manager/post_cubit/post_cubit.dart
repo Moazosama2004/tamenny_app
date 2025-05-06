@@ -12,6 +12,7 @@ import 'package:tamenny_app/features/community/domain/repos/community_repo.dart'
 import 'dart:io';
 
 import 'package:tamenny_app/features/community/presentation/manager/post_cubit/post_state.dart';
+import 'package:uuid/uuid.dart';
 
 class AddPostCubit extends Cubit<AddPostState> {
   AddPostCubit(
@@ -36,6 +37,7 @@ class AddPostCubit extends Cubit<AddPostState> {
 
       await communityRepo.addPost(
           post: PostEntity(
+        postId: Uuid().v4(),
         postText: postText.trim(),
         username: getUserEntitiy().name,
         userAvatarUrl: getUserEntitiy().userAvatarUrl,

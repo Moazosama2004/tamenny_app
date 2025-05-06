@@ -6,5 +6,6 @@ import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 abstract class CommunityRepo {
   Stream<Either<Failure, List<PostEntity>>> getPosts();
   Future<Either<Failure, void>> addPost({required PostEntity post});
-  Future<Either<Failure, void>> addComment({required CommentEntity comment});
+  Future<Either<Failure, void>> addComment(
+      {required CommentEntity comment, required PostEntity post});
 }

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
 
 class PostEntity {
+  final String postId;
   final String userAvatarUrl;
   final String username;
   final Timestamp createdAt;
@@ -13,6 +14,7 @@ class PostEntity {
   final List<CommentEntity>? comments;
 
   PostEntity({
+    required this.postId,
     required this.userAvatarUrl,
     required this.username,
     required this.createdAt,

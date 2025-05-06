@@ -4,6 +4,7 @@ import 'package:tamenny_app/features/community/domain/entites/comment_entity.dar
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 
 class PostModel {
+  final String postId;
   final String postText;
   final String username;
   final String userAvatarUrl;
@@ -16,6 +17,7 @@ class PostModel {
   final List<CommentEntity>? comments;
 
   PostModel({
+    required this.postId,
     required this.postText,
     required this.username,
     required this.userAvatarUrl,
@@ -30,6 +32,7 @@ class PostModel {
 
   factory PostModel.fromJson(Map<String, dynamic> data) {
     return PostModel(
+      postId: data['postId'] ?? '',
       postText: data['postText'] ?? '',
       username: data['username'] ?? '',
       userAvatarUrl: data['userAvatarUrl'] ?? '',
@@ -39,12 +42,16 @@ class PostModel {
       createdAt: data['createdAt'] ?? Timestamp.now(),
       likedBy: List<String>.from(data['likedBy'] ?? []),
       imageUrl: data['imageUrl'] ?? '',
-      comments: data['comments'] ?? [],
+      comments: (data['comments'] as List<dynamic>?)
+              ?.map((comment) => CommentModel.fromJson(comment).toEntity())
+              .toList() ??
+          [],
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
+      'postId': postId,
       'postText': postText,
       'username': username,
       'userAvatarUrl': userAvatarUrl,
@@ -60,6 +67,7 @@ class PostModel {
 
   PostEntity toEntity() {
     return PostEntity(
+        postId: postId,
         postText: postText,
         username: username,
         userAvatarUrl: userAvatarUrl,
@@ -73,6 +81,7 @@ class PostModel {
 
   factory PostModel.fromEntity(PostEntity entity) {
     return PostModel(
+        postId: entity.postId,
         postText: entity.postText,
         username: entity.username,
         userAvatarUrl: entity.userAvatarUrl,

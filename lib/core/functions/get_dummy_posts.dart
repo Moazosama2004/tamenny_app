@@ -4,6 +4,7 @@ import 'package:tamenny_app/features/home/domain/entites/article_entity.dart';
 
 final List<PostEntity> dummyPosts = [
   PostEntity(
+      postId: '124131r32r',
       postText: 'This is a sample post text.',
       username: 'john_doe',
       userAvatarUrl: 'https://example.com/avatar.jpg',
@@ -13,6 +14,7 @@ final List<PostEntity> dummyPosts = [
       createdAt: Timestamp.now(),
       imageUrl: ''),
   PostEntity(
+      postId: '124131r32r',
       postText: 'This is a sample post text.',
       username: 'john_doe',
       userAvatarUrl: 'https://example.com/avatar.jpg',
@@ -22,6 +24,7 @@ final List<PostEntity> dummyPosts = [
       createdAt: Timestamp.now(),
       imageUrl: ''),
   PostEntity(
+      postId: '124131r32r',
       postText: 'This is a sample post text.',
       username: 'john_doe',
       userAvatarUrl: 'https://example.com/avatar.jpg',
@@ -31,6 +34,7 @@ final List<PostEntity> dummyPosts = [
       createdAt: Timestamp.now(),
       imageUrl: ''),
   PostEntity(
+      postId: '124131r32r',
       postText: 'This is a sample post text.',
       username: 'john_doe',
       userAvatarUrl: 'https://example.com/avatar.jpg',
@@ -40,6 +44,7 @@ final List<PostEntity> dummyPosts = [
       createdAt: Timestamp.now(),
       imageUrl: ''),
   PostEntity(
+      postId: '124131r32r',
       postText: 'This is a sample post text.',
       username: 'john_doe',
       userAvatarUrl: 'https://example.com/avatar.jpg',
@@ -49,6 +54,7 @@ final List<PostEntity> dummyPosts = [
       createdAt: Timestamp.now(),
       imageUrl: ''),
   PostEntity(
+      postId: '124131r32r',
       postText: 'This is a sample post text.',
       username: 'john_doe',
       userAvatarUrl: 'https://example.com/avatar.jpg',

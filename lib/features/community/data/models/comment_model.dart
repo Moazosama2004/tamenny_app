@@ -36,4 +36,12 @@ class CommentModel {
       'avatarUrl': avatarUrl,
     };
   }
+
+  CommentEntity toEntity() {
+    return CommentEntity(
+      username: username,
+      comment: comment,
+      avatarUrl: avatarUrl,
+    );
+  }
 }
