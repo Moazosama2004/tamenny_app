@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
 
 class CommentWidget extends StatelessWidget {
-  final String username;
-  final String comment;
-  final String? avatarUrl;
+  final CommentEntity comment;
 
   const CommentWidget({
     super.key,
-    required this.username,
     required this.comment,
-    this.avatarUrl,
   });
 
   @override
@@ -37,10 +34,7 @@ class CommentWidget extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 20,
-            backgroundImage: NetworkImage(
-              avatarUrl ??
-                  'https://i.pravatar.cc/150?img=${username.hashCode % 70}',
-            ),
+            backgroundImage: NetworkImage(comment.avatarUrl!),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -48,7 +42,7 @@ class CommentWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  username,
+                  comment.username,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -57,7 +51,7 @@ class CommentWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  comment,
+                  comment.comment,
                   style: const TextStyle(
                     fontSize: 14,
                     color: Color(0xFF555555),
