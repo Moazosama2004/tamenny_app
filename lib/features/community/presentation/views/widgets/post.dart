@@ -46,7 +46,8 @@ class Post extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       post.postText,
-                      style: AppStyles.font12Regular,
+                      style: AppStyles.font13Regular
+                          .copyWith(color: const Color(0xff676767)),
                       textAlign: TextAlign.start,
                     ),
                     const SizedBox(height: 18),

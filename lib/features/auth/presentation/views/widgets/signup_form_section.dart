@@ -6,14 +6,11 @@ import 'package:tamenny_app/features/auth/presentation/manager/signup_cubit/sign
 import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 
-import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
 import '../../../../../core/widgets/already_have_an_account.dart';
 import '../../../../../core/widgets/custom_app_button.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
-import 'or_sign_in_with.dart';
-import 'social_media_methods.dart';
 
 class SignUpFormSection extends StatefulWidget {
   const SignUpFormSection({super.key});
@@ -82,7 +79,11 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                 const SizedBox(
                   height: 16,
                 ),
-                const PasswordTextField(),
+                PasswordTextField(
+                  onSaved: (data) {
+                    password = data!;
+                  },
+                ),
                 const SizedBox(
                   height: 16,
                 ),

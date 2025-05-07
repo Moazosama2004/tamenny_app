@@ -126,30 +126,31 @@ class AuthRepoImpl extends AuthRepo {
     }
   }
 
-  // @override
-  // Future<Either<Failure, UserEntity>> signInWithFacebook() async {
-  //   User? user;
-  //   try {
-  //     user = await firebaseAuthService.signInWithFacebook();
-  //     UserEntity userEntity = UserModel.fromFirebaseUser(user);
-  //     var isUserExist = await databaseService.checkIfDataExists(
-  //       path: BackendEndPoint.isUserExists,
-  //       documentId: user.uid,
-  //     );
-  //     if (isUserExist) {
-  //       await addUserData(user: userEntity);
-  //     } else {
-  //       await getUserData(uid: user.uid);
-  //     }
-  //     return right(userEntity);
-  //   } catch (e) {
-  //     await deleteUser(user);
-  //     log('Exception in AuthRepoImpl.signInWithFacebook: ${e.toString()}');
-  //     return left(
-  //       ServerFailure(errMessage: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.'),
-  //     );
-  //   }
-  // }
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    User? user;
+    try {
+      user = await firebaseAuthService.signInWithFacebook();
+      UserEntity userEntity = UserModel.fromFirebaseUser(user);
+      var isUserExist = await databaseService.checkIfDataExists(
+        path: BackendEndPoint.isUserExists,
+        documentId: user.uid,
+      );
+      if (!isUserExist) {
+        await addUserData(user: userEntity);
+      } else {
+        userEntity = await getUserData(uid: user.uid);
+      }
+      await saveUserData(user: userEntity);
+      return right(userEntity);
+    } catch (e) {
+      await deleteUser(user);
+      log('Exception in AuthRepoImpl.signInWithFacebook: ${e.toString()}');
+      return left(
+        ServerFailure(errMessage: 'Something happened'),
+      );
+    }
+  }
 
   @override
   Future addUserData({required UserEntity user}) async {
@@ -174,26 +175,5 @@ class AuthRepoImpl extends AuthRepo {
   Future saveUserData({required UserEntity user}) async {
     String jsonData = jsonEncode(UserModel.fromEntity(user).toJson());
     await CacheHelper.set(key: kUserData, value: jsonData);
-  }
-
-  @override
-  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
-    User? user;
-    try {
-      user = await firebaseAuthService.signInWithFacebook();
-      var userEntity = UserModel.fromFirebaseUser(user);
-      await addUserData(user: userEntity);
-      return right(userEntity);
-    } catch (e) {
-      await deleteUser(user);
-      log(
-        'Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}',
-      );
-      return left(
-        ServerFailure(
-          errMessage: 'حدث خطأ ما. الرجاء المحاولة مرة اخرى.',
-        ),
-      );
-    }
   }
 }

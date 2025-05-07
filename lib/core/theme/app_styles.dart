@@ -37,6 +37,10 @@ abstract class AppStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static const font13Regular = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w400,
+  );
   static const font13Bold = TextStyle(
     fontSize: 13,
     fontWeight: FontWeight.w700,

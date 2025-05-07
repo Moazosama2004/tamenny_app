@@ -73,7 +73,11 @@ class _SigninFormSectionState extends State<SigninFormSection> {
                 const SizedBox(
                   height: 16,
                 ),
-                const PasswordTextField(),
+                PasswordTextField(
+                  onSaved: (data) {
+                    password = data!;
+                  },
+                ),
                 const SizedBox(
                   height: 16,
                 ),

@@ -18,6 +18,7 @@ import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_header.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_item.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
+import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_view_body.dart';
 import 'package:tamenny_app/main.dart';
 
 class ProfileView extends StatelessWidget {
@@ -25,9 +26,6 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = getUserEntitiy();
-    final themeNotifier = Provider.of<ThemeNotifier>(context);
-
     return Scaffold(
       appBar: customAppBar(
         context,
@@ -40,130 +38,7 @@ class ProfileView extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            ProfileHeader(user: user),
-            const SizedBox(height: 24),
-
-            // ACCOUNT
-            ProfileSection(
-              title: 'ACCOUNT',
-              items: [
-                ProfileItem(
-                  iconPath: Assets.imagesProfileDataIcon,
-                  title: 'Profile Data',
-                  onTap: () => Navigator.of(context, rootNavigator: true)
-                      .pushNamed(Routes.personalInfoView),
-                ),
-                ProfileItem(
-                  iconPath: Assets.imagesProfileNotificationIcon,
-                  title: 'Notification',
-                  onTap: () => Navigator.of(context, rootNavigator: true)
-                      .pushNamed(Routes.profileNotificationView),
-                ),
-                ProfileItem(
-                  iconPath: Assets.imagesChangePasswordIcon,
-                  title: 'Change Password',
-                  onTap: () => Navigator.of(context, rootNavigator: true)
-                      .pushNamed(Routes.profileChangePasswordView),
-                ),
-              ],
-            ),
-
-            // PREFERENCE
-            ProfileSection(
-              title: 'PREFERENCE',
-              items: [
-                ProfileItem(
-                  iconPath: Assets.imagesDarkModeIcon,
-                  title: 'Dark Mode',
-                  trailingWidget: SizedBox(
-                    width: 60,
-                    height: 30,
-                    child: Center(
-                      child: FlutterSwitch(
-                        value: themeNotifier.isDark,
-                        onToggle: (val) {
-                          themeNotifier.toggleTheme();
-                        },
-                        activeColor: Colors.black87,
-                        inactiveColor: Colors.grey.shade300,
-                        toggleColor: Colors.grey.shade100,
-                        activeIcon:
-                            const Icon(Icons.dark_mode, color: Colors.amber),
-                        inactiveIcon:
-                            const Icon(Icons.light_mode, color: Colors.black54),
-                      ),
-                    ),
-                  ),
-                ),
-                ProfileItem(
-                  iconPath: Assets.imagesLanguageIcon,
-                  title: 'Language',
-                  onTap: () {
-                    showLanguagePicker(context, currentLanguage: 'en');
-                  },
-                ),
-              ],
-            ),
-
-            // HELP
-            ProfileSection(
-              title: 'HELP',
-              items: [
-                ProfileItem(
-                  iconPath: Assets.imagesQuestionIcon,
-                  title: 'FAQ',
-                  onTap: () => Navigator.of(context, rootNavigator: true)
-                      .pushNamed(Routes.profileFaqView),
-                ),
-                ProfileItem(
-                  iconPath: Assets.imagesPrivacyIcon,
-                  title: 'Privacy Center',
-                  onTap: () => Navigator.of(context, rootNavigator: true)
-                      .pushNamed(Routes.profilePrivacyCenterApp),
-                ),
-              ],
-            ),
-            CustomAppButton(
-              text: 'Sign out',
-              onTap: () async {
-                QuickAlert.show(
-                  context: context,
-                  type: QuickAlertType.warning,
-                  text: 'Are you sure you want to log out?',
-                  animType: QuickAlertAnimType.scale,
-                  titleAlignment: TextAlign.center,
-                  confirmBtnColor: Colors.white,
-                  confirmBtnText: 'Sign out',
-                  confirmBtnTextStyle: const TextStyle(
-                    color: Colors.red,
-                  ),
-                  barrierColor: Colors.black.withAlpha(100),
-                  backgroundColor: Colors.white,
-                  showCancelBtn: true,
-                  onConfirmBtnTap: () async {
-                    await FirebaseAuth.instance.signOut();
-                    await GoogleSignIn().signOut();
-                    await FacebookAuth.instance.logOut();
-                    await Navigator.of(context, rootNavigator: true)
-                        .pushNamedAndRemoveUntil(
-                      Routes.loginView,
-                      (route) => false,
-                    );
-                  },
-                  cancelBtnText: 'Cancel',
-                );
-              },
-              bgColor: Colors.white,
-              textColor: Colors.red,
-            )
-          ],
-        ),
-      ),
+      body: const ProfileViewBody(),
     );
   }
 }

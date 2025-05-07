@@ -3,8 +3,11 @@ import 'package:tamenny_app/core/functions/validator.dart';
 import 'package:tamenny_app/core/widgets/custom_text_form_field.dart';
 
 class PasswordTextField extends StatefulWidget {
-  const PasswordTextField({super.key, this.text = 'Password'});
+  const PasswordTextField({super.key, this.text = 'Password', this.onSaved});
+
   final String text;
+  // final ValueChanged<String> onChange;
+  final Function(String?)? onSaved;
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -17,9 +20,10 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   Widget build(BuildContext context) {
     return CustomTextFormField(
       hintText: widget.text,
-      onChanged: (data) {
-        password = data;
-      },
+      onSaved: widget.onSaved,
+      // onChanged: (data) {
+      //   widget.onChange(data);
+      // },
       validate: Validator.validatePassword,
       obscure: isObscure,
       suffixIcon: IconButton(
