@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/core/services/database_service.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/services/storage_service.dart';
-import 'package:tamenny_app/core/services/supabase_storage_service.dart';
+
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
-import 'package:tamenny_app/core/widgets/custom_app_button.dart';
+
 import 'package:tamenny_app/features/profiel/presentation/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_info_view_body.dart';
-
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_styles.dart';
-import '../../../../core/utils/app_assets.dart';
 
 class PersonalInfoView extends StatelessWidget {
   const PersonalInfoView({super.key});

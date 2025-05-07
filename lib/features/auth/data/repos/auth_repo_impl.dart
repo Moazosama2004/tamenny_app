@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hive/hive.dart';
 import 'package:tamenny_app/config/cache_helper.dart';
 import 'package:tamenny_app/constants.dart';
 import 'package:tamenny_app/core/errors/custom_exception.dart';
@@ -96,7 +97,7 @@ class AuthRepoImpl extends AuthRepo {
       user = await firebaseAuthService.signInWithGoogle();
 
       // Create user entity from Firebase user
-      UserEntity userEntity = UserModel.fromFirebaseUser(user);
+      UserEntity userEntity = UserModel.fromFirebaseUser(user).toEntity();
 
       // Check if user exists in database
       var isUserExist = await databaseService.checkIfDataExists(
@@ -131,7 +132,7 @@ class AuthRepoImpl extends AuthRepo {
     User? user;
     try {
       user = await firebaseAuthService.signInWithFacebook();
-      UserEntity userEntity = UserModel.fromFirebaseUser(user);
+      UserEntity userEntity = UserModel.fromFirebaseUser(user).toEntity();
       var isUserExist = await databaseService.checkIfDataExists(
         path: BackendEndPoint.isUserExists,
         documentId: user.uid,
@@ -168,13 +169,13 @@ class AuthRepoImpl extends AuthRepo {
         path: BackendEndPoint.getUserData,
         documentId: uid,
       ),
-    );
+    ).toEntity();
   }
 
   @override
   Future saveUserData({required UserEntity user}) async {
-    String jsonData = jsonEncode(UserModel.fromEntity(user).toJson());
-    await CacheHelper.set(key: kUserData, value: jsonData);
+    final userBox = Hive.box<UserModel>('user');
+    await userBox.put('currentUser', UserModel.fromEntity(user));
   }
 
   @override

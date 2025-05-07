@@ -1,13 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:tamenny_app/bloc_observer.dart';
 import 'package:tamenny_app/config/cache_helper.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/routes/app_router.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/services/supabase_storage_service.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
+import 'package:tamenny_app/features/auth/data/models/user_model.dart';
 import 'package:tamenny_app/tamenny_app.dart';
 import 'core/functions/change_system_ui_overlay_style.dart';
 import 'core/functions/check_auth_state_changes.dart';
@@ -21,14 +24,19 @@ void main() async {
   );
   await SupabaseStorageService.initSupaBase();
   checkAuthStateChanges();
-  setupGetIt();
   await CacheHelper.init();
   Bloc.observer = SimpleBlocObserver();
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserModelAdapter());
+  setupGetIt();
   runApp(
     ChangeNotifierProvider(
       create: (_) => ThemeNotifier(),
-      child: TamennyApp(
-        appRouter: AppRouter(),
+      child: BlocProvider(
+        create: (context) => getIt<UserCubit>(),
+        child: TamennyApp(
+          appRouter: AppRouter(),
+        ),
       ),
     ),
   );

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
+import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
-import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({
     super.key,
-    required this.user,
   });
-
-  final UserEntity user;
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +15,17 @@ class ProfileHeader extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 32,
-          backgroundImage: NetworkImage(user.userAvatarUrl),
+          backgroundImage: NetworkImage(
+              context.watch<UserCubit>().currentUser!.userAvatarUrl),
         ),
         const SizedBox(width: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(user.name, style: AppStyles.font18SemiBold),
+            Text(context.read<UserCubit>().currentUser!.name,
+                style: AppStyles.font18SemiBold),
             const SizedBox(height: 4),
-            Text(user.email,
+            Text(context.read<UserCubit>().currentUser!.email,
                 style:
                     AppStyles.font12Regular.copyWith(color: Colors.grey[600])),
           ],

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
+import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/presentation/manager/community_cubit/community_cubit.dart';
 import 'package:tamenny_app/features/home/presentation/views/home_view.dart';
@@ -25,7 +27,7 @@ class BottomNavBar extends StatelessWidget {
       context,
       controller: _controller,
       screens: _buildScreens(),
-      items: _navBarsItems(),
+      items: _navBarsItems(context),
       backgroundColor: Colors.white,
       navBarStyle: NavBarStyle.style6,
       decoration: const NavBarDecoration(),
@@ -41,7 +43,7 @@ class BottomNavBar extends StatelessWidget {
     ];
   }
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
+  List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
     return [
       PersistentBottomNavBarItem(
         icon: SvgPicture.asset(Assets.imagesHomeActiveIcon),
@@ -72,12 +74,14 @@ class BottomNavBar extends StatelessWidget {
           opacity: 0.6,
           child: CircleAvatar(
             radius: 12,
-            backgroundImage: NetworkImage(getUserEntitiy().userAvatarUrl),
+            backgroundImage:
+                NetworkImage(getIt<UserCubit>().currentUser!.userAvatarUrl),
           ),
         ),
         inactiveIcon: CircleAvatar(
           radius: 12,
-          backgroundImage: NetworkImage(getUserEntitiy().userAvatarUrl),
+          backgroundImage:
+              NetworkImage(getIt<UserCubit>().currentUser!.userAvatarUrl),
         ),
       ),
     ];

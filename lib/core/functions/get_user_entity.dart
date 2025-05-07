@@ -7,7 +7,7 @@ import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
 
 UserEntity getUserEntitiy() {
   var jsonString = CacheHelper.getString(key: kUserData);
-  var userEntitiy = UserModel.fromJson(jsonDecode(jsonString!));
+  var userEntitiy = UserModel.fromJson(jsonDecode(jsonString!)).toEntity();
   return userEntitiy;
 }
 
@@ -15,10 +15,11 @@ void updateUserImageUrl(String newImageUrl) {
   final jsonString = CacheHelper.getString(key: kUserData);
   if (jsonString == null) return;
 
-  final userModel = UserModel.fromJson(jsonDecode(jsonString));
+  final userEntity = UserModel.fromJson(jsonDecode(jsonString)).toEntity();
 
-  userModel.userAvatarUrl = newImageUrl;
+  userEntity.userAvatarUrl = newImageUrl;
 
-  final updatedJsonString = jsonEncode(userModel.toJson());
+  final updatedJsonString =
+      jsonEncode(UserModel.fromEntity(userEntity).toJson());
   CacheHelper.set(key: kUserData, value: updatedJsonString);
 }

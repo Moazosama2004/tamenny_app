@@ -7,8 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
+import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
@@ -82,7 +84,9 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                                       borderRadius: BorderRadius.circular(999),
                                       child: selectedImage == null
                                           ? Image.network(
-                                              getUserEntitiy().userAvatarUrl,
+                                              getIt<UserCubit>()
+                                                  .currentUser!
+                                                  .userAvatarUrl,
                                               height: 120,
                                               width: 120,
                                               fit: BoxFit.cover,
@@ -122,7 +126,7 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                       ),
                       TextField(
                         decoration: InputDecoration(
-                          hintText: getUserEntitiy().name,
+                          hintText: getIt<UserCubit>().currentUser!.name,
                           hintStyle: AppStyles.font14Medium.copyWith(
                             color: const Color(0xffC2C2C2),
                           ),
@@ -150,7 +154,7 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                       ),
                       TextField(
                         decoration: InputDecoration(
-                          hintText: getUserEntitiy().email,
+                          hintText: getIt<UserCubit>().currentUser!.email,
                           hintStyle: AppStyles.font14Medium.copyWith(
                             color: const Color(0xffC2C2C2),
                           ),
@@ -224,7 +228,7 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                       onTap: () {
                         if (selectedImage != null) {
                           context.read<EditProfileCubit>().editProfileAvatar(
-                                getUserEntitiy().uId,
+                                getIt<UserCubit>().currentUser!.uId,
                                 selectedImage!,
                               );
                         } else {

@@ -22,14 +22,13 @@ class ProfileViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = getUserEntitiy();
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
           const SizedBox(height: 20),
-          ProfileHeader(user: user),
+          const ProfileHeader(),
           const SizedBox(height: 24),
 
           // ACCOUNT

@@ -1,12 +1,28 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hive/hive.dart';
+
 import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
 
-class UserModel extends UserEntity {
+part 'user_model.g.dart';
+
+@HiveType(typeId: 0)
+class UserModel extends HiveObject {
+  @HiveField(0)
+  final String name;
+
+  @HiveField(1)
+  final String email;
+
+  @HiveField(2)
+  final String userAvatarUrl;
+
+  @HiveField(3)
+  final String uId;
   UserModel(
-      {required super.name,
-      required super.email,
-      required super.uId,
-      required super.userAvatarUrl});
+      {required this.name,
+      required this.email,
+      required this.uId,
+      required this.userAvatarUrl});
 
   factory UserModel.fromFirebaseUser(User user) {
     return UserModel(
@@ -34,6 +50,11 @@ class UserModel extends UserEntity {
         userAvatarUrl: user.userAvatarUrl);
   }
 
+  UserEntity toEntity() {
+    return UserEntity(
+        name: name, email: email, uId: uId, userAvatarUrl: userAvatarUrl);
+  }
+
   toJson() {
     return {
       "name": name,
@@ -49,16 +70,16 @@ class UserModel extends UserEntity {
   }
 
   UserModel copyWith({
-    String? id,
     String? name,
     String? email,
-    String? imageUrl,
+    String? userAvatarUrl,
+    String? uId,
   }) {
     return UserModel(
-      uId: id ?? this.uId,
       name: name ?? this.name,
       email: email ?? this.email,
-      userAvatarUrl: imageUrl ?? this.userAvatarUrl,
+      userAvatarUrl: userAvatarUrl ?? this.userAvatarUrl,
+      uId: uId ?? this.uId,
     );
   }
 }

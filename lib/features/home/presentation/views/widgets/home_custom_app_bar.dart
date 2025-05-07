@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
+import 'package:tamenny_app/core/services/get_it_service.dart';
 
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_styles.dart';
@@ -11,16 +14,15 @@ class HomeCustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final authState = context.watch<AuthCubit>().state;
-    // log(authState.toString());
     return ListTile(
       contentPadding: EdgeInsets.zero,
       leading: CircleAvatar(
         radius: 20,
-        backgroundImage: NetworkImage(getUserEntitiy().userAvatarUrl),
+        backgroundImage:
+            NetworkImage(getIt<UserCubit>().currentUser!.userAvatarUrl),
       ),
       title: Text(
-        'Hi ${getUserEntitiy().name}',
+        'Hi ${getIt<UserCubit>().currentUser!.name}',
         style: AppStyles.font18Bold.copyWith(),
       ),
       subtitle: Text(
