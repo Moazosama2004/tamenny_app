@@ -9,6 +9,7 @@ import 'package:tamenny_app/features/home/presentation/views/widgets/home_custom
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_view_custom_header.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/main_banner_widget.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/search_text_field.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/search_view_screen.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/sliver_medical_articles_list.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -34,23 +35,30 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Column(
               children: [
-                HomeCustomAppBar(),
-                SizedBox(
+                const HomeCustomAppBar(),
+                const SizedBox(
                   height: 16,
                 ),
-                SearchTextField(),
-                SizedBox(
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(_createRouteToSearch());
+                  },
+                  child: const AbsorbPointer(
+                    child: SearchTextField(),
+                  ),
+                ),
+                const SizedBox(
                   height: 12,
                 ),
-                MainBannerWidget(),
-                SizedBox(
+                const MainBannerWidget(),
+                const SizedBox(
                   height: 12,
                 ),
-                HealthScanCategoriesWidget(),
-                Align(
+                const HealthScanCategoriesWidget(),
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: HomeViewCustomHeader(
                     text: "Your Recent Insights",
@@ -145,6 +153,27 @@ class _HomeViewBodyState extends State<HomeViewBody> {
       ),
     );
   }
+}
+
+Route _createRouteToSearch() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) =>
+        const SearchViewScreen(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(0.0, 1.0); // Slide from bottom
+      const end = Offset.zero;
+      const curve = Curves.ease;
+
+      final tween = Tween(begin: begin, end: end).chain(
+        CurveTween(curve: curve),
+      );
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
 }
 
 class ScanResultScreen extends StatelessWidget {
