@@ -15,6 +15,8 @@ abstract class AuthRepo {
   Future<Either<Failure, UserEntity>> signInWithGoogle();
   Future<Either<Failure, UserEntity>> signInWithFacebook();
 
+  Future<Either<Failure, void>> forgotPassword({required String email});
+
   Future addUserData({required UserEntity user});
   Future saveUserData({required UserEntity user});
   Future<UserEntity> getUserData({required String uid});

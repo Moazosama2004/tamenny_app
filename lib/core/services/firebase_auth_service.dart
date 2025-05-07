@@ -8,6 +8,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tamenny_app/core/errors/custom_exception.dart';
 
 class FirebaseAuthService {
+  Future forgotPassword({required String email}) async {
+    await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+  }
+
   Future deleteUser() async {
     await FirebaseAuth.instance.currentUser!.delete();
   }

@@ -176,4 +176,14 @@ class AuthRepoImpl extends AuthRepo {
     String jsonData = jsonEncode(UserModel.fromEntity(user).toJson());
     await CacheHelper.set(key: kUserData, value: jsonData);
   }
+
+  @override
+  Future<Either<Failure, void>> forgotPassword({required String email}) async {
+    try {
+      await firebaseAuthService.forgotPassword(email: email);
+      return right(null);
+    } catch (e) {
+      return left(ServerFailure(errMessage: e.toString()));
+    }
+  }
 }
