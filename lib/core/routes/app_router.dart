@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/features/community/presentation/manager/post_cubit/post_cubit.dart';
 import 'package:tamenny_app/features/community/presentation/views/add_post_view.dart';
+import 'package:tamenny_app/features/home/domain/entites/article_entity.dart';
+import 'package:tamenny_app/features/home/presentation/views/latest_medical_news_view.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_bottom_nav_bar.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.dart';
@@ -105,6 +107,12 @@ class AppRouter {
       case Routes.profileFaqView:
         return MaterialPageRoute(
           builder: (context) => const ProfileFaqView(),
+        );
+      case Routes.latestMedicalNewsView:
+        return MaterialPageRoute(
+          builder: (context) => LatestMedicalNewsView(
+            articles: settings.arguments as List<ArticleEntity>,
+          ),
         );
 
       case Routes.previewScanView:

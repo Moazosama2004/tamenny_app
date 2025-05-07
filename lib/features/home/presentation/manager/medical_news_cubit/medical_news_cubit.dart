@@ -9,11 +9,15 @@ class MedicalNewsCubit extends Cubit<MedicalNewsState> {
   MedicalNewsCubit(this.medicalNewsRepo) : super(MedicalNewsInitial());
 
   final MedicalNewsRepo medicalNewsRepo;
+  List<ArticleEntity> articlesList = [];
 
   getMedicalNews() async {
     emit(MedicalNewsLoading());
     var result = await medicalNewsRepo.getLatestMedicalNews();
     result.fold((f) => emit(MedicalNewsFailure(errMessage: f.errMessage)),
-        (articles) => emit(MedicalNewsSuccess(articles: articles)));
+        (articles) {
+      articlesList = articles;
+      emit(MedicalNewsSuccess(articles: articles));
+    });
   }
 }

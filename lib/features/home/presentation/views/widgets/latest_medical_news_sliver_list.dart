@@ -15,7 +15,7 @@ class SliverMedicalArticlesList extends StatelessWidget {
       builder: (context, state) {
         if (state is MedicalNewsSuccess) {
           return SliverList.builder(
-            itemCount: state.articles.length,
+            itemCount: 4,
             itemBuilder: (context, index) {
               return MedicalArticleItem(
                 article: state.articles[index],

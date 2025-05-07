@@ -8,6 +8,7 @@ abstract class Routes {
   static const String homeView = 'homeView';
   static const String bottomNavBarView = 'bottomNavBarView';
   static const String notificationView = 'notificationView';
+  static const String latestMedicalNewsView = 'latestMedicalNewsView';
   static const String scanView = 'scanView';
   static const String uploadFileView = 'uploadFileView';
   static const String processingScreen = 'processingScreen';

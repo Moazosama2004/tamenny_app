@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/home/domain/entites/article_entity.dart';
 
 class MedicalArticleItem extends StatelessWidget {
@@ -43,7 +45,8 @@ class MedicalArticleItem extends StatelessWidget {
                   width: 80,
                   height: 80,
                 )),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+                errorWidget: (context, url, error) =>
+                    SvgPicture.asset(Assets.imagesNoDataIcon),
               ),
             ),
           ),
