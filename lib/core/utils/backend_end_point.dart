@@ -7,4 +7,5 @@ class BackendEndPoint {
   static const addPost = 'posts';
   static const addComment = 'posts';
   static const updateCommentsCount = 'posts';
+  static const getDoctors = 'doctors';
 }
