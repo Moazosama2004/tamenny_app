@@ -16,11 +16,13 @@ class DoctorDetailsViewBody extends StatelessWidget {
           if (doctor.imageUrl != null)
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.network(
-                doctor.imageUrl!,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              child: AspectRatio(
+                aspectRatio: 3 / 2.5,
+                child: Image.network(
+                  doctor.imageUrl!,
+                  width: double.infinity,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           const SizedBox(height: 16),
