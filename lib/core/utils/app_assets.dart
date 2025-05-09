@@ -174,6 +174,14 @@ class Assets {
   /// assets/images/main_banner_bg.svg
   static const String imagesMainBannerBg = "assets/images/main_banner_bg.svg";
 
+  /// Assets for imagesMapFillIcon
+  /// assets/images/map_fill_icon.svg
+  static const String imagesMapFillIcon = "assets/images/map_fill_icon.svg";
+
+  /// Assets for imagesMapLightIcon
+  /// assets/images/map_light_icon.svg
+  static const String imagesMapLightIcon = "assets/images/map_light_icon.svg";
+
   /// Assets for imagesMoreAppBarIcon
   /// assets/images/more_app_bar_icon.svg
   static const String imagesMoreAppBarIcon = "assets/images/more_app_bar_icon.svg";

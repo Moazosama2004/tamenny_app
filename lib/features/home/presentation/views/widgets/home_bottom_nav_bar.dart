@@ -72,6 +72,16 @@ class BottomNavBar extends StatelessWidget {
         ),
       ),
       PersistentBottomNavBarItem(
+        icon: SvgPicture.asset(
+          Assets.imagesMapFillIcon,
+          width: 35,
+        ),
+        inactiveIcon: SvgPicture.asset(
+          Assets.imagesMapLightIcon,
+          width: 35,
+        ),
+      ),
+      PersistentBottomNavBarItem(
         icon: Opacity(
           opacity: 0.6,
           child: CircleAvatar(
