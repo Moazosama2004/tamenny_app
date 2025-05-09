@@ -15,6 +15,7 @@ import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
+import 'package:tamenny_app/features/map/presentation/views/nearby_doctors_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_header.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_item.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
@@ -34,7 +35,14 @@ class ProfileView extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
-            child: SvgPicture.asset(Assets.imagesProfileShareIcon),
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const NearbyDoctorsView()));
+                },
+                child: SvgPicture.asset(Assets.imagesProfileShareIcon)),
           ),
         ],
       ),

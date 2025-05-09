@@ -1,0 +1,6 @@
+1 - add dependinces and packages 
+2 - display map 
+3 - create doctor entity and model
+4 - create repo 
+5 - add doctor's data in firestore
+6 - create repo impl

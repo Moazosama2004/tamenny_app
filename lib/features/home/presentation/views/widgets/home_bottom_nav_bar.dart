@@ -9,6 +9,7 @@ import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/presentation/manager/community_cubit/community_cubit.dart';
 import 'package:tamenny_app/features/home/presentation/views/home_view.dart';
+import 'package:tamenny_app/features/map/presentation/views/nearby_doctors_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_view.dart';
 import 'package:tamenny_app/features/search/presentation/views/search_view.dart';
 
@@ -39,6 +40,7 @@ class BottomNavBar extends StatelessWidget {
       const HomeView(),
       const CommunityView(),
       const ChatbotWelcomeView(),
+      const NearbyDoctorsView(),
       const ProfileView(),
     ];
   }
