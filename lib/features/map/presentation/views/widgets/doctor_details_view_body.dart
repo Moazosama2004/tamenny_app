@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/entites/doctor_entity.dart';
+import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DoctorDetailsViewBody extends StatelessWidget {
@@ -9,7 +10,7 @@ class DoctorDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 20),
       child: Column(
         children: [
           if (doctor.imageUrl != null)
@@ -52,17 +53,11 @@ class DoctorDetailsViewBody extends StatelessWidget {
             ),
           const Spacer(),
           if (doctor.phone != null)
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton.icon(
-                onPressed: () => _callDoctor(doctor.phone!),
-                icon: const Icon(Icons.phone),
-                label: const Text("اتصل بالطبيب"),
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                ),
-              ),
-            ),
+            CustomAppButton(
+                text: 'Call Doctor',
+                onTap: () {
+                  _callDoctor(doctor.phone!);
+                }),
         ],
       ),
     );
