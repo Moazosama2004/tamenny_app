@@ -19,7 +19,7 @@ class HomeCustomAppBar extends StatelessWidget {
       leading: CircleAvatar(
         radius: 20,
         backgroundImage:
-            NetworkImage(getIt<UserCubit>().currentUser!.userAvatarUrl),
+            NetworkImage(context.watch<UserCubit>().currentUser!.userAvatarUrl),
       ),
       title: Text(
         'Hi ${getIt<UserCubit>().currentUser!.name}',

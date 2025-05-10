@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/core/services/database_service.dart';
+import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/utils/backend_end_point.dart';
 import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
@@ -20,9 +22,9 @@ class AddCommentCubit extends Cubit<AddCommentState> {
 
   addComment({required PostEntity post}) async {
     CommentEntity commentEntity = CommentEntity(
-        username: getUserEntitiy().name,
+        username: getIt<UserCubit>().currentUser!.name,
         comment: commentText,
-        avatarUrl: getUserEntitiy().userAvatarUrl);
+        avatarUrl: getIt<UserCubit>().currentUser!.userAvatarUrl);
     emit(AddCommentLoading());
     var result =
         await communityRepo.addComment(comment: commentEntity, post: post);

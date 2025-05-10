@@ -2,8 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tamenny_app/config/cache_helper.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/core/services/database_service.dart';
+import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/services/storage_service.dart';
 import 'package:tamenny_app/core/utils/backend_end_point.dart';
 import 'package:tamenny_app/features/community/data/models/post_model.dart';
@@ -37,10 +39,10 @@ class AddPostCubit extends Cubit<AddPostState> {
 
       await communityRepo.addPost(
           post: PostEntity(
-        postId: Uuid().v4(),
+        postId: const Uuid().v4(),
         postText: postText.trim(),
-        username: getUserEntitiy().name,
-        userAvatarUrl: getUserEntitiy().userAvatarUrl,
+        username: getIt<UserCubit>().currentUser!.name,
+        userAvatarUrl: getIt<UserCubit>().currentUser!.userAvatarUrl,
         commentsCount: 0,
         likesCount: 0,
         sharesCount: 0,

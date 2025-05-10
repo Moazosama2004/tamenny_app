@@ -86,14 +86,14 @@ class BottomNavBar extends StatelessWidget {
           opacity: 0.6,
           child: CircleAvatar(
             radius: 12,
-            backgroundImage:
-                NetworkImage(getIt<UserCubit>().currentUser!.userAvatarUrl),
+            backgroundImage: NetworkImage(
+                context.watch<UserCubit>().currentUser!.userAvatarUrl),
           ),
         ),
         inactiveIcon: CircleAvatar(
           radius: 12,
-          backgroundImage:
-              NetworkImage(getIt<UserCubit>().currentUser!.userAvatarUrl),
+          backgroundImage: NetworkImage(
+              context.watch<UserCubit>().currentUser!.userAvatarUrl),
         ),
       ),
     ];

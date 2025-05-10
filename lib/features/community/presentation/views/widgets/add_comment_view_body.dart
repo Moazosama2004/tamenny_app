@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
+import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 import 'package:tamenny_app/features/community/presentation/manager/add_comment_cubit/add_comment_cubit.dart';
@@ -70,8 +72,8 @@ class _AddCommentViewBodyState extends State<AddCommentViewBody> {
                   children: [
                     CircleAvatar(
                       radius: 20,
-                      backgroundImage:
-                          NetworkImage(getUserEntitiy().userAvatarUrl),
+                      backgroundImage: NetworkImage(
+                          getIt<UserCubit>().currentUser!.userAvatarUrl),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
