@@ -66,7 +66,6 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   supabase_flutter: ^2.8.4
   tap_to_expand: ^0.7.2
-  unused_import_remover: ^1.0.1
   uuid: ^4.5.1
 
 dev_dependencies:

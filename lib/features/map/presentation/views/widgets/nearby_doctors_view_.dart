@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:tamenny_app/core/entites/doctor_entity.dart';
-import 'package:tamenny_app/features/map/presentation/views/doctor_details_view.dart';
 import 'package:tamenny_app/features/map/presentation/views/functions/build_custom_marker.dart';
 
 class NearbyDoctorsViewBody extends StatelessWidget {
