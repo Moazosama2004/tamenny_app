@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hive/hive.dart';
-
 import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
+import 'package:tamenny_app/features/scan/data/models/diagnosis_result_model.dart';
+import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 
 part 'user_model.g.dart';
 
@@ -18,11 +19,17 @@ class UserModel extends HiveObject {
 
   @HiveField(3)
   final String uId;
-  UserModel(
-      {required this.name,
-      required this.email,
-      required this.uId,
-      required this.userAvatarUrl});
+
+  @HiveField(4)
+  final List<DiagnosisResultModel>? diagnoses;
+
+  UserModel({
+    required this.name,
+    required this.email,
+    required this.uId,
+    required this.userAvatarUrl,
+    this.diagnoses,
+  });
 
   factory UserModel.fromFirebaseUser(User user) {
     return UserModel(
@@ -30,6 +37,7 @@ class UserModel extends HiveObject {
       email: user.email ?? '',
       uId: user.uid,
       userAvatarUrl: user.photoURL ?? '',
+      diagnoses: [],
     );
   }
 
@@ -39,28 +47,46 @@ class UserModel extends HiveObject {
       email: json['email'],
       uId: json['uId'],
       userAvatarUrl: json['userAvatarUrl'],
+      diagnoses: json['diagnoses'] != null
+          ? List<DiagnosisResultModel>.from(
+              json['diagnoses'].map((x) => DiagnosisResultModel.fromJson(x)))
+          : null,
     );
   }
 
   factory UserModel.fromEntity(UserEntity user) {
     return UserModel(
-        name: user.name,
-        email: user.email,
-        uId: user.uId,
-        userAvatarUrl: user.userAvatarUrl);
+      name: user.name,
+      email: user.email,
+      uId: user.uId,
+      userAvatarUrl: user.userAvatarUrl,
+      diagnoses: user.diagnoses != null
+          ? List<DiagnosisResultModel>.from(
+              user.diagnoses!.map((x) => DiagnosisResultModel.fromEntity(x)))
+          : null,
+    );
   }
 
   UserEntity toEntity() {
     return UserEntity(
-        name: name, email: email, uId: uId, userAvatarUrl: userAvatarUrl);
+      name: name,
+      email: email,
+      uId: uId,
+      userAvatarUrl: userAvatarUrl,
+      diagnoses: diagnoses != null
+          ? List<DiagnosisResultEntity>.from(
+              diagnoses!.map((x) => x.toEntity()))
+          : null,
+    );
   }
 
-  toJson() {
+  Map<String, dynamic> toJson() {
     return {
       "name": name,
       "email": email,
       "uId": uId,
-      'userAvatarUrl': userAvatarUrl
+      'userAvatarUrl': userAvatarUrl,
+      'diagnoses': diagnoses?.map((x) => x.toJson()).toList(),
     };
   }
 
@@ -74,12 +100,14 @@ class UserModel extends HiveObject {
     String? email,
     String? userAvatarUrl,
     String? uId,
+    List<DiagnosisResultModel>? diagnoses,
   }) {
     return UserModel(
       name: name ?? this.name,
       email: email ?? this.email,
       userAvatarUrl: userAvatarUrl ?? this.userAvatarUrl,
       uId: uId ?? this.uId,
+      diagnoses: diagnoses ?? this.diagnoses,
     );
   }
 }
