@@ -4,12 +4,12 @@ import 'package:tamenny_app/core/errors/failure.dart';
 import 'package:tamenny_app/core/models/doctor_model.dart';
 import 'package:tamenny_app/core/services/database_service.dart';
 import 'package:tamenny_app/core/utils/backend_end_point.dart';
-import 'package:tamenny_app/features/map/domain/repos/map_repo.dart';
+import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
 
-class MapRepoImpl extends MapRepo {
+class NearbyDoctorsRepoImpl extends NearbyDoctorsRepo {
   final DatabaseService databaseService;
 
-  MapRepoImpl(this.databaseService);
+  NearbyDoctorsRepoImpl(this.databaseService);
 
   @override
   Future<Either<Failure, List<DoctorEntity>>> fetchNearbyDoctors() async {

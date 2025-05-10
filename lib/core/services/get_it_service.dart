@@ -15,6 +15,8 @@ import 'package:tamenny_app/features/community/data/repos/community_repo_impl.da
 import 'package:tamenny_app/features/community/domain/repos/community_repo.dart';
 import 'package:tamenny_app/features/home/data/repos/medical_news_repo_impl.dart';
 import 'package:tamenny_app/features/home/domain/repos/medical_news_repo.dart';
+import 'package:tamenny_app/features/map/data/repos/nearby_doctors_repo_impl.dart';
+import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
 
 final getIt = GetIt.instance;
 
@@ -39,6 +41,11 @@ void setupGetIt() async {
   );
   getIt.registerSingleton<CommunityRepo>(
     CommunityRepoImpl(
+      getIt<DatabaseService>(),
+    ),
+  );
+  getIt.registerSingleton<NearbyDoctorsRepo>(
+    NearbyDoctorsRepoImpl(
       getIt<DatabaseService>(),
     ),
   );
