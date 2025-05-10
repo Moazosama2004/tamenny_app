@@ -198,6 +198,10 @@ class Assets {
   /// assets/images/no_data_icon.svg
   static const String imagesNoDataIcon = "assets/images/no_data_icon.svg";
 
+  /// Assets for imagesNoPhotoIcon
+  /// assets/images/no_photo_icon.png
+  static const String imagesNoPhotoIcon = "assets/images/no_photo_icon.png";
+
   /// Assets for imagesNoResultsIcon
   /// assets/images/no_results_icon.svg
   static const String imagesNoResultsIcon = "assets/images/no_results_icon.svg";
@@ -237,6 +241,10 @@ class Assets {
   /// Assets for imagesPersonalCardIcon
   /// assets/images/personal_card_icon.svg
   static const String imagesPersonalCardIcon = "assets/images/personal_card_icon.svg";
+
+  /// Assets for imagesPikasoCreations
+  /// assets/images/pikaso-creations.zip
+  static const String imagesPikasoCreations = "assets/images/pikaso-creations.zip";
 
   /// Assets for imagesPointersFillIcon
   /// assets/images/pointers_fill_icon.svg

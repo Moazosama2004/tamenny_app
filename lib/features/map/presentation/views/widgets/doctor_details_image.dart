@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/entites/doctor_entity.dart';
+import 'package:tamenny_app/core/utils/app_assets.dart';
 
 class DoctorDetailsImage extends StatelessWidget {
   const DoctorDetailsImage({
@@ -27,12 +28,8 @@ class DoctorDetailsImage extends StatelessWidget {
             ),
           ),
           errorWidget: (context, url, error) => Container(
-            color: Colors.grey[200],
-            child: const Icon(
-              Icons.error_outline,
-              color: Colors.red,
-              size: 40,
-            ),
+            color: Colors.grey[100],
+            child: Image.asset(Assets.imagesNoPhotoIcon),
           ),
         ),
       ),
