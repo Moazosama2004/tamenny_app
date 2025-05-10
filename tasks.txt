@@ -7,3 +7,5 @@
     - fetch data 
     - create cubit and state 
 7 - validate Data of Doctors
+
+10 doctors validate

@@ -11,6 +11,10 @@ import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/services/supabase_storage_service.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/features/auth/data/models/user_model.dart';
+import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
+import 'package:tamenny_app/features/map/presentation/manager/nearby_doctors_cubit/nearby_doctors_cubit.dart';
+import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
+import 'package:tamenny_app/features/scan/presentation/manager/cubit/dianosis_cubit.dart';
 import 'package:tamenny_app/tamenny_app.dart';
 import 'core/functions/change_system_ui_overlay_style.dart';
 import 'core/functions/check_auth_state_changes.dart';
@@ -28,12 +32,21 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
   await Hive.initFlutter();
   Hive.registerAdapter(UserModelAdapter());
-  setupGetIt();
+  await setupGetIt();
   runApp(
     ChangeNotifierProvider(
       create: (_) => ThemeNotifier(),
-      child: BlocProvider(
-        create: (context) => getIt<UserCubit>(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => getIt<UserCubit>(),
+          ),
+          BlocProvider(
+            create: (context) => NearbyDoctorsCubit(
+              getIt<NearbyDoctorsRepo>(),
+            )..fetchNearbyDoctors(),
+          ),
+        ],
         child: TamennyApp(
           appRouter: AppRouter(),
         ),
