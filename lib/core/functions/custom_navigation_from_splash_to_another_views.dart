@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/config/cache_helper.dart';
 import 'package:tamenny_app/constants.dart';

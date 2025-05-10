@@ -1,14 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:tamenny_app/config/cache_helper.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
-import 'package:tamenny_app/core/functions/get_user_entity.dart';
-import 'package:tamenny_app/core/services/database_service.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/services/storage_service.dart';
-import 'package:tamenny_app/core/utils/backend_end_point.dart';
-import 'package:tamenny_app/features/community/data/models/post_model.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 import 'package:tamenny_app/features/community/domain/repos/community_repo.dart';
 import 'dart:io';

@@ -238,6 +238,10 @@ class Assets {
   /// assets/images/personal_card_icon.svg
   static const String imagesPersonalCardIcon = "assets/images/personal_card_icon.svg";
 
+  /// Assets for imagesPointersFillIcon
+  /// assets/images/pointers_fill_icon.svg
+  static const String imagesPointersFillIcon = "assets/images/pointers_fill_icon.svg";
+
   /// Assets for imagesPopArrowWhiteIcon
   /// assets/images/pop_arrow_white_icon.svg
   static const String imagesPopArrowWhiteIcon = "assets/images/pop_arrow_white_icon.svg";
@@ -329,6 +333,10 @@ class Assets {
   /// Assets for imagesSplashScreenIosAndriodBelow12
   /// assets/images/splash_screen_ios_andriod_below_12.png
   static const String imagesSplashScreenIosAndriodBelow12 = "assets/images/splash_screen_ios_andriod_below_12.png";
+
+  /// Assets for imagesStarFillIcon
+  /// assets/images/star_fill_icon.svg
+  static const String imagesStarFillIcon = "assets/images/star_fill_icon.svg";
 
   /// Assets for imagesTimeIcon
   /// assets/images/time_icon.svg

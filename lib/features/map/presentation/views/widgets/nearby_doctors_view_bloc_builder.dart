@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_map/flutter_map.dart';
-
-import 'package:latlong2/latlong.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/functions/get_dummy_doctors.dart';
-import 'package:tamenny_app/core/models/doctor_model.dart';
 import 'package:tamenny_app/core/widgets/custom_error_widget.dart';
 import 'package:tamenny_app/features/map/presentation/manager/nearby_doctors_cubit/nearby_doctors_cubit.dart';
-import 'package:tamenny_app/features/map/presentation/views/doctor_details_view.dart';
 import 'package:tamenny_app/features/map/presentation/views/widgets/nearby_doctors_view_.dart';
 
 class NearbyDoctorsViewBlocBuilder extends StatelessWidget {
@@ -24,8 +19,11 @@ class NearbyDoctorsViewBlocBuilder extends StatelessWidget {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
           return Skeletonizer(
-              enabled: true,
-              child: NearbyDoctorsViewBody(doctors: getDummyDoctors()));
+            enabled: true,
+            child: NearbyDoctorsViewBody(
+              doctors: getDummyDoctors(),
+            ),
+          );
         }
       },
     );

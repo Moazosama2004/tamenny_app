@@ -49,7 +49,7 @@ class HealthTipsItem extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             healthTipEntity.tip,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 13,
               color: Colors.black54,
             ),

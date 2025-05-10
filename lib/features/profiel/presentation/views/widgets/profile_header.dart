@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
-import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 
 class ProfileHeader extends StatelessWidget {

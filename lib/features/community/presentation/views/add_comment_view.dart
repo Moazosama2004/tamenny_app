@@ -1,9 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/services/database_service.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 import 'package:tamenny_app/features/community/domain/repos/community_repo.dart';

@@ -1,9 +1,14 @@
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/entites/doctor_entity.dart';
+import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:tamenny_app/features/map/presentation/views/functions/call_doctor.dart';
+import 'package:tamenny_app/features/map/presentation/views/widgets/doctor_details_image.dart';
 
 class DoctorDetailsViewBody extends StatelessWidget {
   const DoctorDetailsViewBody({super.key, required this.doctor});
@@ -15,24 +20,7 @@ class DoctorDetailsViewBody extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 20),
       child: Column(
         children: [
-          if (doctor.imageUrl != null)
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: AspectRatio(
-                  aspectRatio: 3 / 2.5,
-                  child: CachedNetworkImage(
-                    imageUrl: doctor.imageUrl!,
-                    placeholder: (context, url) {
-                      return const Skeletonizer(
-                          enabled: true,
-                          child: SizedBox(
-                            width: 100,
-                            height: 200,
-                          ));
-                    },
-                    fit: BoxFit.fill,
-                  )),
-            ),
+          if (doctor.imageUrl != null) DoctorDetailsImage(doctor: doctor),
           const SizedBox(height: 16),
           Text(
             doctor.name,
@@ -47,7 +35,7 @@ class DoctorDetailsViewBody extends StatelessWidget {
           if (doctor.rating != null)
             Row(
               children: [
-                const Icon(Icons.star, color: Colors.amber),
+                SvgPicture.asset(Assets.imagesStarFillIcon),
                 const SizedBox(width: 4),
                 Text(doctor.rating.toString()),
               ],
@@ -56,7 +44,9 @@ class DoctorDetailsViewBody extends StatelessWidget {
           if (doctor.address != null)
             Row(
               children: [
-                const Icon(Icons.location_on),
+                const Icon(
+                  Icons.location_on,
+                ),
                 const SizedBox(width: 8),
                 Expanded(child: Text(doctor.address!)),
               ],
@@ -64,21 +54,13 @@ class DoctorDetailsViewBody extends StatelessWidget {
           const Spacer(),
           if (doctor.phone != null)
             CustomAppButton(
-                text: 'Call Doctor',
-                onTap: () {
-                  _callDoctor(doctor.phone!);
-                }),
+              text: 'Call Doctor',
+              onTap: () {
+                callDoctor(doctor.phone!);
+              },
+            ),
         ],
       ),
     );
-  }
-
-  void _callDoctor(String phone) async {
-    final Uri url = Uri.parse('tel:$phone');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
-    } else {
-      debugPrint('Could not launch $phone');
-    }
   }
 }

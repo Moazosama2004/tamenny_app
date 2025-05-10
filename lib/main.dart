@@ -13,8 +13,6 @@ import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/features/auth/data/models/user_model.dart';
 import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
 import 'package:tamenny_app/features/map/presentation/manager/nearby_doctors_cubit/nearby_doctors_cubit.dart';
-import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
-import 'package:tamenny_app/features/scan/presentation/manager/cubit/dianosis_cubit.dart';
 import 'package:tamenny_app/tamenny_app.dart';
 import 'core/functions/change_system_ui_overlay_style.dart';
 import 'core/functions/check_auth_state_changes.dart';

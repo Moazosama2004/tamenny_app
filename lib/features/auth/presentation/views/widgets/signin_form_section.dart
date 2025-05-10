@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
@@ -8,13 +7,11 @@ import 'package:tamenny_app/features/auth/presentation/manager/signin_cubit/sign
 import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/remember_me_and_forgot_password.dart';
 
-import '../../../../../core/functions/show_toast_message.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
 import '../../../../../core/widgets/custom_app_button.dart';
 import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../core/widgets/dont_have_an_account.dart';
-import '../functions/login_navigation_with_toast_message.dart';
 import 'or_sign_in_with.dart';
 import 'social_media_methods.dart';
 import 'terms_and_conditions.dart';

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/entites/doctor_entity.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
-import 'package:tamenny_app/features/community/presentation/manager/post_cubit/post_cubit.dart';
 import 'package:tamenny_app/features/community/presentation/views/add_post_view.dart';
 import 'package:tamenny_app/features/home/domain/entites/article_entity.dart';
 import 'package:tamenny_app/features/home/presentation/views/latest_medical_news_view.dart';

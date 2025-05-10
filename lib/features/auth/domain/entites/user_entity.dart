@@ -1,4 +1,3 @@
-import 'package:tamenny_app/features/scan/data/models/diagnosis_result_model.dart';
 import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 
 class UserEntity {
@@ -25,10 +24,10 @@ class UserEntity {
     List<DiagnosisResultEntity>? diagnoses,
   }) {
     return UserEntity(
-      uId: id ?? this.uId,
+      uId: id ?? uId,
       name: name ?? this.name,
       email: email ?? this.email,
-      userAvatarUrl: imageUrl ?? this.userAvatarUrl,
+      userAvatarUrl: imageUrl ?? userAvatarUrl,
       diagnoses: diagnoses ?? this.diagnoses,
     );
   }

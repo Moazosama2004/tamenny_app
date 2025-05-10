@@ -1,10 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
-import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
-import 'package:tamenny_app/features/community/presentation/views/functions/get_time_age.dart';
 import 'package:tamenny_app/features/community/presentation/views/post_details_view.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_actions.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_header.dart';

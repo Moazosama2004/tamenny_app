@@ -20,7 +20,7 @@ AppBar addPostAppBar(BuildContext context) => AppBar(
             decoration: BoxDecoration(
                 color: const Color(0xffF5F5F5),
                 borderRadius: BorderRadius.circular(100)),
-            child: Text('Public'),
+            child: const Text('Public'),
           ),
         )
       ],

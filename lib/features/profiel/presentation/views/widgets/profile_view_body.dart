@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import 'package:quickalert/models/quickalert_animtype.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
-import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/core/functions/show_language_picker.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';

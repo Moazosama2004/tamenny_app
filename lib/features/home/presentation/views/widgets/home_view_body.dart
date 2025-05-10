@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tamenny_app/core/entites/doctor_entity.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
@@ -13,10 +12,8 @@ import 'package:tamenny_app/features/home/presentation/views/widgets/home_view_c
 import 'package:tamenny_app/features/home/presentation/views/widgets/latest_medical_news_sliver_list.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/latest_scans_sliver_grid.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/main_banner_widget.dart';
-import 'package:tamenny_app/features/home/presentation/views/widgets/nearby_doctors_sliver_list.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/nearby_doctors_sliver_list_bloc_builder.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/search_text_field.dart';
-import 'package:tamenny_app/features/home/presentation/views/widgets/search_view_screen.dart';
 import 'package:tamenny_app/features/map/presentation/manager/nearby_doctors_cubit/nearby_doctors_cubit.dart';
 
 class HomeViewBody extends StatefulWidget {
