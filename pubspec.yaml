@@ -42,7 +42,7 @@ dependencies:
   flutter_bloc: ^9.1.0
   flutter_facebook_auth: ^7.1.2
   flutter_launcher_icons: ^0.13.1
-  flutter_map: ^8.1.1
+  flutter_map: 5.0.0
   flutter_native_splash: ^2.4.3
   flutter_open_street_map: ^0.0.4
   flutter_svg: ^2.0.16
