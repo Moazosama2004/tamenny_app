@@ -198,6 +198,10 @@ class Assets {
   /// assets/images/no_data_icon.svg
   static const String imagesNoDataIcon = "assets/images/no_data_icon.svg";
 
+  /// Assets for imagesNoResultsIcon
+  /// assets/images/no_results_icon.svg
+  static const String imagesNoResultsIcon = "assets/images/no_results_icon.svg";
+
   /// Assets for imagesNotification
   /// assets/images/notification.svg
   static const String imagesNotification = "assets/images/notification.svg";
