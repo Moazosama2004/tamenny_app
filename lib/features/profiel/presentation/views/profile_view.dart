@@ -8,6 +8,7 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:quickalert/quickalert.dart';
+import 'package:tamenny_app/core/entites/doctor_entity.dart';
 import 'package:tamenny_app/core/functions/get_user_entity.dart';
 import 'package:tamenny_app/core/functions/show_language_picker.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
@@ -39,7 +40,10 @@ class ProfileView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: GestureDetector(
-                onTap: () async {},
+                onTap: () {
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (_) => const TestView()));
+                },
                 child: SvgPicture.asset(Assets.imagesProfileShareIcon)),
           ),
         ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/features/scan/presentation/manager/cubit/dianosis_cubit.dart';
 
 import '../../../../core/routes/routes.dart';
 import '../../../../core/theme/app_styles.dart';
@@ -22,6 +24,9 @@ class ScanAnalysisResults extends StatelessWidget {
             const SizedBox(height: 20),
 
             // Diagnosis Summary
+            _sectionTitle('Test'),
+            _sectionBody(
+                'result => ${context.read<DiagnosisCubit>().diagnosisResultEntity.classification} \n conf => ${context.read<DiagnosisCubit>().diagnosisResultEntity.confidence} '),
             _sectionTitle('Diagnosis Summary'),
             _sectionBody(
                 'Diagnosed Condition: Potential Early-Stage Chronic Obstructive Pulmonary Disease (COPD)'),

@@ -12,14 +12,9 @@ class NearbyDoctorsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NearbyDoctorsCubit(
-        getIt<NearbyDoctorsRepo>(),
-      )..fetchNearbyDoctors(),
-      child: Scaffold(
-        appBar: customAppBar(context, title: 'Nearby Doctors'),
-        body: const NearbyDoctorsViewBlocBuilder(),
-      ),
+    return Scaffold(
+      appBar: customAppBar(context, title: 'Nearby Doctors'),
+      body: const NearbyDoctorsViewBlocBuilder(),
     );
   }
 }

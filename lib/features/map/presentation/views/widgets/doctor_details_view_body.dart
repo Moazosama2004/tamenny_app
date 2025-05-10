@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/entites/doctor_entity.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,13 +19,19 @@ class DoctorDetailsViewBody extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: AspectRatio(
-                aspectRatio: 3 / 2.5,
-                child: Image.network(
-                  doctor.imageUrl!,
-                  width: double.infinity,
-                  fit: BoxFit.fill,
-                ),
-              ),
+                  aspectRatio: 3 / 2.5,
+                  child: CachedNetworkImage(
+                    imageUrl: doctor.imageUrl!,
+                    placeholder: (context, url) {
+                      return const Skeletonizer(
+                          enabled: true,
+                          child: SizedBox(
+                            width: 100,
+                            height: 200,
+                          ));
+                    },
+                    fit: BoxFit.fill,
+                  )),
             ),
           const SizedBox(height: 16),
           Text(
