@@ -2,5 +2,5 @@
 2 - display map [Done]
 3 - create doctor entity and model [Done]
 4 - create repo [Done]
-5 - add doctor's data in firestore
+5 - add doctor's data in firestore [Done]
 6 - create repo impl
