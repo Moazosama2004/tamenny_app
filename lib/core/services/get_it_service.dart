@@ -18,6 +18,8 @@ import 'package:tamenny_app/features/home/data/repos/medical_news_repo_impl.dart
 import 'package:tamenny_app/features/home/domain/repos/medical_news_repo.dart';
 import 'package:tamenny_app/features/map/data/repos/nearby_doctors_repo_impl.dart';
 import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
+import 'package:tamenny_app/features/profiel/data/repo/change_password_repo_impl.dart';
+import 'package:tamenny_app/features/profiel/domain/repo/change_password_repo.dart';
 import 'package:tamenny_app/features/scan/data/repos/diagnosis_repo_impl.dart';
 import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
 
@@ -33,6 +35,11 @@ Future<void> setupGetIt() async {
     AuthRepoImpl(
       firebaseAuthService: getIt<FirebaseAuthService>(),
       databaseService: getIt<DatabaseService>(),
+    ),
+  );
+  getIt.registerSingleton<ChangePasswordRepo>(
+    ChangePasswordRepoImpl(
+      getIt<FirebaseAuthService>(),
     ),
   );
 

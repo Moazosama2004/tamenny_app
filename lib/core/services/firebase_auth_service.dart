@@ -8,6 +8,27 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tamenny_app/core/errors/custom_exception.dart';
 
 class FirebaseAuthService {
+  Future<bool> checkPassword(String enteredPassword) async {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      return false; // No user is logged in.
+    }
+
+    try {
+      // Reauthenticate the user with their current password
+      AuthCredential credential = EmailAuthProvider.credential(
+        email: user.email!,
+        password: enteredPassword,
+      );
+
+      // Sign in with the credentials to verify the password
+      await user.reauthenticateWithCredential(credential);
+      return true; // Password is correct
+    } catch (e) {
+      return false; // Password is incorrect or reauthentication failed
+    }
+  }
+
   Future forgotPassword({required String email}) async {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
   }

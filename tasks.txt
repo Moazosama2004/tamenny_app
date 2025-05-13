@@ -3,3 +3,4 @@
 3 - edit in comments below posts in post details view [done] 
 4 - display image in add comment view [done]
 5 - save dark theme in sharedPrefs [done]
+6 - user can change password now [done]

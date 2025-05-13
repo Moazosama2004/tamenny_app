@@ -12,7 +12,9 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.onSaved,
+    this.controller,
   });
+
   final String hintText;
   final Function(String)? onChanged;
   final String? Function(String?)? validate;
@@ -20,10 +22,12 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final Function(String?)? onSaved;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       onSaved: onSaved,
       onChanged: onChanged,
       validator: validate,
