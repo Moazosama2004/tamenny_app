@@ -48,10 +48,15 @@ class AddPostButtonBlocConsumer extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           ),
           child: state is AddPostLoading
-              ? const Center(
-                  child: CircularProgressIndicator(
-                  color: Colors.white,
-                ))
+              ? const SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.white,
+                    ),
+                  ),
+                )
               : const Text("Post now", style: TextStyle(color: Colors.white)),
         );
       },

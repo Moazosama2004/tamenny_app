@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
@@ -54,14 +56,24 @@ class Post extends StatelessWidget {
                     if (post.imageUrl!.isNotEmpty)
                       Padding(
                         padding: const EdgeInsets.only(top: 12.0),
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          child: AspectRatio(
-                            aspectRatio: 3 / 2,
-                            child: Image.network(
-                              post.imageUrl!,
-                              fit: BoxFit.cover,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: CachedNetworkImage(
+                            imageUrl: post.imageUrl!,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) => Skeletonizer(
+                              enabled: true,
+                              child: Container(
+                                width: double.infinity,
+                                // height: MediaQuery.of(context).size.width *
+                                //     2 /
+                                //     3, // same as 3:2 aspect
+                                color: Colors.grey[850],
+                              ),
                             ),
+                            errorWidget: (context, url, error) =>
+                                const Center(child: Icon(Icons.error)),
                           ),
                         ),
                       ),
