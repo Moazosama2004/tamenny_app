@@ -5,6 +5,7 @@ import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/already_have_an_account.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/widgets/get_started_custom_button.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/widgets/header_logo_welcome_view.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class WelcomeViewBody extends StatelessWidget {
   const WelcomeViewBody({super.key});
@@ -23,7 +24,7 @@ class WelcomeViewBody extends StatelessWidget {
             height: 16,
           ),
           Text(
-            'Welcome to the TAMENNY',
+            S.of(context).welcomeToTheTAMENNY,
             textAlign: TextAlign.center,
             style: AppStyles.font30ExtraBold.copyWith(
               color: AppColors.primaryColor,
@@ -32,8 +33,8 @@ class WelcomeViewBody extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          const Text(
-            'Your mindful mental health AI companion for everyone, anywhere 🍃',
+          Text(
+            S.of(context).yourMindfulMentalHealthAICompanion,
             textAlign: TextAlign.center,
             style: AppStyles.font18Medium,
           ),

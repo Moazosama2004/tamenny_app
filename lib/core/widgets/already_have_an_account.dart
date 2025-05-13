@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../routes/routes.dart';
 import '../theme/app_colors.dart';
@@ -14,8 +15,8 @@ class AlreadyHaveAnAccount extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          'Already have an account yet?',
+        Text(
+          S.of(context).alreadyHaveAccount,
           style: AppStyles.font11Regular,
         ),
         const SizedBox(
@@ -26,7 +27,7 @@ class AlreadyHaveAnAccount extends StatelessWidget {
             Navigator.pushReplacementNamed(context, Routes.loginView);
           },
           child: Text(
-            'Sign in',
+            S.of(context).signIn,
             style: AppStyles.font11Regular.copyWith(
               color: AppColors.primaryColor,
             ),

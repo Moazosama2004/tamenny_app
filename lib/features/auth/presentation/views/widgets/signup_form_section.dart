@@ -5,6 +5,7 @@ import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
 import 'package:tamenny_app/features/auth/presentation/manager/signup_cubit/signup_cubit.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/terms_and_conditions.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
@@ -51,7 +52,7 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                   height: 14,
                 ),
                 Text(
-                  'Create Account',
+                  S.of(context).createAccount,
                   style: AppStyles.font24Bold.copyWith(
                     color: AppColors.primaryColor,
                   ),
@@ -60,7 +61,7 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                   height: 30,
                 ),
                 CustomTextFormField(
-                  hintText: 'Full Name',
+                  hintText: S.of(context).fullName,
                   onSaved: (data) {
                     name = data!;
                   },
@@ -70,7 +71,7 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                   height: 16,
                 ),
                 CustomTextFormField(
-                  hintText: 'Email',
+                  hintText: S.of(context).email,
                   onSaved: (data) {
                     email = data!;
                   },
@@ -94,7 +95,7 @@ class _SignUpFormSectionState extends State<SignUpFormSection> {
                         ),
                       )
                     : CustomAppButton(
-                        text: 'Create Account',
+                        text: S.of(context).createAccount,
                         onTap: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();

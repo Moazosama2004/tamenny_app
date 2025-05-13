@@ -1,0 +1,181 @@
+{
+    "welcomeToTheTAMENNY": "مرحبًا بك في TAMENNY",
+    "yourMindfulMentalHealthAICompanion": "رفيقك الذكي للصحة العقلية المدروس للجميع، في أي مكان 🍃",
+    "getStarted": "ابدأ الآن",
+    "alreadyHaveAccount": "هل لديك حساب بالفعل؟",
+    "signIn": "تسجيل الدخول",
+    "stepOne": "الخطوة الأولى",
+    "stepThree": "الخطوة الثالثة",
+    "stepTwo": "الخطوة الثانية",
+    "aiResults": "نتائج مدفوعة بالذكاء الاصطناعي، رعاية مخصصة",
+    "healthInsights": "رؤى صحية دقيقة، فقط لك",
+    "connectGrow": "اتصل، شارك، وكن جزءًا من النمو معًا.",
+    "createAccount": "إنشاء حساب",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "agreeLogging": "بتسجيل الدخول، فإنك توافق على",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsAndConditions": "الشروط والأحكام",
+    "and": "و",
+    "welcomeBack": "مرحبًا بعودتك",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "noAccount": "ليس لديك حساب؟",
+    "createOne": "إنشاء حساب",
+    "login": "تسجيل الدخول",
+    "orSignInWith": "أو قم بتسجيل الدخول باستخدام",
+    "days ago": "منذ $days",
+    "hours ago": "منذ $hours",
+    "minutes ago": "منذ دقائق",
+    "1. Tap the \"Start Chatting\" button below.\\n": "1. اضغط على زر \"ابدأ الدردشة\" أدناه.\\n",
+    "2 NEW": "2 جديد",
+    "2. Ask any question related to your health.\\n": "2. اطرح أي سؤال يتعلق بصحتك.\\n",
+    "reviews": "مراجعات",
+    "3. Get instant, AI-powered responses customized for you.": "3. احصل على استجابات فورية مدعومة بالذكاء الاصطناعي مخصصة لك.",
+    "ACCOUNT": "الحساب",
+    "AI Analysis": "تحليل الذكاء الاصطناعي",
+    "AI in action! Tamenny is analyzing your data to provide a personalized assessment. Sit tight!": "الذكاء الاصطناعي قيد التنفيذ! يقوم تميني بتحليل بياناتك لتقديم تقييم مخصص. انتظر قليلاً!",
+    "App Updates": "تحديثات التطبيق",
+    "Are you sure you want to log out?": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
+    "Ask questions about your health conditions.": "اطرح أسئلة حول حالتك الصحية.",
+    "At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have.": "في تميني، خصوصيتك هي إحدى أولوياتنا القصوى. نحن ملتزمون بحماية معلوماتك الشخصية وضمان بقائك دائمًا مسيطرًا على بياناتك. تم تصميم هذا المركز الخصوصي لمساعدتك في فهم ما نقوم بجمعه وكيف نستخدمه والخيارات المتاحة لك.",
+    "At our app, we take the security of your information seriously.": "في تطبيقنا، نأخذ أمان معلوماتك على محمل الجد.",
+    "Brain Cancer": "سرطان الدماغ",
+    "By Logging , you agree to our ": "بتسجيل الدخول، أنت توافق على ",
+    "Call Doctor": "اتصل بالطبيب",
+    "Can I share my assessment with others?": "هل يمكنني مشاركة تقييمي مع الآخرين؟",
+    "Can I trust the results provided by Tamenny?": "هل يمكنني الثقة في النتائج المقدمة من تميني؟",
+    "Can I use Tamenny if I have a pre-existing condition?": "هل يمكنني استخدام تميني إذا كان لدي حالة صحية موجودة مسبقًا؟",
+    "Cancel": "إلغاء",
+    "Change Password": "تغيير كلمة المرور",
+    "Change your language": "تغيير لغتك",
+    "Check your email for the reset link.": "تحقق من بريدك الإلكتروني للحصول على رابط إعادة تعيين كلمة المرور.",
+    "Circle": "الدائرة",
+    "Clear All History": "مسح كل السجل",
+    "Comment has been added": "تم إضافة تعليق",
+    "Comments": "تعليقات",
+    "Completed": "مكتمل",
+    "Confirm New Password": "تأكيد كلمة المرور الجديدة",
+    "Consulting with a pulmonologist is advised for a thorough evaluation and personalized treatment strategies.": "من المستحسن استشارة طبيب رئة لتقييم شامل واستراتيجيات علاج مخصصة.",
+    "Contact Support": "اتصل بالدعم",
+    "Continue your periodic health check-ups.": "استمر في فحوصاتك الصحية الدورية.",
+    "Could not launch $phone": "لم يتمكن من تشغيل $phone",
+    "Create Account": "إنشاء حساب",
+    "Current Password": "كلمة المرور الحالية",
+    "Dark Mode": "الوضع المظلم",
+    "Dental": "طب الأسنان",
+    "Diagnosed Condition: Potential Early-Stage Chronic Obstructive Pulmonary Disease (COPD)": "الحالة المشخصة: مرض الانسداد الرئوي المزمن المحتمل في مراحله المبكرة (COPD)",
+    "Diagnosis Summary": "ملخص التشخيص",
+    "Doctors": "الأطباء",
+    "Drink plenty of water daily for better health.": "اشرب الكثير من الماء يوميًا من أجل صحة أفضل.",
+    "Eat more fruits and veggies for a stronger immune system.": "تناول المزيد من الفواكه والخضروات للحصول على جهاز مناعي أقوى.",
+    "Email": "البريد الإلكتروني",
+    "Email or Phone Number": "البريد الإلكتروني أو رقم الهاتف",
+    "Error: ${state.message}": "خطأ: ${state.message}",
+    "FAQ": "الأسئلة الشائعة",
+    "Failed to sign in with Google. Please try again.": "فشل تسجيل الدخول باستخدام جوجل. الرجاء المحاولة مرة أخرى.",
+    "Forgot Password": "نسيت كلمة المرور",
+    "Forgot Password?": "نسيت كلمة المرور؟",
+    "Full Name": "الاسم الكامل",
+    "General usage data (anonymous and non-identifiable)": "بيانات الاستخدام العامة (مجهولة الهوية وغير قابلة للتحديد)",
+    "Get 7–8 hours of sleep each night to stay energized.": "احصل على 7-8 ساعات من النوم كل ليلة للبقاء نشطًا.",
+    "Get AI-powered\\npreliminary health\\ninsights and advice": "احصل على رؤى صحية أولية\\nمدعومة بالذكاء الاصطناعي ونصائح.",
+    "Get Results & Next Steps": "احصل على النتائج والخطوات التالية",
+    "Get Started": "ابدأ",
+    "Get recommendations on your next steps.": "احصل على التوصيات حول الخطوات التالية.",
+    "Get results in minutes, saving time and effort.": "احصل على النتائج في دقائق، مما يوفر الوقت والجهد.",
+    "Good health starts with awareness. Thanks for letting Tamenny help you take that step!": "الصحة الجيدة تبدأ بالوعي. شكرًا لأنك سمحت لتميني بمساعدتك في اتخاذ تلك الخطوة!",
+    "Guidance on next steps to manage your lung health.": "إرشادات حول الخطوات التالية لإدارة صحة رئتيك.",
+    "HELP": "مساعدة",
+    "Health Scan Categories": "فئات فحص الصحة",
+    "Health Tips for You": "نصائح صحية لك",
+    "Heart": "القلب",
+    "Heart Disease Analysis": "تحليل أمراض القلب",
+    "Hi ${getIt<UserCubit>().currentUser!.name}": "مرحبًا ${getIt<UserCubit>().currentUser!.name}",
+    "How We Use Your Data": "كيف نستخدم بياناتك",
+    "How are you Today?": "كيف حالك اليوم؟",
+    "How does Tamenny help with my health concerns?": "كيف يساعدني تميني في التعامل مع مشاكلي الصحية؟",
+    "How does Tamenny protect my data?": "كيف يحمي تميني بياناتي؟",
+    "How much does it cost to use Tamenny?": "كم يكلف استخدام تميني؟",
+    "How to Use the Chatbot:": "كيفية استخدام الروبوت:",
+    "If you have any questions or concerns about your privacy, please contact us at:\\n\\nsupport@tamenny.app": "إذا كان لديك أي أسئلة أو استفسارات بشأن خصوصيتك، يرجى الاتصال بنا عبر:\\n\\nsupport@tamenny.app",
+    "Improve app performance and reliability": "تحسين أداء التطبيق وموثوقيته",
+    "Is Tamenny\\": "هل تميني\\",
+    "Keep doing regular light exercises.": "استمر في ممارسة التمارين الخفيفة بانتظام.",
+    "Knee OA": "الفصال العظمي للركبة",
+    "Knee Osteoarthritis (OA)": "الفصال العظمي للركبة (OA)",
+    "Language": "اللغة",
+    "Latest Medical News": "أحدث الأخبار الطبية",
+    "Learn about health-related topics with ease.": "تعلم عن المواضيع الصحية بسهولة.",
+    "Limit screen time to protect your eyes and mental health.": "حدد وقت الشاشة لحماية عينيك وصحتك النفسية.",
+    "Login": "تسجيل الدخول",
+    "Lung Cancer": "سرطان الرئة",
+    "Lung Disease Analysis": "تحليل أمراض الرئة",
+    "Maintain a healthy diet.": "حافظ على نظام غذائي صحي.",
+    "Mark all as read": "علامة جميع كمقروءة",
+    "Medical News": "الأخبار الطبية",
+    "Meet Tamenny AI Chatbot": "التعرف على روبوت تميني الذكي",
+    "Nearby Doctors": "الأطباء القريبون",
+    "Need Help?": "هل تحتاج مساعدة؟",
+    "New Password": "كلمة المرور الجديدة",
+    "No health issues were detected in this scan.": "لم يتم اكتشاف أي مشكلات صحية في هذا الفحص.",
+    "No results yet. Start typing...": "لا توجد نتائج بعد. ابدأ الكتابة...",
+    "Notification": "إشعار",
+    "Notification from Tamenny": "إشعار من تميني",
+    "Or sign in with": "أو سجل الدخول باستخدام",
+    "Our AI will analyze your heart scan, detect potential cardiovascular risks, and suggest preventive or corrective measures.": "سيقوم الذكاء الاصطناعي بتحليل فحص قلبك، واكتشاف المخاطر المحتملة للأمراض القلبية، واقتراح تدابير وقائية أو تصحيحية.",
+    "Our AI will assess your knee joint, detect signs of osteoarthritis or degeneration, and offer recommendations to manage symptoms early.": "سيقوم الذكاء الاصطناعي بتقييم مفصل الركبة، واكتشاف علامات الفصال العظمي أو التنكس، وتقديم توصيات لإدارة الأعراض في وقت مبكر.",
+    "Our AI will examine your brain scan, identify signs of abnormal growth or tumors, and assist you with expert-backed next steps.": "سيقوم الذكاء الاصطناعي بفحص أشعة دماغك، واكتشاف علامات النمو غير الطبيعي أو الأورام، ومساعدتك في الخطوات التالية المدعومة من الخبراء.",
+    "Our AI will highlight issues, detect early-stage lung conditions like COPD, and provide guidance on the next steps.": "سيقوم الذكاء الاصطناعي بتسليط الضوء على المشاكل، واكتشاف الحالات الرئوية المبكرة مثل مرض الانسداد الرئوي المزمن (COPD)، وتقديم إرشادات حول الخطوات التالية.",
+    "PREFERENCE": "التفضيلات",
+    "Password": "كلمة المرور",
+    "Personal information": "المعلومات الشخصية",
+    "Personalize your app experience": "شخصّن تجربة تطبيقك",
+    "Please choose a new avatar first": "يرجى اختيار صورة رمزية جديدة أولاً",
+    "Please select an image to proceed": "يرجى اختيار صورة للمتابعة",
+    "Post now": "انشر الآن",
+    "Post your reply...": "انشر ردك...",
+    "Posted successfully!": "تم النشر بنجاح!",
+    "Preventive Tips": "نصائح وقائية",
+    "Preview Your Scan": "معاينة الفحص الخاص بك",
+    "Privacy Center": "مركز الخصوصية",
+    "PrivacyPolicy": "سياسة الخصوصية",
+    "Proceed to Upload": "الاستمرار في التحميل",
+    "Processed": "تم معالجته",
+    "Processing": "قيد المعالجة",
+    "Profile": "الملف الشخصي",
+    "Profile Data": "بيانات الملف الشخصي",
+    "Public": "عام",
+    "Read more": "اقرأ المزيد",
+    "Recent Search": "البحث الأخير",
+    "Recommended Next Steps": "الخطوات التالية الموصى بها",
+    "Remember your preferences": "تذكر تفضيلاتك",
+    "Reset Password": "إعادة تعيين كلمة المرور",
+    "Result: $status": "النتيجة: $status",
+    "Review app permissions": "مراجعة أذونات التطبيق",
+    "Save": "حفظ",
+    "Scan": "فحص",
+    "Scan ${index + 1}": "الفحص ${index + 1}",
+    "Scan Analysis Completed": "تم اكتمال تحليل الفحص",
+    "Scan Analysis Results": "نتائج تحليل الفحص",
+    "Scan Result": "نتيجة الفحص",
+    "Search": "بحث",
+    "Select and upload a clear image of your ${scan.analysisType} X-ray or CT scan to begin the analysis.": "حدد وقم بتحميل صورة واضحة لأشعة X أو الفحص المقطعي للـ ${scan.analysisType} لبدء التحليل.",
+    "Send message...": "إرسال الرسالة...",
+    "Share Results in Circle": "مشاركة النتائج في الدائرة",
+    "Show Results": "عرض النتائج",
+    "Sign out": "تسجيل الخروج",
+    "Something happened": "حدث شيء ما",
+    "Sound": "صوت",
+    "Start Chatting": "ابدأ الدردشة",
+    "Start New Scan": "ابدأ فحصًا جديدًا",
+    "Status: Normal": "الحالة: طبيعية",
+    "Stretch daily to improve flexibility and reduce stress.": "تمدد يوميًا لتحسين المرونة وتقليل التوتر.",
+    "Take short walks to boost your mood and circulation.": "قم بنزهات قصيرة لتعزيز مزاجك ودورتك الدموية.",
+    "Tamenny": "تميني",
+    "Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:": "يساعدك روبوت تميني في الحصول على نصائح صحية أولية. إليك ما يمكنك القيام به باستخدامه:",
+    "Tamenny bot": "روبوت تميني",
+    "Tamenny is a healthcare app designed to provide an initial assessment of your health condition using AI, helping you make informed decisions before visiting a doctor. It aims to save you time and money by offering an accurate preliminary diagnosis.": "تميني هو تطبيق صحي مصمم لتقديم تقييم أولي لحالتك الصحية باستخدام الذكاء الاصطناعي، مما يساعدك على اتخاذ قرارات مستنيرة قبل زيارة الطبيب. يهدف إلى توفير الوقت والمال من خلال تقديم تشخيص أولي دقيق.",
+    "Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely.": "قد يستخدم تميني خدمات طرف ثالث موثوقة (مثل Firebase أو أدوات التحليل) لمساعدتنا في فهم استخدام التطبيق وتحسين وظيفته. هذه الخدمات تعالج البيانات بشكل مجهول وآمن.",
+    "Tamenny’s AI will analyze your scan and deliver results in just a few minutes.": "سيقوم الذكاء الاصطناعي في تميني بتحليل فحصك وتقديم النتائج في بضع دقائق."
+}

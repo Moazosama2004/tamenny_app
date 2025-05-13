@@ -6,6 +6,7 @@ import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/forgot_password_widget.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
@@ -53,7 +54,7 @@ class _SigninFormSectionState extends State<SigninFormSection> {
                   height: 14,
                 ),
                 Text(
-                  'Welcome Back',
+                  S.of(context).welcomeBack,
                   style: AppStyles.font24Bold
                       .copyWith(color: AppColors.primaryColor),
                 ),
@@ -61,7 +62,7 @@ class _SigninFormSectionState extends State<SigninFormSection> {
                   height: 30,
                 ),
                 CustomTextFormField(
-                  hintText: 'Email',
+                  hintText: S.of(context).email,
                   onSaved: (data) {
                     email = data!;
                   },
@@ -89,7 +90,7 @@ class _SigninFormSectionState extends State<SigninFormSection> {
                         ),
                       )
                     : CustomAppButton(
-                        text: 'Login',
+                        text: S.of(context).login,
                         onTap: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();

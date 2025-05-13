@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_colors.dart';
@@ -26,7 +27,7 @@ class GetStartedButton extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Get Started',
+                    S.of(context).getStarted,
                     style: AppStyles.font18ExtraBold.copyWith(
                       color: Colors.white,
                     ),

@@ -19,7 +19,6 @@ import 'core/functions/check_auth_state_changes.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  changeSystemUiOverlayStyle();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -31,25 +30,33 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserModelAdapter());
   await setupGetIt();
+
   final themeNotifier = ThemeNotifier();
+  final localeNotifier = LocaleNotifier();
+
   await themeNotifier.loadThemeFromPrefs();
+  await localeNotifier.loadLocaleFromPrefs();
+
   runApp(
-    ChangeNotifierProvider.value(
-      value: themeNotifier,
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (context) => getIt<UserCubit>(),
-          ),
-          BlocProvider(
-            create: (context) => NearbyDoctorsCubit(
-              getIt<NearbyDoctorsRepo>(),
-            )..fetchNearbyDoctors(),
-          ),
-        ],
-        child: TamennyApp(
-          appRouter: AppRouter(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: themeNotifier,
         ),
+        ChangeNotifierProvider.value(
+          value: localeNotifier,
+        ),
+        BlocProvider(
+          create: (context) => getIt<UserCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => NearbyDoctorsCubit(
+            getIt<NearbyDoctorsRepo>(),
+          )..fetchNearbyDoctors(),
+        ),
+      ],
+      child: TamennyApp(
+        appRouter: AppRouter(),
       ),
     ),
   );

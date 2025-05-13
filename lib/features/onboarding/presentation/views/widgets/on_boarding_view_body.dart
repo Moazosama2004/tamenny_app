@@ -3,6 +3,7 @@ import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/onboarding/domain/entites/on_boarding_entity.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/widgets/on_boarding_button_section.dart';
 import 'package:tamenny_app/features/onboarding/presentation/views/widgets/on_boarding_page_view_body.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({super.key});
@@ -14,27 +15,26 @@ class OnBoardingViewBody extends StatefulWidget {
 class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   PageController controller = PageController();
 
-  final List<OnBoardingEntity> onBoardingEntites = const [
-    OnBoardingEntity(
-      numberOfStep: 'Step One',
-      image: Assets.imagesOnboarding2,
-      textDesc: 'Accurate Health Insights, Just For You',
-    ),
-    OnBoardingEntity(
-      numberOfStep: 'Step Two',
-      image: Assets.imagesOnboarding3,
-      textDesc: 'AI-Driven Results, Personalized Care',
-    ),
-    OnBoardingEntity(
-      numberOfStep: 'Step Three',
-      image: Assets.imagesOnboarding4,
-      textDesc: 'Connect, Share, And Grow Together.',
-    ),
-  ];
-
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final List<OnBoardingEntity> onBoardingEntites = [
+      OnBoardingEntity(
+        numberOfStep: S.of(context).stepOne,
+        image: Assets.imagesOnboarding2,
+        textDesc: S.of(context).aiResults,
+      ),
+      OnBoardingEntity(
+        numberOfStep: S.of(context).stepTwo,
+        image: Assets.imagesOnboarding3,
+        textDesc: S.of(context).healthInsights,
+      ),
+      OnBoardingEntity(
+        numberOfStep: S.of(context).stepThree,
+        image: Assets.imagesOnboarding4,
+        textDesc: S.of(context).connectGrow,
+      ),
+    ];
     return Stack(
       children: [
         PageView.builder(

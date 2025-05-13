@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../routes/routes.dart';
 import '../theme/app_colors.dart';
@@ -12,8 +13,8 @@ class DontHaveAnAccount extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          'Don’t have an account?',
+        Text(
+          S.of(context).noAccount,
           style: AppStyles.font11Regular,
         ),
         const SizedBox(
@@ -24,7 +25,7 @@ class DontHaveAnAccount extends StatelessWidget {
             Navigator.pushNamed(context, Routes.signupView);
           },
           child: Text(
-            'Create one',
+            S.of(context).createOne,
             style: AppStyles.font11Regular.copyWith(
               color: AppColors.primaryColor,
             ),

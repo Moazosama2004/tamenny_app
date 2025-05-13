@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
+import 'package:tamenny_app/tamenny_app.dart';
 
 void showLanguagePicker(BuildContext context,
     {required String currentLanguage}) {
+  final localeNotifier = Provider.of<LocaleNotifier>(context, listen: false);
+
   showModalBottomSheet(
     context: context,
     shape: const RoundedRectangleBorder(
@@ -36,7 +40,9 @@ void showLanguagePicker(BuildContext context,
               label: 'English',
               isSelected: currentLanguage == 'en',
               onTap: () {
-                // setLanguage('en');
+                if (currentLanguage != 'en') {
+                  localeNotifier.setLocale(Locale('en')); // Switch to English
+                }
                 Navigator.pop(context);
               },
             ),
@@ -46,7 +52,9 @@ void showLanguagePicker(BuildContext context,
               label: 'العربية',
               isSelected: currentLanguage == 'ar',
               onTap: () {
-                // setLanguage('ar');
+                if (currentLanguage != 'ar') {
+                  localeNotifier.setLocale(Locale('ar')); // Switch to Arabic
+                }
                 Navigator.pop(context);
               },
             ),

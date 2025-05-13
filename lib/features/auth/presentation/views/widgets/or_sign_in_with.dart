@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/theme/app_styles.dart';
 
@@ -18,7 +19,7 @@ class OrSignInWith extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Text(
-            'Or sign in with',
+            S.of(context).orSignInWith,
             style: AppStyles.font12Regular
                 .copyWith(color: const Color(0xff9E9E9E)),
           ),
