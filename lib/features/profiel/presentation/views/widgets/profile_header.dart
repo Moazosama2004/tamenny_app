@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 
@@ -10,12 +12,38 @@ class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final avatarUrl =
+        context.watch<UserCubit>().currentUser?.userAvatarUrl ?? '';
+
     return Row(
       children: [
         CircleAvatar(
           radius: 32,
-          backgroundImage: NetworkImage(
-              context.watch<UserCubit>().currentUser!.userAvatarUrl),
+          backgroundColor: Colors.transparent,
+          child: ClipOval(
+            child: CachedNetworkImage(
+              imageUrl: avatarUrl,
+              width: 64,
+              height: 64,
+              fit: BoxFit.cover,
+              placeholder: (context, url) => Skeletonizer(
+                enabled: true,
+                child: Container(
+                  width: 64,
+                  height: 64,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+              errorWidget: (context, url, error) => const Icon(
+                Icons.person,
+                size: 32,
+                color: Colors.grey,
+              ),
+            ),
+          ),
         ),
         const SizedBox(width: 16),
         Column(

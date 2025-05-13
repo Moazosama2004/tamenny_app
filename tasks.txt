@@ -4,3 +4,4 @@
 4 - display image in add comment view [done]
 5 - save dark theme in sharedPrefs [done]
 6 - user can change password now [done]
+7 - edit behaviour for user images in app [done]

@@ -1,10 +1,12 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
@@ -72,50 +74,91 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                             onTap: () {
                               pickImage();
                             },
-                            child: Skeletonizer(
-                              enabled: state is EditProfileLoading,
-                              child: Stack(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Colors.white,
-                                    radius: 65,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(999),
-                                      child: selectedImage == null
-                                          ? Image.network(
-                                              getIt<UserCubit>()
-                                                  .currentUser!
-                                                  .userAvatarUrl,
-                                              height: 120,
-                                              width: 120,
-                                              fit: BoxFit.cover,
-                                            )
-                                          : (Image.file(
-                                              File(selectedImage!.path),
-                                              height: 120,
-                                              width: 120,
-                                              fit: BoxFit.cover,
-                                            )),
-                                    ),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                // Circle Avatar to hold the profile image
+                                CircleAvatar(
+                                  radius: 65,
+                                  backgroundColor: Colors.white,
+                                  child: ClipOval(
+                                    child: selectedImage == null
+                                        ? CachedNetworkImage(
+                                            imageUrl: getIt<UserCubit>()
+                                                .currentUser!
+                                                .userAvatarUrl,
+                                            width: 130,
+                                            height: 130,
+                                            fit: BoxFit.cover,
+                                            // Placeholder: Shimmer effect to indicate loading
+                                            placeholder: (context, url) =>
+                                                Shimmer.fromColors(
+                                              baseColor: Colors.grey[300]!,
+                                              highlightColor: Colors.grey[100]!,
+                                              child: Container(
+                                                width: 130,
+                                                height: 130,
+                                                decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color: Colors.grey[300],
+                                                ),
+                                              ),
+                                            ),
+                                            // Error widget if image fails to load
+                                            errorWidget:
+                                                (context, url, error) =>
+                                                    Container(
+                                              width: 130,
+                                              height: 130,
+                                              decoration: const BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: Colors.grey,
+                                              ),
+                                              child: const Icon(Icons.person,
+                                                  size: 60,
+                                                  color: Colors.white),
+                                            ),
+                                          )
+                                        : Image.file(
+                                            File(selectedImage!.path),
+                                            width: 130,
+                                            height: 130,
+                                            fit: BoxFit.cover,
+                                          ),
                                   ),
-                                  Positioned(
-                                    bottom: 0,
-                                    right: 0,
+                                ),
+                                // Positioned edit icon
+                                Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      // Implement image pick/upload logic here
+                                    },
                                     child: Container(
-                                      width: 30,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                        color: const Color(0xffF4F8FF),
-                                        borderRadius: BorderRadius.circular(99),
+                                      width: 36,
+                                      height: 36,
+                                      decoration: const BoxDecoration(
+                                        color: Color(0xffF4F8FF),
+                                        shape: BoxShape.circle,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black12,
+                                            blurRadius: 4,
+                                            offset: Offset(0, 2),
+                                          ),
+                                        ],
                                       ),
                                       padding: const EdgeInsets.all(8),
                                       child: SvgPicture.asset(
                                         Assets.imagesPenEditIcon,
+                                        width: 20,
+                                        height: 20,
                                       ),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ],

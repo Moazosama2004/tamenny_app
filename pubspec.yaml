@@ -62,6 +62,7 @@ dependencies:
   quickalert: ^1.1.0
   ruut_flutter: ^0.0.2+patch
   shared_preferences: ^2.3.3
+  shimmer: ^3.0.0
   skeletonizer: ^1.4.3
   smooth_page_indicator: ^1.2.0+3
   supabase_flutter: ^2.8.4

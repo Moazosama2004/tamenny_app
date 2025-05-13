@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/home/presentation/views/home_view.dart';
@@ -41,6 +43,9 @@ class BottomNavBar extends StatelessWidget {
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
+    final avatarUrl =
+        context.watch<UserCubit>().currentUser?.userAvatarUrl ?? '';
+
     return [
       PersistentBottomNavBarItem(
         icon: SvgPicture.asset(Assets.imagesHomeActiveIcon),
@@ -79,18 +84,37 @@ class BottomNavBar extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Opacity(
           opacity: 0.6,
-          child: CircleAvatar(
-            radius: 12,
-            backgroundImage: NetworkImage(
-                context.watch<UserCubit>().currentUser!.userAvatarUrl),
-          ),
+          child: _buildProfileAvatar(avatarUrl),
         ),
-        inactiveIcon: CircleAvatar(
-          radius: 12,
-          backgroundImage: NetworkImage(
-              context.watch<UserCubit>().currentUser!.userAvatarUrl),
-        ),
+        inactiveIcon: _buildProfileAvatar(avatarUrl),
       ),
     ];
   }
+}
+
+Widget _buildProfileAvatar(String avatarUrl) {
+  return CircleAvatar(
+    radius: 12,
+    backgroundColor: Colors.transparent,
+    child: ClipOval(
+      child: CachedNetworkImage(
+        imageUrl: avatarUrl,
+        fit: BoxFit.cover,
+        width: 24,
+        height: 24,
+        placeholder: (context, url) => Skeletonizer(
+          enabled: true,
+          child: Container(
+            width: 24,
+            height: 24,
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+        errorWidget: (context, url, error) => const Icon(Icons.error, size: 16),
+      ),
+    ),
+  );
 }
