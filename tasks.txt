@@ -1,2 +1,3 @@
 1 - edit marker in map feature [done]
 2 - user can like post in community [done]
+3 - edit in comments below posts in post details view

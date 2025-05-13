@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
+import 'package:tamenny_app/core/theme/app_styles.dart';
+import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
+import 'package:tamenny_app/features/community/presentation/views/functions/get_time_age.dart';
+import 'package:tamenny_app/features/community/presentation/views/widgets/post_header.dart';
 
 class CommentWidget extends StatelessWidget {
   final CommentEntity comment;
@@ -11,56 +18,106 @@ class CommentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String currentUserId = context.read<UserCubit>().currentUser!.uId;
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [Color(0xFFF0F4F8), Color(0xFFFFFFFF)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(
+          color: const Color(0xffEEEEEE),
         ),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.15),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            radius: 20,
-            backgroundImage: NetworkImage(comment.avatarUrl!),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  comment.username,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: Color(0xFF333333),
-                  ),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (_) => PostDetailsView(post: post),
+                //   ),
+                // );
+              },
+              child: Container(
+                color: Colors.transparent,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 16,
+                              backgroundImage: NetworkImage(comment.avatarUrl!),
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              comment.username,
+                              style: AppStyles.font13Bold,
+                            ),
+                            const SizedBox(width: 5),
+                            // Text(
+                            //   getTimeAgo(comment.createdAt),
+                            //   style: AppStyles.font13Bold,
+                            // ),
+                          ],
+                        ),
+                        SvgPicture.asset(Assets.imagesMoreOptionIcon)
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      comment.comment,
+                      style: AppStyles.font13Regular
+                          .copyWith(color: const Color(0xff676767)),
+                      textAlign: TextAlign.start,
+                    ),
+                    const SizedBox(height: 18),
+                    // if (comment.imageUrl!.isNotEmpty)
+                    //   Padding(
+                    //     padding: const EdgeInsets.only(top: 12.0),
+                    //     child: SizedBox(
+                    //       width: MediaQuery.of(context).size.width,
+                    //       child: AspectRatio(
+                    //         aspectRatio: 3 / 2,
+                    //         child: Image.network(
+                    //           post.imageUrl!,
+                    //           fit: BoxFit.cover,
+                    //         ),
+                    //       ),
+                    //     ),
+                    //   ),
+                    const SizedBox(height: 18),
+                  ],
                 ),
-                const SizedBox(height: 6),
-                Text(
-                  comment.comment,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Color(0xFF555555),
-                  ),
-                ),
-              ],
+              ),
             ),
-          ),
-        ],
+            // PostActions(
+            //   commentsCount: post.commentsCount,
+            //   likesCount: post.likedBy.length,
+            //   sharesCount: post.sharesCount,
+            //   isLiked: post.likedBy.contains(currentUserId),
+            //   onLikePressed: () async {
+            //     // إضافة الـ Like أو إزالته
+            //     await context
+            //         .read<CommunityCubit>()
+            //         .likePost(post: post, userId: currentUserId);
+
+            //     // بعد إضافة الـ Like في الـ Backend، نقوم بتحديث الـ UI مباشرة
+            //     context.read<CommunityCubit>().toggleLikeInPost(
+            //           postId: post.postId,
+            //           userId: currentUserId,
+            //         );
+            //   },
+            //   post: post,
+            // ),
+          ],
+        ),
       ),
     );
   }
