@@ -43,6 +43,7 @@ class AddPostCubit extends Cubit<AddPostState> {
         sharesCount: 0,
         createdAt: Timestamp.now(),
         imageUrl: imageUrl,
+        likedBy: [],
       ));
 
       emit(AddPostSuccess());

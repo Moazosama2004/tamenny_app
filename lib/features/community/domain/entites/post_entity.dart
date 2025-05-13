@@ -12,6 +12,7 @@ class PostEntity {
   final int likesCount;
   final int sharesCount;
   final List<CommentEntity>? comments;
+  final List<String> likedBy;
 
   PostEntity({
     required this.postId,
@@ -22,7 +23,36 @@ class PostEntity {
     required this.commentsCount,
     required this.likesCount,
     required this.sharesCount,
+    required this.likedBy,
     this.comments,
     this.imageUrl,
   });
+
+  PostEntity copyWith({
+    String? postId,
+    String? userAvatarUrl,
+    String? username,
+    Timestamp? createdAt,
+    String? postText,
+    String? imageUrl,
+    int? commentsCount,
+    int? likesCount,
+    int? sharesCount,
+    List<CommentEntity>? comments,
+    List<String>? likedBy,
+  }) {
+    return PostEntity(
+      postId: postId ?? this.postId,
+      userAvatarUrl: userAvatarUrl ?? this.userAvatarUrl,
+      username: username ?? this.username,
+      createdAt: createdAt ?? this.createdAt,
+      postText: postText ?? this.postText,
+      imageUrl: imageUrl ?? this.imageUrl,
+      commentsCount: commentsCount ?? this.commentsCount,
+      likesCount: likesCount ?? this.likesCount,
+      sharesCount: sharesCount ?? this.sharesCount,
+      comments: comments ?? this.comments,
+      likedBy: likedBy ?? this.likedBy,
+    );
+  }
 }

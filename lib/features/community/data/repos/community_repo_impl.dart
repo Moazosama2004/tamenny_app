@@ -60,4 +60,31 @@ class CommunityRepoImpl implements CommunityRepo {
       return left(ServerFailure(errMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> addLike(
+      {required PostEntity post, required String userId}) async {
+    try {
+      final postRef =
+          FirebaseFirestore.instance.collection('posts').doc(post.postId);
+
+      final alreadyLiked = post.likedBy.contains(userId);
+
+      if (alreadyLiked) {
+        await postRef.update({
+          'likedBy': FieldValue.arrayRemove([userId]),
+          'likesCount': FieldValue.increment(-1),
+        });
+      } else {
+        await postRef.update({
+          'likedBy': FieldValue.arrayUnion([userId]),
+          'likesCount': FieldValue.increment(1),
+        });
+      }
+
+      return Right(null);
+    } catch (e) {
+      return Left(ServerFailure(errMessage: eitherM.toString()));
+    }
+  }
 }

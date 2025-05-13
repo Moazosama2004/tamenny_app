@@ -1,2 +1,2 @@
 1 - edit marker in map feature [done]
-2 - user can like post in community
+2 - user can like post in community [done]

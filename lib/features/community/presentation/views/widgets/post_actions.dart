@@ -30,6 +30,7 @@ class PostActions extends StatelessWidget {
           child: PostAction(
             counts: likesCount,
             iconPath: Assets.imagesLoveIcon,
+            isLiked: isLiked, // 👈 مرر القيمة هنا
             onTap: onLikePressed,
           ),
         ),

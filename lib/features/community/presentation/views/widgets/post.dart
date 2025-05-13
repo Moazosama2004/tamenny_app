@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
+import 'package:tamenny_app/features/community/presentation/manager/community_cubit/community_cubit.dart';
 import 'package:tamenny_app/features/community/presentation/views/post_details_view.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_actions.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post_header.dart';
@@ -11,6 +14,7 @@ class Post extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String currentUserId = context.read<UserCubit>().currentUser!.uId;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18),
@@ -68,12 +72,22 @@ class Post extends StatelessWidget {
             ),
             PostActions(
               commentsCount: post.commentsCount,
-              likesCount: post.likesCount,
+              likesCount: post.likedBy.length,
               sharesCount: post.sharesCount,
-              isLiked: false,
+              isLiked: post.likedBy.contains(currentUserId),
+              onLikePressed: () async {
+                // إضافة الـ Like أو إزالته
+                await context
+                    .read<CommunityCubit>()
+                    .likePost(post: post, userId: currentUserId);
+
+                // بعد إضافة الـ Like في الـ Backend، نقوم بتحديث الـ UI مباشرة
+                context.read<CommunityCubit>().toggleLikeInPost(
+                      postId: post.postId,
+                      userId: currentUserId,
+                    );
+              },
               post: post,
-              // isLiked: isLiked,
-              // onLikePressed: () => communityCubit.toggleLike(post.postId),
             ),
           ],
         ),

@@ -76,7 +76,8 @@ class PostModel {
         sharesCount: sharesCount,
         createdAt: createdAt,
         imageUrl: imageUrl,
-        comments: comments);
+        comments: comments,
+        likedBy: likedBy);
   }
 
   factory PostModel.fromEntity(PostEntity entity) {

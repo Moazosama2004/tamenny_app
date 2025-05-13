@@ -8,4 +8,8 @@ abstract class CommunityRepo {
   Future<Either<Failure, void>> addPost({required PostEntity post});
   Future<Either<Failure, void>> addComment(
       {required CommentEntity comment, required PostEntity post});
+  Future<Either<Failure, void>> addLike({
+    required PostEntity post,
+    required String userId,
+  });
 }

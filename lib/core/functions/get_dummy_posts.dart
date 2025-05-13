@@ -11,8 +11,10 @@ final List<PostEntity> dummyPosts = [
       likesCount: 100,
       sharesCount: 5,
       createdAt: Timestamp.now(),
-      imageUrl: ''),
+      imageUrl: '',
+      likedBy: ['user1']),
   PostEntity(
+      likedBy: ['user1'],
       postId: '124131r32r',
       postText: 'This is a sample post text.',
       username: 'john_doe',
@@ -31,7 +33,8 @@ final List<PostEntity> dummyPosts = [
       likesCount: 100,
       sharesCount: 5,
       createdAt: Timestamp.now(),
-      imageUrl: ''),
+      imageUrl: '',
+      likedBy: ['user1']),
   PostEntity(
       postId: '124131r32r',
       postText: 'This is a sample post text.',
@@ -41,7 +44,8 @@ final List<PostEntity> dummyPosts = [
       likesCount: 100,
       sharesCount: 5,
       createdAt: Timestamp.now(),
-      imageUrl: ''),
+      imageUrl: '',
+      likedBy: ['user1']),
   PostEntity(
       postId: '124131r32r',
       postText: 'This is a sample post text.',
@@ -51,7 +55,8 @@ final List<PostEntity> dummyPosts = [
       likesCount: 100,
       sharesCount: 5,
       createdAt: Timestamp.now(),
-      imageUrl: ''),
+      imageUrl: '',
+      likedBy: ['user1']),
   PostEntity(
       postId: '124131r32r',
       postText: 'This is a sample post text.',
@@ -61,5 +66,6 @@ final List<PostEntity> dummyPosts = [
       likesCount: 100,
       sharesCount: 5,
       createdAt: Timestamp.now(),
-      imageUrl: '')
+      imageUrl: '',
+      likedBy: ['user1'])
 ];
