@@ -5,7 +5,7 @@ import 'package:tamenny_app/core/functions/validator.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/features/auth/presentation/manager/signin_cubit/signin_cubit.dart';
 import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
-import 'package:tamenny_app/features/auth/presentation/views/widgets/remember_me_and_forgot_password.dart';
+import 'package:tamenny_app/features/auth/presentation/views/widgets/forgot_password_widget.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
@@ -78,7 +78,7 @@ class _SigninFormSectionState extends State<SigninFormSection> {
                 const SizedBox(
                   height: 16,
                 ),
-                const RememberMeWidgetAndForgotPassword(),
+                const ForgotPasswordWidget(),
                 const SizedBox(
                   height: 32,
                 ),
@@ -104,21 +104,17 @@ class _SigninFormSectionState extends State<SigninFormSection> {
                         },
                       ),
                 const SizedBox(
-                  height: 46,
+                  height: 32,
+                ),
+                const DontHaveAnAccount(),
+                const SizedBox(
+                  height: 32,
                 ),
                 const OrSignInWith(),
                 const SizedBox(
                   height: 32,
                 ),
                 const SocialMediaMethods(),
-                const SizedBox(
-                  height: 32,
-                ),
-                const TermsAndConditionsAndPrivacyPolicy(),
-                const SizedBox(
-                  height: 24,
-                ),
-                const DontHaveAnAccount(),
                 const SizedBox(
                   height: 24,
                 ),

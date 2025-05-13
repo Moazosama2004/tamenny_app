@@ -24,7 +24,7 @@ class DontHaveAnAccount extends StatelessWidget {
             Navigator.pushNamed(context, Routes.signupView);
           },
           child: Text(
-            'Sign Up.',
+            'Create one',
             style: AppStyles.font11Regular.copyWith(
               color: AppColors.primaryColor,
             ),
