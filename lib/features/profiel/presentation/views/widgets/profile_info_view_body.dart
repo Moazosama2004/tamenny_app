@@ -177,34 +177,6 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                         ),
                       ),
                       const SizedBox(
-                        height: 16,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Password',
-                          hintStyle: AppStyles.font14Medium.copyWith(
-                            color: const Color(0xffC2C2C2),
-                          ),
-                          fillColor: AppColors.grayColor,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            borderSide: const BorderSide(
-                                color: AppColors.deepGrayColor),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            borderSide: const BorderSide(
-                                color: AppColors.deepGrayColor),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(16),
-                            borderSide: const BorderSide(
-                                color: AppColors.deepGrayColor),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
                         height: 24,
                       ),
                       Text(

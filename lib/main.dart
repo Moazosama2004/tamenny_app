@@ -31,9 +31,11 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserModelAdapter());
   await setupGetIt();
+  final themeNotifier = ThemeNotifier();
+  await themeNotifier.loadThemeFromPrefs();
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => ThemeNotifier(),
+    ChangeNotifierProvider.value(
+      value: themeNotifier,
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
@@ -54,6 +56,7 @@ void main() async {
 }
 
 class ThemeNotifier extends ChangeNotifier {
+  static const String _themeKey = 'isDarkMode';
   bool _isDark = false;
 
   bool get isDark => _isDark;
@@ -61,14 +64,29 @@ class ThemeNotifier extends ChangeNotifier {
   ThemeData get currentTheme =>
       _isDark ? darkTheme : ThemeData(scaffoldBackgroundColor: Colors.white);
 
-  void toggleTheme() {
+  ThemeNotifier() {
+    loadThemeFromPrefs(); // Load saved theme on init
+  }
+
+  void toggleTheme() async {
     _isDark = !_isDark;
     notifyListeners();
+    _saveThemeToPrefs();
   }
 
   void setDarkMode(bool value) {
     _isDark = value;
     notifyListeners();
+    _saveThemeToPrefs();
+  }
+
+  Future<void> loadThemeFromPrefs() async {
+    _isDark = CacheHelper.getBool(key: _themeKey) ?? false;
+    notifyListeners();
+  }
+
+  Future<void> _saveThemeToPrefs() async {
+    await CacheHelper.set(key: _themeKey, value: _isDark);
   }
 }
 
