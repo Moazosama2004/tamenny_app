@@ -11,7 +11,6 @@ abstract class Routes {
   static const String latestMedicalNewsView = 'latestMedicalNewsView';
   static const String scanView = 'scanView';
   static const String uploadFileView = 'uploadFileView';
-  static const String processingScreen = 'processingScreen';
   static const String completedScreen = 'completedScreen';
   static const String scanAnalysisResultsScreen = 'ScanAnalysisResults';
 

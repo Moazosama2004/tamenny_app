@@ -1,39 +1,57 @@
 import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 
 class DiagnosisResultModel {
-  final String classification;
-  final double confidence;
+  final String diagnosisId;
+  final String status;
+  final DateTime scannedAt;
+  final String scanImageUrl;
+  final String diagnosisSummary;
 
   DiagnosisResultModel({
-    required this.classification,
-    required this.confidence,
+    required this.diagnosisId,
+    required this.status,
+    required this.scannedAt,
+    required this.scanImageUrl,
+    required this.diagnosisSummary,
   });
 
   DiagnosisResultEntity toEntity() {
     return DiagnosisResultEntity(
-      classification: classification,
-      confidence: confidence,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'classification': classification,
-      'confidence': confidence,
-    };
-  }
-
-  factory DiagnosisResultModel.fromJson(Map<String, dynamic> json) {
-    return DiagnosisResultModel(
-      classification: json['classification'],
-      confidence: json['confidence'].toDouble(),
+      diagnosisId: diagnosisId,
+      status: status,
+      scannedAt: scannedAt,
+      scanImageUrl: scanImageUrl,
+      diagnosisSummary: diagnosisSummary,
     );
   }
 
   factory DiagnosisResultModel.fromEntity(DiagnosisResultEntity entity) {
     return DiagnosisResultModel(
-      classification: entity.classification,
-      confidence: entity.confidence,
+      diagnosisId: entity.diagnosisId,
+      status: entity.status,
+      scannedAt: entity.scannedAt,
+      scanImageUrl: entity.scanImageUrl,
+      diagnosisSummary: entity.diagnosisSummary,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'diagnosisId': diagnosisId,
+      'status': status,
+      'scannedAt': scannedAt.toIso8601String(),
+      'scanImageUrl': scanImageUrl,
+      'resultDescription': diagnosisSummary,
+    };
+  }
+
+  factory DiagnosisResultModel.fromJson(Map<String, dynamic> json) {
+    return DiagnosisResultModel(
+      diagnosisId: json['diagnosisId'],
+      status: json['status'],
+      scannedAt: DateTime.parse(json['scannedAt']),
+      scanImageUrl: json['scanImageUrl'],
+      diagnosisSummary: json['diagnosisSummary'],
     );
   }
 }

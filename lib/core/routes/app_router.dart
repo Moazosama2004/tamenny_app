@@ -10,6 +10,7 @@ import 'package:tamenny_app/features/onboarding/presentation/views/onboarding_vi
 import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_change_password_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_privacy_center_app_view.dart';
+import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 import 'package:tamenny_app/features/scan/domain/entites/scan_details_entity.dart';
 
 import '../../features/auth/presentation/views/forgot_password_view.dart';
@@ -25,7 +26,6 @@ import '../../features/profiel/presentation/views/profile_notification_view.dart
 
 import '../../features/splash/presentation/views/splash_view.dart';
 import '../../features/scan/presentation/views/completed_view.dart';
-import '../../features/scan/presentation/views/processing_view.dart';
 import '../../features/scan/presentation/views/scan_analysis_results.dart';
 import '../../features/scan/presentation/views/scan_view.dart';
 import '../../features/scan/presentation/views/upload_file_view.dart';
@@ -67,10 +67,6 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const BottomNavBar(),
         );
-      case Routes.processingScreen:
-        return MaterialPageRoute(
-          builder: (context) => const ProcessingScreen(),
-        );
       case Routes.uploadFileView:
         return MaterialPageRoute(
           builder: (context) => const UploadFileView(),
@@ -82,11 +78,15 @@ class AppRouter {
         );
       case Routes.completedScreen:
         return MaterialPageRoute(
-          builder: (context) => const CompletedView(),
+          builder: (context) => CompletedView(
+            diagnosisResultEntity: settings.arguments as DiagnosisResultEntity,
+          ),
         );
       case Routes.scanAnalysisResultsScreen:
         return MaterialPageRoute(
-          builder: (context) => const ScanAnalysisResults(),
+          builder: (context) => ScanAnalysisResults(
+            diagnosisResultEntity: settings.arguments as DiagnosisResultEntity,
+          ),
         );
       case Routes.profileNotificationView:
         return MaterialPageRoute(

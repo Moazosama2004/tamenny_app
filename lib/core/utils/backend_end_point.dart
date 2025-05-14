@@ -10,4 +10,5 @@ class BackendEndPoint {
   static const getDoctors = 'doctors';
   static const addDiagnosis = 'users';
   static const addLike = 'posts';
+  static const addDiagnosisImage = 'diagnosis';
 }

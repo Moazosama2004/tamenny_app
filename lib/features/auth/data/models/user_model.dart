@@ -85,8 +85,8 @@ class UserModel extends HiveObject {
       "name": name,
       "email": email,
       "uId": uId,
-      'userAvatarUrl': userAvatarUrl,
-      'diagnoses': diagnoses?.map((x) => x.toJson()).toList(),
+      "userAvatarUrl": userAvatarUrl,
+      "diagnoses": diagnoses?.map((x) => x.toJson()).toList() ?? [],
     };
   }
 

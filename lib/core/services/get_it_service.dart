@@ -64,6 +64,7 @@ Future<void> setupGetIt() async {
     DiagnosisRepoImpl(
       getIt<AIDiagnosisService>(),
       getIt<DatabaseService>(),
+      getIt<StorageService>(),
     ),
   );
 
