@@ -7,7 +7,6 @@ import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
 import 'package:tamenny_app/features/scan/presentation/manager/cubit/dianosis_cubit.dart';
 import 'package:tamenny_app/features/scan/presentation/views/widgets/scan_view_body.dart';
 
-
 class ScanView extends StatelessWidget {
   const ScanView({
     super.key,
@@ -17,15 +16,10 @@ class ScanView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DiagnosisCubit(
-        getIt<DiagnosisRepo>(),
-      ),
-      child: Scaffold(
-        appBar: customAppBar(context, title: scanDetailsEntity.analysisTitle),
-        body: ScanViewBody(
-          scan: scanDetailsEntity,
-        ),
+    return Scaffold(
+      appBar: customAppBar(context, title: scanDetailsEntity.analysisTitle),
+      body: ScanViewBody(
+        scan: scanDetailsEntity,
       ),
     );
   }

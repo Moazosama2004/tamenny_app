@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
+import 'package:image_picker/image_picker.dart';
 
 import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
@@ -13,14 +14,14 @@ class DiagnosisCubit extends Cubit<DiagnosisState> {
 
   late DiagnosisResultEntity diagnosisResultEntity;
 
-  startDiagnosis({required File image}) async {
+  startDiagnosis({required XFile image}) async {
     emit(DiagnosisLoading());
 
     var result = await diagnosisRepo.startDiagnosis(image: image);
     result.fold((f) => emit(DiagnosisFailure(errMessage: f.errMessage)),
         (data) {
       diagnosisResultEntity = data;
-      emit(DiagnosisSuccess());
+      emit(DiagnosisSuccess(diagnosisResultEntity: data));
     });
   }
 }

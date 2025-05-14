@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 import 'package:tamenny_app/features/scan/presentation/manager/cubit/dianosis_cubit.dart';
 
 import '../../../../core/routes/routes.dart';
@@ -9,7 +11,8 @@ import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_app_button.dart';
 
 class ScanAnalysisResults extends StatelessWidget {
-  const ScanAnalysisResults({super.key});
+  const ScanAnalysisResults({super.key, required this.diagnosisResultEntity});
+  final DiagnosisResultEntity diagnosisResultEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +23,16 @@ class ScanAnalysisResults extends StatelessWidget {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           children: [
-            Image.asset(Assets.imagesScanResult),
+            CachedNetworkImage(imageUrl: diagnosisResultEntity.scanImageUrl),
             const SizedBox(height: 20),
 
             // Diagnosis Summary
             _sectionTitle('Test'),
-            _sectionBody(
-                'result => ${context.read<DiagnosisCubit>().diagnosisResultEntity.classification} \n conf => ${context.read<DiagnosisCubit>().diagnosisResultEntity.confidence} '),
+            _sectionBody('result => ${diagnosisResultEntity.status}'),
             _sectionTitle('Diagnosis Summary'),
             _sectionBody(
-                'Diagnosed Condition: Potential Early-Stage Chronic Obstructive Pulmonary Disease (COPD)'),
+              diagnosisResultEntity.diagnosisSummary,
+            ),
 
             // Recommended Steps
             _sectionTitle('Recommended Next Steps'),
@@ -38,18 +41,19 @@ class ScanAnalysisResults extends StatelessWidget {
 
             // Buttons
             CustomAppButton(
-              text: 'Share Results in Circle',
-              onTap: () =>
-                  Navigator.pushNamed(context, Routes.processingScreen),
-            ),
+                text: 'Share Results in Circle',
+                onTap: () => Navigator.pushNamed(
+                    context, Routes.scanAnalysisResultsScreen)),
             const SizedBox(height: 12),
             CustomAppButton(
-              text: 'Upload Another Scan',
-              bgColor: const Color(0xffEFF1F5),
-              textColor: Colors.black,
-              onTap: () =>
-                  Navigator.pushNamed(context, Routes.processingScreen),
-            ),
+                text: 'Upload Another Scan',
+                bgColor: const Color(0xffEFF1F5),
+                textColor: Colors.black,
+                onTap: () async {
+                  await Navigator.of(context, rootNavigator: true)
+                      .pushNamedAndRemoveUntil(
+                          Routes.bottomNavBarView, (route) => false);
+                }),
             const SizedBox(height: 30),
 
             // Help

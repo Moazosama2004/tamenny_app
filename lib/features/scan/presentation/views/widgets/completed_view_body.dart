@@ -3,9 +3,11 @@ import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
+import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 
 class CompletedViewBody extends StatelessWidget {
-  const CompletedViewBody({super.key});
+  const CompletedViewBody({super.key, required this.diagnosisResultEntity});
+  final DiagnosisResultEntity diagnosisResultEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,8 @@ class CompletedViewBody extends StatelessWidget {
             text: 'Show Results',
             bgColor: const Color(0xffD3A9FF).withOpacity(0.25),
             onTap: () {
-              Navigator.pushNamed(context, Routes.scanAnalysisResultsScreen);
+              Navigator.pushNamed(context, Routes.scanAnalysisResultsScreen,
+                  arguments: diagnosisResultEntity);
             },
           ),
           const SizedBox(
