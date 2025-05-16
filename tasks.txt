@@ -10,6 +10,13 @@
 ======= 14 May ======= 
 1 - user can make scan [Done]
 2 - add scan for user [Done]
-3 - display it and form it for enhance ux
+3 - display it and form it for enhance ux [Done]
 4 - display latest scans 
 5 - add localization for home feature
+
+======= 15 May ======= 
+free
+
+======= 16 May ======= 
+1 - display latest scans 
+2 - add localization for features
