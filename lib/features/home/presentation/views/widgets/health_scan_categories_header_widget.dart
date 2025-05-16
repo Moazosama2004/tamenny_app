@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 import '../../../../../core/theme/app_styles.dart';
 
 class HealthScanCategoriesHeaderWidget extends StatelessWidget {
@@ -6,11 +7,11 @@ class HealthScanCategoriesHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Health Scan Categories',
+          S.of(context).healthScanCategories,
           style: AppStyles.font18SemiBold,
         ),
       ],

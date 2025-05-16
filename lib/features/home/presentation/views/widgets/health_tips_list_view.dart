@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/features/home/domain/entites/health_tip_entity.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/health_tips_item.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class HealthTipsListView extends StatelessWidget {
   const HealthTipsListView({
@@ -9,6 +10,20 @@ class HealthTipsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<HealthTipEntity> healthTips = [
+      HealthTipEntity(
+          tip: S.of(context).drinkWaterDaily, icon: Icons.water_drop),
+      HealthTipEntity(tip: S.of(context).getEnoughSleep, icon: Icons.bedtime),
+      HealthTipEntity(
+          tip: S.of(context).takeShortWalks, icon: Icons.directions_walk),
+      HealthTipEntity(
+          tip: S.of(context).eatFruitsVeggies, icon: Icons.emoji_nature),
+      HealthTipEntity(
+          tip: S.of(context).stretchDaily, icon: Icons.self_improvement),
+      HealthTipEntity(
+          tip: S.of(context).limitScreenTime, icon: Icons.visibility_off),
+    ];
+
     return SizedBox(
       height: 180,
       child: ListView.builder(
@@ -24,24 +39,3 @@ class HealthTipsListView extends StatelessWidget {
     );
   }
 }
-
-List<HealthTipEntity> healthTips = [
-  HealthTipEntity(
-      tip: "Drink plenty of water daily for better health.",
-      icon: Icons.water_drop),
-  HealthTipEntity(
-      tip: "Get 7–8 hours of sleep each night to stay energized.",
-      icon: Icons.bedtime),
-  HealthTipEntity(
-      tip: "Take short walks to boost your mood and circulation.",
-      icon: Icons.directions_walk),
-  HealthTipEntity(
-      tip: "Eat more fruits and veggies for a stronger immune system.",
-      icon: Icons.emoji_nature),
-  HealthTipEntity(
-      tip: "Stretch daily to improve flexibility and reduce stress.",
-      icon: Icons.self_improvement),
-  HealthTipEntity(
-      tip: "Limit screen time to protect your eyes and mental health.",
-      icon: Icons.visibility_off),
-];

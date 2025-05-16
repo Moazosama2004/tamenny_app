@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_styles.dart';
@@ -46,11 +47,11 @@ class HomeCustomAppBar extends StatelessWidget {
         ),
       ),
       title: Text(
-        'Hi ${getIt<UserCubit>().currentUser!.name}',
+        '${S.of(context).hi} ${getIt<UserCubit>().currentUser!.name}',
         style: AppStyles.font18Bold.copyWith(),
       ),
       subtitle: Text(
-        'How are you Today?',
+        S.of(context).howAreYouToday,
         style: AppStyles.font11Regular.copyWith(
           color: const Color(0xff616161),
         ),

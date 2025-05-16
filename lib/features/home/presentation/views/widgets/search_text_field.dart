@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class SearchTextField extends StatelessWidget {
   const SearchTextField({super.key});
@@ -31,7 +32,7 @@ class SearchTextField extends StatelessWidget {
             width: 20,
             child: Center(child: SvgPicture.asset(Assets.imagesFilterIcon)),
           ),
-          hintText: 'Search',
+          hintText: S.of(context).search,
           hintStyle: AppStyles.font12Regular.copyWith(
             color: const Color(0xff949D9E),
           ),

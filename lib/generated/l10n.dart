@@ -560,6 +560,206 @@ class S {
     );
   }
 
+  /// `Hi`
+  String get hi {
+    return Intl.message(
+      'Hi',
+      name: 'hi',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How are you Today?`
+  String get howAreYouToday {
+    return Intl.message(
+      'How are you Today?',
+      name: 'howAreYouToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Health Scan Categories`
+  String get healthScanCategories {
+    return Intl.message(
+      'Health Scan Categories',
+      name: 'healthScanCategories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read more`
+  String get readMore {
+    return Intl.message(
+      'Read more',
+      name: 'readMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Health Tips for You`
+  String get healthTipsForYou {
+    return Intl.message(
+      'Health Tips for You',
+      name: 'healthTipsForYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Drink plenty of water daily for better health.`
+  String get drinkWaterDaily {
+    return Intl.message(
+      'Drink plenty of water daily for better health.',
+      name: 'drinkWaterDaily',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get 7–8 hours of sleep each night to stay energized.`
+  String get getEnoughSleep {
+    return Intl.message(
+      'Get 7–8 hours of sleep each night to stay energized.',
+      name: 'getEnoughSleep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take short walks to boost your mood and circulation.`
+  String get takeShortWalks {
+    return Intl.message(
+      'Take short walks to boost your mood and circulation.',
+      name: 'takeShortWalks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Eat more fruits and veggies for a stronger immune system.`
+  String get eatFruitsVeggies {
+    return Intl.message(
+      'Eat more fruits and veggies for a stronger immune system.',
+      name: 'eatFruitsVeggies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stretch daily to improve flexibility and reduce stress.`
+  String get stretchDaily {
+    return Intl.message(
+      'Stretch daily to improve flexibility and reduce stress.',
+      name: 'stretchDaily',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest Medical News`
+  String get latestMedicalNews {
+    return Intl.message(
+      'Latest Medical News',
+      name: 'latestMedicalNews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit screen time to protect your eyes and mental health.`
+  String get limitScreenTime {
+    return Intl.message(
+      'Limit screen time to protect your eyes and mental health.',
+      name: 'limitScreenTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Recent Insights`
+  String get yourRecentInsights {
+    return Intl.message(
+      'Your Recent Insights',
+      name: 'yourRecentInsights',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get AI-powered\npreliminary health\ninsights and advice`
+  String get aiPoweredHealthInsights {
+    return Intl.message(
+      'Get AI-powered\npreliminary health\ninsights and advice',
+      name: 'aiPoweredHealthInsights',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start New Scan`
+  String get startNewScan {
+    return Intl.message(
+      'Start New Scan',
+      name: 'startNewScan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Knee OA`
+  String get kneeOa {
+    return Intl.message(
+      'Knee OA',
+      name: 'kneeOa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lung Cancer`
+  String get lungCancer {
+    return Intl.message(
+      'Lung Cancer',
+      name: 'lungCancer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Heart`
+  String get heart {
+    return Intl.message(
+      'Heart',
+      name: 'heart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Brain Cancer`
+  String get brainCancer {
+    return Intl.message(
+      'Brain Cancer',
+      name: 'brainCancer',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the 'days ago' key
 
   // skipped getter for the 'hours ago' key
@@ -589,10 +789,6 @@ class S {
   // skipped getter for the 'At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have.' key
 
   // skipped getter for the 'At our app, we take the security of your information seriously.' key
-
-  // skipped getter for the 'Brain Cancer' key
-
-  // skipped getter for the 'Call Doctor' key
 
   // skipped getter for the 'Can I share my assessment with others?' key
 
@@ -688,10 +884,6 @@ class S {
     );
   }
 
-  // skipped getter for the 'Drink plenty of water daily for better health.' key
-
-  // skipped getter for the 'Eat more fruits and veggies for a stronger immune system.' key
-
   // skipped getter for the 'Email or Phone Number' key
 
   // skipped getter for the 'Error: \${state.message}' key
@@ -714,10 +906,6 @@ class S {
 
   // skipped getter for the 'General usage data (anonymous and non-identifiable)' key
 
-  // skipped getter for the 'Get 7–8 hours of sleep each night to stay energized.' key
-
-  // skipped getter for the 'Get AI-powered\\npreliminary health\\ninsights and advice' key
-
   // skipped getter for the 'Get Results & Next Steps' key
 
   // skipped getter for the 'Get Started' key
@@ -728,37 +916,9 @@ class S {
 
   // skipped getter for the 'Guidance on next steps to manage your lung health.' key
 
-  /// `HELP`
-  String get HELP {
-    return Intl.message(
-      'HELP',
-      name: 'HELP',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Health Scan Categories' key
-
-  // skipped getter for the 'Health Tips for You' key
-
-  /// `Heart`
-  String get Heart {
-    return Intl.message(
-      'Heart',
-      name: 'Heart',
-      desc: '',
-      args: [],
-    );
-  }
-
   // skipped getter for the 'Heart Disease Analysis' key
 
-  // skipped getter for the 'Hi \${getIt<UserCubit>().currentUser!.name}' key
-
   // skipped getter for the 'How We Use Your Data' key
-
-  // skipped getter for the 'How are you Today?' key
 
   // skipped getter for the 'How does Tamenny help with my health concerns?' key
 
@@ -774,8 +934,6 @@ class S {
 
   // skipped getter for the 'Keep doing regular light exercises.' key
 
-  // skipped getter for the 'Knee OA' key
-
   // skipped getter for the 'Knee Osteoarthritis (OA)' key
 
   /// `Language`
@@ -788,12 +946,6 @@ class S {
     );
   }
 
-  // skipped getter for the 'Latest Medical News' key
-
-  // skipped getter for the 'Limit screen time to protect your eyes and mental health.' key
-
-  // skipped getter for the 'Lung Cancer' key
-
   // skipped getter for the 'Lung Disease Analysis' key
 
   // skipped getter for the 'Maintain a healthy diet.' key
@@ -801,8 +953,6 @@ class S {
   // skipped getter for the 'Mark all as read' key
 
   // skipped getter for the 'Medical News' key
-
-  // skipped getter for the 'Nearby Doctors' key
 
   // skipped getter for the 'Need Help?' key
 
@@ -898,8 +1048,6 @@ class S {
     );
   }
 
-  // skipped getter for the 'Read more' key
-
   // skipped getter for the 'Recent Search' key
 
   // skipped getter for the 'Recommended Next Steps' key
@@ -940,16 +1088,6 @@ class S {
 
   // skipped getter for the 'Scan Result' key
 
-  /// `Search`
-  String get Search {
-    return Intl.message(
-      'Search',
-      name: 'Search',
-      desc: '',
-      args: [],
-    );
-  }
-
   // skipped getter for the 'Select and upload a clear image of your \${scan.analysisType} X-ray or CT scan to begin the analysis.' key
 
   // skipped getter for the 'Share Results in Circle' key
@@ -968,13 +1106,7 @@ class S {
     );
   }
 
-  // skipped getter for the 'Start New Scan' key
-
   // skipped getter for the 'Status: Normal' key
-
-  // skipped getter for the 'Stretch daily to improve flexibility and reduce stress.' key
-
-  // skipped getter for the 'Take short walks to boost your mood and circulation.' key
 
   /// `Tamenny`
   String get Tamenny {

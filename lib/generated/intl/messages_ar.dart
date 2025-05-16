@@ -29,8 +29,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "Dental": MessageLookupByLibrary.simpleMessage("طب الأسنان"),
         "Doctors": MessageLookupByLibrary.simpleMessage("الأطباء"),
         "FAQ": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
-        "HELP": MessageLookupByLibrary.simpleMessage("مساعدة"),
-        "Heart": MessageLookupByLibrary.simpleMessage("القلب"),
         "Language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "Notification": MessageLookupByLibrary.simpleMessage("إشعار"),
         "PREFERENCE": MessageLookupByLibrary.simpleMessage("التفضيلات"),
@@ -39,12 +37,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "Public": MessageLookupByLibrary.simpleMessage("عام"),
         "Save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "Scan": MessageLookupByLibrary.simpleMessage("فحص"),
-        "Search": MessageLookupByLibrary.simpleMessage("بحث"),
         "Sound": MessageLookupByLibrary.simpleMessage("صوت"),
         "Tamenny": MessageLookupByLibrary.simpleMessage("تميني"),
         "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "agreeLogging": MessageLookupByLibrary.simpleMessage(
             "بتسجيل الدخول، فإنك توافق على"),
+        "aiPoweredHealthInsights": MessageLookupByLibrary.simpleMessage(
+            "احصل على رؤى ونصائح\nصحية أولية مدعومة بالذكاء الاصطناعي"),
         "aiResults": MessageLookupByLibrary.simpleMessage(
             "نتائج مدفوعة بالذكاء الاصطناعي، رعاية مخصصة"),
         "alreadyHaveAccount":
@@ -52,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "and": MessageLookupByLibrary.simpleMessage("و"),
         "askHealthQuestions": MessageLookupByLibrary.simpleMessage(
             "اطرح أسئلة حول حالتك الصحية."),
+        "brainCancer": MessageLookupByLibrary.simpleMessage("سرطان الدماغ"),
         "callDoctor": MessageLookupByLibrary.simpleMessage("اتصل بالطبيب"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
@@ -61,23 +61,43 @@ class MessageLookup extends MessageLookupByLibrary {
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "createOne": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
+        "drinkWaterDaily": MessageLookupByLibrary.simpleMessage(
+            "اشرب الكثير من الماء يوميًا لصحة أفضل."),
+        "eatFruitsVeggies": MessageLookupByLibrary.simpleMessage(
+            "تناول المزيد من الفواكه والخضروات لتعزيز جهاز المناعة."),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+        "getEnoughSleep": MessageLookupByLibrary.simpleMessage(
+            "احصل على 7-8 ساعات نوم كل ليلة لتحافظ على نشاطك."),
         "getRecommendations": MessageLookupByLibrary.simpleMessage(
             "احصل على توصيات حول الخطوات التالية."),
         "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
         "healthInsights":
             MessageLookupByLibrary.simpleMessage("رؤى صحية دقيقة، فقط لك"),
+        "healthScanCategories":
+            MessageLookupByLibrary.simpleMessage("فئات الفحص الصحي"),
+        "healthTipsForYou":
+            MessageLookupByLibrary.simpleMessage("نصائح صحية لك"),
+        "heart": MessageLookupByLibrary.simpleMessage("القلب"),
         "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
+        "hi": MessageLookupByLibrary.simpleMessage("مرحبا"),
+        "howAreYouToday":
+            MessageLookupByLibrary.simpleMessage("كيف حالك اليوم؟"),
         "howToUseChatbot":
             MessageLookupByLibrary.simpleMessage("كيفية استخدام الروبوت:"),
+        "kneeOa": MessageLookupByLibrary.simpleMessage("خشونة الركبة"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+        "latestMedicalNews":
+            MessageLookupByLibrary.simpleMessage("آخر الأخبار الطبية"),
         "learnHealthTopics": MessageLookupByLibrary.simpleMessage(
             "تعلم مواضيع متعلقة بالصحة بسهولة."),
+        "limitScreenTime": MessageLookupByLibrary.simpleMessage(
+            "قلل وقت الشاشة لحماية عينيك وصحتك النفسية."),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "lungCancer": MessageLookupByLibrary.simpleMessage("سرطان الرئة"),
         "meetTamennyAiChatbot":
             MessageLookupByLibrary.simpleMessage("تعرف على روبوت طمني الذكي"),
         "nearbyDoctors":
@@ -93,11 +113,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "profileData":
             MessageLookupByLibrary.simpleMessage("بيانات الملف الشخصي"),
+        "readMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
         "reviews": MessageLookupByLibrary.simpleMessage("مراجعات"),
+        "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "sendMessage": MessageLookupByLibrary.simpleMessage("أرسل رسالة..."),
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "startChatting": MessageLookupByLibrary.simpleMessage("ابدأ الدردشة"),
+        "startNewScan":
+            MessageLookupByLibrary.simpleMessage("ابدأ فحصًا جديدًا"),
         "stepOne": MessageLookupByLibrary.simpleMessage("الخطوة الأولى"),
         "stepOneChatBot": MessageLookupByLibrary.simpleMessage(
             "1. اضغط على زر \"ابدأ الدردشة\" أدناه.\\n"),
@@ -107,6 +131,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "stepTwo": MessageLookupByLibrary.simpleMessage("الخطوة الثانية"),
         "stepTwoChatBot": MessageLookupByLibrary.simpleMessage(
             "2. اطرح أي سؤال يتعلق بصحتك.\\n"),
+        "stretchDaily": MessageLookupByLibrary.simpleMessage(
+            "قم بالتمدد يوميًا لتحسين المرونة وتقليل التوتر."),
+        "takeShortWalks": MessageLookupByLibrary.simpleMessage(
+            "قم بالمشي القصير لتحسين مزاجك ودورتك الدموية."),
         "tamennyChatbotDescription": MessageLookupByLibrary.simpleMessage(
             "يساعدك روبوت تامني في الحصول على نصائح صحية أولية. إليك ما يمكنك القيام به:"),
         "termsAndConditions":
@@ -116,6 +144,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("مرحبًا بك في TAMENNY"),
         "yourMindfulMentalHealthAICompanion":
             MessageLookupByLibrary.simpleMessage(
-                "رفيقك الذكي للصحة العقلية المدروس للجميع، في أي مكان 🍃")
+                "رفيقك الذكي للصحة العقلية المدروس للجميع، في أي مكان 🍃"),
+        "yourRecentInsights":
+            MessageLookupByLibrary.simpleMessage("آخر فحوصاتك")
       };
 }

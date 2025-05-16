@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_styles.dart';
@@ -31,7 +32,7 @@ class MainBannerWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Get AI-powered\npreliminary health\ninsights and advice',
+                  S.of(context).aiPoweredHealthInsights,
                   style: AppStyles.font17Medium.copyWith(
                     color: Colors.white,
                   ),
@@ -49,7 +50,7 @@ class MainBannerWidget extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Text(
-                        'Start New Scan',
+                        S.of(context).startNewScan,
                         style: AppStyles.font10Regular.copyWith(
                           color: AppColors.primaryColor,
                         ),
@@ -61,7 +62,8 @@ class MainBannerWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 15,
+            right: Directionality.of(context) == TextDirection.ltr ? 15 : null,
+            left: Directionality.of(context) == TextDirection.rtl ? 15 : null,
             top: 0,
             child: Image.asset(
               Assets.imagesFemaleDoctorImage,

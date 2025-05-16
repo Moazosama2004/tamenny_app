@@ -16,24 +16,23 @@ class TamennyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
-    final locale = Provider.of<LocaleNotifier>(context).locale;
+    final localeNotifier = Provider.of<LocaleNotifier>(context);
+
     return MaterialApp(
-      // locale: locale,
-      locale: const Locale('ar'),
+      locale: localeNotifier.locale,
+      supportedLocales: S.delegate.supportedLocales,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('ar', 'SA'),
-      ],
-      onGenerateRoute: appRouter.generateRoute,
-      initialRoute: Routes.splashView,
       debugShowCheckedModeBanner: false,
       theme: themeNotifier.currentTheme,
+      darkTheme: darkTheme,
+      themeMode: themeNotifier.isDark ? ThemeMode.dark : ThemeMode.light,
+      onGenerateRoute: appRouter.generateRoute,
+      initialRoute: Routes.splashView,
     );
   }
 }

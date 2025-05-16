@@ -15,6 +15,7 @@ import 'package:tamenny_app/features/home/presentation/views/widgets/main_banner
 import 'package:tamenny_app/features/home/presentation/views/widgets/nearby_doctors_sliver_list_bloc_builder.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/search_text_field.dart';
 import 'package:tamenny_app/features/map/presentation/manager/nearby_doctors_cubit/nearby_doctors_cubit.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({
@@ -41,6 +42,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         slivers: [
           SliverToBoxAdapter(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const HomeCustomAppBar(),
                 const SizedBox(
@@ -62,12 +64,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   height: 12,
                 ),
                 const HealthScanCategoriesWidget(),
-                const Align(
-                  alignment: Alignment.centerLeft,
-                  child: HomeViewCustomHeader(
-                    text: "Your Recent Insights",
-                  ),
-                ),
+                HomeViewCustomHeader(text: S.of(context).yourRecentInsights),
               ],
             ),
           ),
@@ -76,7 +73,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const HomeViewCustomHeader(text: "Nearby Doctors"),
+                HomeViewCustomHeader(
+                  text: S.of(context).nearbyDoctors,
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context, rootNavigator: true).pushNamed(
@@ -85,7 +84,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                             context.read<NearbyDoctorsCubit>().doctorsList);
                   },
                   child: Text(
-                    'Read more',
+                    S.of(context).readMore,
                     style: AppStyles.font12Regular.copyWith(
                       color: AppColors.primaryColor,
                     ),
@@ -95,8 +94,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ),
           ),
           const NearbyDoctorsSliverListBlocBuilder(),
-          const SliverToBoxAdapter(
-            child: HomeViewCustomHeader(text: "Health Tips for You"),
+          SliverToBoxAdapter(
+            child: HomeViewCustomHeader(
+              text: S.of(context).healthTipsForYou,
+            ),
           ),
           const SliverToBoxAdapter(
             child: HealthTipsListView(),
@@ -105,7 +106,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const HomeViewCustomHeader(text: "Latest Medical News"),
+                HomeViewCustomHeader(
+                  text: S.of(context).latestMedicalNews,
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context, rootNavigator: true).pushNamed(
@@ -114,7 +117,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                             context.read<MedicalNewsCubit>().articlesList);
                   },
                   child: Text(
-                    'Read more',
+                    S.of(context).readMore,
                     style: AppStyles.font12Regular.copyWith(
                       color: AppColors.primaryColor,
                     ),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
@@ -42,9 +44,10 @@ void showLanguagePicker(BuildContext context,
               isSelected: currentLanguage == 'en',
               onTap: () {
                 if (currentLanguage != 'en') {
-                  localeNotifier
-                      .setLocale(const Locale('en')); // Switch to English
+                  localeNotifier.setLocale(const Locale('en'));
+                  // Switch to English
                 }
+                log(localeNotifier.locale.toString());
                 Navigator.pop(context);
               },
             ),
@@ -58,6 +61,7 @@ void showLanguagePicker(BuildContext context,
                   localeNotifier
                       .setLocale(const Locale('ar')); // Switch to Arabic
                 }
+                log(localeNotifier.locale.toString());
                 Navigator.pop(context);
               },
             ),

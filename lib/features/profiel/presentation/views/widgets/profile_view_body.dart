@@ -16,6 +16,7 @@ import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
 import 'package:tamenny_app/generated/l10n.dart';
 import 'package:tamenny_app/main.dart';
+import 'package:tamenny_app/tamenny_app.dart';
 
 class ProfileViewBody extends StatelessWidget {
   const ProfileViewBody({super.key});
@@ -23,6 +24,7 @@ class ProfileViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
+    final localeNotifier = Provider.of<LocaleNotifier>(context, listen: false);
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
@@ -85,7 +87,8 @@ class ProfileViewBody extends StatelessWidget {
                 iconPath: Assets.imagesLanguageIcon,
                 title: S.of(context).language,
                 onTap: () {
-                  showLanguagePicker(context, currentLanguage: 'en');
+                  showLanguagePicker(context,
+                      currentLanguage: localeNotifier.locale.toString());
                 },
               ),
             ],
