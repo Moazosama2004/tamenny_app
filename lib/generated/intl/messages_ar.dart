@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "and": MessageLookupByLibrary.simpleMessage("و"),
+        "askHealthQuestions": MessageLookupByLibrary.simpleMessage(
+            "اطرح أسئلة حول حالتك الصحية."),
         "callDoctor": MessageLookupByLibrary.simpleMessage("اتصل بالطبيب"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
@@ -64,12 +66,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+        "getRecommendations": MessageLookupByLibrary.simpleMessage(
+            "احصل على توصيات حول الخطوات التالية."),
         "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
         "healthInsights":
             MessageLookupByLibrary.simpleMessage("رؤى صحية دقيقة، فقط لك"),
         "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
+        "howToUseChatbot":
+            MessageLookupByLibrary.simpleMessage("كيفية استخدام الروبوت:"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+        "learnHealthTopics": MessageLookupByLibrary.simpleMessage(
+            "تعلم مواضيع متعلقة بالصحة بسهولة."),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "meetTamennyAiChatbot":
+            MessageLookupByLibrary.simpleMessage("تعرف على روبوت طمني الذكي"),
         "nearbyDoctors":
             MessageLookupByLibrary.simpleMessage("الأطباء القريبون"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
@@ -84,11 +94,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "profileData":
             MessageLookupByLibrary.simpleMessage("بيانات الملف الشخصي"),
         "reviews": MessageLookupByLibrary.simpleMessage("مراجعات"),
+        "sendMessage": MessageLookupByLibrary.simpleMessage("أرسل رسالة..."),
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "startChatting": MessageLookupByLibrary.simpleMessage("ابدأ الدردشة"),
         "stepOne": MessageLookupByLibrary.simpleMessage("الخطوة الأولى"),
+        "stepOneChatBot": MessageLookupByLibrary.simpleMessage(
+            "1. اضغط على زر \"ابدأ الدردشة\" أدناه.\\n"),
         "stepThree": MessageLookupByLibrary.simpleMessage("الخطوة الثالثة"),
+        "stepThreeChatBot": MessageLookupByLibrary.simpleMessage(
+            "3. احصل على ردود فورية مدعومة بالذكاء الاصطناعي مخصصة لك."),
         "stepTwo": MessageLookupByLibrary.simpleMessage("الخطوة الثانية"),
+        "stepTwoChatBot": MessageLookupByLibrary.simpleMessage(
+            "2. اطرح أي سؤال يتعلق بصحتك.\\n"),
+        "tamennyChatbotDescription": MessageLookupByLibrary.simpleMessage(
+            "يساعدك روبوت تامني في الحصول على نصائح صحية أولية. إليك ما يمكنك القيام به:"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك"),

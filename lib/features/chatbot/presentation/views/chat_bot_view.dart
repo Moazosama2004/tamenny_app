@@ -4,6 +4,7 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
 import 'package:tamenny_app/features/chatbot/presentation/views/widgets/message.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class ChatBotView extends StatefulWidget {
   const ChatBotView({super.key});
@@ -100,7 +101,7 @@ class _ChatBotViewState extends State<ChatBotView> {
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
-                        hintText: 'Send message...',
+                        hintText: S.of(context).sendMessage,
                         contentPadding: const EdgeInsets.all(16),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),

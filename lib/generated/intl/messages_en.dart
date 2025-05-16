@@ -50,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "and": MessageLookupByLibrary.simpleMessage("and"),
+        "askHealthQuestions": MessageLookupByLibrary.simpleMessage(
+            "Ask questions about your health conditions."),
         "callDoctor": MessageLookupByLibrary.simpleMessage("Call Doctor"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
@@ -65,12 +67,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "getRecommendations": MessageLookupByLibrary.simpleMessage(
+            "Get recommendations on your next steps."),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
         "healthInsights": MessageLookupByLibrary.simpleMessage(
             "Accurate Health Insights, Just For You"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "howToUseChatbot":
+            MessageLookupByLibrary.simpleMessage("How to Use the Chatbot:"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "learnHealthTopics": MessageLookupByLibrary.simpleMessage(
+            "Learn about health-related topics with ease."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "meetTamennyAiChatbot":
+            MessageLookupByLibrary.simpleMessage("Meet Tamenny AI Chatbot"),
         "nearbyDoctors": MessageLookupByLibrary.simpleMessage("Nearby Doctors"),
         "noAccount":
             MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
@@ -84,11 +94,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "profileData": MessageLookupByLibrary.simpleMessage("Profile Data"),
         "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
+        "sendMessage": MessageLookupByLibrary.simpleMessage("Send message..."),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign out"),
+        "startChatting": MessageLookupByLibrary.simpleMessage("Start Chatting"),
         "stepOne": MessageLookupByLibrary.simpleMessage("Step One"),
+        "stepOneChatBot": MessageLookupByLibrary.simpleMessage(
+            "1. Tap the \"Start Chatting\" button below.\\n"),
         "stepThree": MessageLookupByLibrary.simpleMessage("Step Three"),
+        "stepThreeChatBot": MessageLookupByLibrary.simpleMessage(
+            "3. Get instant, AI-powered responses customized for you."),
         "stepTwo": MessageLookupByLibrary.simpleMessage("Step Two"),
+        "stepTwoChatBot": MessageLookupByLibrary.simpleMessage(
+            "2. Ask any question related to your health.\\n"),
+        "tamennyChatbotDescription": MessageLookupByLibrary.simpleMessage(
+            "Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),

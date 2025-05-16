@@ -450,17 +450,123 @@ class S {
     );
   }
 
+  /// `Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:`
+  String get tamennyChatbotDescription {
+    return Intl.message(
+      'Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:',
+      name: 'tamennyChatbotDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ask questions about your health conditions.`
+  String get askHealthQuestions {
+    return Intl.message(
+      'Ask questions about your health conditions.',
+      name: 'askHealthQuestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get recommendations on your next steps.`
+  String get getRecommendations {
+    return Intl.message(
+      'Get recommendations on your next steps.',
+      name: 'getRecommendations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Learn about health-related topics with ease.`
+  String get learnHealthTopics {
+    return Intl.message(
+      'Learn about health-related topics with ease.',
+      name: 'learnHealthTopics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How to Use the Chatbot:`
+  String get howToUseChatbot {
+    return Intl.message(
+      'How to Use the Chatbot:',
+      name: 'howToUseChatbot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `1. Tap the "Start Chatting" button below.\n`
+  String get stepOneChatBot {
+    return Intl.message(
+      '1. Tap the "Start Chatting" button below.\\n',
+      name: 'stepOneChatBot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `2. Ask any question related to your health.\n`
+  String get stepTwoChatBot {
+    return Intl.message(
+      '2. Ask any question related to your health.\\n',
+      name: 'stepTwoChatBot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `3. Get instant, AI-powered responses customized for you.`
+  String get stepThreeChatBot {
+    return Intl.message(
+      '3. Get instant, AI-powered responses customized for you.',
+      name: 'stepThreeChatBot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Chatting`
+  String get startChatting {
+    return Intl.message(
+      'Start Chatting',
+      name: 'startChatting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send message...`
+  String get sendMessage {
+    return Intl.message(
+      'Send message...',
+      name: 'sendMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meet Tamenny AI Chatbot`
+  String get meetTamennyAiChatbot {
+    return Intl.message(
+      'Meet Tamenny AI Chatbot',
+      name: 'meetTamennyAiChatbot',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the 'days ago' key
 
   // skipped getter for the 'hours ago' key
 
   // skipped getter for the 'minutes ago' key
 
-  // skipped getter for the '1. Tap the "Start Chatting" button below.\\n' key
-
   // skipped getter for the '2 NEW' key
-
-  // skipped getter for the '2. Ask any question related to your health.\\n' key
 
   /// `reviews`
   String get reviews {
@@ -472,8 +578,6 @@ class S {
     );
   }
 
-  // skipped getter for the '3. Get instant, AI-powered responses customized for you.' key
-
   // skipped getter for the 'AI Analysis' key
 
   // skipped getter for the 'AI in action! Tamenny is analyzing your data to provide a personalized assessment. Sit tight!' key
@@ -481,8 +585,6 @@ class S {
   // skipped getter for the 'App Updates' key
 
   // skipped getter for the 'Are you sure you want to log out?' key
-
-  // skipped getter for the 'Ask questions about your health conditions.' key
 
   // skipped getter for the 'At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have.' key
 
@@ -620,8 +722,6 @@ class S {
 
   // skipped getter for the 'Get Started' key
 
-  // skipped getter for the 'Get recommendations on your next steps.' key
-
   // skipped getter for the 'Get results in minutes, saving time and effort.' key
 
   // skipped getter for the 'Good health starts with awareness. Thanks for letting Tamenny help you take that step!' key
@@ -666,8 +766,6 @@ class S {
 
   // skipped getter for the 'How much does it cost to use Tamenny?' key
 
-  // skipped getter for the 'How to Use the Chatbot:' key
-
   // skipped getter for the 'If you have any questions or concerns about your privacy, please contact us at:\\n\\nsupport@tamenny.app' key
 
   // skipped getter for the 'Improve app performance and reliability' key
@@ -692,8 +790,6 @@ class S {
 
   // skipped getter for the 'Latest Medical News' key
 
-  // skipped getter for the 'Learn about health-related topics with ease.' key
-
   // skipped getter for the 'Limit screen time to protect your eyes and mental health.' key
 
   // skipped getter for the 'Lung Cancer' key
@@ -705,8 +801,6 @@ class S {
   // skipped getter for the 'Mark all as read' key
 
   // skipped getter for the 'Medical News' key
-
-  // skipped getter for the 'Meet Tamenny AI Chatbot' key
 
   // skipped getter for the 'Nearby Doctors' key
 
@@ -858,8 +952,6 @@ class S {
 
   // skipped getter for the 'Select and upload a clear image of your \${scan.analysisType} X-ray or CT scan to begin the analysis.' key
 
-  // skipped getter for the 'Send message...' key
-
   // skipped getter for the 'Share Results in Circle' key
 
   // skipped getter for the 'Show Results' key
@@ -875,8 +967,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the 'Start Chatting' key
 
   // skipped getter for the 'Start New Scan' key
 
@@ -895,10 +985,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the 'Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:' key
-
-  // skipped getter for the 'Tamenny bot' key
 
   // skipped getter for the 'Tamenny is a healthcare app designed to provide an initial assessment of your health condition using AI, helping you make informed decisions before visiting a doctor. It aims to save you time and money by offering an accurate preliminary diagnosis.' key
 
