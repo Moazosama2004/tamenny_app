@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
 import 'package:tamenny_app/features/scan/presentation/views/widgets/completed_view_body.dart';
 
 class CompletedView extends StatelessWidget {

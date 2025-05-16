@@ -10,7 +10,7 @@ import 'package:tamenny_app/features/onboarding/presentation/views/onboarding_vi
 import 'package:tamenny_app/features/onboarding/presentation/views/welcome_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_change_password_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_privacy_center_app_view.dart';
-import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
 import 'package:tamenny_app/features/scan/domain/entites/scan_details_entity.dart';
 
 import '../../features/auth/presentation/views/forgot_password_view.dart';

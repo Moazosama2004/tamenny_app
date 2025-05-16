@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tamenny_app/core/errors/failure.dart';
-import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
 
 abstract class DiagnosisRepo {
   Future<Either<Failure, DiagnosisResultEntity>> startDiagnosis(

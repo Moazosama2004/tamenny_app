@@ -14,7 +14,9 @@ import 'package:tamenny_app/features/auth/data/repos/auth_repo_impl.dart';
 import 'package:tamenny_app/features/auth/domain/repos/auth_repo.dart';
 import 'package:tamenny_app/features/community/data/repos/community_repo_impl.dart';
 import 'package:tamenny_app/features/community/domain/repos/community_repo.dart';
+import 'package:tamenny_app/features/home/data/repos/latest_scans_repo_impl.dart';
 import 'package:tamenny_app/features/home/data/repos/medical_news_repo_impl.dart';
+import 'package:tamenny_app/features/home/domain/repos/latest_scans_repo.dart';
 import 'package:tamenny_app/features/home/domain/repos/medical_news_repo.dart';
 import 'package:tamenny_app/features/map/data/repos/nearby_doctors_repo_impl.dart';
 import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
@@ -65,6 +67,11 @@ Future<void> setupGetIt() async {
       getIt<AIDiagnosisService>(),
       getIt<DatabaseService>(),
       getIt<StorageService>(),
+    ),
+  );
+  getIt.registerSingleton<LatestScansRepo>(
+    LatestScansRepoImpl(
+      getIt<DatabaseService>(),
     ),
   );
 

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hive/hive.dart';
+import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/core/models/diagnosis_result_model.dart';
 import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
-import 'package:tamenny_app/features/scan/data/models/diagnosis_result_model.dart';
-import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
 
 part 'user_model.g.dart';
 

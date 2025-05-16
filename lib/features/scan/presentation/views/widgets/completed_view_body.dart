@@ -3,7 +3,7 @@ import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
-import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
 
 class CompletedViewBody extends StatelessWidget {
   const CompletedViewBody({super.key, required this.diagnosisResultEntity});

@@ -10,6 +10,7 @@ import 'package:tamenny_app/features/home/presentation/views/widgets/health_tips
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_custom_app_bar.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/home_view_custom_header.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/latest_medical_news_sliver_list.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/latest_scans_bloc_builder.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/latest_scans_sliver_grid.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/main_banner_widget.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/nearby_doctors_sliver_list_bloc_builder.dart';
@@ -68,7 +69,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ],
             ),
           ),
-          const latestScansSliverGrid(),
+          const LatestScansBlocBuilder(),
           SliverToBoxAdapter(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

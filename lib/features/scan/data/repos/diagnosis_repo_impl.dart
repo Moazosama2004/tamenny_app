@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -10,8 +11,9 @@ import 'package:tamenny_app/core/services/database_service.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/services/storage_service.dart';
 import 'package:tamenny_app/core/utils/backend_end_point.dart';
-import 'package:tamenny_app/features/scan/data/models/diagnosis_result_model.dart';
-import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/core/models/diagnosis_result_model.dart';
+import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/features/auth/data/models/user_model.dart';
 import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
 import 'package:uuid/uuid.dart';
 
@@ -81,6 +83,19 @@ class DiagnosisRepoImpl extends DiagnosisRepo {
         userId: userId,
         diagnosis: DiagnosisResultModel.fromEntity(diagnosis).toJson(),
       );
+
+      // final userCubit = getIt<UserCubit>();
+      // final currentUser = userCubit.currentUser;
+
+      // if (currentUser != null) {
+      //   final updatedDiagnoses = List<DiagnosisResultModel>.from(
+      //     currentUser.diagnoses ?? [],
+      //   )..add(DiagnosisResultModel.fromEntity(diagnosis));
+
+      //   final updatedUser = currentUser.copyWith(diagnoses: updatedDiagnoses);
+
+      //   userCubit.saveUser(updatedUser);
+      // }
 
       return Right(diagnosis);
     } catch (e) {

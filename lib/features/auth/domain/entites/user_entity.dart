@@ -1,4 +1,4 @@
-import 'package:tamenny_app/features/scan/domain/entites/diagnosis_result_entity.dart';
+import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
 
 class UserEntity {
   final String name;
