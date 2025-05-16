@@ -19,7 +19,7 @@ class TamennyApp extends StatelessWidget {
     final locale = Provider.of<LocaleNotifier>(context).locale;
     return MaterialApp(
       // locale: locale,
-      // locale: const Locale('ar'),
+      locale: const Locale('ar'),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

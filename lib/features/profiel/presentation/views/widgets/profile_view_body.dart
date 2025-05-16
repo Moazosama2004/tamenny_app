@@ -14,6 +14,7 @@ import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_header.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_item.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 import 'package:tamenny_app/main.dart';
 
 class ProfileViewBody extends StatelessWidget {
@@ -29,10 +30,8 @@ class ProfileViewBody extends StatelessWidget {
           const SizedBox(height: 20),
           const ProfileHeader(),
           const SizedBox(height: 24),
-
-          // ACCOUNT
           ProfileSection(
-            title: 'ACCOUNT',
+            title: S.of(context).account,
             items: [
               ProfileItem(
                 iconPath: Assets.imagesProfileDataIcon,
@@ -42,13 +41,13 @@ class ProfileViewBody extends StatelessWidget {
               ),
               ProfileItem(
                 iconPath: Assets.imagesProfileNotificationIcon,
-                title: 'Notification',
+                title: S.of(context).notification,
                 onTap: () => Navigator.of(context, rootNavigator: true)
                     .pushNamed(Routes.profileNotificationView),
               ),
               ProfileItem(
                 iconPath: Assets.imagesChangePasswordIcon,
-                title: 'Change Password',
+                title: S.of(context).changePassword,
                 onTap: () => Navigator.of(context, rootNavigator: true)
                     .pushNamed(Routes.profileChangePasswordView),
               ),
@@ -57,11 +56,11 @@ class ProfileViewBody extends StatelessWidget {
 
           // PREFERENCE
           ProfileSection(
-            title: 'PREFERENCE',
+            title: S.of(context).preference,
             items: [
               ProfileItem(
                 iconPath: Assets.imagesDarkModeIcon,
-                title: 'Dark Mode',
+                title: S.of(context).darkMode,
                 trailingWidget: SizedBox(
                   width: 60,
                   height: 30,
@@ -84,7 +83,7 @@ class ProfileViewBody extends StatelessWidget {
               ),
               ProfileItem(
                 iconPath: Assets.imagesLanguageIcon,
-                title: 'Language',
+                title: S.of(context).language,
                 onTap: () {
                   showLanguagePicker(context, currentLanguage: 'en');
                 },
@@ -94,24 +93,24 @@ class ProfileViewBody extends StatelessWidget {
 
           // HELP
           ProfileSection(
-            title: 'HELP',
+            title: S.of(context).help,
             items: [
               ProfileItem(
                 iconPath: Assets.imagesQuestionIcon,
-                title: 'FAQ',
+                title: S.of(context).faq,
                 onTap: () => Navigator.of(context, rootNavigator: true)
                     .pushNamed(Routes.profileFaqView),
               ),
               ProfileItem(
                 iconPath: Assets.imagesPrivacyIcon,
-                title: 'Privacy Center',
+                title: S.of(context).privacyPolicy,
                 onTap: () => Navigator.of(context, rootNavigator: true)
                     .pushNamed(Routes.profilePrivacyCenterApp),
               ),
             ],
           ),
           CustomAppButton(
-            text: 'Sign out',
+            text: S.of(context).signOut,
             onTap: () async {
               QuickAlert.show(
                 context: context,

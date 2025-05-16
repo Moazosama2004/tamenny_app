@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 import 'package:tamenny_app/tamenny_app.dart';
 
 void showLanguagePicker(BuildContext context,
@@ -29,7 +30,7 @@ void showLanguagePicker(BuildContext context,
             ),
             const SizedBox(height: 20),
             Text(
-              'Choose Language',
+              S.of(context).chooseLanguage,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -41,7 +42,8 @@ void showLanguagePicker(BuildContext context,
               isSelected: currentLanguage == 'en',
               onTap: () {
                 if (currentLanguage != 'en') {
-                  localeNotifier.setLocale(Locale('en')); // Switch to English
+                  localeNotifier
+                      .setLocale(const Locale('en')); // Switch to English
                 }
                 Navigator.pop(context);
               },
@@ -53,7 +55,8 @@ void showLanguagePicker(BuildContext context,
               isSelected: currentLanguage == 'ar',
               onTap: () {
                 if (currentLanguage != 'ar') {
-                  localeNotifier.setLocale(Locale('ar')); // Switch to Arabic
+                  localeNotifier
+                      .setLocale(const Locale('ar')); // Switch to Arabic
                 }
                 Navigator.pop(context);
               },

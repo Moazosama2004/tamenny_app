@@ -300,6 +300,136 @@ class S {
     );
   }
 
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get changePassword {
+    return Intl.message(
+      'Change Password',
+      name: 'changePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preference`
+  String get preference {
+    return Intl.message(
+      'Preference',
+      name: 'preference',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FAQ`
+  String get faq {
+    return Intl.message(
+      'FAQ',
+      name: 'faq',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Center`
+  String get privacy_center {
+    return Intl.message(
+      'Privacy Center',
+      name: 'privacy_center',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help`
+  String get help {
+    return Intl.message(
+      'Help',
+      name: 'help',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out`
+  String get signOut {
+    return Intl.message(
+      'Sign out',
+      name: 'signOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Data`
+  String get profileData {
+    return Intl.message(
+      'Profile Data',
+      name: 'profileData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose language`
+  String get chooseLanguage {
+    return Intl.message(
+      'Choose language',
+      name: 'chooseLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the 'days ago' key
 
   // skipped getter for the 'hours ago' key
@@ -323,16 +453,6 @@ class S {
   }
 
   // skipped getter for the '3. Get instant, AI-powered responses customized for you.' key
-
-  /// `ACCOUNT`
-  String get ACCOUNT {
-    return Intl.message(
-      'ACCOUNT',
-      name: 'ACCOUNT',
-      desc: '',
-      args: [],
-    );
-  }
 
   // skipped getter for the 'AI Analysis' key
 
@@ -652,16 +772,6 @@ class S {
     );
   }
 
-  /// `Profile`
-  String get Profile {
-    return Intl.message(
-      'Profile',
-      name: 'Profile',
-      desc: '',
-      args: [],
-    );
-  }
-
   // skipped getter for the 'Profile Data' key
 
   /// `Public`
@@ -733,8 +843,6 @@ class S {
   // skipped getter for the 'Share Results in Circle' key
 
   // skipped getter for the 'Show Results' key
-
-  // skipped getter for the 'Sign out' key
 
   // skipped getter for the 'Something happened' key
 

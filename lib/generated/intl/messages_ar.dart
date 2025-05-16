@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "ACCOUNT": MessageLookupByLibrary.simpleMessage("الحساب"),
         "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "Circle": MessageLookupByLibrary.simpleMessage("الدائرة"),
         "Comments": MessageLookupByLibrary.simpleMessage("تعليقات"),
@@ -37,13 +36,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "PREFERENCE": MessageLookupByLibrary.simpleMessage("التفضيلات"),
         "Processed": MessageLookupByLibrary.simpleMessage("تم معالجته"),
         "Processing": MessageLookupByLibrary.simpleMessage("قيد المعالجة"),
-        "Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "Public": MessageLookupByLibrary.simpleMessage("عام"),
         "Save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "Scan": MessageLookupByLibrary.simpleMessage("فحص"),
         "Search": MessageLookupByLibrary.simpleMessage("بحث"),
         "Sound": MessageLookupByLibrary.simpleMessage("صوت"),
         "Tamenny": MessageLookupByLibrary.simpleMessage("تميني"),
+        "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "agreeLogging": MessageLookupByLibrary.simpleMessage(
             "بتسجيل الدخول، فإنك توافق على"),
         "aiResults": MessageLookupByLibrary.simpleMessage(
@@ -51,25 +50,39 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب بالفعل؟"),
         "and": MessageLookupByLibrary.simpleMessage("و"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+        "chooseLanguage": MessageLookupByLibrary.simpleMessage("أختار لغه"),
         "connectGrow": MessageLookupByLibrary.simpleMessage(
             "اتصل، شارك، وكن جزءًا من النمو معًا."),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "createOne": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
         "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
         "healthInsights":
             MessageLookupByLibrary.simpleMessage("رؤى صحية دقيقة، فقط لك"),
+        "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
+        "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "orSignInWith": MessageLookupByLibrary.simpleMessage(
             "أو قم بتسجيل الدخول باستخدام"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "preference": MessageLookupByLibrary.simpleMessage("التفضيلات"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+        "privacy_center": MessageLookupByLibrary.simpleMessage("مركز الخصوصية"),
+        "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "profileData":
+            MessageLookupByLibrary.simpleMessage("بيانات الملف الشخصي"),
         "reviews": MessageLookupByLibrary.simpleMessage("مراجعات"),
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "stepOne": MessageLookupByLibrary.simpleMessage("الخطوة الأولى"),
         "stepThree": MessageLookupByLibrary.simpleMessage("الخطوة الثالثة"),
         "stepTwo": MessageLookupByLibrary.simpleMessage("الخطوة الثانية"),

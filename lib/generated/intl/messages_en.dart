@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "ACCOUNT": MessageLookupByLibrary.simpleMessage("ACCOUNT"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "Circle": MessageLookupByLibrary.simpleMessage("Circle"),
         "Comments": MessageLookupByLibrary.simpleMessage("Comments"),
@@ -37,13 +36,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "PREFERENCE": MessageLookupByLibrary.simpleMessage("PREFERENCE"),
         "Processed": MessageLookupByLibrary.simpleMessage("Processed"),
         "Processing": MessageLookupByLibrary.simpleMessage("Processing"),
-        "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "Public": MessageLookupByLibrary.simpleMessage("Public"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Scan": MessageLookupByLibrary.simpleMessage("Scan"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "Sound": MessageLookupByLibrary.simpleMessage("Sound"),
         "Tamenny": MessageLookupByLibrary.simpleMessage("Tamenny"),
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
         "agreeLogging":
             MessageLookupByLibrary.simpleMessage("By logging in, you agree to"),
         "aiResults": MessageLookupByLibrary.simpleMessage(
@@ -51,25 +50,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "and": MessageLookupByLibrary.simpleMessage("and"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
+        "chooseLanguage":
+            MessageLookupByLibrary.simpleMessage("Choose language"),
         "connectGrow": MessageLookupByLibrary.simpleMessage(
             "Connect, Share, And Grow Together."),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "createOne": MessageLookupByLibrary.simpleMessage("Create one"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "faq": MessageLookupByLibrary.simpleMessage("FAQ"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
         "healthInsights": MessageLookupByLibrary.simpleMessage(
             "Accurate Health Insights, Just For You"),
+        "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "noAccount":
             MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "orSignInWith": MessageLookupByLibrary.simpleMessage("Or sign in with"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "preference": MessageLookupByLibrary.simpleMessage("Preference"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "privacy_center":
+            MessageLookupByLibrary.simpleMessage("Privacy Center"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "profileData": MessageLookupByLibrary.simpleMessage("Profile Data"),
         "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "signOut": MessageLookupByLibrary.simpleMessage("Sign out"),
         "stepOne": MessageLookupByLibrary.simpleMessage("Step One"),
         "stepThree": MessageLookupByLibrary.simpleMessage("Step Three"),
         "stepTwo": MessageLookupByLibrary.simpleMessage("Step Two"),
