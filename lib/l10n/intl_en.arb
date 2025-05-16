@@ -37,6 +37,8 @@
     "signOut": "Sign out",
     "profileData": "Profile Data",
     "chooseLanguage": "Choose language",
+    "nearbyDoctors": "Nearby Doctors",
+    "callDoctor": "Call Doctor",
     "days ago": "$days ago",
     "hours ago": "$hours ago",
     "minutes ago": "minutes ago",

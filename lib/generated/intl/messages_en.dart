@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "and": MessageLookupByLibrary.simpleMessage("and"),
+        "callDoctor": MessageLookupByLibrary.simpleMessage("Call Doctor"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "chooseLanguage":
@@ -70,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "nearbyDoctors": MessageLookupByLibrary.simpleMessage("Nearby Doctors"),
         "noAccount":
             MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),

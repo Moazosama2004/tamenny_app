@@ -430,6 +430,26 @@ class S {
     );
   }
 
+  /// `Nearby Doctors`
+  String get nearbyDoctors {
+    return Intl.message(
+      'Nearby Doctors',
+      name: 'nearbyDoctors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call Doctor`
+  String get callDoctor {
+    return Intl.message(
+      'Call Doctor',
+      name: 'callDoctor',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the 'days ago' key
 
   // skipped getter for the 'hours ago' key

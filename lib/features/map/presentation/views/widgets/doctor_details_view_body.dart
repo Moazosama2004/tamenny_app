@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tamenny_app/core/entites/doctor_entity.dart';
@@ -6,6 +5,7 @@ import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/map/presentation/views/functions/call_doctor.dart';
 import 'package:tamenny_app/features/map/presentation/views/widgets/doctor_details_image.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class DoctorDetailsViewBody extends StatelessWidget {
   const DoctorDetailsViewBody({super.key, required this.doctor});
@@ -51,7 +51,7 @@ class DoctorDetailsViewBody extends StatelessWidget {
           const Spacer(),
           if (doctor.phone != null)
             CustomAppButton(
-              text: 'Call Doctor',
+              text: S.of(context).callDoctor,
               onTap: () {
                 callDoctor(doctor.phone!);
               },

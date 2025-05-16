@@ -37,6 +37,8 @@
     "signOut": "تسجيل الخروج",
     "profileData": "بيانات الملف الشخصي",
     "chooseLanguage": "أختار لغه",
+    "nearbyDoctors": "الأطباء القريبون",
+    "callDoctor": "اتصل بالطبيب",
     "days ago": "منذ $days",
     "hours ago": "منذ $hours",
     "minutes ago": "منذ دقائق",
