@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Doctors": MessageLookupByLibrary.simpleMessage("الأطباء"),
         "FAQ": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
         "Language": MessageLookupByLibrary.simpleMessage("اللغة"),
+        "New": MessageLookupByLibrary.simpleMessage("جديد"),
         "Notification": MessageLookupByLibrary.simpleMessage("إشعار"),
         "PREFERENCE": MessageLookupByLibrary.simpleMessage("التفضيلات"),
         "Processed": MessageLookupByLibrary.simpleMessage("تم معالجته"),
@@ -148,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "heart": MessageLookupByLibrary.simpleMessage("القلب"),
         "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
         "hi": MessageLookupByLibrary.simpleMessage("مرحبا"),
+        "hoursShort": MessageLookupByLibrary.simpleMessage("س"),
         "howAreYouToday":
             MessageLookupByLibrary.simpleMessage("كيف حالك اليوم؟"),
         "howToUseChatbot":
@@ -170,6 +172,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "قلل وقت الشاشة لحماية عينيك وصحتك النفسية."),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "lungCancer": MessageLookupByLibrary.simpleMessage("سرطان الرئة"),
+        "markAllAsRead":
+            MessageLookupByLibrary.simpleMessage("تمييز الكل كمقروء"),
         "meetTamennyAiChatbot": MessageLookupByLibrary.simpleMessage(
             "تعرف على روبوت Tamenny الذكي"),
         "nameHint": MessageLookupByLibrary.simpleMessage("الاسم"),
@@ -217,6 +221,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تم تحديث صورة الملف الشخصي"),
         "readMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "scanAnalysisCompleted":
+            MessageLookupByLibrary.simpleMessage("اكتمل تحليل الفحص"),
+        "scanAnalysisMessage": MessageLookupByLibrary.simpleMessage(
+            "تم تحليل فحص الرئة الخاص بك بنجاح. لم يتم اكتشاف أية مشكلات كبيرة. نوصي بإجراء فحوصات منتظمة للبقاء على اطلاع بصحتك."),
         "scan_brain_message": MessageLookupByLibrary.simpleMessage(
             "سيقوم الذكاء الاصطناعي بفحص صورة دماغك، والتعرف على علامات النمو غير الطبيعي أو الأورام، ومساعدتك في اتخاذ الخطوات التالية المعتمدة من الخبراء."),
         "scan_brain_title":
@@ -268,6 +276,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "قد يستخدم تمنّي خدمات طرف ثالث موثوقة (مثل Firebase أو أدوات التحليل) لمساعدتنا على فهم استخدام التطبيق وتحسين الوظائف. تتم معالجة هذه البيانات بشكل مجهول وآمن."),
         "thirdPartyServicesTitle":
             MessageLookupByLibrary.simpleMessage("الخدمات الخارجية"),
+        "today": MessageLookupByLibrary.simpleMessage("اليوم"),
         "transparencyNote": MessageLookupByLibrary.simpleMessage(
             "نحن نؤمن بالشفافية ونوفر لك الأدوات لتعديل تجربتك في أي وقت."),
         "updatePassword":

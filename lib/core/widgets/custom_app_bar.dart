@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../theme/app_styles.dart';
@@ -27,12 +29,12 @@ AppBar customAppBar(
             },
             child: Center(
               child: Transform.rotate(
-                angle: isArabic ? 135 : 0, // Rotate only if Arabic
+                angle: isArabic ? 180 * math.pi / 180 : 0,
                 child: SvgPicture.asset(
                   Assets.imagesPopIcon,
                   width: 30,
                   height: 30,
-                  color: theme.iconTheme.color, // adapts to dark/light mode
+                  color: theme.iconTheme.color,
                 ),
               ),
             ),

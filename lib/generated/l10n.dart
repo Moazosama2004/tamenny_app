@@ -320,16 +320,6 @@ class S {
     );
   }
 
-  /// `Notification`
-  String get notification {
-    return Intl.message(
-      'Notification',
-      name: 'notification',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Change Password`
   String get changePassword {
     return Intl.message(
@@ -605,6 +595,56 @@ class S {
     return Intl.message(
       'Doctors',
       name: 'doctors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NEW`
+  String get New {
+    return Intl.message(
+      'NEW',
+      name: 'New',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan Analysis Completed`
+  String get scanAnalysisCompleted {
+    return Intl.message(
+      'Scan Analysis Completed',
+      name: 'scanAnalysisCompleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your lung scan has been successfully analyzed. No major issues were detected. We recommend regular check-ups to stay informed about your health.`
+  String get scanAnalysisMessage {
+    return Intl.message(
+      'Your lung scan has been successfully analyzed. No major issues were detected. We recommend regular check-ups to stay informed about your health.',
+      name: 'scanAnalysisMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `h`
+  String get hoursShort {
+    return Intl.message(
+      'h',
+      name: 'hoursShort',
       desc: '',
       args: [],
     );
@@ -1295,6 +1335,26 @@ class S {
     return Intl.message(
       'Your Controls',
       name: 'yourControlsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today`
+  String get today {
+    return Intl.message(
+      'Today',
+      name: 'today',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark all as read`
+  String get markAllAsRead {
+    return Intl.message(
+      'Mark all as read',
+      name: 'markAllAsRead',
       desc: '',
       args: [],
     );

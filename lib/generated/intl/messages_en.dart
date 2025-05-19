@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Doctors": MessageLookupByLibrary.simpleMessage("Doctors"),
         "FAQ": MessageLookupByLibrary.simpleMessage("FAQ"),
         "Language": MessageLookupByLibrary.simpleMessage("Language"),
+        "New": MessageLookupByLibrary.simpleMessage("NEW"),
         "Notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "PREFERENCE": MessageLookupByLibrary.simpleMessage("PREFERENCE"),
         "Processed": MessageLookupByLibrary.simpleMessage("Processed"),
@@ -148,6 +149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "heart": MessageLookupByLibrary.simpleMessage("Heart"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
         "hi": MessageLookupByLibrary.simpleMessage("Hi"),
+        "hoursShort": MessageLookupByLibrary.simpleMessage("h"),
         "howAreYouToday":
             MessageLookupByLibrary.simpleMessage("How are you Today?"),
         "howToUseChatbot":
@@ -170,6 +172,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Limit screen time to protect your eyes and mental health."),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "lungCancer": MessageLookupByLibrary.simpleMessage("Lung Cancer"),
+        "markAllAsRead":
+            MessageLookupByLibrary.simpleMessage("Mark all as read"),
         "meetTamennyAiChatbot":
             MessageLookupByLibrary.simpleMessage("Meet Tamenny AI Chatbot"),
         "nameHint": MessageLookupByLibrary.simpleMessage("Name"),
@@ -217,6 +221,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "readMore": MessageLookupByLibrary.simpleMessage("Read more"),
         "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "scanAnalysisCompleted":
+            MessageLookupByLibrary.simpleMessage("Scan Analysis Completed"),
+        "scanAnalysisMessage": MessageLookupByLibrary.simpleMessage(
+            "Your lung scan has been successfully analyzed. No major issues were detected. We recommend regular check-ups to stay informed about your health."),
         "scan_brain_message": MessageLookupByLibrary.simpleMessage(
             "Our AI will examine your brain scan, identify signs of abnormal growth or tumors, and assist you with expert-backed next steps."),
         "scan_brain_title":
@@ -266,6 +274,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely."),
         "thirdPartyServicesTitle":
             MessageLookupByLibrary.simpleMessage("Third-Party Services"),
+        "today": MessageLookupByLibrary.simpleMessage("Today"),
         "transparencyNote": MessageLookupByLibrary.simpleMessage(
             "We believe in transparency and give you the tools to adjust your experience at any time."),
         "updatePassword":
