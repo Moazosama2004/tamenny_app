@@ -35,9 +35,9 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
   @override
   void initState() {
     super.initState();
-    final user = getIt<UserCubit>().currentUser!;
-    nameController.text = user.name;
-    emailController.text = user.email;
+    // final user = getIt<UserCubit>().currentUser!;
+    // nameController.text = user.name;
+    // emailController.text = user.email;
   }
 
   @override
