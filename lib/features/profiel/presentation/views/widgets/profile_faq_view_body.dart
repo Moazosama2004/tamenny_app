@@ -8,7 +8,9 @@ class ProfileFaqViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
+    final theme = Theme.of(context);
+    final backgroundColor = theme.scaffoldBackgroundColor;
+
     List<FaqItemEntity> getFaqItems(BuildContext context) {
       final s = S.of(context);
       return [
@@ -27,15 +29,19 @@ class ProfileFaqViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
       child: Container(
-        color: Colors.white,
+        color: backgroundColor,
         child: ListView.separated(
-          itemBuilder: (context, index) => ExpandedListWidget(
-            title: getFaqItems(context)[index].title,
-            content: getFaqItems(context)[index].content,
-          ),
-          separatorBuilder: (context, index) => const Divider(
+          itemBuilder: (context, index) {
+            final faq = getFaqItems(context)[index];
+            return ExpandedListWidget(
+              title: faq.title,
+              content: faq.content,
+            );
+          },
+          separatorBuilder: (context, index) => Divider(
             thickness: 1,
             height: 12,
+            color: theme.dividerColor,
           ),
           itemCount: getFaqItems(context).length,
         ),

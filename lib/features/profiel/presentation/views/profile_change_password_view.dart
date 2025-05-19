@@ -11,7 +11,6 @@ import 'package:tamenny_app/generated/l10n.dart';
 class ProfileChangePasswordView extends StatelessWidget {
   const ProfileChangePasswordView({super.key});
 
-  // bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -20,8 +19,10 @@ class ProfileChangePasswordView extends StatelessWidget {
         getIt<FirebaseAuthService>(),
       ),
       child: Scaffold(
-        appBar: customAppBar(context,
-            title: S.of(context).changePassword, leadingIcon: true),
+        appBar: customAppBar(
+          context,
+          title: S.of(context).changePassword,
+        ),
         body: const ProfileChangePasswordBlocConsumer(),
       ),
     );

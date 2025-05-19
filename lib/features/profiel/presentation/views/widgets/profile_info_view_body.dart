@@ -29,14 +29,12 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
   XFile? selectedImage;
   final ImagePicker _picker = ImagePicker();
 
-  // Add these controllers to track text input
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    // Initialize the controllers with current user info
     final user = getIt<UserCubit>().currentUser!;
     nameController.text = user.name;
     emailController.text = user.email;

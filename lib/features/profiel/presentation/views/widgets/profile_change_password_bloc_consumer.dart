@@ -23,7 +23,6 @@ class ProfileChangePasswordBlocConsumer extends StatelessWidget {
         } else if (state is ChangePasswordFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          // For both initial and success state, show the form
           return const ProfileChangePasswordViewBody();
         }
       },

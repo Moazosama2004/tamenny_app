@@ -600,6 +600,16 @@ class S {
     );
   }
 
+  /// `Doctors`
+  String get doctors {
+    return Intl.message(
+      'Doctors',
+      name: 'doctors',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Posted successfully!`
   String get postSuccessMessage {
     return Intl.message(

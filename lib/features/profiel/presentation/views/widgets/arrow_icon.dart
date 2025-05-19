@@ -7,11 +7,21 @@ class ArrowIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      Assets.imagesProfileArrowGoIcon,
-      width: 12,
-      height: 12,
-      colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.srcIn),
+    final theme = Theme.of(context);
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
+
+    final iconColor = theme.brightness == Brightness.dark
+        ? Colors.grey.shade400
+        : Colors.grey;
+
+    return Transform.rotate(
+      angle: isArabic ? 3.1416 : 0,
+      child: SvgPicture.asset(
+        Assets.imagesProfileArrowGoIcon,
+        width: 12,
+        height: 12,
+        colorFilter: ColorFilter.mode(iconColor, BlendMode.srcIn),
+      ),
     );
   }
 }

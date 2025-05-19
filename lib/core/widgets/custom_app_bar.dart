@@ -12,8 +12,10 @@ AppBar customAppBar(
   Color? titleColor,
 }) {
   final theme = Theme.of(context);
+  final isArabic = Localizations.localeOf(context).languageCode == 'ar';
 
   return AppBar(
+    automaticallyImplyLeading: false,
     backgroundColor: backgroundColor ?? theme.scaffoldBackgroundColor,
     surfaceTintColor: Colors.transparent,
     elevation: 0.0,
@@ -24,11 +26,14 @@ AppBar customAppBar(
               Navigator.pop(context);
             },
             child: Center(
-              child: SvgPicture.asset(
-                Assets.imagesPopIcon,
-                width: 30,
-                height: 30,
-                color: theme.iconTheme.color, // adapts to dark/light mode
+              child: Transform.rotate(
+                angle: isArabic ? 135 : 0, // Rotate only if Arabic
+                child: SvgPicture.asset(
+                  Assets.imagesPopIcon,
+                  width: 30,
+                  height: 30,
+                  color: theme.iconTheme.color, // adapts to dark/light mode
+                ),
               ),
             ),
           )

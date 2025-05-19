@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
+import 'package:tamenny_app/config/locale_notifier.dart';
+import 'package:tamenny_app/config/theme_notifier.dart';
 import 'package:tamenny_app/core/functions/show_language_picker.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';

@@ -73,15 +73,6 @@ class _AddPostViewBodyState extends State<AddPostViewBody> {
                   IconButton(
                       icon: const Icon(Icons.image, color: Colors.blue),
                       onPressed: pickImage),
-                  IconButton(
-                      icon: const Icon(Icons.gif_box_outlined,
-                          color: Colors.blue),
-                      onPressed: () {}),
-                  IconButton(
-                      icon: const Icon(Icons.location_on, color: Colors.blue),
-                      onPressed: () {
-                        log(postController.text);
-                      }),
                 ],
               ),
               AddPostButtonBlocConsumer(

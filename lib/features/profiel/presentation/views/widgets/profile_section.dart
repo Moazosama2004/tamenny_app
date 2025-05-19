@@ -16,7 +16,6 @@ class ProfileSection extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 24),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        // Use the cardColor from theme (dark/light mode compatible)
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(12),
       ),
@@ -26,7 +25,6 @@ class ProfileSection extends StatelessWidget {
           Text(
             title,
             style: AppStyles.font13Bold.copyWith(
-              // Use theme's secondary text color or fallback to grey
               color: theme.textTheme.bodyMedium?.color ?? Colors.grey[600],
             ),
           ),

@@ -28,7 +28,6 @@ class CustomTextFormField extends StatelessWidget {
   final Function(String?)? onSaved;
   final TextEditingController? controller;
 
-  // New optional color & style parameters:
   final Color? fillColor;
   final Color? borderColor;
   final TextStyle? hintStyle;
@@ -36,36 +35,56 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    // Use theme or fallback to your AppColors for fill and border colors
+    final defaultFillColor = fillColor ??
+        (theme.brightness == Brightness.dark
+            ? AppColors.darkCardColor
+            : AppColors.grayColor);
+
+    final defaultBorderColor = borderColor ??
+        (theme.brightness == Brightness.dark
+            ? AppColors.darkDividerColor
+            : AppColors.deepGrayColor);
+
+    final defaultHintStyle = hintStyle ??
+        AppStyles.font14Medium.copyWith(
+          color: theme.brightness == Brightness.dark
+              ? AppColors.darkSecondaryTextColor
+              : const Color(0xffC2C2C2),
+        );
+
+    final defaultTextColor = textColor ??
+        (theme.brightness == Brightness.dark
+            ? AppColors.darkTextColor
+            : Colors.black87);
+
     return TextFormField(
       controller: controller,
       onSaved: onSaved,
       onChanged: onChanged,
       validator: validate,
       obscureText: obscure,
-      style: AppStyles.font14Medium.copyWith(
-        color: textColor ?? Colors.black87,
-      ),
+      style: AppStyles.font14Medium.copyWith(color: defaultTextColor),
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,
-        hintStyle: hintStyle ??
-            AppStyles.font14Medium.copyWith(
-              color: const Color(0xffC2C2C2),
-            ),
-        fillColor: fillColor ?? AppColors.grayColor,
+        hintStyle: defaultHintStyle,
+        fillColor: defaultFillColor,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: borderColor ?? AppColors.deepGrayColor),
+          borderSide: BorderSide(color: defaultBorderColor),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: borderColor ?? AppColors.deepGrayColor),
+          borderSide: BorderSide(color: defaultBorderColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: borderColor ?? AppColors.deepGrayColor),
+          borderSide: BorderSide(color: defaultBorderColor),
         ),
       ),
     );

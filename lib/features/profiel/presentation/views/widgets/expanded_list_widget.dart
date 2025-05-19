@@ -8,15 +8,18 @@ class ExpandedListWidget extends StatelessWidget {
     required this.title,
     required this.content,
   });
+
   final String title;
   final String content;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return ClipRect(
       child: TapToExpand(
-        backgroundcolor: Colors.white,
-        iconColor: Colors.black,
+        backgroundcolor: theme.cardColor,
+        iconColor: theme.iconTheme.color,
         outerClosedPadding: 0,
         outerOpenedPadding: 0,
         openedHeight: 150,
@@ -24,15 +27,15 @@ class ExpandedListWidget extends StatelessWidget {
         title: Expanded(
           child: Text(
             title,
-            style: AppStyles.font14Regular.copyWith(),
+            style: AppStyles.font14Regular.copyWith(
+              color: theme.textTheme.bodyLarge?.color,
+            ),
           ),
         ),
         content: Text(
           content,
           style: AppStyles.font10Regular.copyWith(
-            color: const Color(
-              0xff757575,
-            ),
+            color: theme.textTheme.bodyMedium?.color,
           ),
         ),
       ),

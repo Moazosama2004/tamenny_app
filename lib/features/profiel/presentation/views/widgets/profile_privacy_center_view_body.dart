@@ -8,6 +8,12 @@ class ProfilePrivacyCenterViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final locale = S.of(context);
+    final theme = Theme.of(context);
+    final primaryTextColor = theme.textTheme.bodyLarge?.color ?? Colors.black;
+    final secondaryTextColor =
+        theme.textTheme.bodyMedium?.color ?? Colors.black87;
+    final hintTextColor = theme.hintColor.withOpacity(0.6);
+
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: SingleChildScrollView(
@@ -16,57 +22,60 @@ class ProfilePrivacyCenterViewBody extends StatelessWidget {
           children: [
             Text(
               locale.privacyMattersTitle,
-              style: AppStyles.font20SemiBold.copyWith(color: Colors.black),
+              style: AppStyles.font20SemiBold.copyWith(color: primaryTextColor),
             ),
             const SizedBox(height: 12),
             Text(
               locale.privacyIntroText,
-              style: AppStyles.font16Regular.copyWith(color: Colors.black87),
+              style:
+                  AppStyles.font16Regular.copyWith(color: secondaryTextColor),
             ),
             const SizedBox(height: 24),
-            _sectionTitle(locale.whatWeCollectTitle),
-            _sectionBody([
+            _sectionTitle(context, locale.whatWeCollectTitle),
+            _sectionBody(context, [
               locale.whatWeCollectItem1,
               locale.whatWeCollectItem2,
               locale.whatWeCollectItem3,
             ]),
             Text(
               locale.noSensitiveDataNote,
-              style: AppStyles.font16Regular.copyWith(color: Colors.black45),
+              style: AppStyles.font16Regular.copyWith(color: hintTextColor),
             ),
             const SizedBox(height: 24),
-            _sectionTitle(locale.howWeUseDataTitle),
-            _sectionBody([
+            _sectionTitle(context, locale.howWeUseDataTitle),
+            _sectionBody(context, [
               locale.howWeUseDataItem1,
               locale.howWeUseDataItem2,
               locale.howWeUseDataItem3,
             ]),
             Text(
               locale.noAdsOrSellingNote,
-              style: AppStyles.font16Regular.copyWith(color: Colors.black45),
+              style: AppStyles.font16Regular.copyWith(color: hintTextColor),
             ),
             const SizedBox(height: 24),
-            _sectionTitle(locale.thirdPartyServicesTitle),
+            _sectionTitle(context, locale.thirdPartyServicesTitle),
             Text(
               locale.thirdPartyServicesDescription,
-              style: AppStyles.font16Regular.copyWith(color: Colors.black87),
+              style:
+                  AppStyles.font16Regular.copyWith(color: secondaryTextColor),
             ),
             const SizedBox(height: 24),
-            _sectionTitle(locale.yourControlsTitle),
-            _sectionBody([
+            _sectionTitle(context, locale.yourControlsTitle),
+            _sectionBody(context, [
               locale.yourControlsItem1,
               locale.yourControlsItem2,
               locale.yourControlsItem3,
             ]),
             Text(
               locale.transparencyNote,
-              style: AppStyles.font16Regular.copyWith(color: Colors.black45),
+              style: AppStyles.font16Regular.copyWith(color: hintTextColor),
             ),
             const SizedBox(height: 24),
-            _sectionTitle(locale.contactUsTitle),
+            _sectionTitle(context, locale.contactUsTitle),
             Text(
               locale.contactUsDescription,
-              style: AppStyles.font16Regular.copyWith(color: Colors.black87),
+              style:
+                  AppStyles.font16Regular.copyWith(color: secondaryTextColor),
             ),
             const SizedBox(height: 32),
           ],
@@ -75,14 +84,18 @@ class ProfilePrivacyCenterViewBody extends StatelessWidget {
     );
   }
 
-  Widget _sectionTitle(String text) {
+  Widget _sectionTitle(BuildContext context, String text) {
+    final theme = Theme.of(context);
+    final titleColor = theme.textTheme.titleLarge?.color ?? Colors.black;
     return Text(
       text,
-      style: AppStyles.font18SemiBold.copyWith(color: Colors.black),
+      style: AppStyles.font18SemiBold.copyWith(color: titleColor),
     );
   }
 
-  Widget _sectionBody(List<String> items) {
+  Widget _sectionBody(BuildContext context, List<String> items) {
+    final theme = Theme.of(context);
+    final textColor = theme.textTheme.bodyMedium?.color ?? Colors.black87;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Column(
@@ -92,11 +105,12 @@ class ProfilePrivacyCenterViewBody extends StatelessWidget {
                   children: [
                     const Text("• ", style: TextStyle(fontSize: 16)),
                     Expanded(
-                        child: Text(
-                      item,
-                      style: AppStyles.font16Regular
-                          .copyWith(color: Colors.black87),
-                    )),
+                      child: Text(
+                        item,
+                        style:
+                            AppStyles.font16Regular.copyWith(color: textColor),
+                      ),
+                    ),
                   ],
                 ))
             .toList(),

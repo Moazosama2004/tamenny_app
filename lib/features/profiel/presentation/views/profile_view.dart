@@ -15,17 +15,6 @@ class ProfileView extends StatelessWidget {
         context,
         title: S.of(context).profile,
         leadingIcon: false,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: GestureDetector(
-                onTap: () {
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (_) => const TestView()));
-                },
-                child: SvgPicture.asset(Assets.imagesProfileShareIcon)),
-          ),
-        ],
       ),
       body: const ProfileViewBody(),
     );

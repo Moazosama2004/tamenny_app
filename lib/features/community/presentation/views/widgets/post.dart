@@ -17,91 +17,94 @@ class Post extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String currentUserId = context.read<UserCubit>().currentUser!.uId;
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(18),
-        border: Border.all(
-          color: const Color(0xffEEEEEE),
+
+    return Directionality(
+      textDirection:
+          TextDirection.ltr, // 👈 يجبر البوست يكون من اليسار لليمين دائماً
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(
+            color: Theme.of(context).dividerColor, // دعم الثيم
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => PostDetailsView(post: post),
-                  ),
-                );
-              },
-              child: Container(
-                color: Colors.transparent,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    PostHeader(post: post),
-                    const SizedBox(height: 8),
-                    Text(
-                      post.postText,
-                      style: AppStyles.font13Regular
-                          .copyWith(color: const Color(0xff676767)),
-                      textAlign: TextAlign.start,
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => PostDetailsView(post: post),
                     ),
-                    const SizedBox(height: 18),
-                    if (post.imageUrl!.isNotEmpty)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 12.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: CachedNetworkImage(
-                            imageUrl: post.imageUrl!,
-                            width: double.infinity,
-                            fit: BoxFit.cover,
-                            placeholder: (context, url) => Skeletonizer(
-                              enabled: true,
-                              child: Container(
-                                width: double.infinity,
-                                // height: MediaQuery.of(context).size.width *
-                                //     2 /
-                                //     3, // same as 3:2 aspect
-                                color: Colors.grey[850],
+                  );
+                },
+                child: Container(
+                  color: Colors.transparent,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      PostHeader(post: post),
+                      const SizedBox(height: 8),
+                      Text(
+                        post.postText,
+                        style: AppStyles.font13Regular.copyWith(
+                          color:
+                              Theme.of(context).textTheme.bodyMedium?.color ??
+                                  const Color(0xff676767),
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                      const SizedBox(height: 18),
+                      if (post.imageUrl!.isNotEmpty)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 12.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: CachedNetworkImage(
+                              imageUrl: post.imageUrl!,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                              placeholder: (context, url) => Skeletonizer(
+                                enabled: true,
+                                child: Container(
+                                  width: double.infinity,
+                                  color: Colors.grey[850],
+                                ),
                               ),
+                              errorWidget: (context, url, error) =>
+                                  const Center(child: Icon(Icons.error)),
                             ),
-                            errorWidget: (context, url, error) =>
-                                const Center(child: Icon(Icons.error)),
                           ),
                         ),
-                      ),
-                    const SizedBox(height: 18),
-                  ],
+                      const SizedBox(height: 18),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            PostActions(
-              commentsCount: post.commentsCount,
-              likesCount: post.likedBy.length,
-              sharesCount: post.sharesCount,
-              isLiked: post.likedBy.contains(currentUserId),
-              onLikePressed: () async {
-                // إضافة الـ Like أو إزالته
-                await context
-                    .read<CommunityCubit>()
-                    .likePost(post: post, userId: currentUserId);
+              PostActions(
+                commentsCount: post.commentsCount,
+                likesCount: post.likedBy.length,
+                sharesCount: post.sharesCount,
+                isLiked: post.likedBy.contains(currentUserId),
+                onLikePressed: () async {
+                  await context
+                      .read<CommunityCubit>()
+                      .likePost(post: post, userId: currentUserId);
 
-                // بعد إضافة الـ Like في الـ Backend، نقوم بتحديث الـ UI مباشرة
-                context.read<CommunityCubit>().toggleLikeInPost(
-                      postId: post.postId,
-                      userId: currentUserId,
-                    );
-              },
-              post: post,
-            ),
-          ],
+                  context.read<CommunityCubit>().toggleLikeInPost(
+                        postId: post.postId,
+                        userId: currentUserId,
+                      );
+                },
+                post: post,
+              ),
+            ],
+          ),
         ),
       ),
     );

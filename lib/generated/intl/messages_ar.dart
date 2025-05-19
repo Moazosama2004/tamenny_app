@@ -83,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "currentPassword":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الحالية"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
+        "doctors": MessageLookupByLibrary.simpleMessage("الأطباء"),
         "drinkWaterDaily": MessageLookupByLibrary.simpleMessage(
             "اشرب الكثير من الماء يوميًا لصحة أفضل."),
         "eatFruitsVeggies": MessageLookupByLibrary.simpleMessage(

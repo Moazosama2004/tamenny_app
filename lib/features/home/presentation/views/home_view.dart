@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
         value: SystemUiOverlayStyle(
           statusBarColor: isDark ? AppColors.darkBackgroundColor : Colors.white,
           systemNavigationBarColor:
-              isDark ? const Color.fromARGB(255, 159, 158, 158) : Colors.white,
+              isDark ? AppColors.darkBackgroundColor : Colors.white,
           statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
           systemNavigationBarIconBrightness:
               isDark ? Brightness.light : Brightness.dark,
