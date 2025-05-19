@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
@@ -10,7 +9,6 @@ import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_styles.dart';
-import '../../../../../core/utils/app_assets.dart';
 
 class HomeCustomAppBar extends StatelessWidget {
   const HomeCustomAppBar({super.key});

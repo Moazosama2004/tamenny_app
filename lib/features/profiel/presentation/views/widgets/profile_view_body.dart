@@ -11,8 +11,6 @@ import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/signout_button.dart';
 import 'package:tamenny_app/generated/l10n.dart';
-import 'package:tamenny_app/main.dart';
-import 'package:tamenny_app/tamenny_app.dart';
 
 class ProfileViewBody extends StatelessWidget {
   const ProfileViewBody({super.key});

@@ -5,7 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:tamenny_app/config/locale_notifier.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/generated/l10n.dart';
-import 'package:tamenny_app/tamenny_app.dart';
 
 void showLanguagePicker(BuildContext context,
     {required String currentLanguage}) {
