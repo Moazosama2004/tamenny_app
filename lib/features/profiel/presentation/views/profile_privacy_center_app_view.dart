@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class ProfilePrivacyCenterScreen extends StatelessWidget {
   const ProfilePrivacyCenterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
+
     return Scaffold(
-      appBar: customAppBar(context, title: 'Privacy Center'),
+      appBar: customAppBar(context, title: s.privacyCenterTitle),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
@@ -16,57 +19,57 @@ class ProfilePrivacyCenterScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Your Privacy Matters',
+                s.privacyMattersTitle,
                 style: AppStyles.font20SemiBold.copyWith(color: Colors.black),
               ),
               const SizedBox(height: 12),
               Text(
-                'At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have.',
+                s.privacyIntroText,
                 style: AppStyles.font16Regular.copyWith(color: Colors.black87),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('What We Collect'),
+              _sectionTitle(s.whatWeCollectTitle),
               _sectionBody([
-                'Preferred language (Arabic / English)',
-                'Display settings (Dark Mode / Light Mode)',
-                'General usage data (anonymous and non-identifiable)',
+                s.whatWeCollectItem1,
+                s.whatWeCollectItem2,
+                s.whatWeCollectItem3,
               ]),
               Text(
-                'We do not collect any sensitive personal data.',
+                s.noSensitiveDataNote,
                 style: AppStyles.font16Regular.copyWith(color: Colors.black45),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('How We Use Your Data'),
+              _sectionTitle(s.howWeUseDataTitle),
               _sectionBody([
-                'Personalize your app experience',
-                'Remember your preferences',
-                'Improve app performance and reliability',
+                s.howWeUseDataItem1,
+                s.howWeUseDataItem2,
+                s.howWeUseDataItem3,
               ]),
               Text(
-                'Your data is never used for advertising purposes or sold to third parties.',
+                s.noAdsOrSellingNote,
                 style: AppStyles.font16Regular.copyWith(color: Colors.black45),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('Third-Party Services'),
+              _sectionTitle(s.thirdPartyServicesTitle),
               Text(
-                'Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely.',
+                s.thirdPartyServicesDescription,
                 style: AppStyles.font16Regular.copyWith(color: Colors.black87),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('Your Controls'),
+              _sectionTitle(s.yourControlsTitle),
               _sectionBody([
-                'Change your language',
-                'Toggle Dark Mode on or off',
-                'Review app permissions',
+                s.yourControlsItem1,
+                s.yourControlsItem2,
+                s.yourControlsItem3,
               ]),
               Text(
-                'We believe in transparency and give you the tools to adjust your experience at any time.',
+                s.transparencyNote,
                 style: AppStyles.font16Regular.copyWith(color: Colors.black45),
               ),
               const SizedBox(height: 24),
-              _sectionTitle('📩 Contact Us'),
+              _sectionTitle(s.contactUsTitle),
               Text(
-                'If you have any questions or concerns about your privacy, please contact us at:\n\nsupport@tamenny.app',
+                s.contactUsDescription,
                 style: AppStyles.font16Regular.copyWith(color: Colors.black87),
               ),
               const SizedBox(height: 32),

@@ -37,7 +37,7 @@ class ProfileViewBody extends StatelessWidget {
             items: [
               ProfileItem(
                 iconPath: Assets.imagesProfileDataIcon,
-                title: 'Profile Data',
+                title: S.of(context).profileDataTitle,
                 onTap: () => Navigator.of(context, rootNavigator: true)
                     .pushNamed(Routes.personalInfoView),
               ),
@@ -117,19 +117,22 @@ class ProfileViewBody extends StatelessWidget {
             onTap: () async {
               QuickAlert.show(
                 context: context,
-                type: QuickAlertType.warning,
-                text: 'Are you sure you want to log out?',
+                type: QuickAlertType.error,
+                title: S.of(context).confirmSignOut,
+                text: S.of(context).signOutPrompt,
                 animType: QuickAlertAnimType.scale,
                 titleAlignment: TextAlign.center,
                 confirmBtnColor: Colors.white,
-                confirmBtnText: 'Sign out',
-                confirmBtnTextStyle: const TextStyle(
-                  color: Colors.red,
-                ),
-                barrierColor: Colors.black.withAlpha(100),
-                backgroundColor: Colors.white,
+                confirmBtnText: S.of(context).signOut,
+                confirmBtnTextStyle:
+                    TextStyle(color: Theme.of(context).colorScheme.error),
+                barrierColor: Colors.black.withOpacity(0.4),
+                backgroundColor: Theme.of(context).colorScheme.surface,
                 showCancelBtn: true,
+                cancelBtnText: S.of(context).cancel,
                 onConfirmBtnTap: () async {
+                  Navigator.of(context, rootNavigator: true)
+                      .pop(); // Close the alert first
                   try {
                     await FirebaseAuth.instance.signOut();
                     await GoogleSignIn().signOut();
@@ -139,15 +142,21 @@ class ProfileViewBody extends StatelessWidget {
                       await FacebookAuth.instance.logOut();
                     }
 
-                    await Navigator.of(context, rootNavigator: true)
+                    Navigator.of(context, rootNavigator: true)
                         .pushNamedAndRemoveUntil(
                             Routes.loginView, (route) => false);
                   } catch (e) {
-                    // Handle/log error
+                    QuickAlert.show(
+                      context: context,
+                      type: QuickAlertType.error,
+                      title: S.of(context).error,
+                      text: S.of(context).signOutFailed,
+                      confirmBtnText: S.of(context).ok,
+                      confirmBtnColor: Theme.of(context).colorScheme.primary,
+                    );
                     print('Sign-out error: $e');
                   }
                 },
-                cancelBtnText: 'Cancel',
               );
             },
             bgColor: Colors.white,

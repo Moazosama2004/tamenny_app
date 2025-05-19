@@ -57,11 +57,17 @@ class MessageLookup extends MessageLookupByLibrary {
             "اطرح أسئلة حول حالتك الصحية."),
         "brainCancer": MessageLookupByLibrary.simpleMessage("سرطان الدماغ"),
         "callDoctor": MessageLookupByLibrary.simpleMessage("اتصل بالطبيب"),
+        "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "chooseLanguage": MessageLookupByLibrary.simpleMessage("أختار لغه"),
+        "confirmSignOut":
+            MessageLookupByLibrary.simpleMessage("تأكيد تسجيل الخروج"),
         "connectGrow": MessageLookupByLibrary.simpleMessage(
             "اتصل، شارك، وكن جزءًا من النمو معًا."),
+        "contactUsDescription": MessageLookupByLibrary.simpleMessage(
+            "إذا كانت لديك أي أسئلة أو استفسارات بخصوص الخصوصية، يرجى التواصل معنا على:\n\nsupport@tamenny.app"),
+        "contactUsTitle": MessageLookupByLibrary.simpleMessage("📩 تواصل معنا"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "createOne": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
@@ -70,7 +76,44 @@ class MessageLookup extends MessageLookupByLibrary {
         "eatFruitsVeggies": MessageLookupByLibrary.simpleMessage(
             "تناول المزيد من الفواكه والخضروات لتعزيز جهاز المناعة."),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "error": MessageLookupByLibrary.simpleMessage("خطأ"),
         "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
+        "faqA1": MessageLookupByLibrary.simpleMessage(
+            "Tamenny هو تطبيق صحي يستخدم الذكاء الاصطناعي لتقديم تقييم أولي لحالتك الصحية، لمساعدتك في اتخاذ قرارات مدروسة قبل زيارة الطبيب. يهدف إلى توفير الوقت والمال من خلال تقديم تشخيص أولي دقيق."),
+        "faqA2": MessageLookupByLibrary.simpleMessage(
+            "يستخدم Tamenny الذكاء الاصطناعي لتحليل الأعراض وتقديم إرشادات حول الخطوات التالية المناسبة قبل زيارة الطبيب، مما يوفر لك الوقت ويقلل القلق."),
+        "faqA3": MessageLookupByLibrary.simpleMessage(
+            "يقدم Tamenny تشخيصًا أوليًا يستند إلى الذكاء الاصطناعي، لكنه لا يغني عن استشارة الطبيب المختص للحصول على تقييم نهائي ودقيق."),
+        "faqA4": MessageLookupByLibrary.simpleMessage(
+            "يوفر Tamenny نتائج موثوقة بناءً على الذكاء الاصطناعي، لكنه دائمًا ينصح باتباع استشارة طبية للحصول على رأي نهائي."),
+        "faqA5": MessageLookupByLibrary.simpleMessage(
+            "الخدمات الأساسية في Tamenny مجانية. قد تتطلب بعض الميزات الإضافية اشتراكًا مدفوعًا."),
+        "faqA6": MessageLookupByLibrary.simpleMessage(
+            "يستخدم Tamenny تقنيات أمان متقدمة لحماية بياناتك وتشفيرها أثناء التخزين والنقل لضمان خصوصيتك."),
+        "faqA7": MessageLookupByLibrary.simpleMessage(
+            "نعم، يمكنك مشاركة نتائج التقييم الخاصة بك مع مقدمي الرعاية الصحية أو من تثق بهم بسهولة."),
+        "faqA8": MessageLookupByLibrary.simpleMessage(
+            "Tamenny مناسب لجميع الأعمار، ولكن يُنصح باستخدامه للأطفال تحت إشراف الأهل أو الأوصياء."),
+        "faqA9": MessageLookupByLibrary.simpleMessage(
+            "نعم، يمكنك استخدام Tamenny، ولكن دائمًا يُنصح باستشارة طبيب مختص لحالتك الخاصة."),
+        "faqQ1": MessageLookupByLibrary.simpleMessage("ما هو Tamenny؟"),
+        "faqQ2": MessageLookupByLibrary.simpleMessage(
+            "كيف يساعدني Tamenny في مخاوفي الصحية؟"),
+        "faqQ3": MessageLookupByLibrary.simpleMessage(
+            "هل تشخيص Tamenny دقيق مثل تشخيص الطبيب؟"),
+        "faqQ4": MessageLookupByLibrary.simpleMessage(
+            "هل يمكنني الوثوق بنتائج Tamenny؟"),
+        "faqQ5":
+            MessageLookupByLibrary.simpleMessage("كم تكلفة استخدام Tamenny؟"),
+        "faqQ6":
+            MessageLookupByLibrary.simpleMessage("كيف يحمي Tamenny بياناتي؟"),
+        "faqQ7": MessageLookupByLibrary.simpleMessage(
+            "هل يمكنني مشاركة تقييمي مع الآخرين؟"),
+        "faqQ8":
+            MessageLookupByLibrary.simpleMessage("من يمكنه استخدام Tamenny؟"),
+        "faqQ9": MessageLookupByLibrary.simpleMessage(
+            "هل يمكنني استخدام Tamenny إذا كنت أعاني من حالة صحية مزمنة؟"),
+        "faqTitle": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
@@ -94,6 +137,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("كيف حالك اليوم؟"),
         "howToUseChatbot":
             MessageLookupByLibrary.simpleMessage("كيفية استخدام الروبوت:"),
+        "howWeUseDataItem1": MessageLookupByLibrary.simpleMessage(
+            "تخصيص تجربة التطبيق الخاصة بك"),
+        "howWeUseDataItem2":
+            MessageLookupByLibrary.simpleMessage("تذكّر تفضيلاتك"),
+        "howWeUseDataItem3": MessageLookupByLibrary.simpleMessage(
+            "تحسين أداء التطبيق وموثوقيته"),
+        "howWeUseDataTitle":
+            MessageLookupByLibrary.simpleMessage("كيفية استخدام بياناتك"),
         "kneeOa": MessageLookupByLibrary.simpleMessage("خشونة الركبة"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "latestMedicalNews":
@@ -109,17 +160,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "nearbyDoctors":
             MessageLookupByLibrary.simpleMessage("الأطباء القريبون"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "noAdsOrSellingNote": MessageLookupByLibrary.simpleMessage(
+            "لا يتم استخدام بياناتك لأغراض إعلانية أو بيعها لأطراف ثالثة."),
+        "noSensitiveDataNote": MessageLookupByLibrary.simpleMessage(
+            "لا نقوم بجمع أي بيانات شخصية حساسة."),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+        "ok": MessageLookupByLibrary.simpleMessage("حسناً"),
         "orSignInWith": MessageLookupByLibrary.simpleMessage(
             "أو قم بتسجيل الدخول باستخدام"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "preference": MessageLookupByLibrary.simpleMessage("التفضيلات"),
+        "privacyCenterTitle":
+            MessageLookupByLibrary.simpleMessage("مركز الخصوصية"),
+        "privacyIntroText": MessageLookupByLibrary.simpleMessage(
+            "في تمنّي، تعتبر خصوصيتك من أولوياتنا. نحن ملتزمون بحماية معلوماتك الشخصية وضمان بقائك دائمًا متحكمًا في بياناتك. تم تصميم مركز الخصوصية هذا لمساعدتك على فهم ما نقوم بجمعه وكيف نستخدمه والخيارات المتاحة لك."),
+        "privacyMattersTitle":
+            MessageLookupByLibrary.simpleMessage("خصوصيتك تهمنا"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
         "privacy_center": MessageLookupByLibrary.simpleMessage("مركز الخصوصية"),
         "proceed_to_upload":
             MessageLookupByLibrary.simpleMessage("المتابعة إلى الرفع"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "profileData":
+            MessageLookupByLibrary.simpleMessage("بيانات الملف الشخصي"),
+        "profileDataTitle":
             MessageLookupByLibrary.simpleMessage("بيانات الملف الشخصي"),
         "readMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
         "reviews": MessageLookupByLibrary.simpleMessage("مراجعات"),
@@ -144,6 +208,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendMessage": MessageLookupByLibrary.simpleMessage("أرسل رسالة..."),
         "signIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "signOutFailed": MessageLookupByLibrary.simpleMessage(
+            "فشل في تسجيل الخروج. حاول مرة أخرى."),
+        "signOutPrompt": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد أنك تريد تسجيل الخروج؟"),
         "startChatting": MessageLookupByLibrary.simpleMessage("ابدأ الدردشة"),
         "startNewScan":
             MessageLookupByLibrary.simpleMessage("ابدأ فحصًا جديدًا"),
@@ -166,6 +234,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "يساعدك روبوت تامني في الحصول على نصائح صحية أولية. إليك ما يمكنك القيام به:"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
+        "thirdPartyServicesDescription": MessageLookupByLibrary.simpleMessage(
+            "قد يستخدم تمنّي خدمات طرف ثالث موثوقة (مثل Firebase أو أدوات التحليل) لمساعدتنا على فهم استخدام التطبيق وتحسين الوظائف. تتم معالجة هذه البيانات بشكل مجهول وآمن."),
+        "thirdPartyServicesTitle":
+            MessageLookupByLibrary.simpleMessage("الخدمات الخارجية"),
+        "transparencyNote": MessageLookupByLibrary.simpleMessage(
+            "نحن نؤمن بالشفافية ونوفر لك الأدوات لتعديل تجربتك في أي وقت."),
         "upload_prompt_button":
             MessageLookupByLibrary.simpleMessage("تحميل الملف"),
         "upload_prompt_description": MessageLookupByLibrary.simpleMessage(
@@ -180,6 +254,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك"),
         "welcomeToTheTAMENNY":
             MessageLookupByLibrary.simpleMessage("مرحبًا بك في TAMENNY"),
+        "whatWeCollectItem1": MessageLookupByLibrary.simpleMessage(
+            "اللغة المفضلة (العربية / الإنجليزية)"),
+        "whatWeCollectItem2": MessageLookupByLibrary.simpleMessage(
+            "إعدادات العرض (الوضع الداكن / الوضع الفاتح)"),
+        "whatWeCollectItem3": MessageLookupByLibrary.simpleMessage(
+            "بيانات الاستخدام العامة (بشكل مجهول وغير قابل للتعريف)"),
+        "whatWeCollectTitle":
+            MessageLookupByLibrary.simpleMessage("ما نقوم بجمعه"),
         "why_choose_tamenny_reason_1": MessageLookupByLibrary.simpleMessage(
             "تحليل موثوق مدعوم بالذكاء الاصطناعي وبدقة عالية."),
         "why_choose_tamenny_reason_2": MessageLookupByLibrary.simpleMessage(
@@ -188,6 +270,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "إرشادات للخطوات التالية من أجل إدارة صحة رئتيك."),
         "why_choose_tamenny_title": MessageLookupByLibrary.simpleMessage(
             "لماذا تختار تمني لتحليل فحوصاتك؟"),
+        "yourControlsItem1":
+            MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+        "yourControlsItem2":
+            MessageLookupByLibrary.simpleMessage("تفعيل أو تعطيل الوضع الداكن"),
+        "yourControlsItem3":
+            MessageLookupByLibrary.simpleMessage("مراجعة أذونات التطبيق"),
+        "yourControlsTitle":
+            MessageLookupByLibrary.simpleMessage("التحكم الخاص بك"),
         "yourMindfulMentalHealthAICompanion":
             MessageLookupByLibrary.simpleMessage(
                 "رفيقك الذكي للصحة العقلية المدروس للجميع، في أي مكان 🍃"),

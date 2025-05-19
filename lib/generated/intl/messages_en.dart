@@ -57,12 +57,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ask questions about your health conditions."),
         "brainCancer": MessageLookupByLibrary.simpleMessage("Brain Cancer"),
         "callDoctor": MessageLookupByLibrary.simpleMessage("Call Doctor"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "chooseLanguage":
             MessageLookupByLibrary.simpleMessage("Choose language"),
+        "confirmSignOut":
+            MessageLookupByLibrary.simpleMessage("Confirm Sign Out"),
         "connectGrow": MessageLookupByLibrary.simpleMessage(
             "Connect, Share, And Grow Together."),
+        "contactUsDescription": MessageLookupByLibrary.simpleMessage(
+            "If you have any questions or concerns about your privacy, please contact us at:\n\nsupport@tamenny.app"),
+        "contactUsTitle": MessageLookupByLibrary.simpleMessage("📩 Contact Us"),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "createOne": MessageLookupByLibrary.simpleMessage("Create one"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
@@ -71,7 +77,43 @@ class MessageLookup extends MessageLookupByLibrary {
         "eatFruitsVeggies": MessageLookupByLibrary.simpleMessage(
             "Eat more fruits and veggies for a stronger immune system."),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "error": MessageLookupByLibrary.simpleMessage("Error"),
         "faq": MessageLookupByLibrary.simpleMessage("FAQ"),
+        "faqA1": MessageLookupByLibrary.simpleMessage(
+            "Tamenny is a healthcare app designed to provide an initial assessment of your health condition using AI..."),
+        "faqA2": MessageLookupByLibrary.simpleMessage(
+            "Tamenny uses AI to assess symptoms and guide your next steps before visiting a doctor..."),
+        "faqA3": MessageLookupByLibrary.simpleMessage(
+            "Tamenny offers a preliminary AI-based diagnosis, but it\'s not a substitute for a professional medical consultation..."),
+        "faqA4": MessageLookupByLibrary.simpleMessage(
+            "Tamenny provides reliable AI-based assessments but always advises professional follow-up..."),
+        "faqA5": MessageLookupByLibrary.simpleMessage(
+            "Tamenny offers its core services for free. Additional features may require a subscription..."),
+        "faqA6": MessageLookupByLibrary.simpleMessage(
+            "Tamenny uses industry-standard security measures to ensure your data is stored and transmitted securely..."),
+        "faqA7": MessageLookupByLibrary.simpleMessage(
+            "Yes, you can share your assessment results with healthcare providers or trusted contacts..."),
+        "faqA8": MessageLookupByLibrary.simpleMessage(
+            "Tamenny is designed for users of all ages, but children should use it under parental supervision..."),
+        "faqA9": MessageLookupByLibrary.simpleMessage(
+            "Yes, but always consult with a healthcare provider for personalized medical advice..."),
+        "faqQ1": MessageLookupByLibrary.simpleMessage("What is Tamenny?"),
+        "faqQ2": MessageLookupByLibrary.simpleMessage(
+            "How does Tamenny help with my health concerns?"),
+        "faqQ3": MessageLookupByLibrary.simpleMessage(
+            "Is Tamenny\'s diagnosis as accurate as a doctor’s diagnosis?"),
+        "faqQ4": MessageLookupByLibrary.simpleMessage(
+            "Can I trust the results provided by Tamenny?"),
+        "faqQ5": MessageLookupByLibrary.simpleMessage(
+            "How much does it cost to use Tamenny?"),
+        "faqQ6": MessageLookupByLibrary.simpleMessage(
+            "How does Tamenny protect my data?"),
+        "faqQ7": MessageLookupByLibrary.simpleMessage(
+            "Can I share my assessment with others?"),
+        "faqQ8": MessageLookupByLibrary.simpleMessage("Who can use Tamenny?"),
+        "faqQ9": MessageLookupByLibrary.simpleMessage(
+            "Can I use Tamenny if I have a pre-existing condition?"),
+        "faqTitle": MessageLookupByLibrary.simpleMessage("FAQ"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
@@ -95,6 +137,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("How are you Today?"),
         "howToUseChatbot":
             MessageLookupByLibrary.simpleMessage("How to Use the Chatbot:"),
+        "howWeUseDataItem1": MessageLookupByLibrary.simpleMessage(
+            "Personalize your app experience"),
+        "howWeUseDataItem2":
+            MessageLookupByLibrary.simpleMessage("Remember your preferences"),
+        "howWeUseDataItem3": MessageLookupByLibrary.simpleMessage(
+            "Improve app performance and reliability"),
+        "howWeUseDataTitle":
+            MessageLookupByLibrary.simpleMessage("How We Use Your Data"),
         "kneeOa": MessageLookupByLibrary.simpleMessage("Knee OA"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "latestMedicalNews":
@@ -110,10 +160,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "nearbyDoctors": MessageLookupByLibrary.simpleMessage("Nearby Doctors"),
         "noAccount":
             MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
+        "noAdsOrSellingNote": MessageLookupByLibrary.simpleMessage(
+            "Your data is never used for advertising purposes or sold to third parties."),
+        "noSensitiveDataNote": MessageLookupByLibrary.simpleMessage(
+            "We do not collect any sensitive personal data."),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "orSignInWith": MessageLookupByLibrary.simpleMessage("Or sign in with"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "preference": MessageLookupByLibrary.simpleMessage("Preference"),
+        "privacyCenterTitle":
+            MessageLookupByLibrary.simpleMessage("Privacy Center"),
+        "privacyIntroText": MessageLookupByLibrary.simpleMessage(
+            "At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have."),
+        "privacyMattersTitle":
+            MessageLookupByLibrary.simpleMessage("Your Privacy Matters"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "privacy_center":
             MessageLookupByLibrary.simpleMessage("Privacy Center"),
@@ -121,6 +182,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Proceed to Upload"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "profileData": MessageLookupByLibrary.simpleMessage("Profile Data"),
+        "profileDataTitle":
+            MessageLookupByLibrary.simpleMessage("Profile Data"),
         "readMore": MessageLookupByLibrary.simpleMessage("Read more"),
         "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
         "scan_brain_message": MessageLookupByLibrary.simpleMessage(
@@ -144,6 +207,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "sendMessage": MessageLookupByLibrary.simpleMessage("Send message..."),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign out"),
+        "signOutFailed": MessageLookupByLibrary.simpleMessage(
+            "Failed to sign out. Please try again."),
+        "signOutPrompt": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to log out?"),
         "startChatting": MessageLookupByLibrary.simpleMessage("Start Chatting"),
         "startNewScan": MessageLookupByLibrary.simpleMessage("Start New Scan"),
         "status_processed": MessageLookupByLibrary.simpleMessage("Processed"),
@@ -164,6 +231,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
+        "thirdPartyServicesDescription": MessageLookupByLibrary.simpleMessage(
+            "Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely."),
+        "thirdPartyServicesTitle":
+            MessageLookupByLibrary.simpleMessage("Third-Party Services"),
+        "transparencyNote": MessageLookupByLibrary.simpleMessage(
+            "We believe in transparency and give you the tools to adjust your experience at any time."),
         "upload_prompt_button":
             MessageLookupByLibrary.simpleMessage("Upload File"),
         "upload_prompt_description": MessageLookupByLibrary.simpleMessage(
@@ -179,6 +252,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
         "welcomeToTheTAMENNY":
             MessageLookupByLibrary.simpleMessage("Welcome to the TAMENNY"),
+        "whatWeCollectItem1": MessageLookupByLibrary.simpleMessage(
+            "Preferred language (Arabic / English)"),
+        "whatWeCollectItem2": MessageLookupByLibrary.simpleMessage(
+            "Display settings (Dark Mode / Light Mode)"),
+        "whatWeCollectItem3": MessageLookupByLibrary.simpleMessage(
+            "General usage data (anonymous and non-identifiable)"),
+        "whatWeCollectTitle":
+            MessageLookupByLibrary.simpleMessage("What We Collect"),
         "why_choose_tamenny_reason_1": MessageLookupByLibrary.simpleMessage(
             "Trusted AI-powered analysis with high accuracy."),
         "why_choose_tamenny_reason_2": MessageLookupByLibrary.simpleMessage(
@@ -187,6 +268,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Guidance on next steps to manage your lung health."),
         "why_choose_tamenny_title": MessageLookupByLibrary.simpleMessage(
             "Why Choose Tamenny for Your Scan Analysis?"),
+        "yourControlsItem1":
+            MessageLookupByLibrary.simpleMessage("Change your language"),
+        "yourControlsItem2":
+            MessageLookupByLibrary.simpleMessage("Toggle Dark Mode on or off"),
+        "yourControlsItem3":
+            MessageLookupByLibrary.simpleMessage("Review app permissions"),
+        "yourControlsTitle":
+            MessageLookupByLibrary.simpleMessage("Your Controls"),
         "yourMindfulMentalHealthAICompanion": MessageLookupByLibrary.simpleMessage(
             "Your mindful mental health AI companion for everyone, anywhere 🍃"),
         "yourRecentInsights":

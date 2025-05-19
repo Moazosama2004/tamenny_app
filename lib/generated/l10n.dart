@@ -1000,6 +1000,486 @@ class S {
     );
   }
 
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message(
+      'OK',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Sign Out`
+  String get confirmSignOut {
+    return Intl.message(
+      'Confirm Sign Out',
+      name: 'confirmSignOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get signOutPrompt {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'signOutPrompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to sign out. Please try again.`
+  String get signOutFailed {
+    return Intl.message(
+      'Failed to sign out. Please try again.',
+      name: 'signOutFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Center`
+  String get privacyCenterTitle {
+    return Intl.message(
+      'Privacy Center',
+      name: 'privacyCenterTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Privacy Matters`
+  String get privacyMattersTitle {
+    return Intl.message(
+      'Your Privacy Matters',
+      name: 'privacyMattersTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have.`
+  String get privacyIntroText {
+    return Intl.message(
+      'At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have.',
+      name: 'privacyIntroText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What We Collect`
+  String get whatWeCollectTitle {
+    return Intl.message(
+      'What We Collect',
+      name: 'whatWeCollectTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preferred language (Arabic / English)`
+  String get whatWeCollectItem1 {
+    return Intl.message(
+      'Preferred language (Arabic / English)',
+      name: 'whatWeCollectItem1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Display settings (Dark Mode / Light Mode)`
+  String get whatWeCollectItem2 {
+    return Intl.message(
+      'Display settings (Dark Mode / Light Mode)',
+      name: 'whatWeCollectItem2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General usage data (anonymous and non-identifiable)`
+  String get whatWeCollectItem3 {
+    return Intl.message(
+      'General usage data (anonymous and non-identifiable)',
+      name: 'whatWeCollectItem3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We do not collect any sensitive personal data.`
+  String get noSensitiveDataNote {
+    return Intl.message(
+      'We do not collect any sensitive personal data.',
+      name: 'noSensitiveDataNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How We Use Your Data`
+  String get howWeUseDataTitle {
+    return Intl.message(
+      'How We Use Your Data',
+      name: 'howWeUseDataTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personalize your app experience`
+  String get howWeUseDataItem1 {
+    return Intl.message(
+      'Personalize your app experience',
+      name: 'howWeUseDataItem1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember your preferences`
+  String get howWeUseDataItem2 {
+    return Intl.message(
+      'Remember your preferences',
+      name: 'howWeUseDataItem2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Improve app performance and reliability`
+  String get howWeUseDataItem3 {
+    return Intl.message(
+      'Improve app performance and reliability',
+      name: 'howWeUseDataItem3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your data is never used for advertising purposes or sold to third parties.`
+  String get noAdsOrSellingNote {
+    return Intl.message(
+      'Your data is never used for advertising purposes or sold to third parties.',
+      name: 'noAdsOrSellingNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Third-Party Services`
+  String get thirdPartyServicesTitle {
+    return Intl.message(
+      'Third-Party Services',
+      name: 'thirdPartyServicesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely.`
+  String get thirdPartyServicesDescription {
+    return Intl.message(
+      'Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely.',
+      name: 'thirdPartyServicesDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Controls`
+  String get yourControlsTitle {
+    return Intl.message(
+      'Your Controls',
+      name: 'yourControlsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change your language`
+  String get yourControlsItem1 {
+    return Intl.message(
+      'Change your language',
+      name: 'yourControlsItem1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Toggle Dark Mode on or off`
+  String get yourControlsItem2 {
+    return Intl.message(
+      'Toggle Dark Mode on or off',
+      name: 'yourControlsItem2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review app permissions`
+  String get yourControlsItem3 {
+    return Intl.message(
+      'Review app permissions',
+      name: 'yourControlsItem3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We believe in transparency and give you the tools to adjust your experience at any time.`
+  String get transparencyNote {
+    return Intl.message(
+      'We believe in transparency and give you the tools to adjust your experience at any time.',
+      name: 'transparencyNote',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `📩 Contact Us`
+  String get contactUsTitle {
+    return Intl.message(
+      '📩 Contact Us',
+      name: 'contactUsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you have any questions or concerns about your privacy, please contact us at:\n\nsupport@tamenny.app`
+  String get contactUsDescription {
+    return Intl.message(
+      'If you have any questions or concerns about your privacy, please contact us at:\n\nsupport@tamenny.app',
+      name: 'contactUsDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FAQ`
+  String get faqTitle {
+    return Intl.message(
+      'FAQ',
+      name: 'faqTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is Tamenny?`
+  String get faqQ1 {
+    return Intl.message(
+      'What is Tamenny?',
+      name: 'faqQ1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny is a healthcare app designed to provide an initial assessment of your health condition using AI...`
+  String get faqA1 {
+    return Intl.message(
+      'Tamenny is a healthcare app designed to provide an initial assessment of your health condition using AI...',
+      name: 'faqA1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How does Tamenny help with my health concerns?`
+  String get faqQ2 {
+    return Intl.message(
+      'How does Tamenny help with my health concerns?',
+      name: 'faqQ2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny uses AI to assess symptoms and guide your next steps before visiting a doctor...`
+  String get faqA2 {
+    return Intl.message(
+      'Tamenny uses AI to assess symptoms and guide your next steps before visiting a doctor...',
+      name: 'faqA2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is Tamenny's diagnosis as accurate as a doctor’s diagnosis?`
+  String get faqQ3 {
+    return Intl.message(
+      'Is Tamenny\'s diagnosis as accurate as a doctor’s diagnosis?',
+      name: 'faqQ3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny offers a preliminary AI-based diagnosis, but it's not a substitute for a professional medical consultation...`
+  String get faqA3 {
+    return Intl.message(
+      'Tamenny offers a preliminary AI-based diagnosis, but it\'s not a substitute for a professional medical consultation...',
+      name: 'faqA3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Can I trust the results provided by Tamenny?`
+  String get faqQ4 {
+    return Intl.message(
+      'Can I trust the results provided by Tamenny?',
+      name: 'faqQ4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny provides reliable AI-based assessments but always advises professional follow-up...`
+  String get faqA4 {
+    return Intl.message(
+      'Tamenny provides reliable AI-based assessments but always advises professional follow-up...',
+      name: 'faqA4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How much does it cost to use Tamenny?`
+  String get faqQ5 {
+    return Intl.message(
+      'How much does it cost to use Tamenny?',
+      name: 'faqQ5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny offers its core services for free. Additional features may require a subscription...`
+  String get faqA5 {
+    return Intl.message(
+      'Tamenny offers its core services for free. Additional features may require a subscription...',
+      name: 'faqA5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How does Tamenny protect my data?`
+  String get faqQ6 {
+    return Intl.message(
+      'How does Tamenny protect my data?',
+      name: 'faqQ6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny uses industry-standard security measures to ensure your data is stored and transmitted securely...`
+  String get faqA6 {
+    return Intl.message(
+      'Tamenny uses industry-standard security measures to ensure your data is stored and transmitted securely...',
+      name: 'faqA6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Can I share my assessment with others?`
+  String get faqQ7 {
+    return Intl.message(
+      'Can I share my assessment with others?',
+      name: 'faqQ7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, you can share your assessment results with healthcare providers or trusted contacts...`
+  String get faqA7 {
+    return Intl.message(
+      'Yes, you can share your assessment results with healthcare providers or trusted contacts...',
+      name: 'faqA7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Who can use Tamenny?`
+  String get faqQ8 {
+    return Intl.message(
+      'Who can use Tamenny?',
+      name: 'faqQ8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny is designed for users of all ages, but children should use it under parental supervision...`
+  String get faqA8 {
+    return Intl.message(
+      'Tamenny is designed for users of all ages, but children should use it under parental supervision...',
+      name: 'faqA8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Can I use Tamenny if I have a pre-existing condition?`
+  String get faqQ9 {
+    return Intl.message(
+      'Can I use Tamenny if I have a pre-existing condition?',
+      name: 'faqQ9',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, but always consult with a healthcare provider for personalized medical advice...`
+  String get faqA9 {
+    return Intl.message(
+      'Yes, but always consult with a healthcare provider for personalized medical advice...',
+      name: 'faqA9',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile Data`
+  String get profileDataTitle {
+    return Intl.message(
+      'Profile Data',
+      name: 'profileDataTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the 'days ago' key
 
   // skipped getter for the 'hours ago' key
