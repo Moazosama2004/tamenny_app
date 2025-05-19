@@ -620,6 +620,16 @@ class S {
     );
   }
 
+  /// `Public`
+  String get public {
+    return Intl.message(
+      'Public',
+      name: 'public',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Scan Analysis Completed`
   String get scanAnalysisCompleted {
     return Intl.message(
@@ -660,10 +670,10 @@ class S {
     );
   }
 
-  /// `ما الذي يدور في ذهنك؟`
+  /// `What's on your mind?`
   String get addPostHintText {
     return Intl.message(
-      'ما الذي يدور في ذهنك؟',
+      'What\'s on your mind?',
       name: 'addPostHintText',
       desc: '',
       args: [],

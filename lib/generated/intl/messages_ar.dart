@@ -219,6 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "عند إعداد إعدادات معلوماتك الشخصية، يجب الحرص على تقديم معلومات دقيقة."),
         "profilePictureUpdated":
             MessageLookupByLibrary.simpleMessage("تم تحديث صورة الملف الشخصي"),
+        "public": MessageLookupByLibrary.simpleMessage("العامه"),
         "readMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "scanAnalysisCompleted":

@@ -42,7 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Tamenny": MessageLookupByLibrary.simpleMessage("Tamenny"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addPostHintText":
-            MessageLookupByLibrary.simpleMessage("ما الذي يدور في ذهنك؟"),
+            MessageLookupByLibrary.simpleMessage("What\'s on your mind?"),
         "agreeLogging":
             MessageLookupByLibrary.simpleMessage("By logging in, you agree to"),
         "aiPoweredHealthInsights": MessageLookupByLibrary.simpleMessage(
@@ -218,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "When you set up your personal information settings, you should take care to provide accurate information."),
         "profilePictureUpdated":
             MessageLookupByLibrary.simpleMessage("Profile picture updated"),
+        "public": MessageLookupByLibrary.simpleMessage("Public"),
         "readMore": MessageLookupByLibrary.simpleMessage("Read more"),
         "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),

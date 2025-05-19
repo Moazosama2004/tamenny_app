@@ -14,11 +14,15 @@ class CommunityView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isArabic = Localizations.localeOf(context).languageCode == 'ar';
     return BlocProvider(
       create: (context) => CommunityCubit(getIt<CommunityRepo>())..getPosts(),
       child: Scaffold(
         appBar: customAppBar(context, title: 'Circle', leadingIcon: false),
         floatingActionButton: buildAddPostFloatingActionButton(context),
+        floatingActionButtonLocation: isArabic
+            ? FloatingActionButtonLocation.startFloat
+            : FloatingActionButtonLocation.endFloat,
         body: const CommunityViewBodyBlocBuilder(),
       ),
     );
