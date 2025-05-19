@@ -1,22 +1,7 @@
-======= 13 May ======= 
-1 - edit marker in map feature [done]
-2 - user can like post in community [done]
-3 - edit in comments below posts in post details view [done] 
-4 - display image in add comment view [done]
-5 - save dark theme in sharedPrefs [done]
-6 - user can change password now [done]
-7 - edit behaviour for user images in app [done]
-
-======= 14 May ======= 
-1 - user can make scan [Done]
-2 - add scan for user [Done]
-3 - display it and form it for enhance ux [Done]
-4 - display latest scans 
-5 - add localization for home feature
-
-======= 15 May ======= 
-free
-
-======= 16 May ======= 
-1 - display latest scans 
-2 - add localization for features
+1 - password field
+2 - padding for medical list view
+3 - notification view 
+4 - localization in add post view
+5 - chatbot theme
+6 - placeholders of profile data and add loading indicator
+7 - signout design make ux
