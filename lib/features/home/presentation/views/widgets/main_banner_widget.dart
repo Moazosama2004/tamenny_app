@@ -48,7 +48,7 @@ class MainBannerWidget extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(48))),
                     child: Padding(
-                      padding: const EdgeInsets.all(12.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Text(
                         S.of(context).startNewScan,
                         style: AppStyles.font10Regular.copyWith(

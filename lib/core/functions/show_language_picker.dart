@@ -9,13 +9,31 @@ import 'package:tamenny_app/tamenny_app.dart';
 void showLanguagePicker(BuildContext context,
     {required String currentLanguage}) {
   final localeNotifier = Provider.of<LocaleNotifier>(context, listen: false);
+  final theme = Theme.of(context);
+  final isDark = theme.brightness == Brightness.dark;
+
+  // اختار الألوان حسب الثيم
+  final backgroundColor =
+      isDark ? AppColors.darkCardColor : theme.colorScheme.surface;
+  final onSurfaceColor =
+      isDark ? AppColors.darkTextColor : theme.colorScheme.onSurface;
+  final primaryColor =
+      isDark ? AppColors.darkPrimaryColor : theme.colorScheme.primary;
+  final outlineColor =
+      isDark ? AppColors.darkDividerColor : theme.colorScheme.outline;
+  final surfaceVariantColor = isDark
+      ? AppColors.darkBackgroundColor
+      : theme.colorScheme.surfaceContainerHighest;
+  final onSurfaceVariantColor = isDark
+      ? AppColors.darkSecondaryTextColor
+      : theme.colorScheme.onSurfaceVariant;
 
   showModalBottomSheet(
     context: context,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
     ),
-    backgroundColor: Colors.white,
+    backgroundColor: backgroundColor,
     builder: (context) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
@@ -26,16 +44,17 @@ void showLanguagePicker(BuildContext context,
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: Colors.grey.shade400,
+                color: onSurfaceColor.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
             const SizedBox(height: 20),
             Text(
               S.of(context).chooseLanguage,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: onSurfaceColor,
+              ),
             ),
             const SizedBox(height: 20),
             _buildLanguageOption(
@@ -45,11 +64,16 @@ void showLanguagePicker(BuildContext context,
               onTap: () {
                 if (currentLanguage != 'en') {
                   localeNotifier.setLocale(const Locale('en'));
-                  // Switch to English
                 }
                 log(localeNotifier.locale.toString());
                 Navigator.pop(context);
               },
+              primaryColor: primaryColor,
+              onSurfaceColor: onSurfaceColor,
+              outlineColor: outlineColor,
+              surfaceVariantColor: surfaceVariantColor,
+              onSurfaceVariantColor: onSurfaceVariantColor,
+              isDark: isDark,
             ),
             const SizedBox(height: 8),
             _buildLanguageOption(
@@ -58,12 +82,17 @@ void showLanguagePicker(BuildContext context,
               isSelected: currentLanguage == 'ar',
               onTap: () {
                 if (currentLanguage != 'ar') {
-                  localeNotifier
-                      .setLocale(const Locale('ar')); // Switch to Arabic
+                  localeNotifier.setLocale(const Locale('ar'));
                 }
                 log(localeNotifier.locale.toString());
                 Navigator.pop(context);
               },
+              primaryColor: primaryColor,
+              onSurfaceColor: onSurfaceColor,
+              outlineColor: outlineColor,
+              surfaceVariantColor: surfaceVariantColor,
+              onSurfaceVariantColor: onSurfaceVariantColor,
+              isDark: isDark,
             ),
             const SizedBox(height: 16),
           ],
@@ -78,6 +107,12 @@ Widget _buildLanguageOption({
   required String label,
   required bool isSelected,
   required VoidCallback onTap,
+  required Color primaryColor,
+  required Color onSurfaceColor,
+  required Color outlineColor,
+  required Color surfaceVariantColor,
+  required Color onSurfaceVariantColor,
+  required bool isDark,
 }) {
   return InkWell(
     onTap: onTap,
@@ -86,20 +121,22 @@ Widget _buildLanguageOption({
       width: double.infinity,
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
       decoration: BoxDecoration(
-        color: isSelected
-            ? AppColors.primaryColor.withOpacity(0.08)
-            : AppColors.grayColor,
+        color:
+            isSelected ? primaryColor.withOpacity(0.15) : surfaceVariantColor,
         border: Border.all(
-          color: isSelected ? AppColors.primaryColor : AppColors.deepGrayColor,
+          color: isSelected ? primaryColor : outlineColor,
         ),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(
         label,
         style: TextStyle(
-          fontSize: 16,
-          color: isSelected ? AppColors.primaryColor : AppColors.blueDarkColor,
+          color: isSelected ? primaryColor : onSurfaceVariantColor,
           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+          fontSize: 16,
+          height: 1.3,
+          fontFamily:
+              isDark ? 'YourDarkModeFont' : null, // لو عندك فونت خاص للدارك
         ),
         textAlign: TextAlign.start,
       ),

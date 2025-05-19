@@ -29,6 +29,26 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
   XFile? selectedImage;
   final ImagePicker _picker = ImagePicker();
 
+  // Add these controllers to track text input
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    // Initialize the controllers with current user info
+    final user = getIt<UserCubit>().currentUser!;
+    nameController.text = user.name;
+    emailController.text = user.email;
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    super.dispose();
+  }
+
   Future<void> pickImage() async {
     final XFile? picked = await _picker.pickImage(source: ImageSource.gallery);
     if (picked != null) {
@@ -43,7 +63,6 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    // Use custom dark theme colors or fallback to light mode colors
     final backgroundColor =
         isDark ? AppColors.darkBackgroundColor : Colors.white;
     final fillColor = isDark ? AppColors.darkCardColor : AppColors.grayColor;
@@ -60,7 +79,7 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
     return BlocConsumer<EditProfileCubit, EditProfileState>(
       listener: (context, state) {
         if (state is EditProfileSuccess) {
-          showErrorBar(context, message: 'profile picture updated');
+          showErrorBar(context, message: 'profile data updated');
           updateUserImageUrl(state.imageUrl);
         } else if (state is EditProfileCancelled) {
           showErrorBar(context, message: 'cancelled');
@@ -186,6 +205,7 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                       ),
                       const SizedBox(height: 50),
                       TextField(
+                        controller: nameController,
                         style:
                             AppStyles.font14Medium.copyWith(color: textColor),
                         decoration: InputDecoration(
@@ -210,6 +230,7 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                       ),
                       const SizedBox(height: 16),
                       TextField(
+                        controller: emailController,
                         style:
                             AppStyles.font14Medium.copyWith(color: textColor),
                         decoration: InputDecoration(
@@ -250,17 +271,13 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
                   child: CustomAppButton(
                     text: 'Save',
                     onTap: () {
-                      if (selectedImage != null) {
-                        context.read<EditProfileCubit>().editProfileAvatar(
-                              getIt<UserCubit>().currentUser!.uId,
-                              selectedImage!,
-                            );
-                      } else {
-                        showErrorBar(
-                          context,
-                          message: 'Please choose a new avatar first',
-                        );
-                      }
+                      log('name -> ${nameController.text.trim()} ,\n email -> ${emailController.text.trim()}');
+                      context.read<EditProfileCubit>().updateProfile(
+                            userId: getIt<UserCubit>().currentUser!.uId,
+                            newAvatar: selectedImage,
+                            newEmail: emailController.text.trim(),
+                            newUsername: nameController.text.trim(),
+                          );
                     },
                   ),
                 ),

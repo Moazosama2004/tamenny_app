@@ -45,7 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "agreeLogging": MessageLookupByLibrary.simpleMessage(
             "بتسجيل الدخول، فإنك توافق على"),
         "aiPoweredHealthInsights": MessageLookupByLibrary.simpleMessage(
-            "احصل على رؤى ونصائح\nصحية أولية مدعومة بالذكاء الاصطناعي"),
+            "احصل على رؤى ونصائح\nصحية أولية مدعومة\nبالذكاء الاصطناعي"),
         "aiResults": MessageLookupByLibrary.simpleMessage(
             "نتائج مدفوعة بالذكاء الاصطناعي، رعاية مخصصة"),
         "ai_analysis_description": MessageLookupByLibrary.simpleMessage(
@@ -215,7 +215,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "profilePictureUpdated":
             MessageLookupByLibrary.simpleMessage("تم تحديث صورة الملف الشخصي"),
         "readMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
-        "reviews": MessageLookupByLibrary.simpleMessage("مراجعات"),
         "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "scan_brain_message": MessageLookupByLibrary.simpleMessage(
             "سيقوم الذكاء الاصطناعي بفحص صورة دماغك، والتعرف على علامات النمو غير الطبيعي أو الأورام، ومساعدتك في اتخاذ الخطوات التالية المعتمدة من الخبراء."),

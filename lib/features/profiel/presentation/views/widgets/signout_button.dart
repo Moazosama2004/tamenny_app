@@ -34,7 +34,7 @@ class SignOutButton extends StatelessWidget {
           showCancelBtn: true,
           cancelBtnText: S.of(context).cancel,
           onConfirmBtnTap: () async {
-            Navigator.of(context, rootNavigator: true).pop(); // Close alert
+            Navigator.of(context, rootNavigator: true).pop();
             try {
               await FirebaseAuth.instance.signOut();
               await GoogleSignIn().signOut();
@@ -60,7 +60,6 @@ class SignOutButton extends StatelessWidget {
           },
         );
       },
-      // Use theme colors for button background and text
       bgColor: theme.colorScheme.surface,
       textColor: theme.colorScheme.error,
     );
