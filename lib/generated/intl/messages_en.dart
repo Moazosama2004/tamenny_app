@@ -40,6 +40,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Sound": MessageLookupByLibrary.simpleMessage("Sound"),
         "Tamenny": MessageLookupByLibrary.simpleMessage("Tamenny"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "addPostHintText":
+            MessageLookupByLibrary.simpleMessage("ما الذي يدور في ذهنك؟"),
         "agreeLogging":
             MessageLookupByLibrary.simpleMessage("By logging in, you agree to"),
         "aiPoweredHealthInsights": MessageLookupByLibrary.simpleMessage(
@@ -65,6 +67,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose language"),
         "chooseNewAvatarError": MessageLookupByLibrary.simpleMessage(
             "Please choose a new avatar first"),
+        "commentAdded":
+            MessageLookupByLibrary.simpleMessage("Comment has been added"),
+        "commentsTitle": MessageLookupByLibrary.simpleMessage("Comments"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("Confirm New Password"),
         "confirmSignOut":
@@ -173,6 +178,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
         "noAdsOrSellingNote": MessageLookupByLibrary.simpleMessage(
             "Your data is never used for advertising purposes or sold to third parties."),
+        "noCommentsText":
+            MessageLookupByLibrary.simpleMessage("There is No Comment"),
         "noSensitiveDataNote": MessageLookupByLibrary.simpleMessage(
             "We do not collect any sensitive personal data."),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
@@ -181,6 +188,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordMismatchError": MessageLookupByLibrary.simpleMessage(
             "The new password and confirmation do not match. Please try again."),
+        "postNow": MessageLookupByLibrary.simpleMessage("Post now"),
+        "postSuccessMessage":
+            MessageLookupByLibrary.simpleMessage("Posted successfully!"),
+        "postYourReply":
+            MessageLookupByLibrary.simpleMessage("Post your reply..."),
         "preference": MessageLookupByLibrary.simpleMessage("Preference"),
         "privacyCenterTitle":
             MessageLookupByLibrary.simpleMessage("Privacy Center"),

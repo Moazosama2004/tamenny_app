@@ -40,6 +40,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Sound": MessageLookupByLibrary.simpleMessage("صوت"),
         "Tamenny": MessageLookupByLibrary.simpleMessage("تميني"),
         "account": MessageLookupByLibrary.simpleMessage("الحساب"),
+        "addPostHintText":
+            MessageLookupByLibrary.simpleMessage("ما الذي يدور في ذهنك؟"),
         "agreeLogging": MessageLookupByLibrary.simpleMessage(
             "بتسجيل الدخول، فإنك توافق على"),
         "aiPoweredHealthInsights": MessageLookupByLibrary.simpleMessage(
@@ -64,6 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseLanguage": MessageLookupByLibrary.simpleMessage("أختار لغه"),
         "chooseNewAvatarError": MessageLookupByLibrary.simpleMessage(
             "يرجى اختيار صورة جديدة أولاً"),
+        "commentAdded":
+            MessageLookupByLibrary.simpleMessage("تم إضافة التعليق"),
+        "commentsTitle": MessageLookupByLibrary.simpleMessage("التعليقات"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديدة"),
         "confirmSignOut":
@@ -164,8 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "قلل وقت الشاشة لحماية عينيك وصحتك النفسية."),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "lungCancer": MessageLookupByLibrary.simpleMessage("سرطان الرئة"),
-        "meetTamennyAiChatbot":
-            MessageLookupByLibrary.simpleMessage("تعرف على روبوت طمني الذكي"),
+        "meetTamennyAiChatbot": MessageLookupByLibrary.simpleMessage(
+            "تعرف على روبوت Tamenny الذكي"),
         "nameHint": MessageLookupByLibrary.simpleMessage("الاسم"),
         "nearbyDoctors":
             MessageLookupByLibrary.simpleMessage("الأطباء القريبون"),
@@ -174,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "noAdsOrSellingNote": MessageLookupByLibrary.simpleMessage(
             "لا يتم استخدام بياناتك لأغراض إعلانية أو بيعها لأطراف ثالثة."),
+        "noCommentsText":
+            MessageLookupByLibrary.simpleMessage("لا يوجد تعليقات"),
         "noSensitiveDataNote": MessageLookupByLibrary.simpleMessage(
             "لا نقوم بجمع أي بيانات شخصية حساسة."),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
@@ -183,6 +190,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordMismatchError": MessageLookupByLibrary.simpleMessage(
             "كلمة المرور الجديدة وتأكيدها غير متطابقين. يرجى المحاولة مرة أخرى."),
+        "postNow": MessageLookupByLibrary.simpleMessage("انشر الآن"),
+        "postSuccessMessage":
+            MessageLookupByLibrary.simpleMessage("تم النشر بنجاح!"),
+        "postYourReply": MessageLookupByLibrary.simpleMessage("انشر ردك..."),
         "preference": MessageLookupByLibrary.simpleMessage("التفضيلات"),
         "privacyCenterTitle":
             MessageLookupByLibrary.simpleMessage("مركز الخصوصية"),
@@ -238,13 +249,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تمت المعالجة"),
         "stepOne": MessageLookupByLibrary.simpleMessage("الخطوة الأولى"),
         "stepOneChatBot": MessageLookupByLibrary.simpleMessage(
-            "1. اضغط على زر \"ابدأ الدردشة\" أدناه.\\n"),
+            "1. اضغط على زر \"ابدأ الدردشة\" أدناه."),
         "stepThree": MessageLookupByLibrary.simpleMessage("الخطوة الثالثة"),
         "stepThreeChatBot": MessageLookupByLibrary.simpleMessage(
             "3. احصل على ردود فورية مدعومة بالذكاء الاصطناعي مخصصة لك."),
         "stepTwo": MessageLookupByLibrary.simpleMessage("الخطوة الثانية"),
         "stepTwoChatBot": MessageLookupByLibrary.simpleMessage(
-            "2. اطرح أي سؤال يتعلق بصحتك.\\n"),
+            "2. اطرح أي سؤال يتعلق بصحتك."),
         "stretchDaily": MessageLookupByLibrary.simpleMessage(
             "قم بالتمدد يوميًا لتحسين المرونة وتقليل التوتر."),
         "takeShortWalks": MessageLookupByLibrary.simpleMessage(

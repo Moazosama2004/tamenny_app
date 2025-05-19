@@ -7,6 +7,7 @@ import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/features/community/presentation/manager/post_cubit/post_cubit.dart';
 import 'package:tamenny_app/features/community/presentation/manager/post_cubit/post_state.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class AddPostButtonBlocConsumer extends StatelessWidget {
   const AddPostButtonBlocConsumer(
@@ -16,10 +17,12 @@ class AddPostButtonBlocConsumer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final locale = S.of(context);
+
     return BlocConsumer<AddPostCubit, AddPostState>(
       listener: (context, state) {
         if (state is AddPostSuccess) {
-          showErrorBar(context, message: 'Posted successfully!');
+          showErrorBar(context, message: locale.postSuccessMessage);
           Navigator.pop(context);
         }
 
@@ -57,7 +60,10 @@ class AddPostButtonBlocConsumer extends StatelessWidget {
                     ),
                   ),
                 )
-              : const Text("Post now", style: TextStyle(color: Colors.white)),
+              : Text(
+                  locale.postNow,
+                  style: const TextStyle(color: Colors.white),
+                ),
         );
       },
     );

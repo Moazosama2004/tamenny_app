@@ -400,16 +400,6 @@ class S {
     );
   }
 
-  /// `Sign out`
-  String get signOut {
-    return Intl.message(
-      'Sign out',
-      name: 'signOut',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Profile Data`
   String get profileData {
     return Intl.message(
@@ -555,6 +545,76 @@ class S {
     return Intl.message(
       'Meet Tamenny AI Chatbot',
       name: 'meetTamennyAiChatbot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comment has been added`
+  String get commentAdded {
+    return Intl.message(
+      'Comment has been added',
+      name: 'commentAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post your reply...`
+  String get postYourReply {
+    return Intl.message(
+      'Post your reply...',
+      name: 'postYourReply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post now`
+  String get postNow {
+    return Intl.message(
+      'Post now',
+      name: 'postNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comments`
+  String get commentsTitle {
+    return Intl.message(
+      'Comments',
+      name: 'commentsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is No Comment`
+  String get noCommentsText {
+    return Intl.message(
+      'There is No Comment',
+      name: 'noCommentsText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posted successfully!`
+  String get postSuccessMessage {
+    return Intl.message(
+      'Posted successfully!',
+      name: 'postSuccessMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ما الذي يدور في ذهنك؟`
+  String get addPostHintText {
+    return Intl.message(
+      'ما الذي يدور في ذهنك؟',
+      name: 'addPostHintText',
       desc: '',
       args: [],
     );
@@ -995,6 +1055,16 @@ class S {
     return Intl.message(
       'Please select an image to proceed',
       name: 'select_image_prompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out`
+  String get signOut {
+    return Intl.message(
+      'Sign out',
+      name: 'signOut',
       desc: '',
       args: [],
     );

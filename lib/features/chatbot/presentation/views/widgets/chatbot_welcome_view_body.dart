@@ -19,8 +19,8 @@ class ChatbotWelcomeViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 20),
-                const Text(
-                  'Meet Tamenny AI Chatbot',
+                Text(
+                  S.of(context).meetTamennyAiChatbot,
                   style: AppStyles.font26Bold,
                 ),
                 const SizedBox(height: 10),

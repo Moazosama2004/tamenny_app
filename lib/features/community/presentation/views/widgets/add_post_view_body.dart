@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/add_post_button_bloc_consumer.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class AddPostViewBody extends StatefulWidget {
   const AddPostViewBody({super.key});
@@ -35,8 +36,8 @@ class _AddPostViewBodyState extends State<AddPostViewBody> {
           TextField(
             controller: postController,
             maxLines: null,
-            decoration: const InputDecoration(
-              hintText: "What's on your mind?",
+            decoration: InputDecoration(
+              hintText: S.of(context).addPostHintText,
               border: InputBorder.none,
             ),
           ),

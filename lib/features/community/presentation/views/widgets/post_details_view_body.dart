@@ -5,7 +5,9 @@ import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/comment_widget.dart';
+import 'package:tamenny_app/features/community/presentation/views/widgets/no_comment_widget.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/post.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class PostDetailsViewBody extends StatelessWidget {
   const PostDetailsViewBody({super.key, required this.post});
@@ -19,8 +21,8 @@ class PostDetailsViewBody extends StatelessWidget {
       children: [
         Post(post: post),
         const SizedBox(height: 24),
-        const Text(
-          'Comments',
+        Text(
+          S.of(context).commentsTitle,
           style: AppStyles.font20Bold,
         ),
         const SizedBox(height: 12),
@@ -45,30 +47,5 @@ class PostDetailsViewBody extends StatelessWidget {
               )
       ],
     );
-  }
-}
-
-class NoComments extends StatelessWidget {
-  const NoComments({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Column(
-      children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: AspectRatio(
-            aspectRatio: 3 / 2,
-            child: SvgPicture.asset(
-              Assets.imagesNoCommentIcon,
-            ),
-          ),
-        ),
-        const Text('There is No Comment'),
-      ],
-    ));
   }
 }

@@ -9,6 +9,7 @@ import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 import 'package:tamenny_app/features/community/presentation/manager/add_comment_cubit/add_comment_cubit.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class AddCommentViewBody extends StatefulWidget {
   const AddCommentViewBody({super.key, required this.post});
@@ -23,10 +24,12 @@ class _AddCommentViewBodyState extends State<AddCommentViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final locale = S.of(context);
+
     return BlocConsumer<AddCommentCubit, AddCommentState>(
       listener: (context, state) {
         if (state is AddCommentSuccess) {
-          showErrorBar(context, message: 'Comment has been added');
+          showErrorBar(context, message: locale.commentAdded);
           Navigator.pop(context);
         } else if (state is AddCommentFailure) {
           showErrorBar(context, message: state.errMessage);
@@ -116,9 +119,9 @@ class _AddCommentViewBodyState extends State<AddCommentViewBody> {
                         },
                         maxLines: null,
                         style: const TextStyle(fontSize: 16),
-                        decoration: const InputDecoration(
-                          hintText: "Post your reply...",
-                          hintStyle: TextStyle(color: Colors.grey),
+                        decoration: InputDecoration(
+                          hintText: locale.postYourReply,
+                          hintStyle: const TextStyle(color: Colors.grey),
                           border: InputBorder.none,
                         ),
                       ),
