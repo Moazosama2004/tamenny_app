@@ -1,4 +1,4 @@
-1 - password field
+1 - password field [Done]
 2 - padding for medical list view
 3 - notification view 
 4 - localization in add post view

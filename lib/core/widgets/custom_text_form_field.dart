@@ -37,7 +37,6 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    // Use theme or fallback to your AppColors for fill and border colors
     final defaultFillColor = fillColor ??
         (theme.brightness == Brightness.dark
             ? AppColors.darkCardColor
