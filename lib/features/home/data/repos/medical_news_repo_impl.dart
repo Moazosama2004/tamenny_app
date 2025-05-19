@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:tamenny_app/core/errors/failure.dart';
-import 'package:tamenny_app/core/services/Medical_news_api_service.dart';
+import 'package:tamenny_app/core/services/medical_news_api_service.dart';
 import 'package:tamenny_app/core/utils/app_keys.dart';
 import 'package:tamenny_app/features/home/data/models/article_model.dart';
 import 'package:tamenny_app/features/home/domain/entites/article_entity.dart';

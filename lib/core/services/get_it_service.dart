@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
-import 'package:tamenny_app/core/services/Medical_news_api_service.dart';
+import 'package:tamenny_app/core/services/medical_news_api_service.dart';
 import 'package:tamenny_app/core/services/ai_diagnosis_service.dart';
 import 'package:tamenny_app/core/services/database_service.dart';
 import 'package:tamenny_app/core/services/firebase_auth_service.dart';

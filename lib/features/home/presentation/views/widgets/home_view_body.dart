@@ -56,7 +56,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ],
             ),
           ),
-          const LatestScansBlocBuilder(),
+          // TODO : عدل هنا ظهور الالفحوصات علي حسب اللي موجود ف الليست لو فاضيه متظهرهاش خالص
+          if (false) const LatestScansBlocBuilder(),
           const NearbyDoctorsSection(),
           const NearbyDoctorsSliverListBlocBuilder(),
           const HealthTipsSection(),

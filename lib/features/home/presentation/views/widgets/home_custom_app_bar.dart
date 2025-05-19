@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
+import 'package:tamenny_app/features/home/presentation/views/widgets/notification_icon_widget.dart';
 import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../../../../core/routes/routes.dart';
@@ -62,30 +63,6 @@ class HomeCustomAppBar extends StatelessWidget {
               .pushNamed(Routes.notificationView);
         },
         child: const NotificationIconWidget(),
-      ),
-    );
-  }
-}
-
-class NotificationIconWidget extends StatelessWidget {
-  const NotificationIconWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-
-    return CircleAvatar(
-      radius: 24,
-      backgroundColor: isDark
-          ? theme.cardColor.withOpacity(0.3) // subtle background in dark mode
-          : const Color(0xffF5F5F5), // original light bg
-      child: SvgPicture.asset(
-        Assets.imagesNotificationFoundIcon,
-        colorFilter: ColorFilter.mode(
-          isDark ? Colors.white70 : Colors.black87,
-          BlendMode.srcIn,
-        ),
       ),
     );
   }
