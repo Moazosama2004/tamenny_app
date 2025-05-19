@@ -7,15 +7,19 @@ import '../../../../../core/routes/routes.dart';
 import '../../../../../core/theme/app_styles.dart';
 
 class HealthScanItemWidget extends StatelessWidget {
-  const HealthScanItemWidget(
-      {super.key,
-      required this.healthScanCategoryEntity,
-      required this.selectedWidgetIndex});
+  const HealthScanItemWidget({
+    super.key,
+    required this.healthScanCategoryEntity,
+    required this.selectedWidgetIndex,
+  });
   final HealthScanCategoryEntity healthScanCategoryEntity;
   final int selectedWidgetIndex;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     List<ScanDetailsEntity> scansDetails = [
       ScanDetailsEntity(
         analysisTitle: S.of(context).scan_heart_title,
@@ -40,24 +44,27 @@ class HealthScanItemWidget extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.of(context, rootNavigator: true).pushNamed(Routes.scanView,
-            arguments: scansDetails[selectedWidgetIndex]);
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          Routes.scanView,
+          arguments: scansDetails[selectedWidgetIndex],
+        );
       },
       child: Column(
         children: [
           CircleAvatar(
             radius: 28,
-            backgroundColor: const Color(0xffF4F8FF),
+            backgroundColor: isDark ? theme.cardColor : const Color(0xffF4F8FF),
             child: SvgPicture.asset(
               healthScanCategoryEntity.image,
+              color: isDark ? Colors.white : null,
             ),
           ),
-          const SizedBox(
-            height: 12,
-          ),
+          const SizedBox(height: 12),
           Text(
             healthScanCategoryEntity.title,
-            style: AppStyles.font12Regular,
+            style: AppStyles.font12Regular.copyWith(
+              color: theme.textTheme.bodyMedium?.color,
+            ),
             textAlign: TextAlign.center,
           ),
         ],

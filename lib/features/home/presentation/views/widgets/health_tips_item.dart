@@ -12,16 +12,22 @@ class HealthTipsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Container(
       width: 200,
       margin: const EdgeInsets.only(right: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? theme.cardColor : Colors.white,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: isDark
+                ? Colors.white
+                    .withOpacity(0.05) // subtle light shadow for dark mode
+                : Colors.black.withOpacity(0.05),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -49,9 +55,10 @@ class HealthTipsItem extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             healthTipEntity.tip,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 13,
-              color: Colors.black54,
+              color:
+                  isDark ? theme.textTheme.bodyMedium?.color : Colors.black54,
             ),
           ),
         ],

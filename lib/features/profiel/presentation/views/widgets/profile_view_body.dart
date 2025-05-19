@@ -14,6 +14,7 @@ import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_header.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_item.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
+import 'package:tamenny_app/features/profiel/presentation/views/widgets/signout_button.dart';
 import 'package:tamenny_app/generated/l10n.dart';
 import 'package:tamenny_app/main.dart';
 import 'package:tamenny_app/tamenny_app.dart';
@@ -106,56 +107,7 @@ class ProfileViewBody extends StatelessWidget {
               ),
             ],
           ),
-          CustomAppButton(
-            text: S.of(context).signOut,
-            onTap: () async {
-              QuickAlert.show(
-                context: context,
-                type: QuickAlertType.error,
-                title: S.of(context).confirmSignOut,
-                text: S.of(context).signOutPrompt,
-                animType: QuickAlertAnimType.scale,
-                titleAlignment: TextAlign.center,
-                confirmBtnColor: Colors.white,
-                confirmBtnText: S.of(context).signOut,
-                confirmBtnTextStyle:
-                    TextStyle(color: Theme.of(context).colorScheme.error),
-                barrierColor: Colors.black.withOpacity(0.4),
-                backgroundColor: Theme.of(context).colorScheme.surface,
-                showCancelBtn: true,
-                cancelBtnText: S.of(context).cancel,
-                onConfirmBtnTap: () async {
-                  Navigator.of(context, rootNavigator: true)
-                      .pop(); // Close the alert first
-                  try {
-                    await FirebaseAuth.instance.signOut();
-                    await GoogleSignIn().signOut();
-
-                    final accessToken = await FacebookAuth.instance.accessToken;
-                    if (accessToken != null) {
-                      await FacebookAuth.instance.logOut();
-                    }
-
-                    Navigator.of(context, rootNavigator: true)
-                        .pushNamedAndRemoveUntil(
-                            Routes.loginView, (route) => false);
-                  } catch (e) {
-                    QuickAlert.show(
-                      context: context,
-                      type: QuickAlertType.error,
-                      title: S.of(context).error,
-                      text: S.of(context).signOutFailed,
-                      confirmBtnText: S.of(context).ok,
-                      confirmBtnColor: Theme.of(context).colorScheme.primary,
-                    );
-                    print('Sign-out error: $e');
-                  }
-                },
-              );
-            },
-            bgColor: Colors.white,
-            textColor: Colors.red,
-          )
+          SignOutButton(),
         ],
       ),
     );

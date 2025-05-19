@@ -24,6 +24,8 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return CustomTextFormField(
       controller: widget.controller,
       hintText: widget.text ?? S.of(context).password,
@@ -36,10 +38,17 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
             isObscure = !isObscure;
           });
         },
-        icon: isObscure
-            ? const Icon(Icons.remove_red_eye)
-            : const Icon(Icons.visibility_off),
+        icon: Icon(
+          isObscure ? Icons.remove_red_eye : Icons.visibility_off,
+          color: theme.iconTheme.color,
+        ),
       ),
+
+      // Pass colors/styles based on theme:
+      fillColor: theme.cardColor,
+      borderColor: theme.dividerColor,
+      hintStyle: theme.textTheme.bodyMedium,
+      textColor: theme.textTheme.bodyLarge?.color,
     );
   }
 }

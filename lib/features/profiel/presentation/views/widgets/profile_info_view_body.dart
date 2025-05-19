@@ -17,12 +17,9 @@ import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/profiel/presentation/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:tamenny_app/features/profiel/presentation/manager/edit_profile_cubit/edit_profile_state.dart';
-import 'package:tamenny_app/generated/l10n.dart';
 
 class ProfileInfoViewBody extends StatefulWidget {
-  const ProfileInfoViewBody({
-    super.key,
-  });
+  const ProfileInfoViewBody({super.key});
 
   @override
   State<ProfileInfoViewBody> createState() => _ProfileInfoViewBodyState();
@@ -43,207 +40,232 @@ class _ProfileInfoViewBodyState extends State<ProfileInfoViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    final locale = S.of(context);
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    // Use custom dark theme colors or fallback to light mode colors
+    final backgroundColor =
+        isDark ? AppColors.darkBackgroundColor : Colors.white;
+    final fillColor = isDark ? AppColors.darkCardColor : AppColors.grayColor;
+    final borderColor =
+        isDark ? AppColors.darkDividerColor : AppColors.deepGrayColor;
+    final hintTextColor =
+        isDark ? AppColors.darkSecondaryTextColor : const Color(0xffC2C2C2);
+    final textColor = isDark ? AppColors.darkTextColor : Colors.black87;
+    final shimmerBaseColor =
+        isDark ? AppColors.darkDividerColor : Colors.grey[300]!;
+    final shimmerHighlightColor =
+        isDark ? AppColors.darkCardColor : Colors.grey[100]!;
 
     return BlocConsumer<EditProfileCubit, EditProfileState>(
       listener: (context, state) {
         if (state is EditProfileSuccess) {
-          showErrorBar(context, message: locale.profilePictureUpdated);
+          showErrorBar(context, message: 'profile picture updated');
           updateUserImageUrl(state.imageUrl);
         } else if (state is EditProfileCancelled) {
-          showErrorBar(context, message: locale.cancelled);
+          showErrorBar(context, message: 'cancelled');
         } else if (state is EditProfileError) {
           log(state.message);
           showErrorBar(context, message: state.message);
         }
       },
       builder: (context, state) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              Expanded(
-                child: ListView(
-                  children: [
-                    const SizedBox(height: 48),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            pickImage();
-                          },
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 65,
-                                backgroundColor: Colors.white,
-                                child: ClipOval(
-                                  child: selectedImage == null
-                                      ? CachedNetworkImage(
-                                          imageUrl: getIt<UserCubit>()
-                                              .currentUser!
-                                              .userAvatarUrl,
-                                          width: 130,
-                                          height: 130,
-                                          fit: BoxFit.cover,
-                                          placeholder: (context, url) =>
-                                              Shimmer.fromColors(
-                                            baseColor: Colors.grey[300]!,
-                                            highlightColor: Colors.grey[100]!,
-                                            child: Container(
+        return Container(
+          color: backgroundColor,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: [
+                Expanded(
+                  child: ListView(
+                    children: [
+                      const SizedBox(height: 48),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: pickImage,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                CircleAvatar(
+                                  radius: 65,
+                                  backgroundColor: backgroundColor,
+                                  child: ClipOval(
+                                    child: selectedImage == null
+                                        ? CachedNetworkImage(
+                                            imageUrl: getIt<UserCubit>()
+                                                .currentUser!
+                                                .userAvatarUrl,
+                                            width: 130,
+                                            height: 130,
+                                            fit: BoxFit.cover,
+                                            placeholder: (context, url) =>
+                                                Shimmer.fromColors(
+                                              baseColor: shimmerBaseColor,
+                                              highlightColor:
+                                                  shimmerHighlightColor,
+                                              child: Container(
+                                                width: 130,
+                                                height: 130,
+                                                decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color: shimmerBaseColor,
+                                                ),
+                                              ),
+                                            ),
+                                            errorWidget:
+                                                (context, url, error) =>
+                                                    Container(
                                               width: 130,
                                               height: 130,
                                               decoration: BoxDecoration(
                                                 shape: BoxShape.circle,
-                                                color: Colors.grey[300],
+                                                color: isDark
+                                                    ? AppColors.darkDividerColor
+                                                    : Colors.grey,
+                                              ),
+                                              child: Icon(
+                                                Icons.person,
+                                                size: 60,
+                                                color: isDark
+                                                    ? AppColors.darkTextColor
+                                                        .withOpacity(0.7)
+                                                    : Colors.white,
                                               ),
                                             ),
-                                          ),
-                                          errorWidget: (context, url, error) =>
-                                              Container(
+                                          )
+                                        : Image.file(
+                                            File(selectedImage!.path),
                                             width: 130,
                                             height: 130,
-                                            decoration: const BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Colors.grey,
-                                            ),
-                                            child: const Icon(
-                                              Icons.person,
-                                              size: 60,
-                                              color: Colors.white,
-                                            ),
+                                            fit: BoxFit.cover,
                                           ),
-                                        )
-                                      : Image.file(
-                                          File(selectedImage!.path),
-                                          width: 130,
-                                          height: 130,
-                                          fit: BoxFit.cover,
-                                        ),
+                                  ),
                                 ),
-                              ),
-                              Positioned(
-                                bottom: 0,
-                                right: 0,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    // يمكن تضيف هنا وظيفة التعديل أو اختيار صورة جديدة
-                                  },
-                                  child: Container(
-                                    width: 36,
-                                    height: 36,
-                                    decoration: const BoxDecoration(
-                                      color: Color(0xffF4F8FF),
-                                      shape: BoxShape.circle,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black12,
-                                          blurRadius: 4,
-                                          offset: Offset(0, 2),
-                                        ),
-                                      ],
-                                    ),
-                                    padding: const EdgeInsets.all(8),
-                                    child: SvgPicture.asset(
-                                      Assets.imagesPenEditIcon,
-                                      width: 20,
-                                      height: 20,
+                                Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  child: GestureDetector(
+                                    onTap: pickImage,
+                                    child: Container(
+                                      width: 36,
+                                      height: 36,
+                                      decoration: BoxDecoration(
+                                        color: isDark
+                                            ? AppColors.darkCardColor
+                                            : const Color(0xffF4F8FF),
+                                        shape: BoxShape.circle,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: isDark
+                                                ? Colors.black54
+                                                : Colors.black12,
+                                            blurRadius: 4,
+                                            offset: const Offset(0, 2),
+                                          ),
+                                        ],
+                                      ),
+                                      padding: const EdgeInsets.all(8),
+                                      child: SvgPicture.asset(
+                                        Assets.imagesPenEditIcon,
+                                        color: isDark
+                                            ? AppColors.darkTextColor
+                                                .withOpacity(0.7)
+                                            : null,
+                                        width: 20,
+                                        height: 20,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 50),
+                      TextField(
+                        style:
+                            AppStyles.font14Medium.copyWith(color: textColor),
+                        decoration: InputDecoration(
+                          hintText: getIt<UserCubit>().currentUser!.name,
+                          hintStyle: AppStyles.font14Medium
+                              .copyWith(color: hintTextColor),
+                          fillColor: fillColor,
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide(color: borderColor),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide(color: borderColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide(color: borderColor),
                           ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(height: 50),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: getIt<UserCubit>().currentUser!.name.isEmpty
-                            ? locale.nameHint
-                            : getIt<UserCubit>().currentUser!.name,
-                        hintStyle: AppStyles.font14Medium.copyWith(
-                          color: const Color(0xffC2C2C2),
-                        ),
-                        fillColor: AppColors.grayColor,
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide:
-                              const BorderSide(color: AppColors.deepGrayColor),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide:
-                              const BorderSide(color: AppColors.deepGrayColor),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide:
-                              const BorderSide(color: AppColors.deepGrayColor),
+                      ),
+                      const SizedBox(height: 16),
+                      TextField(
+                        style:
+                            AppStyles.font14Medium.copyWith(color: textColor),
+                        decoration: InputDecoration(
+                          hintText: getIt<UserCubit>().currentUser!.email,
+                          hintStyle: AppStyles.font14Medium
+                              .copyWith(color: hintTextColor),
+                          fillColor: fillColor,
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide(color: borderColor),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide(color: borderColor),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            borderSide: BorderSide(color: borderColor),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 16),
-                    TextField(
-                      decoration: InputDecoration(
-                        hintText: getIt<UserCubit>().currentUser!.email.isEmpty
-                            ? locale.emailHint
-                            : getIt<UserCubit>().currentUser!.email,
-                        hintStyle: AppStyles.font14Medium.copyWith(
-                          color: const Color(0xffC2C2C2),
-                        ),
-                        fillColor: AppColors.grayColor,
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide:
-                              const BorderSide(color: AppColors.deepGrayColor),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide:
-                              const BorderSide(color: AppColors.deepGrayColor),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide:
-                              const BorderSide(color: AppColors.deepGrayColor),
+                      const SizedBox(height: 24),
+                      Text(
+                        'When you set up your personal information settings, you should take care to provide accurate information.',
+                        style: AppStyles.font12Regular.copyWith(
+                          color: isDark
+                              ? AppColors.darkSecondaryTextColor
+                              : const Color(0xff757575),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 24),
-                    Text(
-                      locale.profileInfoDescription,
-                      style: AppStyles.font12Regular.copyWith(
-                        color: const Color(0xff757575),
-                      ),
-                    ),
-                    const SizedBox(height: 54),
-                  ],
+                      const SizedBox(height: 54),
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: CustomAppButton(
-                  text: locale.save,
-                  onTap: () {
-                    if (selectedImage != null) {
-                      context.read<EditProfileCubit>().editProfileAvatar(
-                            getIt<UserCubit>().currentUser!.uId,
-                            selectedImage!,
-                          );
-                    } else {
-                      showErrorBar(context,
-                          message: locale.chooseNewAvatarError);
-                    }
-                  },
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: CustomAppButton(
+                    text: 'Save',
+                    onTap: () {
+                      if (selectedImage != null) {
+                        context.read<EditProfileCubit>().editProfileAvatar(
+                              getIt<UserCubit>().currentUser!.uId,
+                              selectedImage!,
+                            );
+                      } else {
+                        showErrorBar(
+                          context,
+                          message: 'Please choose a new avatar first',
+                        );
+                      }
+                    },
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },

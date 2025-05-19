@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
+import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/features/home/domain/repos/latest_scans_repo.dart';
 import 'package:tamenny_app/features/home/domain/repos/medical_news_repo.dart';
 import 'package:tamenny_app/features/home/presentation/manager/latest_scans_cubit/latest_scans_cubit.dart';
@@ -13,6 +14,9 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(
@@ -26,10 +30,13 @@ class HomeView extends StatelessWidget {
         ),
       ],
       child: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light.copyWith(
-          statusBarColor: Colors.white,
-          systemNavigationBarColor: Colors.white,
-          statusBarIconBrightness: Brightness.dark,
+        value: SystemUiOverlayStyle(
+          statusBarColor: isDark ? AppColors.darkBackgroundColor : Colors.white,
+          systemNavigationBarColor:
+              isDark ? const Color.fromARGB(255, 159, 158, 158) : Colors.white,
+          statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+          systemNavigationBarIconBrightness:
+              isDark ? Brightness.light : Brightness.dark,
         ),
         child: const SafeArea(
           child: Scaffold(

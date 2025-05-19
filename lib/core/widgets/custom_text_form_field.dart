@@ -13,6 +13,10 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.onSaved,
     this.controller,
+    this.fillColor,
+    this.borderColor,
+    this.hintStyle,
+    this.textColor,
   });
 
   final String hintText;
@@ -24,6 +28,12 @@ class CustomTextFormField extends StatelessWidget {
   final Function(String?)? onSaved;
   final TextEditingController? controller;
 
+  // New optional color & style parameters:
+  final Color? fillColor;
+  final Color? borderColor;
+  final TextStyle? hintStyle;
+  final Color? textColor;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -32,26 +42,30 @@ class CustomTextFormField extends StatelessWidget {
       onChanged: onChanged,
       validator: validate,
       obscureText: obscure,
+      style: AppStyles.font14Medium.copyWith(
+        color: textColor ?? Colors.black87,
+      ),
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,
-        hintStyle: AppStyles.font14Medium.copyWith(
-          color: const Color(0xffC2C2C2),
-        ),
-        fillColor: AppColors.grayColor,
+        hintStyle: hintStyle ??
+            AppStyles.font14Medium.copyWith(
+              color: const Color(0xffC2C2C2),
+            ),
+        fillColor: fillColor ?? AppColors.grayColor,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: AppColors.deepGrayColor),
+          borderSide: BorderSide(color: borderColor ?? AppColors.deepGrayColor),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: AppColors.deepGrayColor),
+          borderSide: BorderSide(color: borderColor ?? AppColors.deepGrayColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: AppColors.deepGrayColor),
+          borderSide: BorderSide(color: borderColor ?? AppColors.deepGrayColor),
         ),
       ),
     );

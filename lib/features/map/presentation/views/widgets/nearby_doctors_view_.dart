@@ -10,16 +10,23 @@ class NearbyDoctorsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    final tileUrl = isDark
+        ? 'https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=3766cb4f731f49f2847a6f94beb1564c'
+        : 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+
     return FlutterMap(
       options: MapOptions(
         maxZoom: 18,
         minZoom: 3,
         center: const LatLng(26.563760, 31.686651),
-        zoom: 13,
+        zoom: 15,
       ),
       children: [
         TileLayer(
-          urlTemplate: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+          urlTemplate: tileUrl,
+          subdomains: isDark ? ['a', 'b', 'c', 'd'] : [],
           userAgentPackageName: 'tamenny_app',
         ),
         MarkerLayer(

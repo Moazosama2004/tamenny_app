@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
+import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/home/presentation/views/home_view.dart';
 import 'package:tamenny_app/features/map/presentation/views/nearby_doctors_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_view.dart';
+import 'package:tamenny_app/main.dart';
 
 import '../../../../chatbot/presentation/views/chat_bot_welcome_view.dart';
 import '../../../../community/presentation/views/community_view.dart';
@@ -21,12 +24,13 @@ class BottomNavBar extends StatelessWidget {
 // style 5 , 6
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return PersistentTabView(
       context,
       controller: _controller,
       screens: _buildScreens(),
       items: _navBarsItems(context),
-      backgroundColor: Colors.white,
+      backgroundColor: theme.scaffoldBackgroundColor,
       navBarStyle: NavBarStyle.style6,
       decoration: const NavBarDecoration(),
     );

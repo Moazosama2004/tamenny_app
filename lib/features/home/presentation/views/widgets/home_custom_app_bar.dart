@@ -61,10 +61,30 @@ class HomeCustomAppBar extends StatelessWidget {
           Navigator.of(context, rootNavigator: true)
               .pushNamed(Routes.notificationView);
         },
-        child: CircleAvatar(
-          radius: 24,
-          backgroundColor: const Color(0xffF5F5F5),
-          child: SvgPicture.asset(Assets.imagesNotificationFoundIcon),
+        child: const NotificationIconWidget(),
+      ),
+    );
+  }
+}
+
+class NotificationIconWidget extends StatelessWidget {
+  const NotificationIconWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    return CircleAvatar(
+      radius: 24,
+      backgroundColor: isDark
+          ? theme.cardColor.withOpacity(0.3) // subtle background in dark mode
+          : const Color(0xffF5F5F5), // original light bg
+      child: SvgPicture.asset(
+        Assets.imagesNotificationFoundIcon,
+        colorFilter: ColorFilter.mode(
+          isDark ? Colors.white70 : Colors.black87,
+          BlendMode.srcIn,
         ),
       ),
     );

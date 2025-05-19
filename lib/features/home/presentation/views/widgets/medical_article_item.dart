@@ -15,15 +15,20 @@ class MedicalArticleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? theme.cardColor : Colors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: isDark
+                ? Colors.black.withOpacity(0.4)
+                : Colors.black.withOpacity(0.05),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -41,10 +46,11 @@ class MedicalArticleItem extends StatelessWidget {
                 imageUrl: article.imageUrl,
                 fit: BoxFit.fill,
                 placeholder: (context, url) => const Skeletonizer(
-                    child: SizedBox(
-                  width: 80,
-                  height: 80,
-                )),
+                  child: SizedBox(
+                    width: 80,
+                    height: 80,
+                  ),
+                ),
                 errorWidget: (context, url, error) =>
                     SvgPicture.asset(Assets.imagesNoDataIcon),
               ),
@@ -57,16 +63,17 @@ class MedicalArticleItem extends StatelessWidget {
               children: [
                 Text(
                   article.title,
-                  style: const TextStyle(
+                  style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
+                    color: isDark ? Colors.white : null,
                   ),
                 ),
                 const SizedBox(height: 6),
                 Text(
                   article.description,
                   style: TextStyle(
-                    color: Colors.grey.shade700,
+                    color: isDark ? Colors.grey.shade400 : Colors.grey.shade700,
                     fontSize: 13.5,
                   ),
                   maxLines: 3,

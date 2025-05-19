@@ -9,47 +9,64 @@ class SearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    Color borderColor = isDark ? theme.cardColor : Colors.white;
+    Color fillColor = isDark ? theme.cardColor : Colors.white;
+    Color hintColor = isDark ? Colors.grey.shade400 : const Color(0xff949D9E);
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Color(0x0A000000),
+            color: isDark
+                ? Colors.black.withOpacity(0.6)
+                : const Color(0x0A000000),
             blurRadius: 9,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
             spreadRadius: 0,
           ),
         ],
       ),
       child: TextField(
         keyboardType: TextInputType.text,
+        style: theme.textTheme.bodyMedium
+            ?.copyWith(color: theme.textTheme.bodyLarge?.color),
         decoration: InputDecoration(
           prefixIcon: SizedBox(
             width: 20,
-            child: Center(child: SvgPicture.asset(Assets.imagesSearchIcon)),
+            child: Center(
+                child: SvgPicture.asset(Assets.imagesSearchIcon,
+                    colorFilter: ColorFilter.mode(
+                        isDark ? Colors.white70 : Colors.black54,
+                        BlendMode.srcIn))),
           ),
           suffixIcon: SizedBox(
             width: 20,
-            child: Center(child: SvgPicture.asset(Assets.imagesFilterIcon)),
+            child: Center(
+                child: SvgPicture.asset(Assets.imagesFilterIcon,
+                    colorFilter: ColorFilter.mode(
+                        isDark ? Colors.white70 : Colors.black54,
+                        BlendMode.srcIn))),
           ),
           hintText: S.of(context).search,
-          hintStyle: AppStyles.font12Regular.copyWith(
-            color: const Color(0xff949D9E),
-          ),
-          fillColor: Colors.white,
+          hintStyle: AppStyles.font12Regular.copyWith(color: hintColor),
+          fillColor: fillColor,
           filled: true,
-          border: buildBorder(),
-          enabledBorder: buildBorder(),
-          focusedBorder: buildBorder(),
+          border: buildBorder(borderColor),
+          enabledBorder: buildBorder(borderColor),
+          focusedBorder: buildBorder(borderColor),
         ),
       ),
     );
   }
 
-  OutlineInputBorder buildBorder() {
+  OutlineInputBorder buildBorder(Color color) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4),
-      borderSide: const BorderSide(color: Colors.white),
+      borderSide: BorderSide(color: color),
     );
   }
 }
