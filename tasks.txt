@@ -4,4 +4,4 @@
 4 - localization in add post view [Done]
 5 - chatbot theme [Done]
 6 - placeholders of profile data and add loading indicator
-7 - signout design make ux
+7 - signout design make ux [Done]

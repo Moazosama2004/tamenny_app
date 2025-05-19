@@ -1,10 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:quickalert/models/quickalert_animtype.dart';
-import 'package:quickalert/models/quickalert_type.dart';
-import 'package:quickalert/widgets/quickalert_dialog.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/generated/l10n.dart';
@@ -15,9 +13,11 @@ class SignOutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
 
     return CustomAppButton(
       text: S.of(context).signOut,
+      // icon: Icons.logout,
       onTap: () async {
         QuickAlert.show(
           context: context,
@@ -28,9 +28,12 @@ class SignOutButton extends StatelessWidget {
           titleAlignment: TextAlign.center,
           confirmBtnColor: theme.colorScheme.error,
           confirmBtnText: S.of(context).signOut,
-          confirmBtnTextStyle: TextStyle(color: theme.colorScheme.onError),
+          confirmBtnTextStyle: TextStyle(
+            color: theme.colorScheme.onError,
+            fontWeight: FontWeight.bold,
+          ),
           barrierColor: Colors.black.withOpacity(0.4),
-          backgroundColor: theme.colorScheme.surface,
+          backgroundColor: Colors.white,
           showCancelBtn: true,
           cancelBtnText: S.of(context).cancel,
           onConfirmBtnTap: () async {
@@ -60,7 +63,7 @@ class SignOutButton extends StatelessWidget {
           },
         );
       },
-      bgColor: theme.colorScheme.surface,
+      bgColor: theme.colorScheme.error.withOpacity(0.1),
       textColor: theme.colorScheme.error,
     );
   }
