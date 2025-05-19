@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tamenny_app/features/profiel/domain/entites/faq_item_entity.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/expanded_list_widget.dart';
 import 'package:tamenny_app/generated/l10n.dart';

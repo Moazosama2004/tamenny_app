@@ -1,16 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
-import 'package:quickalert/models/quickalert_animtype.dart';
-import 'package:quickalert/models/quickalert_type.dart';
-import 'package:quickalert/widgets/quickalert_dialog.dart';
 import 'package:tamenny_app/core/functions/show_language_picker.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
-import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_header.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_item.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_section.dart';
@@ -107,7 +100,7 @@ class ProfileViewBody extends StatelessWidget {
               ),
             ],
           ),
-          SignOutButton(),
+          const SignOutButton(),
         ],
       ),
     );

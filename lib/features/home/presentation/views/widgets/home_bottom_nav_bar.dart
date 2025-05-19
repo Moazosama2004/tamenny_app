@@ -6,12 +6,10 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/home/presentation/views/home_view.dart';
 import 'package:tamenny_app/features/map/presentation/views/nearby_doctors_view.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/profile_view.dart';
-import 'package:tamenny_app/main.dart';
 
 import '../../../../chatbot/presentation/views/chat_bot_welcome_view.dart';
 import '../../../../community/presentation/views/community_view.dart';

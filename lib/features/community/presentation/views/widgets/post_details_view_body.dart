@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
-import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
 import 'package:tamenny_app/features/community/domain/entites/post_entity.dart';
 import 'package:tamenny_app/features/community/presentation/views/widgets/comment_widget.dart';

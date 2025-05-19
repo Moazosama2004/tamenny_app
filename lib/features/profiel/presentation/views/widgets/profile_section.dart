@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_item.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
 
 class ProfileSection extends StatelessWidget {
   final String title;
