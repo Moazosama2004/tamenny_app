@@ -65,11 +65,11 @@ class BottomNavBar extends StatelessWidget {
       ),
       PersistentBottomNavBarItem(
         icon: SvgPicture.asset(
-          Assets.imagesRobotFillIcon,
+          Assets.imagesChatbotFill,
           width: 35,
         ),
         inactiveIcon: SvgPicture.asset(
-          Assets.imagesRobotLightIcon,
+          Assets.imagesChatbotLightIcon,
           width: 30,
         ),
       ),

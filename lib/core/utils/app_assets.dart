@@ -46,6 +46,14 @@ class Assets {
   /// assets/images/chat_bot_icon.svg
   static const String imagesChatBotIcon = "assets/images/chat_bot_icon.svg";
 
+  /// Assets for imagesChatbotFill
+  /// assets/images/chatbot_fill.svg
+  static const String imagesChatbotFill = "assets/images/chatbot_fill.svg";
+
+  /// Assets for imagesChatbotLightIcon
+  /// assets/images/chatbot_light_icon.svg
+  static const String imagesChatbotLightIcon = "assets/images/chatbot_light_icon.svg";
+
   /// Assets for imagesCloseIcon
   /// assets/images/close_icon.svg
   static const String imagesCloseIcon = "assets/images/close_icon.svg";
