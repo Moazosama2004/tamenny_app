@@ -58,10 +58,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "brainCancer": MessageLookupByLibrary.simpleMessage("Brain Cancer"),
         "callDoctor": MessageLookupByLibrary.simpleMessage("Call Doctor"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "chooseLanguage":
             MessageLookupByLibrary.simpleMessage("Choose language"),
+        "chooseNewAvatarError": MessageLookupByLibrary.simpleMessage(
+            "Please choose a new avatar first"),
+        "confirmNewPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm New Password"),
         "confirmSignOut":
             MessageLookupByLibrary.simpleMessage("Confirm Sign Out"),
         "connectGrow": MessageLookupByLibrary.simpleMessage(
@@ -71,12 +76,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "contactUsTitle": MessageLookupByLibrary.simpleMessage("📩 Contact Us"),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "createOne": MessageLookupByLibrary.simpleMessage("Create one"),
+        "currentPassword":
+            MessageLookupByLibrary.simpleMessage("Current Password"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "drinkWaterDaily": MessageLookupByLibrary.simpleMessage(
             "Drink plenty of water daily for better health."),
         "eatFruitsVeggies": MessageLookupByLibrary.simpleMessage(
             "Eat more fruits and veggies for a stronger immune system."),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailHint": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "faq": MessageLookupByLibrary.simpleMessage("FAQ"),
         "faqA1": MessageLookupByLibrary.simpleMessage(
@@ -157,7 +166,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungCancer": MessageLookupByLibrary.simpleMessage("Lung Cancer"),
         "meetTamennyAiChatbot":
             MessageLookupByLibrary.simpleMessage("Meet Tamenny AI Chatbot"),
+        "nameHint": MessageLookupByLibrary.simpleMessage("Name"),
         "nearbyDoctors": MessageLookupByLibrary.simpleMessage("Nearby Doctors"),
+        "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
         "noAccount":
             MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
         "noAdsOrSellingNote": MessageLookupByLibrary.simpleMessage(
@@ -168,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "orSignInWith": MessageLookupByLibrary.simpleMessage("Or sign in with"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordMismatchError": MessageLookupByLibrary.simpleMessage(
+            "The new password and confirmation do not match. Please try again."),
         "preference": MessageLookupByLibrary.simpleMessage("Preference"),
         "privacyCenterTitle":
             MessageLookupByLibrary.simpleMessage("Privacy Center"),
@@ -184,8 +197,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "profileData": MessageLookupByLibrary.simpleMessage("Profile Data"),
         "profileDataTitle":
             MessageLookupByLibrary.simpleMessage("Profile Data"),
+        "profileInfoDescription": MessageLookupByLibrary.simpleMessage(
+            "When you set up your personal information settings, you should take care to provide accurate information."),
+        "profilePictureUpdated":
+            MessageLookupByLibrary.simpleMessage("Profile picture updated"),
         "readMore": MessageLookupByLibrary.simpleMessage("Read more"),
         "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "scan_brain_message": MessageLookupByLibrary.simpleMessage(
             "Our AI will examine your brain scan, identify signs of abnormal growth or tumors, and assist you with expert-backed next steps."),
         "scan_brain_title":
@@ -237,6 +255,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Third-Party Services"),
         "transparencyNote": MessageLookupByLibrary.simpleMessage(
             "We believe in transparency and give you the tools to adjust your experience at any time."),
+        "updatePassword":
+            MessageLookupByLibrary.simpleMessage("Update Password"),
         "upload_prompt_button":
             MessageLookupByLibrary.simpleMessage("Upload File"),
         "upload_prompt_description": MessageLookupByLibrary.simpleMessage(

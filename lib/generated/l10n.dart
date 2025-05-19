@@ -1470,6 +1470,56 @@ class S {
     );
   }
 
+  /// `Current Password`
+  String get currentPassword {
+    return Intl.message(
+      'Current Password',
+      name: 'currentPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get newPassword {
+    return Intl.message(
+      'New Password',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm New Password`
+  String get confirmNewPassword {
+    return Intl.message(
+      'Confirm New Password',
+      name: 'confirmNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Password`
+  String get updatePassword {
+    return Intl.message(
+      'Update Password',
+      name: 'updatePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The new password and confirmation do not match. Please try again.`
+  String get passwordMismatchError {
+    return Intl.message(
+      'The new password and confirmation do not match. Please try again.',
+      name: 'passwordMismatchError',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Profile Data`
   String get profileDataTitle {
     return Intl.message(
@@ -1480,7 +1530,87 @@ class S {
     );
   }
 
+  /// `Profile picture updated`
+  String get profilePictureUpdated {
+    return Intl.message(
+      'Profile picture updated',
+      name: 'profilePictureUpdated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get nameHint {
+    return Intl.message(
+      'Name',
+      name: 'nameHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get emailHint {
+    return Intl.message(
+      'Email',
+      name: 'emailHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `When you set up your personal information settings, you should take care to provide accurate information.`
+  String get profileInfoDescription {
+    return Intl.message(
+      'When you set up your personal information settings, you should take care to provide accurate information.',
+      name: 'profileInfoDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please choose a new avatar first`
+  String get chooseNewAvatarError {
+    return Intl.message(
+      'Please choose a new avatar first',
+      name: 'chooseNewAvatarError',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the 'days ago' key
+
+  /// `Cancelled`
+  String get cancelled {
+    return Intl.message(
+      'Cancelled',
+      name: 'cancelled',
+      desc: '',
+      args: [],
+    );
+  }
 
   // skipped getter for the 'hours ago' key
 

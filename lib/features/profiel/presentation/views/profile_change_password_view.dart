@@ -6,7 +6,9 @@ import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
 import 'package:tamenny_app/core/widgets/custom_error_widget.dart';
 import 'package:tamenny_app/features/profiel/domain/repo/change_password_repo.dart';
 import 'package:tamenny_app/features/profiel/presentation/manager/cubit/change_password_cubit.dart';
+import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_change_password_bloc_consumer.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_change_password_view_body.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class ProfileChangePasswordView extends StatelessWidget {
   const ProfileChangePasswordView({super.key});
@@ -20,37 +22,10 @@ class ProfileChangePasswordView extends StatelessWidget {
         getIt<FirebaseAuthService>(),
       ),
       child: Scaffold(
-        appBar:
-            customAppBar(context, title: 'Change Password', leadingIcon: true),
+        appBar: customAppBar(context,
+            title: S.of(context).changePassword, leadingIcon: true),
         body: const ProfileChangePasswordBlocConsumer(),
       ),
-    );
-  }
-}
-
-class ProfileChangePasswordBlocConsumer extends StatelessWidget {
-  const ProfileChangePasswordBlocConsumer({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocConsumer<ChangePasswordCubit, ChangePasswordState>(
-      listener: (context, state) {
-        if (state is ChangePasswordSuccess) {
-          Navigator.pop(context);
-        }
-      },
-      builder: (context, state) {
-        if (state is ChangePasswordLoading) {
-          return const Center(child: CircularProgressIndicator());
-        } else if (state is ChangePasswordFailure) {
-          return CustomErrorWidget(errMessage: state.errMessage);
-        } else {
-          // For both initial and success state, show the form
-          return const ProfileChangePasswordViewBody();
-        }
-      },
     );
   }
 }

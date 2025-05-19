@@ -14,7 +14,6 @@ abstract class Routes {
   static const String completedScreen = 'completedScreen';
   static const String scanAnalysisResultsScreen = 'ScanAnalysisResults';
 
-  static const String profileNotificationView = 'profileNotificationView';
   static const String profileChangePasswordView = 'profileChangePasswordView';
   static const String profilePrivacyCenterApp = 'profilePrivacyCenterApp';
 

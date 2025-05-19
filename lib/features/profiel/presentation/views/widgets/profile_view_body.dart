@@ -42,12 +42,6 @@ class ProfileViewBody extends StatelessWidget {
                     .pushNamed(Routes.personalInfoView),
               ),
               ProfileItem(
-                iconPath: Assets.imagesProfileNotificationIcon,
-                title: S.of(context).notification,
-                onTap: () => Navigator.of(context, rootNavigator: true)
-                    .pushNamed(Routes.profileNotificationView),
-              ),
-              ProfileItem(
                 iconPath: Assets.imagesChangePasswordIcon,
                 title: S.of(context).changePassword,
                 onTap: () => Navigator.of(context, rootNavigator: true)

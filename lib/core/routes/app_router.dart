@@ -21,9 +21,6 @@ import '../../features/home/presentation/views/notification_view.dart';
 import '../../features/profiel/presentation/views/personal_info_view.dart';
 import '../../features/scan/presentation/views/preview_scan_view.dart';
 import '../../features/profiel/presentation/views/profile_faq_view.dart';
-
-import '../../features/profiel/presentation/views/profile_notification_view.dart';
-
 import '../../features/splash/presentation/views/splash_view.dart';
 import '../../features/scan/presentation/views/completed_view.dart';
 import '../../features/scan/presentation/views/scan_analysis_results.dart';
@@ -88,17 +85,13 @@ class AppRouter {
             diagnosisResultEntity: settings.arguments as DiagnosisResultEntity,
           ),
         );
-      case Routes.profileNotificationView:
-        return MaterialPageRoute(
-          builder: (context) => const ProfileNotificationView(),
-        );
       case Routes.profileChangePasswordView:
         return MaterialPageRoute(
           builder: (context) => const ProfileChangePasswordView(),
         );
       case Routes.profilePrivacyCenterApp:
         return MaterialPageRoute(
-          builder: (context) => const ProfilePrivacyCenterScreen(),
+          builder: (context) => const ProfilePrivacyCenterView(),
         );
       case Routes.chatBotView:
         return MaterialPageRoute(

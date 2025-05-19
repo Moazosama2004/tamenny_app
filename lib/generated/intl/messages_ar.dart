@@ -58,9 +58,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "brainCancer": MessageLookupByLibrary.simpleMessage("سرطان الدماغ"),
         "callDoctor": MessageLookupByLibrary.simpleMessage("اتصل بالطبيب"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+        "cancelled": MessageLookupByLibrary.simpleMessage("تم الإلغاء"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "chooseLanguage": MessageLookupByLibrary.simpleMessage("أختار لغه"),
+        "chooseNewAvatarError": MessageLookupByLibrary.simpleMessage(
+            "يرجى اختيار صورة جديدة أولاً"),
+        "confirmNewPassword":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديدة"),
         "confirmSignOut":
             MessageLookupByLibrary.simpleMessage("تأكيد تسجيل الخروج"),
         "connectGrow": MessageLookupByLibrary.simpleMessage(
@@ -70,12 +75,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "contactUsTitle": MessageLookupByLibrary.simpleMessage("📩 تواصل معنا"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "createOne": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "currentPassword":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور الحالية"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
         "drinkWaterDaily": MessageLookupByLibrary.simpleMessage(
             "اشرب الكثير من الماء يوميًا لصحة أفضل."),
         "eatFruitsVeggies": MessageLookupByLibrary.simpleMessage(
             "تناول المزيد من الفواكه والخضروات لتعزيز جهاز المناعة."),
+        "edit": MessageLookupByLibrary.simpleMessage("تعديل"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "emailHint": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "error": MessageLookupByLibrary.simpleMessage("خطأ"),
         "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
         "faqA1": MessageLookupByLibrary.simpleMessage(
@@ -157,8 +166,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungCancer": MessageLookupByLibrary.simpleMessage("سرطان الرئة"),
         "meetTamennyAiChatbot":
             MessageLookupByLibrary.simpleMessage("تعرف على روبوت طمني الذكي"),
+        "nameHint": MessageLookupByLibrary.simpleMessage("الاسم"),
         "nearbyDoctors":
             MessageLookupByLibrary.simpleMessage("الأطباء القريبون"),
+        "newPassword":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
         "noAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "noAdsOrSellingNote": MessageLookupByLibrary.simpleMessage(
             "لا يتم استخدام بياناتك لأغراض إعلانية أو بيعها لأطراف ثالثة."),
@@ -169,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "orSignInWith": MessageLookupByLibrary.simpleMessage(
             "أو قم بتسجيل الدخول باستخدام"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "passwordMismatchError": MessageLookupByLibrary.simpleMessage(
+            "كلمة المرور الجديدة وتأكيدها غير متطابقين. يرجى المحاولة مرة أخرى."),
         "preference": MessageLookupByLibrary.simpleMessage("التفضيلات"),
         "privacyCenterTitle":
             MessageLookupByLibrary.simpleMessage("مركز الخصوصية"),
@@ -185,8 +199,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("بيانات الملف الشخصي"),
         "profileDataTitle":
             MessageLookupByLibrary.simpleMessage("بيانات الملف الشخصي"),
+        "profileInfoDescription": MessageLookupByLibrary.simpleMessage(
+            "عند إعداد إعدادات معلوماتك الشخصية، يجب الحرص على تقديم معلومات دقيقة."),
+        "profilePictureUpdated":
+            MessageLookupByLibrary.simpleMessage("تم تحديث صورة الملف الشخصي"),
         "readMore": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
         "reviews": MessageLookupByLibrary.simpleMessage("مراجعات"),
+        "save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "scan_brain_message": MessageLookupByLibrary.simpleMessage(
             "سيقوم الذكاء الاصطناعي بفحص صورة دماغك، والتعرف على علامات النمو غير الطبيعي أو الأورام، ومساعدتك في اتخاذ الخطوات التالية المعتمدة من الخبراء."),
         "scan_brain_title":
@@ -240,6 +259,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("الخدمات الخارجية"),
         "transparencyNote": MessageLookupByLibrary.simpleMessage(
             "نحن نؤمن بالشفافية ونوفر لك الأدوات لتعديل تجربتك في أي وقت."),
+        "updatePassword":
+            MessageLookupByLibrary.simpleMessage("تحديث كلمة المرور"),
         "upload_prompt_button":
             MessageLookupByLibrary.simpleMessage("تحميل الملف"),
         "upload_prompt_description": MessageLookupByLibrary.simpleMessage(
