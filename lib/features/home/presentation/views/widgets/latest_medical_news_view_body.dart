@@ -8,10 +8,14 @@ class LatestMedicalNewsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: articles.length,
-      itemBuilder: (context, index) => MedicalArticleItem(
-        article: articles[index],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        itemCount: articles.length,
+        itemBuilder: (context, index) => MedicalArticleItem(
+          article: articles[index],
+        ),
       ),
     );
   }
