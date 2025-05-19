@@ -2,6 +2,6 @@
 2 - padding for medical list view [Done]
 3 - notification view [Done]
 4 - localization in add post view [Done]
-5 - chatbot theme 
+5 - chatbot theme [Done]
 6 - placeholders of profile data and add loading indicator
 7 - signout design make ux

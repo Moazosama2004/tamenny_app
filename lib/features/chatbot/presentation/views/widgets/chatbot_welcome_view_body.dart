@@ -10,6 +10,8 @@ class ChatbotWelcomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: CustomScrollView(
@@ -26,33 +28,42 @@ class ChatbotWelcomeViewBody extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   S.of(context).tamennyChatbotDescription,
-                  style: AppStyles.font16Regular,
+                  style: AppStyles.font16Regular.copyWith(
+                    color: theme.textTheme.bodyMedium?.color,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 _buildFeatureRow(
                   icon: Icons.check_circle,
                   text: S.of(context).askHealthQuestions,
+                  context: context,
                 ),
                 const SizedBox(height: 10),
                 _buildFeatureRow(
                   icon: Icons.check_circle,
                   text: S.of(context).getRecommendations,
+                  context: context,
                 ),
                 const SizedBox(height: 10),
                 _buildFeatureRow(
                   icon: Icons.check_circle,
                   text: S.of(context).learnHealthTopics,
+                  context: context,
                 ),
                 const SizedBox(height: 30),
                 Text(
                   S.of(context).howToUseChatbot,
-                  style: AppStyles.font20Bold
-                      .copyWith(color: AppColors.primaryColor),
+                  style: AppStyles.font20Bold.copyWith(
+                    color: AppColors.primaryColor,
+                  ),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   '${S.of(context).stepOneChatBot}\n${S.of(context).stepTwoChatBot}\n${S.of(context).stepThreeChatBot}',
-                  style: const TextStyle(fontSize: 16, color: Colors.black87),
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: theme.textTheme.bodyMedium?.color,
+                  ),
                 ),
                 const Spacer(),
                 CustomAppButton(
@@ -70,20 +81,28 @@ class ChatbotWelcomeViewBody extends StatelessWidget {
       ),
     );
   }
-}
 
-Row _buildFeatureRow({required IconData icon, required String text}) {
-  return Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Icon(icon, color: AppColors.primaryColor),
-      const SizedBox(width: 10),
-      Expanded(
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 16),
+  Row _buildFeatureRow({
+    required IconData icon,
+    required String text,
+    required BuildContext context,
+  }) {
+    final theme = Theme.of(context);
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(icon, color: AppColors.primaryColor),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 16,
+              color: theme.textTheme.bodyMedium?.color,
+            ),
+          ),
         ),
-      ),
-    ],
-  );
+      ],
+    );
+  }
 }

@@ -10,6 +10,8 @@ class Message extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
@@ -23,7 +25,9 @@ class Message extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 300),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: isSender ? AppColors.primaryColor : Colors.white,
+              color: isSender
+                  ? AppColors.primaryColor
+                  : theme.cardColor, // adapts to theme
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(
@@ -33,7 +37,9 @@ class Message extends StatelessWidget {
               child: Text(
                 text,
                 style: AppStyles.font14Regular.copyWith(
-                  color: isSender ? Colors.white : Colors.black,
+                  color: isSender
+                      ? Colors.white
+                      : theme.textTheme.bodyLarge?.color,
                 ),
               ),
             ),
@@ -43,5 +49,3 @@ class Message extends StatelessWidget {
     );
   }
 }
-
-// AIzaSyBidHH7rDgxm-XBHRD3zR5pMkSGRQUwBMY
