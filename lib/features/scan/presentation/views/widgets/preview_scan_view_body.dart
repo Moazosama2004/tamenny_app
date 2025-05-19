@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tamenny_app/core/functions/build_error_snack_bar.dart';
-import 'package:tamenny_app/core/functions/show_toast_message.dart';
 import 'package:tamenny_app/core/routes/routes.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/scan/presentation/manager/cubit/dianosis_state.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 import '../../manager/cubit/dianosis_cubit.dart';
 
@@ -94,19 +94,19 @@ class _PreviewScanViewBodyState extends State<PreviewScanViewBody> {
                                     fit: BoxFit.contain,
                                   ),
                                 )
-                              : const Column(
+                              : Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.add_photo_alternate_outlined,
                                       size: 40,
                                       color: Colors.blueAccent,
                                     ),
-                                    SizedBox(height: 8),
+                                    const SizedBox(height: 8),
                                     Text(
-                                      'Tap to upload your scan',
-                                      style: TextStyle(
+                                      S.of(context).upload_scan_prompt,
+                                      style: const TextStyle(
                                           fontSize: 16,
                                           color: Colors.grey,
                                           fontWeight: FontWeight.w500),
@@ -117,7 +117,7 @@ class _PreviewScanViewBodyState extends State<PreviewScanViewBody> {
                   ),
                   const Expanded(child: SizedBox(height: 24)),
                   CustomAppButton(
-                    text: 'Processed',
+                    text: S.of(context).status_processed,
                     onTap: () {
                       if (_pickedImage != null) {
                         context
@@ -125,7 +125,7 @@ class _PreviewScanViewBodyState extends State<PreviewScanViewBody> {
                             .startDiagnosis(image: _pickedImage!);
                       } else {
                         showErrorBar(context,
-                            message: 'Please select an image to proceed');
+                            message: S.of(context).select_image_prompt);
                       }
                     },
                   ),

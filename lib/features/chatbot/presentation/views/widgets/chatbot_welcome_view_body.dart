@@ -52,7 +52,7 @@ class ChatbotWelcomeViewBody extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   '${S.of(context).stepOneChatBot}\n${S.of(context).stepTwoChatBot}\n${S.of(context).stepThreeChatBot}',
-                  style: TextStyle(fontSize: 16, color: Colors.black87),
+                  style: const TextStyle(fontSize: 16, color: Colors.black87),
                 ),
                 const Spacer(),
                 CustomAppButton(

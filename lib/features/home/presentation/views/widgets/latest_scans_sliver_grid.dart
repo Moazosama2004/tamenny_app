@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
-import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
-import 'package:tamenny_app/core/models/diagnosis_result_model.dart';
-import 'package:tamenny_app/core/services/get_it_service.dart';
-import 'package:tamenny_app/features/home/presentation/manager/latest_scans_cubit/latest_scans_cubit.dart';
 import 'package:tamenny_app/features/home/presentation/views/latest_scan_result_view.dart';
 
 class LatestScansSliverGrid extends StatelessWidget {

@@ -46,6 +46,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Get AI-powered\npreliminary health\ninsights and advice"),
         "aiResults": MessageLookupByLibrary.simpleMessage(
             "AI-Driven Results, Personalized Care"),
+        "ai_analysis_description": MessageLookupByLibrary.simpleMessage(
+            "Tamenny’s AI will analyze your scan and deliver results in just a few minutes."),
+        "ai_analysis_title":
+            MessageLookupByLibrary.simpleMessage("AI Analysis"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "and": MessageLookupByLibrary.simpleMessage("and"),
@@ -76,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "getRecommendations": MessageLookupByLibrary.simpleMessage(
             "Get recommendations on your next steps."),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "get_results_title":
+            MessageLookupByLibrary.simpleMessage("Get Results & Next Steps"),
         "healthInsights": MessageLookupByLibrary.simpleMessage(
             "Accurate Health Insights, Just For You"),
         "healthScanCategories":
@@ -111,16 +117,36 @@ class MessageLookup extends MessageLookupByLibrary {
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "privacy_center":
             MessageLookupByLibrary.simpleMessage("Privacy Center"),
+        "proceed_to_upload":
+            MessageLookupByLibrary.simpleMessage("Proceed to Upload"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "profileData": MessageLookupByLibrary.simpleMessage("Profile Data"),
         "readMore": MessageLookupByLibrary.simpleMessage("Read more"),
         "reviews": MessageLookupByLibrary.simpleMessage("reviews"),
+        "scan_brain_message": MessageLookupByLibrary.simpleMessage(
+            "Our AI will examine your brain scan, identify signs of abnormal growth or tumors, and assist you with expert-backed next steps."),
+        "scan_brain_title":
+            MessageLookupByLibrary.simpleMessage("Brain Cancer"),
+        "scan_heart_message": MessageLookupByLibrary.simpleMessage(
+            "Our AI will analyze your heart scan, detect potential cardiovascular risks, and suggest preventive or corrective measures."),
+        "scan_heart_title":
+            MessageLookupByLibrary.simpleMessage("Heart Disease Analysis"),
+        "scan_knee_message": MessageLookupByLibrary.simpleMessage(
+            "Our AI will assess your knee joint, detect signs of osteoarthritis or degeneration, and offer recommendations to manage symptoms early."),
+        "scan_knee_title":
+            MessageLookupByLibrary.simpleMessage("Knee Osteoarthritis (OA)"),
+        "scan_lung_message": MessageLookupByLibrary.simpleMessage(
+            "Our AI will highlight issues, detect early-stage lung conditions like COPD, and provide guidance on the next steps."),
+        "scan_lung_title": MessageLookupByLibrary.simpleMessage("Lung Cancer"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "select_image_prompt": MessageLookupByLibrary.simpleMessage(
+            "Please select an image to proceed"),
         "sendMessage": MessageLookupByLibrary.simpleMessage("Send message..."),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign in"),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign out"),
         "startChatting": MessageLookupByLibrary.simpleMessage("Start Chatting"),
         "startNewScan": MessageLookupByLibrary.simpleMessage("Start New Scan"),
+        "status_processed": MessageLookupByLibrary.simpleMessage("Processed"),
         "stepOne": MessageLookupByLibrary.simpleMessage("Step One"),
         "stepOneChatBot": MessageLookupByLibrary.simpleMessage(
             "1. Tap the \"Start Chatting\" button below.\\n"),
@@ -138,9 +164,29 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tamenny Chatbot helps you with preliminary healthcare advice. Here is what you can do with it:"),
         "termsAndConditions":
             MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
+        "upload_prompt_button":
+            MessageLookupByLibrary.simpleMessage("Upload File"),
+        "upload_prompt_description": MessageLookupByLibrary.simpleMessage(
+            "Tap to upload your file! Let’s help you analyze your health data and provide insights."),
+        "upload_scan_description": MessageLookupByLibrary.simpleMessage(
+            "Upload your \${scan.analysisType} scan and let Tamenny assist with a trusted AI-based analysis."),
+        "upload_scan_instruction": MessageLookupByLibrary.simpleMessage(
+            "Select and upload a clear image of your \${scan.analysisType} X-ray or CT scan to begin the analysis."),
+        "upload_scan_prompt":
+            MessageLookupByLibrary.simpleMessage("Tap to upload your scan"),
+        "upload_scan_title":
+            MessageLookupByLibrary.simpleMessage("Upload Your Scan"),
         "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
         "welcomeToTheTAMENNY":
             MessageLookupByLibrary.simpleMessage("Welcome to the TAMENNY"),
+        "why_choose_tamenny_reason_1": MessageLookupByLibrary.simpleMessage(
+            "Trusted AI-powered analysis with high accuracy."),
+        "why_choose_tamenny_reason_2": MessageLookupByLibrary.simpleMessage(
+            "Get results in minutes, saving time and effort."),
+        "why_choose_tamenny_reason_3": MessageLookupByLibrary.simpleMessage(
+            "Guidance on next steps to manage your lung health."),
+        "why_choose_tamenny_title": MessageLookupByLibrary.simpleMessage(
+            "Why Choose Tamenny for Your Scan Analysis?"),
         "yourMindfulMentalHealthAICompanion": MessageLookupByLibrary.simpleMessage(
             "Your mindful mental health AI companion for everyone, anywhere 🍃"),
         "yourRecentInsights":

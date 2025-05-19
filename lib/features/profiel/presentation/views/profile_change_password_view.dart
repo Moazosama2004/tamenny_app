@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/services/firebase_auth_service.dart';
 import 'package:tamenny_app/core/services/get_it_service.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
-import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
-import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/core/widgets/custom_error_widget.dart';
-import 'package:tamenny_app/features/auth/presentation/views/widgets/password__text_field.dart';
 import 'package:tamenny_app/features/profiel/domain/repo/change_password_repo.dart';
 import 'package:tamenny_app/features/profiel/presentation/manager/cubit/change_password_cubit.dart';
 import 'package:tamenny_app/features/profiel/presentation/views/widgets/profile_change_password_view_body.dart';

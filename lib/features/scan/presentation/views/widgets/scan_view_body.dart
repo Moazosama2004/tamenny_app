@@ -6,6 +6,7 @@ import 'package:tamenny_app/core/widgets/custom_app_button.dart';
 import 'package:tamenny_app/features/scan/domain/entites/scan_details_entity.dart';
 import 'package:tamenny_app/features/scan/presentation/views/functions/build_benefits_sections.dart';
 import 'package:tamenny_app/features/scan/presentation/views/functions/build_step_indicator.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class ScanViewBody extends StatelessWidget {
   const ScanViewBody({super.key, required this.scan});
@@ -23,7 +24,7 @@ class ScanViewBody extends StatelessWidget {
             Image.asset(Assets.imagesDoctorWelcomeModel, height: 200),
             const SizedBox(height: 10),
             Text(
-              'Upload your ${scan.analysisType} scan and let Tamenny assist with a trusted AI-based analysis.',
+              S.of(context).upload_scan_description,
               style: AppStyles.font16Regular,
               textAlign: TextAlign.center,
             ),
@@ -32,31 +33,29 @@ class ScanViewBody extends StatelessWidget {
         const SizedBox(height: 30),
         buildStepIndicator(
           step: '1',
-          title: 'Upload Your Scan',
-          description:
-              'Select and upload a clear image of your ${scan.analysisType} X-ray or CT scan to begin the analysis.',
+          title: S.of(context).upload_scan_title,
+          description: S.of(context).upload_scan_instruction,
           icon: Icons.upload_file_rounded,
         ),
         const Divider(height: 40),
         buildStepIndicator(
           step: '2',
-          title: 'AI Analysis',
-          description:
-              'Tamenny’s AI will analyze your scan and deliver results in just a few minutes.',
+          title: S.of(context).ai_analysis_title,
+          description: S.of(context).ai_analysis_description,
           icon: Icons.analytics_outlined,
         ),
         const Divider(height: 40),
         buildStepIndicator(
           step: '3',
-          title: 'Get Results & Next Steps',
+          title: S.of(context).get_results_title,
           description: scan.analysisGuidanceMessages,
           icon: Icons.check_circle_outline,
         ),
         const SizedBox(height: 40),
-        buildBenefitsSection(),
+        buildBenefitsSection(context),
         const SizedBox(height: 40),
         CustomAppButton(
-          text: 'Proceed to Upload',
+          text: S.of(context).proceed_to_upload,
           onTap: () {
             Navigator.pushNamed(context, Routes.uploadFileView);
           },

@@ -5,8 +5,6 @@ import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/features/community/domain/entites/comment_entity.dart';
-import 'package:tamenny_app/features/community/presentation/views/functions/get_time_age.dart';
-import 'package:tamenny_app/features/community/presentation/views/widgets/post_header.dart';
 
 class CommentWidget extends StatelessWidget {
   final CommentEntity comment;

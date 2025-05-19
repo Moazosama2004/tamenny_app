@@ -760,6 +760,246 @@ class S {
     );
   }
 
+  /// `Heart Disease Analysis`
+  String get scan_heart_title {
+    return Intl.message(
+      'Heart Disease Analysis',
+      name: 'scan_heart_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our AI will analyze your heart scan, detect potential cardiovascular risks, and suggest preventive or corrective measures.`
+  String get scan_heart_message {
+    return Intl.message(
+      'Our AI will analyze your heart scan, detect potential cardiovascular risks, and suggest preventive or corrective measures.',
+      name: 'scan_heart_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lung Cancer`
+  String get scan_lung_title {
+    return Intl.message(
+      'Lung Cancer',
+      name: 'scan_lung_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our AI will highlight issues, detect early-stage lung conditions like COPD, and provide guidance on the next steps.`
+  String get scan_lung_message {
+    return Intl.message(
+      'Our AI will highlight issues, detect early-stage lung conditions like COPD, and provide guidance on the next steps.',
+      name: 'scan_lung_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Brain Cancer`
+  String get scan_brain_title {
+    return Intl.message(
+      'Brain Cancer',
+      name: 'scan_brain_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our AI will examine your brain scan, identify signs of abnormal growth or tumors, and assist you with expert-backed next steps.`
+  String get scan_brain_message {
+    return Intl.message(
+      'Our AI will examine your brain scan, identify signs of abnormal growth or tumors, and assist you with expert-backed next steps.',
+      name: 'scan_brain_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Knee Osteoarthritis (OA)`
+  String get scan_knee_title {
+    return Intl.message(
+      'Knee Osteoarthritis (OA)',
+      name: 'scan_knee_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our AI will assess your knee joint, detect signs of osteoarthritis or degeneration, and offer recommendations to manage symptoms early.`
+  String get scan_knee_message {
+    return Intl.message(
+      'Our AI will assess your knee joint, detect signs of osteoarthritis or degeneration, and offer recommendations to manage symptoms early.',
+      name: 'scan_knee_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload your ${scan.analysisType} scan and let Tamenny assist with a trusted AI-based analysis.`
+  String get upload_scan_description {
+    return Intl.message(
+      'Upload your \${scan.analysisType} scan and let Tamenny assist with a trusted AI-based analysis.',
+      name: 'upload_scan_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Your Scan`
+  String get upload_scan_title {
+    return Intl.message(
+      'Upload Your Scan',
+      name: 'upload_scan_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select and upload a clear image of your ${scan.analysisType} X-ray or CT scan to begin the analysis.`
+  String get upload_scan_instruction {
+    return Intl.message(
+      'Select and upload a clear image of your \${scan.analysisType} X-ray or CT scan to begin the analysis.',
+      name: 'upload_scan_instruction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI Analysis`
+  String get ai_analysis_title {
+    return Intl.message(
+      'AI Analysis',
+      name: 'ai_analysis_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tamenny’s AI will analyze your scan and deliver results in just a few minutes.`
+  String get ai_analysis_description {
+    return Intl.message(
+      'Tamenny’s AI will analyze your scan and deliver results in just a few minutes.',
+      name: 'ai_analysis_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Results & Next Steps`
+  String get get_results_title {
+    return Intl.message(
+      'Get Results & Next Steps',
+      name: 'get_results_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to Upload`
+  String get proceed_to_upload {
+    return Intl.message(
+      'Proceed to Upload',
+      name: 'proceed_to_upload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why Choose Tamenny for Your Scan Analysis?`
+  String get why_choose_tamenny_title {
+    return Intl.message(
+      'Why Choose Tamenny for Your Scan Analysis?',
+      name: 'why_choose_tamenny_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trusted AI-powered analysis with high accuracy.`
+  String get why_choose_tamenny_reason_1 {
+    return Intl.message(
+      'Trusted AI-powered analysis with high accuracy.',
+      name: 'why_choose_tamenny_reason_1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get results in minutes, saving time and effort.`
+  String get why_choose_tamenny_reason_2 {
+    return Intl.message(
+      'Get results in minutes, saving time and effort.',
+      name: 'why_choose_tamenny_reason_2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guidance on next steps to manage your lung health.`
+  String get why_choose_tamenny_reason_3 {
+    return Intl.message(
+      'Guidance on next steps to manage your lung health.',
+      name: 'why_choose_tamenny_reason_3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap to upload your file! Let’s help you analyze your health data and provide insights.`
+  String get upload_prompt_description {
+    return Intl.message(
+      'Tap to upload your file! Let’s help you analyze your health data and provide insights.',
+      name: 'upload_prompt_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload File`
+  String get upload_prompt_button {
+    return Intl.message(
+      'Upload File',
+      name: 'upload_prompt_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap to upload your scan`
+  String get upload_scan_prompt {
+    return Intl.message(
+      'Tap to upload your scan',
+      name: 'upload_scan_prompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processed`
+  String get status_processed {
+    return Intl.message(
+      'Processed',
+      name: 'status_processed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an image to proceed`
+  String get select_image_prompt {
+    return Intl.message(
+      'Please select an image to proceed',
+      name: 'select_image_prompt',
+      desc: '',
+      args: [],
+    );
+  }
+
   // skipped getter for the 'days ago' key
 
   // skipped getter for the 'hours ago' key

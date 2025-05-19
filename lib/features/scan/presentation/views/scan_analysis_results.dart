@@ -1,12 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
-import 'package:tamenny_app/features/scan/presentation/manager/cubit/dianosis_cubit.dart';
 
 import '../../../../core/routes/routes.dart';
 import '../../../../core/theme/app_styles.dart';
-import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_app_button.dart';
 

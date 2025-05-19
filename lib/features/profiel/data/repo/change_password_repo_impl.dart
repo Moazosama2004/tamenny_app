@@ -1,9 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:tamenny_app/core/errors/custom_exception.dart';
 import 'package:tamenny_app/core/errors/failure.dart';
 import 'package:tamenny_app/core/services/firebase_auth_service.dart';
-import 'package:tamenny_app/features/auth/domain/entites/user_entity.dart';
 import 'package:tamenny_app/features/profiel/domain/repo/change_password_repo.dart';
 
 class ChangePasswordRepoImpl implements ChangePasswordRepo {
@@ -19,7 +17,7 @@ class ChangePasswordRepoImpl implements ChangePasswordRepo {
       if (verifiedPassword) {
         await FirebaseAuth.instance.currentUser!.updatePassword(newPassword);
       } else {
-        throw Exception('verified password is ${verifiedPassword} and cant go');
+        throw Exception('verified password is $verifiedPassword and cant go');
       }
 
       return right(null);

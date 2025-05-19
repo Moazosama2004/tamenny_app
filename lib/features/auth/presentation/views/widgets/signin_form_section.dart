@@ -15,7 +15,6 @@ import '../../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../../core/widgets/dont_have_an_account.dart';
 import 'or_sign_in_with.dart';
 import 'social_media_methods.dart';
-import 'terms_and_conditions.dart';
 
 class SigninFormSection extends StatefulWidget {
   const SigninFormSection({super.key});

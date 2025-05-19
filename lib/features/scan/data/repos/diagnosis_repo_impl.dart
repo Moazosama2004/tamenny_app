@@ -1,6 +1,4 @@
-import 'dart:developer';
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,7 +11,6 @@ import 'package:tamenny_app/core/services/storage_service.dart';
 import 'package:tamenny_app/core/utils/backend_end_point.dart';
 import 'package:tamenny_app/core/models/diagnosis_result_model.dart';
 import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
-import 'package:tamenny_app/features/auth/data/models/user_model.dart';
 import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
 import 'package:uuid/uuid.dart';
 

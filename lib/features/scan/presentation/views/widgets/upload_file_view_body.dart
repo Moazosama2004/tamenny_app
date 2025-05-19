@@ -4,6 +4,7 @@ import 'package:tamenny_app/core/theme/app_colors.dart';
 import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/core/widgets/custom_app_button.dart';
+import 'package:tamenny_app/generated/l10n.dart';
 
 class UploadFileViewBody extends StatelessWidget {
   const UploadFileViewBody({super.key});
@@ -16,7 +17,7 @@ class UploadFileViewBody extends StatelessWidget {
         children: [
           Image.asset(Assets.imagesDoctorUploadFile),
           Text(
-            'Upload File',
+            S.of(context).upload_prompt_button,
             textAlign: TextAlign.center,
             style: AppStyles.font48SemiBold
                 .copyWith(color: AppColors.primaryColor),
@@ -25,7 +26,7 @@ class UploadFileViewBody extends StatelessWidget {
             height: 16,
           ),
           Text(
-            'Tap to upload your file! Let’s help you analyze your health data and provide insights.',
+            S.of(context).upload_prompt_description,
             textAlign: TextAlign.center,
             style: AppStyles.font16SemiBold
                 .copyWith(color: const Color(0xff242424)),
@@ -34,7 +35,7 @@ class UploadFileViewBody extends StatelessWidget {
             height: 60,
           ),
           CustomAppButton(
-            text: 'Upload File',
+            text: S.of(context).upload_prompt_button,
             onTap: () {
               Navigator.pushNamed(context, Routes.previewScanView);
             },

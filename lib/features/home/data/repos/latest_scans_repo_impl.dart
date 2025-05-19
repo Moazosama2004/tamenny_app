@@ -1,10 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/entites/diagnosis_result_entity.dart';
 import 'package:tamenny_app/core/errors/failure.dart';
 import 'package:tamenny_app/core/models/diagnosis_result_model.dart';
 import 'package:tamenny_app/core/services/database_service.dart';
-import 'package:tamenny_app/core/services/get_it_service.dart';
 import 'package:tamenny_app/core/utils/backend_end_point.dart';
 import 'package:tamenny_app/features/home/domain/repos/latest_scans_repo.dart';
 

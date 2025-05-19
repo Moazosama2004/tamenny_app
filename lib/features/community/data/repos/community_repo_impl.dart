@@ -82,7 +82,7 @@ class CommunityRepoImpl implements CommunityRepo {
         });
       }
 
-      return Right(null);
+      return const Right(null);
     } catch (e) {
       return Left(ServerFailure(errMessage: eitherM.toString()));
     }

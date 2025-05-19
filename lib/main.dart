@@ -14,7 +14,6 @@ import 'package:tamenny_app/features/auth/data/models/user_model.dart';
 import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
 import 'package:tamenny_app/features/map/presentation/manager/nearby_doctors_cubit/nearby_doctors_cubit.dart';
 import 'package:tamenny_app/tamenny_app.dart';
-import 'core/functions/change_system_ui_overlay_style.dart';
 import 'core/functions/check_auth_state_changes.dart';
 import 'firebase_options.dart';
 

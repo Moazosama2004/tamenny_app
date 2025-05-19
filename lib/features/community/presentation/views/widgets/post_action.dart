@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PostAction extends StatelessWidget {
   const PostAction({
@@ -25,7 +23,7 @@ class PostAction extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: isLiked
-              ? Icon(Icons.favorite, color: Colors.red, size: 20)
+              ? const Icon(Icons.favorite, color: Colors.red, size: 20)
               : SvgPicture.asset(
                   iconPath,
                   width: 20,
