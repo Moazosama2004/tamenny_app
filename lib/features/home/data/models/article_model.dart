@@ -56,10 +56,10 @@ class ArticleModel {
   });
 
   ArticleEntity toEntity() => ArticleEntity(
-        description: description ?? '',
-        imageUrl: imageUrl ?? '',
-        title: title ?? '',
-      );
+      description: description ?? '',
+      imageUrl: imageUrl ?? '',
+      title: title ?? '',
+      url: link ?? '');
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) => ArticleModel(
         articleId: json['article_id'] as String?,

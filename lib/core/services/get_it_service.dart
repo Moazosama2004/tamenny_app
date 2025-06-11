@@ -3,7 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:tamenny_app/core/cubits/user_cubit/user_cubit.dart';
 import 'package:tamenny_app/core/services/medical_news_api_service.dart';
-import 'package:tamenny_app/core/services/ai_diagnosis_service.dart';
+
 import 'package:tamenny_app/core/services/database_service.dart';
 import 'package:tamenny_app/core/services/firebase_auth_service.dart';
 import 'package:tamenny_app/core/services/firestore_service.dart';
@@ -22,8 +22,6 @@ import 'package:tamenny_app/features/map/data/repos/nearby_doctors_repo_impl.dar
 import 'package:tamenny_app/features/map/domain/repos/nearby_doctors_repo.dart';
 import 'package:tamenny_app/features/profiel/data/repo/change_password_repo_impl.dart';
 import 'package:tamenny_app/features/profiel/domain/repo/change_password_repo.dart';
-import 'package:tamenny_app/features/scan/data/repos/diagnosis_repo_impl.dart';
-import 'package:tamenny_app/features/scan/domain/repos/diagnosis_repo.dart';
 
 final getIt = GetIt.instance;
 
@@ -32,7 +30,7 @@ Future<void> setupGetIt() async {
   getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
   getIt.registerSingleton<DatabaseService>(FirestoreService());
   getIt.registerSingleton<StorageService>(SupabaseStorageService());
-  getIt.registerSingleton<AIDiagnosisService>(AIDiagnosisService(Dio()));
+  // getIt.registerSingleton<AIDiagnosisService>(AIDiagnosisService(Dio()));
   getIt.registerSingleton<AuthRepo>(
     AuthRepoImpl(
       firebaseAuthService: getIt<FirebaseAuthService>(),
@@ -62,13 +60,13 @@ Future<void> setupGetIt() async {
       getIt<DatabaseService>(),
     ),
   );
-  getIt.registerSingleton<DiagnosisRepo>(
-    DiagnosisRepoImpl(
-      getIt<AIDiagnosisService>(),
-      getIt<DatabaseService>(),
-      getIt<StorageService>(),
-    ),
-  );
+  // getIt.registerSingleton<DiagnosisRepo>(
+  //   DiagnosisRepoImpl(
+  //     getIt<AIDiagnosisService>(),
+  //     getIt<DatabaseService>(),
+  //     getIt<StorageService>(),
+  //   ),
+  // );
   getIt.registerSingleton<LatestScansRepo>(
     LatestScansRepoImpl(
       getIt<DatabaseService>(),

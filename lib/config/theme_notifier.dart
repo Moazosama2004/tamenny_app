@@ -37,36 +37,31 @@ class ThemeNotifier extends ChangeNotifier {
   }
 }
 
-final ThemeData darkTheme = ThemeData.dark().copyWith(
-  scaffoldBackgroundColor:
-      AppColors.darkBackgroundColor, // Dark screen background
-  primaryColor: AppColors.darkPrimaryColor, // Primary accent in dark mode
-  cardColor: AppColors.darkCardColor, // Background for cards and containers
-  dividerColor: AppColors.darkDividerColor, // For lines/separators
-
-  appBarTheme: const AppBarTheme(
-    backgroundColor: AppColors.darkBackgroundColor, // App bar background
-    foregroundColor: Colors.white, // App bar text/icon color
-    iconTheme: IconThemeData(color: Colors.white), // App bar icons
+final ThemeData darkTheme = ThemeData(
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: AppColors.darkPrimaryColor,
+    brightness: Brightness.dark,
   ),
-
+  scaffoldBackgroundColor: AppColors.darkBackgroundColor,
+  primaryColor: AppColors.darkPrimaryColor,
+  cardColor: AppColors.darkCardColor,
+  dividerColor: AppColors.darkDividerColor,
+  appBarTheme: const AppBarTheme(
+    backgroundColor: AppColors.darkBackgroundColor,
+    foregroundColor: Colors.white,
+    iconTheme: IconThemeData(color: Colors.white),
+  ),
   textTheme: const TextTheme(
-    bodyLarge: TextStyle(color: AppColors.darkTextColor), // Main text
-    bodyMedium:
-        TextStyle(color: AppColors.darkSecondaryTextColor), // Secondary text
+    bodyLarge: TextStyle(color: AppColors.darkTextColor),
+    bodyMedium: TextStyle(color: AppColors.darkSecondaryTextColor),
     titleLarge: TextStyle(color: AppColors.darkTextColor),
   ),
-
-  iconTheme:
-      const IconThemeData(color: AppColors.darkTextColor), // Default icon color
-
+  iconTheme: const IconThemeData(color: AppColors.darkTextColor),
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.darkCardColor,
     selectedItemColor: AppColors.darkPrimaryColor,
     unselectedItemColor: AppColors.darkSecondaryTextColor,
   ),
-
-  // Optional: Customize switches, sliders, etc.
   switchTheme: SwitchThemeData(
     thumbColor: WidgetStateProperty.all(AppColors.darkPrimaryColor),
     trackColor:
@@ -74,7 +69,11 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
   ),
 );
 
-final ThemeData lightTheme = ThemeData.light().copyWith(
+final ThemeData lightTheme = ThemeData(
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: AppColors.primaryColor,
+    brightness: Brightness.light,
+  ),
   scaffoldBackgroundColor: AppColors.grayColor,
   primaryColor: AppColors.primaryColor,
   cardColor: Colors.white,

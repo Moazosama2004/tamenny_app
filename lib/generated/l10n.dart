@@ -480,20 +480,20 @@ class S {
     );
   }
 
-  /// `1. Tap the "Start Chatting" button below.\n`
+  /// `1. Tap the "Start Chatting" button below.`
   String get stepOneChatBot {
     return Intl.message(
-      '1. Tap the "Start Chatting" button below.\\n',
+      '1. Tap the "Start Chatting" button below.',
       name: 'stepOneChatBot',
       desc: '',
       args: [],
     );
   }
 
-  /// `2. Ask any question related to your health.\n`
+  /// `2. Ask any question related to your health.`
   String get stepTwoChatBot {
     return Intl.message(
-      '2. Ask any question related to your health.\\n',
+      '2. Ask any question related to your health.',
       name: 'stepTwoChatBot',
       desc: '',
       args: [],
@@ -540,11 +540,51 @@ class S {
     );
   }
 
+  /// `No results found`
+  String get no_results {
+    return Intl.message(
+      'No results found',
+      name: 'no_results',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start typing to search for a doctor...`
+  String get start_typing_to_search {
+    return Intl.message(
+      'Start typing to search for a doctor...',
+      name: 'start_typing_to_search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred:`
+  String get error_occurred {
+    return Intl.message(
+      'An error occurred:',
+      name: 'error_occurred',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Comment has been added`
   String get commentAdded {
     return Intl.message(
       'Comment has been added',
       name: 'commentAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Medical News`
+  String get medical_news {
+    return Intl.message(
+      'Medical News',
+      name: 'medical_news',
       desc: '',
       args: [],
     );
@@ -1777,352 +1817,6 @@ class S {
       args: [],
     );
   }
-
-  // skipped getter for the 'AI Analysis' key
-
-  // skipped getter for the 'AI in action! Tamenny is analyzing your data to provide a personalized assessment. Sit tight!' key
-
-  // skipped getter for the 'App Updates' key
-
-  // skipped getter for the 'Are you sure you want to log out?' key
-
-  // skipped getter for the 'At Tamenny, your privacy is one of our top priorities. We are committed to protecting your personal information and ensuring that you always remain in control of your data. This Privacy Center is designed to help you understand what we collect, how we use it, and the choices you have.' key
-
-  // skipped getter for the 'At our app, we take the security of your information seriously.' key
-
-  // skipped getter for the 'Can I share my assessment with others?' key
-
-  // skipped getter for the 'Can I trust the results provided by Tamenny?' key
-
-  // skipped getter for the 'Can I use Tamenny if I have a pre-existing condition?' key
-
-  /// `Cancel`
-  String get Cancel {
-    return Intl.message(
-      'Cancel',
-      name: 'Cancel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Change Password' key
-
-  // skipped getter for the 'Change your language' key
-
-  // skipped getter for the 'Check your email for the reset link.' key
-
-  /// `Circle`
-  String get Circle {
-    return Intl.message(
-      'Circle',
-      name: 'Circle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Clear All History' key
-
-  // skipped getter for the 'Comment has been added' key
-
-  /// `Comments`
-  String get Comments {
-    return Intl.message(
-      'Comments',
-      name: 'Comments',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Completed`
-  String get Completed {
-    return Intl.message(
-      'Completed',
-      name: 'Completed',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Confirm New Password' key
-
-  // skipped getter for the 'Consulting with a pulmonologist is advised for a thorough evaluation and personalized treatment strategies.' key
-
-  // skipped getter for the 'Contact Support' key
-
-  // skipped getter for the 'Continue your periodic health check-ups.' key
-
-  // skipped getter for the 'Could not launch \$phone' key
-
-  // skipped getter for the 'Current Password' key
-
-  // skipped getter for the 'Dark Mode' key
-
-  /// `Dental`
-  String get Dental {
-    return Intl.message(
-      'Dental',
-      name: 'Dental',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Diagnosed Condition: Potential Early-Stage Chronic Obstructive Pulmonary Disease (COPD)' key
-
-  // skipped getter for the 'Diagnosis Summary' key
-
-  /// `Doctors`
-  String get Doctors {
-    return Intl.message(
-      'Doctors',
-      name: 'Doctors',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Email or Phone Number' key
-
-  // skipped getter for the 'Error: \${state.message}' key
-
-  /// `FAQ`
-  String get FAQ {
-    return Intl.message(
-      'FAQ',
-      name: 'FAQ',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Failed to sign in with Google. Please try again.' key
-
-  // skipped getter for the 'Forgot Password' key
-
-  // skipped getter for the 'Forgot Password?' key
-
-  // skipped getter for the 'General usage data (anonymous and non-identifiable)' key
-
-  // skipped getter for the 'Get Results & Next Steps' key
-
-  // skipped getter for the 'Get Started' key
-
-  // skipped getter for the 'Get results in minutes, saving time and effort.' key
-
-  // skipped getter for the 'Good health starts with awareness. Thanks for letting Tamenny help you take that step!' key
-
-  // skipped getter for the 'Guidance on next steps to manage your lung health.' key
-
-  // skipped getter for the 'Heart Disease Analysis' key
-
-  // skipped getter for the 'How We Use Your Data' key
-
-  // skipped getter for the 'How does Tamenny help with my health concerns?' key
-
-  // skipped getter for the 'How does Tamenny protect my data?' key
-
-  // skipped getter for the 'How much does it cost to use Tamenny?' key
-
-  // skipped getter for the 'If you have any questions or concerns about your privacy, please contact us at:\\n\\nsupport@tamenny.app' key
-
-  // skipped getter for the 'Improve app performance and reliability' key
-
-  // skipped getter for the 'Is Tamenny\\' key
-
-  // skipped getter for the 'Keep doing regular light exercises.' key
-
-  // skipped getter for the 'Knee Osteoarthritis (OA)' key
-
-  /// `Language`
-  String get Language {
-    return Intl.message(
-      'Language',
-      name: 'Language',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Lung Disease Analysis' key
-
-  // skipped getter for the 'Maintain a healthy diet.' key
-
-  // skipped getter for the 'Mark all as read' key
-
-  // skipped getter for the 'Medical News' key
-
-  // skipped getter for the 'Need Help?' key
-
-  // skipped getter for the 'New Password' key
-
-  // skipped getter for the 'No health issues were detected in this scan.' key
-
-  // skipped getter for the 'No results yet. Start typing...' key
-
-  /// `Notification`
-  String get Notification {
-    return Intl.message(
-      'Notification',
-      name: 'Notification',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Notification from Tamenny' key
-
-  // skipped getter for the 'Or sign in with' key
-
-  // skipped getter for the 'Our AI will analyze your heart scan, detect potential cardiovascular risks, and suggest preventive or corrective measures.' key
-
-  // skipped getter for the 'Our AI will assess your knee joint, detect signs of osteoarthritis or degeneration, and offer recommendations to manage symptoms early.' key
-
-  // skipped getter for the 'Our AI will examine your brain scan, identify signs of abnormal growth or tumors, and assist you with expert-backed next steps.' key
-
-  // skipped getter for the 'Our AI will highlight issues, detect early-stage lung conditions like COPD, and provide guidance on the next steps.' key
-
-  /// `PREFERENCE`
-  String get PREFERENCE {
-    return Intl.message(
-      'PREFERENCE',
-      name: 'PREFERENCE',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Personal information' key
-
-  // skipped getter for the 'Personalize your app experience' key
-
-  // skipped getter for the 'Please choose a new avatar first' key
-
-  // skipped getter for the 'Please select an image to proceed' key
-
-  // skipped getter for the 'Post now' key
-
-  // skipped getter for the 'Post your reply...' key
-
-  // skipped getter for the 'Posted successfully!' key
-
-  // skipped getter for the 'Preventive Tips' key
-
-  // skipped getter for the 'Preview Your Scan' key
-
-  // skipped getter for the 'Privacy Center' key
-
-  // skipped getter for the 'Proceed to Upload' key
-
-  /// `Processed`
-  String get Processed {
-    return Intl.message(
-      'Processed',
-      name: 'Processed',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Processing`
-  String get Processing {
-    return Intl.message(
-      'Processing',
-      name: 'Processing',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Profile Data' key
-
-  /// `Public`
-  String get Public {
-    return Intl.message(
-      'Public',
-      name: 'Public',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Recent Search' key
-
-  // skipped getter for the 'Recommended Next Steps' key
-
-  // skipped getter for the 'Remember your preferences' key
-
-  // skipped getter for the 'Reset Password' key
-
-  // skipped getter for the 'Result: \$status' key
-
-  // skipped getter for the 'Review app permissions' key
-
-  /// `Save`
-  String get Save {
-    return Intl.message(
-      'Save',
-      name: 'Save',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Scan`
-  String get Scan {
-    return Intl.message(
-      'Scan',
-      name: 'Scan',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Scan \${index + 1}' key
-
-  // skipped getter for the 'Scan Analysis Completed' key
-
-  // skipped getter for the 'Scan Analysis Results' key
-
-  // skipped getter for the 'Scan Result' key
-
-  // skipped getter for the 'Select and upload a clear image of your \${scan.analysisType} X-ray or CT scan to begin the analysis.' key
-
-  // skipped getter for the 'Share Results in Circle' key
-
-  // skipped getter for the 'Show Results' key
-
-  // skipped getter for the 'Something happened' key
-
-  /// `Sound`
-  String get Sound {
-    return Intl.message(
-      'Sound',
-      name: 'Sound',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Status: Normal' key
-
-  /// `Tamenny`
-  String get Tamenny {
-    return Intl.message(
-      'Tamenny',
-      name: 'Tamenny',
-      desc: '',
-      args: [],
-    );
-  }
-
-  // skipped getter for the 'Tamenny is a healthcare app designed to provide an initial assessment of your health condition using AI, helping you make informed decisions before visiting a doctor. It aims to save you time and money by offering an accurate preliminary diagnosis.' key
-
-  // skipped getter for the 'Tamenny may use trusted third-party services (such as Firebase or analytics tools) to help us understand app usage and improve functionality. These services process data anonymously and securely.' key
-
-  // skipped getter for the 'Tamenny’s AI will analyze your scan and deliver results in just a few minutes.' key
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

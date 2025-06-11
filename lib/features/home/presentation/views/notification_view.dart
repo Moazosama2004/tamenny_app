@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tamenny_app/core/theme/app_colors.dart';
-import 'package:tamenny_app/core/theme/app_styles.dart';
 import 'package:tamenny_app/core/widgets/custom_app_bar.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/notification_view_body.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/unread_notifications_widget.dart';

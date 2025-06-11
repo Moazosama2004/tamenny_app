@@ -6,10 +6,6 @@ class Assets {
   /// assets/images/add_more_icon.svg
   static const String imagesAddMoreIcon = "assets/images/add_more_icon.svg";
 
-  /// Assets for imagesAiProcessingModel
-  /// assets/images/ai_processing_model.png
-  static const String imagesAiProcessingModel = "assets/images/ai_processing_model.png";
-
   /// Assets for imagesArrowIcon
   /// assets/images/arrow_icon.svg
   static const String imagesArrowIcon = "assets/images/arrow_icon.svg";
@@ -25,10 +21,6 @@ class Assets {
   /// Assets for imagesBrainIcon
   /// assets/images/brain_icon.svg
   static const String imagesBrainIcon = "assets/images/brain_icon.svg";
-
-  /// Assets for imagesCalendarActiveIcon
-  /// assets/images/calendar_active_icon.svg
-  static const String imagesCalendarActiveIcon = "assets/images/calendar_active_icon.svg";
 
   /// Assets for imagesCalendarCompletedIcon
   /// assets/images/calendar_completed_icon.svg
@@ -150,10 +142,6 @@ class Assets {
   /// assets/images/logout_icon.svg
   static const String imagesLogoutIcon = "assets/images/logout_icon.svg";
 
-  /// Assets for imagesLogoutImage
-  /// assets/images/logout_image.png
-  static const String imagesLogoutImage = "assets/images/logout_image.png";
-
   /// Assets for imagesLoveActiveIcon
   /// assets/images/love_active_icon.svg
   static const String imagesLoveActiveIcon = "assets/images/love_active_icon.svg";
@@ -206,6 +194,10 @@ class Assets {
   /// assets/images/no_comment_icon.svg
   static const String imagesNoCommentIcon = "assets/images/no_comment_icon.svg";
 
+  /// Assets for imagesNoData
+  /// assets/images/no-data.json
+  static const String imagesNoData = "assets/images/no-data.json";
+
   /// Assets for imagesNoDataIcon
   /// assets/images/no_data_icon.svg
   static const String imagesNoDataIcon = "assets/images/no_data_icon.svg";
@@ -254,10 +246,6 @@ class Assets {
   /// assets/images/personal_card_icon.svg
   static const String imagesPersonalCardIcon = "assets/images/personal_card_icon.svg";
 
-  /// Assets for imagesPikasoCreations
-  /// assets/images/pikaso-creations.zip
-  static const String imagesPikasoCreations = "assets/images/pikaso-creations.zip";
-
   /// Assets for imagesPointersFillIcon
   /// assets/images/pointers_fill_icon.svg
   static const String imagesPointersFillIcon = "assets/images/pointers_fill_icon.svg";
@@ -269,10 +257,6 @@ class Assets {
   /// Assets for imagesPopIcon
   /// assets/images/pop_icon.svg
   static const String imagesPopIcon = "assets/images/pop_icon.svg";
-
-  /// Assets for imagesPostImage
-  /// assets/images/post_image.png
-  static const String imagesPostImage = "assets/images/post_image.png";
 
   /// Assets for imagesPrivacyIcon
   /// assets/images/privacy_icon.svg
@@ -298,10 +282,6 @@ class Assets {
   /// assets/images/profile_data_icon.svg
   static const String imagesProfileDataIcon = "assets/images/profile_data_icon.svg";
 
-  /// Assets for imagesProfileNotificationIcon
-  /// assets/images/profile_notification_icon.svg
-  static const String imagesProfileNotificationIcon = "assets/images/profile_notification_icon.svg";
-
   /// Assets for imagesProfileShareIcon
   /// assets/images/profile_share_icon.svg
   static const String imagesProfileShareIcon = "assets/images/profile_share_icon.svg";
@@ -309,18 +289,6 @@ class Assets {
   /// Assets for imagesQuestionIcon
   /// assets/images/question_icon.svg
   static const String imagesQuestionIcon = "assets/images/question_icon.svg";
-
-  /// Assets for imagesRobotFillIcon
-  /// assets/images/robot_fill_icon.svg
-  static const String imagesRobotFillIcon = "assets/images/robot_fill_icon.svg";
-
-  /// Assets for imagesRobotLightIcon
-  /// assets/images/robot_light_icon.svg
-  static const String imagesRobotLightIcon = "assets/images/robot_light_icon.svg";
-
-  /// Assets for imagesScanResult
-  /// assets/images/scan_result.png
-  static const String imagesScanResult = "assets/images/scan_result.png";
 
   /// Assets for imagesSearchGrayIcon
   /// assets/images/search_gray_Icon.svg
@@ -361,6 +329,10 @@ class Assets {
   /// Assets for imagesTimeIcon
   /// assets/images/time_icon.svg
   static const String imagesTimeIcon = "assets/images/time_icon.svg";
+
+  /// Assets for imagesTyping
+  /// assets/images/typing.json
+  static const String imagesTyping = "assets/images/typing.json";
 
   /// Assets for imagesUploadImage
   /// assets/images/upload_image.svg

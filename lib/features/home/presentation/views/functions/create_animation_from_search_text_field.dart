@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tamenny_app/features/home/presentation/views/widgets/search_view_screen.dart';
+import 'package:tamenny_app/features/home/presentation/views/search_view.dart';
 
 Route createRouteToSearch() {
   return PageRouteBuilder(

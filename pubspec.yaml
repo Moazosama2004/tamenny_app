@@ -65,13 +65,13 @@ dependencies:
   persistent_bottom_nav_bar: ^6.2.1
   provider: ^6.1.5
   quickalert: ^1.1.0
-  ruut_flutter: ^0.0.2+patch
   shared_preferences: ^2.3.3
   shimmer: ^3.0.0
-  skeletonizer: ^1.4.3
+  skeletonizer: ^2.0.1
   smooth_page_indicator: ^1.2.0+3
   supabase_flutter: ^2.8.4
   tap_to_expand: ^0.7.2
+  url_launcher: ^6.3.1
   uuid: ^4.5.1
 
 dev_dependencies:

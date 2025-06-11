@@ -37,14 +37,15 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         slivers: [
           const HomeViewMainBannerSection(),
           const HealthScanCategoriesSection(),
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HomeViewCustomHeader(text: S.of(context).yourRecentInsights),
-              ],
+          if (false)
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  HomeViewCustomHeader(text: S.of(context).yourRecentInsights),
+                ],
+              ),
             ),
-          ),
           // TODO : عدل هنا ظهور الالفحوصات علي حسب اللي موجود ف الليست لو فاضيه متظهرهاش خالص
           if (false) const LatestScansBlocBuilder(),
           const NearbyDoctorsSection(),

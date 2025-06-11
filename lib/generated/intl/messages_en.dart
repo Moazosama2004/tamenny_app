@@ -22,24 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "Circle": MessageLookupByLibrary.simpleMessage("Circle"),
-        "Comments": MessageLookupByLibrary.simpleMessage("Comments"),
-        "Completed": MessageLookupByLibrary.simpleMessage("Completed"),
-        "Dental": MessageLookupByLibrary.simpleMessage("Dental"),
-        "Doctors": MessageLookupByLibrary.simpleMessage("Doctors"),
-        "FAQ": MessageLookupByLibrary.simpleMessage("FAQ"),
-        "Language": MessageLookupByLibrary.simpleMessage("Language"),
         "New": MessageLookupByLibrary.simpleMessage("NEW"),
-        "Notification": MessageLookupByLibrary.simpleMessage("Notification"),
-        "PREFERENCE": MessageLookupByLibrary.simpleMessage("PREFERENCE"),
-        "Processed": MessageLookupByLibrary.simpleMessage("Processed"),
-        "Processing": MessageLookupByLibrary.simpleMessage("Processing"),
-        "Public": MessageLookupByLibrary.simpleMessage("Public"),
-        "Save": MessageLookupByLibrary.simpleMessage("Save"),
-        "Scan": MessageLookupByLibrary.simpleMessage("Scan"),
-        "Sound": MessageLookupByLibrary.simpleMessage("Sound"),
-        "Tamenny": MessageLookupByLibrary.simpleMessage("Tamenny"),
         "account": MessageLookupByLibrary.simpleMessage("Account"),
         "addPostHintText":
             MessageLookupByLibrary.simpleMessage("What\'s on your mind?"),
@@ -94,6 +77,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Email"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "error_occurred":
+            MessageLookupByLibrary.simpleMessage("An error occurred:"),
         "faq": MessageLookupByLibrary.simpleMessage("FAQ"),
         "faqA1": MessageLookupByLibrary.simpleMessage(
             "Tamenny is a healthcare app designed to provide an initial assessment of your health condition using AI..."),
@@ -174,6 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungCancer": MessageLookupByLibrary.simpleMessage("Lung Cancer"),
         "markAllAsRead":
             MessageLookupByLibrary.simpleMessage("Mark all as read"),
+        "medical_news": MessageLookupByLibrary.simpleMessage("Medical News"),
         "meetTamennyAiChatbot":
             MessageLookupByLibrary.simpleMessage("Meet Tamenny AI Chatbot"),
         "nameHint": MessageLookupByLibrary.simpleMessage("Name"),
@@ -187,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("There is No Comment"),
         "noSensitiveDataNote": MessageLookupByLibrary.simpleMessage(
             "We do not collect any sensitive personal data."),
+        "no_results": MessageLookupByLibrary.simpleMessage("No results found"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "orSignInWith": MessageLookupByLibrary.simpleMessage("Or sign in with"),
@@ -253,16 +240,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "Are you sure you want to log out?"),
         "startChatting": MessageLookupByLibrary.simpleMessage("Start Chatting"),
         "startNewScan": MessageLookupByLibrary.simpleMessage("Start New Scan"),
+        "start_typing_to_search": MessageLookupByLibrary.simpleMessage(
+            "Start typing to search for a doctor..."),
         "status_processed": MessageLookupByLibrary.simpleMessage("Processed"),
         "stepOne": MessageLookupByLibrary.simpleMessage("Step One"),
         "stepOneChatBot": MessageLookupByLibrary.simpleMessage(
-            "1. Tap the \"Start Chatting\" button below.\\n"),
+            "1. Tap the \"Start Chatting\" button below."),
         "stepThree": MessageLookupByLibrary.simpleMessage("Step Three"),
         "stepThreeChatBot": MessageLookupByLibrary.simpleMessage(
             "3. Get instant, AI-powered responses customized for you."),
         "stepTwo": MessageLookupByLibrary.simpleMessage("Step Two"),
         "stepTwoChatBot": MessageLookupByLibrary.simpleMessage(
-            "2. Ask any question related to your health.\\n"),
+            "2. Ask any question related to your health."),
         "stretchDaily": MessageLookupByLibrary.simpleMessage(
             "Stretch daily to improve flexibility and reduce stress."),
         "takeShortWalks": MessageLookupByLibrary.simpleMessage(

@@ -18,7 +18,7 @@ class MedicalNewsRepoImpl extends MedicalNewsRepo {
     try {
       var data = await _medicalNewsApiService.get(
           endPoint:
-              'latest?apikey=${AppKeys.kMedicalNewsApiKey}&category=health&language=en');
+              'latest?apikey=${AppKeys.kMedicalNewsApiKey}&category=health&language=en&size=10');
       List<ArticleEntity> articles = [];
       for (var article in data['results']) {
         articles.add(ArticleModel.fromJson(article).toEntity());

@@ -22,24 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "Cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
-        "Circle": MessageLookupByLibrary.simpleMessage("الدائرة"),
-        "Comments": MessageLookupByLibrary.simpleMessage("تعليقات"),
-        "Completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
-        "Dental": MessageLookupByLibrary.simpleMessage("طب الأسنان"),
-        "Doctors": MessageLookupByLibrary.simpleMessage("الأطباء"),
-        "FAQ": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
-        "Language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "New": MessageLookupByLibrary.simpleMessage("جديد"),
-        "Notification": MessageLookupByLibrary.simpleMessage("إشعار"),
-        "PREFERENCE": MessageLookupByLibrary.simpleMessage("التفضيلات"),
-        "Processed": MessageLookupByLibrary.simpleMessage("تم معالجته"),
-        "Processing": MessageLookupByLibrary.simpleMessage("قيد المعالجة"),
-        "Public": MessageLookupByLibrary.simpleMessage("عام"),
-        "Save": MessageLookupByLibrary.simpleMessage("حفظ"),
-        "Scan": MessageLookupByLibrary.simpleMessage("فحص"),
-        "Sound": MessageLookupByLibrary.simpleMessage("صوت"),
-        "Tamenny": MessageLookupByLibrary.simpleMessage("تميني"),
         "account": MessageLookupByLibrary.simpleMessage("الحساب"),
         "addPostHintText":
             MessageLookupByLibrary.simpleMessage("ما الذي يدور في ذهنك؟"),
@@ -93,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailHint": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "error": MessageLookupByLibrary.simpleMessage("خطأ"),
+        "error_occurred": MessageLookupByLibrary.simpleMessage("حدث خطأ:"),
         "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
         "faqA1": MessageLookupByLibrary.simpleMessage(
             "Tamenny هو تطبيق صحي يستخدم الذكاء الاصطناعي لتقديم تقييم أولي لحالتك الصحية، لمساعدتك في اتخاذ قرارات مدروسة قبل زيارة الطبيب. يهدف إلى توفير الوقت والمال من خلال تقديم تشخيص أولي دقيق."),
@@ -174,6 +158,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lungCancer": MessageLookupByLibrary.simpleMessage("سرطان الرئة"),
         "markAllAsRead":
             MessageLookupByLibrary.simpleMessage("تمييز الكل كمقروء"),
+        "medical_news": MessageLookupByLibrary.simpleMessage("الأخبار الطبية"),
         "meetTamennyAiChatbot": MessageLookupByLibrary.simpleMessage(
             "تعرف على روبوت Tamenny الذكي"),
         "nameHint": MessageLookupByLibrary.simpleMessage("الاسم"),
@@ -188,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("لا يوجد تعليقات"),
         "noSensitiveDataNote": MessageLookupByLibrary.simpleMessage(
             "لا نقوم بجمع أي بيانات شخصية حساسة."),
+        "no_results": MessageLookupByLibrary.simpleMessage("لا توجد نتائج"),
         "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
         "ok": MessageLookupByLibrary.simpleMessage("حسناً"),
         "orSignInWith": MessageLookupByLibrary.simpleMessage(
@@ -254,6 +240,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "startChatting": MessageLookupByLibrary.simpleMessage("ابدأ الدردشة"),
         "startNewScan":
             MessageLookupByLibrary.simpleMessage("ابدأ فحصًا جديدًا"),
+        "start_typing_to_search": MessageLookupByLibrary.simpleMessage(
+            "ابدأ الكتابة للبحث عن دكتور..."),
         "status_processed":
             MessageLookupByLibrary.simpleMessage("تمت المعالجة"),
         "stepOne": MessageLookupByLibrary.simpleMessage("الخطوة الأولى"),

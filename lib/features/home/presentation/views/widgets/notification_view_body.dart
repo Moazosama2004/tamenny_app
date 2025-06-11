@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tamenny_app/features/home/presentation/views/widgets/notification_item.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/notification_state.dart';
 import 'package:tamenny_app/features/home/presentation/views/widgets/notifications_list_view.dart';
 

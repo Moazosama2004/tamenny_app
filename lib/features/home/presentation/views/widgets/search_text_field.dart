@@ -5,7 +5,8 @@ import 'package:tamenny_app/core/utils/app_assets.dart';
 import 'package:tamenny_app/generated/l10n.dart';
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
+  const SearchTextField({super.key, this.onChanged});
+  final Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class SearchTextField extends StatelessWidget {
         ],
       ),
       child: TextField(
+        onChanged: onChanged,
         keyboardType: TextInputType.text,
         style: theme.textTheme.bodyMedium
             ?.copyWith(color: theme.textTheme.bodyLarge?.color),
@@ -43,14 +45,14 @@ class SearchTextField extends StatelessWidget {
                         isDark ? Colors.white70 : Colors.black54,
                         BlendMode.srcIn))),
           ),
-          suffixIcon: SizedBox(
-            width: 20,
-            child: Center(
-                child: SvgPicture.asset(Assets.imagesFilterIcon,
-                    colorFilter: ColorFilter.mode(
-                        isDark ? Colors.white70 : Colors.black54,
-                        BlendMode.srcIn))),
-          ),
+          // suffixIcon: SizedBox(
+          //   width: 20,
+          //   child: Center(
+          //       child: SvgPicture.asset(Assets.imagesFilterIcon,
+          //           colorFilter: ColorFilter.mode(
+          //               isDark ? Colors.white70 : Colors.black54,
+          //               BlendMode.srcIn))),
+          // ),
           hintText: S.of(context).search,
           hintStyle: AppStyles.font12Regular.copyWith(color: hintColor),
           fillColor: fillColor,
@@ -65,7 +67,7 @@ class SearchTextField extends StatelessWidget {
 
   OutlineInputBorder buildBorder(Color color) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
+      borderRadius: BorderRadius.circular(50),
       borderSide: BorderSide(color: color),
     );
   }

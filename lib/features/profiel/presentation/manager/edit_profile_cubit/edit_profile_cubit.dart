@@ -20,63 +20,6 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   final ImagePicker _picker = ImagePicker();
   final userCubit = getIt<UserCubit>();
 
-  // Future<void> editProfileAvatar(String userId, XFile file) async {
-  //   try {
-  //     emit(EditProfileLoading());
-
-  //     String fileName =
-  //         '${DateTime.now().millisecondsSinceEpoch}_${file.path.split('/').last}';
-  //     String path = 'avatars/$fileName';
-
-  //     final imageUrl = await storageService.uploadFile(file: file, path: path);
-  //     await databaseService.updateUserAvatar(
-  //         userId: userId, imageUrl: imageUrl);
-
-  //     final userBox = Hive.box<UserModel>('user');
-  //     final currentUser = userBox.get('currentUser');
-
-  //     if (currentUser != null) {
-  //       final updatedUser = currentUser.copyWith(userAvatarUrl: imageUrl);
-  //       await userBox.put('currentUser', updatedUser);
-  //       userCubit.saveUser(updatedUser);
-  //     }
-  //     emit(EditProfileSuccess(imageUrl));
-  //   } catch (e) {
-  //     emit(EditProfileError(e.toString()));
-  //   }
-  // }
-
-  // Future<void> updateUsername(String userId, String newUsername) async {
-  //   emit(EditProfileLoading());
-  //   try {
-  //     await databaseService.updateData(
-  //         path: BackendEndPoint.updateUserData,
-  //         documentId: userId,
-  //         data: {
-  //           'name': newUsername,
-  //         });
-  //     emit(EditProfileSuccess('')); // null imageUrl since no image change
-  //   } catch (e) {
-  //     emit(EditProfileError(e.toString()));
-  //   }
-  // }
-
-  // Future<void> updateEmail(String newEmail) async {
-  //   emit(EditProfileLoading());
-  //   try {
-  //     User? user = FirebaseAuth.instance.currentUser;
-  //     if (user != null) {
-  //       await user.updateEmail(newEmail);
-  //       await user.reload(); // refresh user data
-  //       emit(EditProfileSuccess(''));
-  //     } else {
-  //       emit(EditProfileError("User not logged in"));
-  //     }
-  //   } catch (e) {
-  //     emit(EditProfileError(e.toString()));
-  //   }
-  // }
-
   Future<void> updateProfile({
     required String userId,
     XFile? newAvatar,
